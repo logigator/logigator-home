@@ -6,10 +6,10 @@ import {ImpressumRoutingModule} from './impressum-routing.module';
 
 
 @NgModule({
-  declarations: [ImpressumComponent],
-  imports: [
-    ImpressumRoutingModule,
-    CommonModule
-  ]
+	declarations: [ImpressumComponent],
+	imports: [
+		ImpressumRoutingModule,
+		CommonModule
+	]
 })
 export class ImpressumModule { }

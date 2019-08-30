@@ -4,18 +4,18 @@ import {AuthService} from './services/auth/auth.service';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+	declarations: [],
+	imports: [
+		CommonModule
+	]
 })
 export class SharedModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: SharedModule,
-      providers: [
-          AuthService
-      ]
-    };
-  }
+	static forRoot(): ModuleWithProviders {
+		return {
+			ngModule: SharedModule,
+			providers: [
+				AuthService
+			]
+		};
+	}
 }
