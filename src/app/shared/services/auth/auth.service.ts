@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of, throwError} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
+import {DOCUMENT} from '@angular/common';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
 
-	constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document) { }
 
 	public async authenticateTwitter(): Promise<any> {
 		const authUtlResponse: any = await this.http.get('/api/auth/twitter-auth-url').toPromise();
@@ -42,7 +43,7 @@ export class AuthService {
 	}
 
 	public get isLoggedIn(): boolean {
-		const isLoggedIn = document.cookie.match('(^|[^;]+)\\s*' + 'isLoggedIn' + '\\s*=\\s*([^;]+)');
+		const isLoggedIn = this.document.cookie.match('(^|[^;]+)\\s*' + 'isLoggedIn' + '\\s*=\\s*([^;]+)');
 		if (!isLoggedIn) {
 			return false;
 		}
