@@ -14,7 +14,7 @@ export class AuthService {
 	public async authenticateTwitter(): Promise<any> {
 		const authUtlResponse: any = await this.http.get('/api/auth/twitter-auth-url').toPromise();
 		const popup = this.openPopUp();
-		popup.location.href = authUtlResponse.url;
+		popup.location.href = authUtlResponse.result.url;
 		const oauthData = await this.pollingAuthPopup(popup, 'twitter');
 		return await this.http.post('/api/auth/verify-twitter-credentials', oauthData).toPromise();
 	}
@@ -22,7 +22,7 @@ export class AuthService {
 	public async authenticateGoogle(): Promise<any> {
 		const authUrlResponse: any = await this.http.get('/api/auth/google-auth-url').toPromise();
 		const popup = this.openPopUp();
-		popup.location.href = authUrlResponse.url;
+		popup.location.href = authUrlResponse.result.url;
 		const oauthData = await this.pollingAuthPopup(popup, 'google');
 		return await this.http.post('/api/auth/verify-google-credentials', oauthData).toPromise();
 	}
