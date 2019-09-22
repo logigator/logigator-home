@@ -1,0 +1,23 @@
+@import "themes";
+
+footer {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	@include themify() {
+		background-color: themed('primary');
+	}
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+
+	a {
+		text-decoration: none;
+		@include themify() {
+			color: themed('text');
+			&:hover {
+				color: themed('hover');
+			}
+		}
+	}
+
+}

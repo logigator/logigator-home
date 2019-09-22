@@ -1,0 +1,27 @@
+@import "themes";
+@import "variables";
+
+header{
+	width: 100%;
+	height: $header-height;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	top: 0;
+	position: fixed;
+
+	@include themify() {
+		background-color: themed('primary');
+	}
+
+	a {
+		text-decoration: none;
+		@include themify() {
+			color: themed('text');
+			&:hover {
+				color: themed('hover');
+			}
+		}
+	}
+
+}
