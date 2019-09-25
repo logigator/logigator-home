@@ -1,5 +1,8 @@
 # LogigatorHome
 
+[![Build Status](https://travis-ci.org/logigator/logigator-home.svg?branch=master)](https://travis-ci.org/logigator/logigator-home)
+[![Build Status](https://travis-ci.org/logigator/logigator-home.svg?branch=development)](https://travis-ci.org/logigator/logigator-home)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
 
 ## Development server

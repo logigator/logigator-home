@@ -70,7 +70,8 @@ export class AuthService {
 		);
 	}
 
-	private pollingAuthPopup(popup: Window, type: 'twitter' | 'google'): Promise<{oauth_verifier: string, oauth_token: string} | {code: string}> {
+	private pollingAuthPopup(popup: Window, type: 'twitter' | 'google'):
+		Promise<{oauth_verifier: string, oauth_token: string} | {code: string}> {
 		const close = (polling) => {
 			popup.close();
 			clearInterval(polling);
@@ -93,10 +94,10 @@ export class AuthService {
 							const query = new URLSearchParams(popup.location.search);
 
 							if (type === 'twitter') {
-								const oauth_token = query.get('oauth_token');
-								const oauth_verifier = query.get('oauth_verifier');
+								const oauthToken = query.get('oauth_token');
+								const oauthVerifier = query.get('oauth_verifier');
 								close(polling);
-								resolve({oauth_verifier, oauth_token});
+								resolve({oauth_verifier: oauthVerifier, oauth_token: oauthToken});
 							} else if (type === 'google') {
 								const code = query.get('code');
 								close(polling);
