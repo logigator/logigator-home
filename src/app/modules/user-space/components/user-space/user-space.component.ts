@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {AuthService} from '../../../../shared/services/auth/auth.service';
 import {Observable} from 'rxjs';
 import {UserInfo} from '../../../../shared/models/http-responses/user-info';
 import {ApiService} from '../../../../shared/services/api/api.service';
-import {UserComponent} from '../../../../shared/models/http-responses/user-component';
 
 @Component({
 	selector: 'app-user-space',
 	templateUrl: './user-space.component.html',
-	styleUrls: ['./user-space.component.scss']
+	styleUrls: ['./user-space.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class UserSpaceComponent implements OnInit {
 

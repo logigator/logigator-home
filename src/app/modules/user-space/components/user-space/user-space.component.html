@@ -1,6 +1,4 @@
-<p>user-space works!</p>
-
-<ng-container *ngIf="userInfo$ | async as userInfo">
-	<p>{{userInfo.user.username}}</p>
-</ng-container>
-
+<div>
+	<app-drawer></app-drawer>
+	<router-outlet></router-outlet>
+</div>
