@@ -1,0 +1,25 @@
+app-user-space {
+	> div {
+		display: flex;
+		flex-direction: row;
+
+		> app-drawer {
+			min-width: 20rem;
+			margin-right: 1rem;
+		}
+
+		> :last-child {
+			flex-grow: 1;
+		}
+
+		@media (max-width: 600px) {
+			flex-direction: column;
+
+			> app-drawer {
+				margin-right: 0;
+				margin-bottom: 1rem;
+				width: 100%;
+			}
+		}
+	}
+}

@@ -4,6 +4,8 @@ import {AuthService} from './services/auth/auth.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import {RouterModule} from '@angular/router';
+import {ErrorHandlingService} from './services/error-handling/error-handling.service';
+import {ApiService} from "./services/api/api.service";
 
 @NgModule({
 	declarations: [FooterComponent, HeaderComponent],
@@ -21,7 +23,9 @@ export class SharedModule {
 		return {
 			ngModule: SharedModule,
 			providers: [
-				AuthService
+				AuthService,
+				ErrorHandlingService,
+				ApiService
 			]
 		};
 	}
