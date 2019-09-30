@@ -1,0 +1,31 @@
+@import "themes";
+
+.item-list {
+	display: flex;
+	flex-direction: column;
+
+	.item {
+		margin: 1rem;
+		padding: 1rem;
+
+		@include themify() {
+			background-color: themed("primary");
+		}
+
+		p {
+			margin: 0;
+			line-height: 1.5rem;
+		}
+
+		h2 {
+			margin: 0;
+			line-height: 3rem;
+		}
+
+		.date-box {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+}

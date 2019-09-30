@@ -1,15 +1,26 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of, throwError} from 'rxjs';
-import {switchMap} from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
 import {DOCUMENT} from '@angular/common';
+import {HttpResponseData} from '../../models/http-responses/http-response-data';
+import {UserInfo} from '../../models/http-responses/user-info';
+import {ErrorHandlingService} from '../error-handling/error-handling.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
 
-	constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document) { }
+	private _userInfo$: Observable<UserInfo>;
+
+	constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document, private errorHandling: ErrorHandlingService) {
+		this.getUserInformation();
+	}
+
+	public get userInfo$(): Observable<UserInfo> {
+		return this._userInfo$;
+	}
 
 	public async authenticateTwitter(): Promise<any> {
 		const authUtlResponse: any = await this.http.get('/api/auth/twitter-auth-url').toPromise();
@@ -129,6 +140,19 @@ export class AuthService {
 						error: 'not logged in'
 					}
 				});
+			})
+		);
+	}
+
+	private getUserInformation() {
+		this._userInfo$ = of(this.isLoggedIn).pipe(
+			switchMap(isLoggedIn => {
+				if (!isLoggedIn) return of(undefined);
+
+				return this.http.get<HttpResponseData<UserInfo>>('/api/user/get').pipe(
+					map(response => response.result),
+					this.errorHandling.catchErrorOperator('Unable to get user info.', undefined)
+				);
 			})
 		);
 	}
