@@ -1,10 +1,17 @@
 <div class="item-list">
-	<div class="item" *ngFor="let component of components">
-		<h2 class="component-title">{{component.name}} <span class="component-symbol">[{{component.symbol}}]</span></h2>
-		<p class="component-description">{{component.description}}</p>
-		<div class="date-box">
-			<p class="component-edited">Last Edited: {{component.last_edited}}</p>
-			<p class="component-created">Created: {{component.created_on}}</p>
-		</div>
-	</div>
+	<ng-container *ngIf="userComponents$ | async as components">
+		<ng-container *ngIf="components.length > 0; else noComponents">
+			<div class="item" *ngFor="let component of components">
+				<h2 class="component-title">{{component.name}} <span class="component-symbol">[{{component.symbol}}]</span></h2>
+				<p class="component-description">{{component.description}}</p>
+				<div class="date-box">
+					<p class="component-edited">Last Edited: {{component.last_edited}}</p>
+					<p class="component-created">Created: {{component.created_on}}</p>
+				</div>
+			</div>
+		</ng-container>
+		<ng-template #noComponents>
+			<p>You haven't defined any custom components yet.</p>
+		</ng-template>
+	</ng-container>
 </div>

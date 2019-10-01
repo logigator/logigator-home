@@ -12,12 +12,7 @@ import {ApiService} from '../../../../shared/services/api/api.service';
 })
 export class UserSpaceComponent implements OnInit {
 
-	public userInfo$: Observable<UserInfo>;
-
 	constructor(private auth: AuthService, private api: ApiService) { }
 
-	async ngOnInit() {
-		this.userInfo$ = this.auth.userInfo$;
-	}
-
+	ngOnInit() { }
 }

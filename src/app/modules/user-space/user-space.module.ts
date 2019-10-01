@@ -6,13 +6,26 @@ import { ProjectListComponent } from './components/project-list/project-list.com
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { ComponentListComponent } from './components/component-list/component-list.component';
 import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
+import { ChangePasswordComponent } from './components/account-settings/popups/change-password/change-password.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
-	declarations: [UserSpaceComponent, ProjectListComponent, DrawerComponent, ComponentListComponent, AccountSettingsComponent],
+	declarations: [
+		UserSpaceComponent,
+		ProjectListComponent,
+		DrawerComponent,
+		ComponentListComponent,
+		AccountSettingsComponent,
+		ChangePasswordComponent
+	],
+	entryComponents: [
+		ChangePasswordComponent
+	],
 	imports: [
 		UserSpaceRoutingModule,
-		CommonModule
+		CommonModule,
+		ReactiveFormsModule
 	]
 })
 export class UserSpaceModule { }

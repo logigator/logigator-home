@@ -17,6 +17,15 @@ $themes: (
 	)
 );
 
+$border-styles: (
+	width: 1px,
+	radius: 0.1rem
+);
+
+@function border($key) {
+	@return map-get($border-styles, $key);
+}
+
 @mixin themify() {
 	@each $theme, $map in $themes {
 

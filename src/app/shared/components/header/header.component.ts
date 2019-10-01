@@ -13,6 +13,10 @@ export class HeaderComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	public get isLoggedIn() {
+		return this.auth.isLoggedIn;
+	}
+
 	public loginGoogle() {
 		this.auth.authenticateGoogle();
 	}

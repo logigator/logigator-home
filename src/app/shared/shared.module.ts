@@ -5,10 +5,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import {RouterModule} from '@angular/router';
 import {ErrorHandlingService} from './services/error-handling/error-handling.service';
-import {ApiService} from "./services/api/api.service";
+import {ApiService} from './services/api/api.service';
+import {PopupComponent} from './components/popup/popup.component';
 
 @NgModule({
-	declarations: [FooterComponent, HeaderComponent],
+	declarations: [
+		FooterComponent,
+		HeaderComponent,
+		PopupComponent
+	],
+	entryComponents: [
+		PopupComponent
+	],
 	exports: [
 		HeaderComponent,
 		FooterComponent

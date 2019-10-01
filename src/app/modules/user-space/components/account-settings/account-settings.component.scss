@@ -1,0 +1,20 @@
+@import "themes";
+
+.user-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 8rem;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+
+	@include themify() {
+		background-color: #CCCCCC;
+	}
+
+	img {
+		max-height: 100%;
+		max-width: 100%;
+	}
+}

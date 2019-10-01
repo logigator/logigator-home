@@ -1,1 +1,10 @@
-<p>account-settings works!</p>
+<div class="user-info" *ngIf="userInfo$ | async as userInfo">
+	<div>
+		<h3>{{userInfo.user.username}}</h3>
+		<h4>{{userInfo.user.email}}</h4>
+	</div>
+	<img [src]="'/api/images/profile/' + userInfo.user.profile_image">
+</div>
+<div class="settings">
+	<button (click)="openPasswordChangeDialog()">Change Password</button>
+</div>

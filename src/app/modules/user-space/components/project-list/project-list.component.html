@@ -1,10 +1,17 @@
 <div class="item-list">
-	<div class="item" *ngFor="let project of projects">
-		<h2 class="title">{{project.name}}</h2>
-		<p class="description">{{project.description}}</p>
-		<div class="date-box">
-			<p class="edited">Last Edited: {{project.last_edited}}</p>
-			<p class="created">Created: {{project.created_on}}</p>
-		</div>
-	</div>
+	<ng-container *ngIf="userProjects$ | async as projects">
+		<ng-container *ngIf="projects.length > 0; else noProjects">
+			<div class="item" *ngFor="let project of projects;">
+				<h2 class="title">{{project.name}}</h2>
+				<p class="description">{{project.description}}</p>
+				<div class="date-box">
+					<p class="edited">Last Edited: {{project.last_edited}}</p>
+					<p class="created">Created: {{project.created_on}}</p>
+				</div>
+			</div>
+		</ng-container>
+		<ng-template #noProjects>
+			<p>You haven't defined any projects yet.</p>
+		</ng-template>
+	</ng-container>
 </div>
