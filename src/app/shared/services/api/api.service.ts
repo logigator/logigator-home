@@ -55,10 +55,10 @@ export class ApiService {
 		return this._userProjects$;
 	}
 
-	public changePassword(password: string) {
-		this.http.post<HttpResponseData<UserComponent[]>>('/api/user/change-password', { password }).pipe(
-			map(data => data.result),
-			this.errorHandling.catchErrorOperator('Could not change password', [])
+	public changePassword(password: string): Observable<boolean> {
+		return this.http.post<HttpResponseData<any>>('/api/user/change-password', { password }).pipe(
+			map(data => data.result.success),
+			this.errorHandling.catchErrorOperator('Could not change password', false)
 		);
 	}
 }
