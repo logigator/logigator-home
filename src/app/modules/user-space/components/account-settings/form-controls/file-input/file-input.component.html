@@ -15,7 +15,15 @@
 		<p>Drop your files here.</p>
 	</div>
 	<div class="preview">
-		<img src="#" #image>
+		<image-cropper
+			[imageFile]="imageFile"
+			[maintainAspectRatio]="true"
+			[aspectRatio]="1 / 1"
+			[resizeToWidth]="512"
+			format="jpeg"
+			outputType="file"
+			backgroundColor="#FFFFFF"
+			(imageCropped)="onCrop($event)" (loadImageFailed)="onCropperFail()">
+		</image-cropper>
 	</div>
 </div>
-<canvas #canvas></canvas>

@@ -15,7 +15,7 @@ export class AccountSettingsComponent implements OnInit {
 
 	public changeProfileForm: FormGroup;
 
-	public testvar = '';
+	public pictureTouched = false;
 
 	constructor(
 		private auth: AuthService,
@@ -41,11 +41,5 @@ export class AccountSettingsComponent implements OnInit {
 
 	public submitSettings() {
 		console.log(this.changeProfileForm);
-	}
-
-	public testChange(event: File) {
-		const reader = new FileReader();
-		reader.onload = (e: any) => { this.testvar = e.target.result; };
-		reader.readAsDataURL(event);
 	}
 }

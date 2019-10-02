@@ -9,6 +9,7 @@ import { AccountSettingsComponent } from './components/account-settings/account-
 import { ChangePasswordComponent } from './components/account-settings/popups/change-password/change-password.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FileInputComponent } from './components/account-settings/form-controls/file-input/file-input.component';
+import {ImageCropperModule} from 'ngx-image-cropper';
 
 @NgModule({
 	declarations: [
@@ -26,7 +27,8 @@ import { FileInputComponent } from './components/account-settings/form-controls/
 	imports: [
 		UserSpaceRoutingModule,
 		CommonModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		ImageCropperModule
 	]
 })
 export class UserSpaceModule { }

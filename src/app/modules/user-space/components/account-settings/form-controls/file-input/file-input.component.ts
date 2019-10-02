@@ -1,15 +1,14 @@
 import {
-	AfterContentInit,
 	Component,
 	ElementRef,
 	forwardRef,
-	Input,
+	Input, OnInit,
 	ViewChild
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import * as Croppr from 'croppr';
 import {CropValue} from 'croppr';
 import {HttpClient} from '@angular/common/http';
+import {ImageCroppedEvent} from 'ngx-image-cropper';
 
 @Component({
 	selector: 'app-file-input',
@@ -23,34 +22,29 @@ import {HttpClient} from '@angular/common/http';
 		}
 	]
 })
-export class FileInputComponent implements AfterContentInit, ControlValueAccessor {
+export class FileInputComponent implements OnInit, ControlValueAccessor {
 
 	@Input()
 	public defaultImage: string;
 
-	@ViewChild('image', {static: true})
-	private imageElement: ElementRef;
-
-	@ViewChild('canvas', {static: true})
-	private canvasElement: ElementRef<HTMLCanvasElement>;
+	public imageFile: File;
 
 	public isDragging = false;
 	public isDisabled = false;
 
-	private _imgFile: File;
-	private _imgDataURL = '';
-	private _cropper: Croppr;
+	private cropperDisabled = false;
 
 	public onChange = (value: File) => {};
 	public onTouch = () => {};
 
 	constructor(private http: HttpClient) { }
 
-	async ngAfterContentInit() {
+	async ngOnInit() {
 		if (this.defaultImage) {
-			this.setFile(new File([
-				await this.http.get(this.defaultImage, { responseType: 'blob' }).toPromise()
-			], this.defaultImage));
+			this.cropperDisabled = true;
+			this.imageFile = new File([ await this.http.get(this.defaultImage, { responseType: 'blob' }).toPromise() ],
+				this.defaultImage,
+				{ type: 'image/jpeg' });
 		}
 	}
 
@@ -84,43 +78,26 @@ export class FileInputComponent implements AfterContentInit, ControlValueAccesso
 		evt.preventDefault();
 		evt.stopPropagation();
 		this.isDragging = false;
+		console.log('!');
 		if (evt.dataTransfer.files)
-			this.setFile(evt.dataTransfer.files[0]);
+			this.imageFile = evt.dataTransfer.files[0];
 	}
 
 	public fileChange(event: any) {
 		if (event.target.files && event.target.files.length > 0)
-			this.setFile(event.target.files[0]);
+			this.imageFile = event.target.files[0];
 	}
 
-	private setFile(file: File) {
-		this._imgFile = file;
+	public onCrop(event: ImageCroppedEvent) {
+		if (this.cropperDisabled) {
+			this.cropperDisabled = false;
+			return;
+		}
 
-		const reader = new FileReader();
-		reader.onload = (e: any) => {
-			this._imgDataURL = e.target.result;
+		this.onChange(event.file as File);
+	}
 
-			if (!this._cropper) {
-				this._cropper = new Croppr(this.imageElement.nativeElement, {
-					aspectRatio: 1,
-					onCropEnd: (x: CropValue) => {
-						const ctx = this.canvasElement.nativeElement.getContext('2d');
-						this.canvasElement.nativeElement.width = 512;
-						this.canvasElement.nativeElement.height = 512;
-						const image = new Image();
-						image.onload = () => {
-							ctx.drawImage(image, x.x, x.y, x.width, x.height, 0, 0, 512, 512);
-							this.canvasElement.nativeElement.toBlob(blob => {
-								this.onChange(new File([ blob ], this._imgFile.name, {type: 'image/jpeg'}));
-							}, 'image/jpeg');
-						};
-						image.src = this._imgDataURL;
-					}
-				});
-			}
-
-			this._cropper.setImage(this._imgDataURL);
-		};
-		reader.readAsDataURL(file);
+	public onCropperFail() {
+		console.log('Failed to load image into cropper.');
 	}
 }
