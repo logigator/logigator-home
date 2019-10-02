@@ -15,6 +15,8 @@ export class AccountSettingsComponent implements OnInit {
 
 	public changeProfileForm: FormGroup;
 
+	public testvar = '';
+
 	constructor(
 		private auth: AuthService,
 		private popup: PopupService,
@@ -39,5 +41,11 @@ export class AccountSettingsComponent implements OnInit {
 
 	public submitSettings() {
 		console.log(this.changeProfileForm);
+	}
+
+	public testChange(event: File) {
+		const reader = new FileReader();
+		reader.onload = (e: any) => { this.testvar = e.target.result; };
+		reader.readAsDataURL(event);
 	}
 }

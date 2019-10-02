@@ -8,7 +8,8 @@
 	</div>
 
 	<form class="settings" [formGroup]="changeProfileForm" (ngSubmit)="submitSettings()">
-		<app-file-input formControlName="profilePicture" [defaultImage]="'/api/images/profile/' + userInfo.user.profile_image"></app-file-input>
+		<app-file-input formControlName="profilePicture" [defaultImage]="'/api/images/profile/' + userInfo.user.profile_image" (ngModelChange)="testChange($event)"></app-file-input>
+		<img [src]="testvar">
 		<button type="submit" [disabled]="changeProfileForm.invalid">Change Profile</button>
 	</form>
 

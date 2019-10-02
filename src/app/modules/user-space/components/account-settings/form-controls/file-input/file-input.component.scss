@@ -12,6 +12,8 @@
 	height: 8rem;
 
 	.preview {
+		max-height: 100%;
+		max-width: 33.33%;
 		margin-left: 0.5rem;
 	}
 
@@ -52,4 +54,8 @@
 			}
 		}
 	}
+}
+
+canvas {
+	display: none;
 }
