@@ -9,6 +9,7 @@ import {
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import * as Croppr from 'croppr';
 import {CropValue} from 'croppr';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
 	selector: 'app-file-input',
@@ -43,15 +44,13 @@ export class FileInputComponent implements AfterContentInit, ControlValueAccesso
 	public onChange = (value: File) => {};
 	public onTouch = () => {};
 
-	constructor() { }
+	constructor(private http: HttpClient) { }
 
-	ngAfterContentInit() {
+	async ngAfterContentInit() {
 		if (this.defaultImage) {
-			const xhr = new XMLHttpRequest();
-			xhr.open('GET', this.defaultImage);
-			xhr.responseType = 'blob';
-			xhr.onload = () => this.setFile(new File([xhr.response], this.defaultImage));
-			xhr.send();
+			this.setFile(new File([
+				await this.http.get(this.defaultImage, { responseType: 'blob' }).toPromise()
+			], this.defaultImage));
 		}
 	}
 
