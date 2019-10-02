@@ -7,8 +7,8 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 import { ComponentListComponent } from './components/component-list/component-list.component';
 import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
 import { ChangePasswordComponent } from './components/account-settings/popups/change-password/change-password.component';
-import {ReactiveFormsModule} from "@angular/forms";
-
+import {ReactiveFormsModule} from '@angular/forms';
+import { FileInputComponent } from './components/account-settings/form-controls/file-input/file-input.component';
 
 @NgModule({
 	declarations: [
@@ -17,7 +17,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 		DrawerComponent,
 		ComponentListComponent,
 		AccountSettingsComponent,
-		ChangePasswordComponent
+		ChangePasswordComponent,
+		FileInputComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent

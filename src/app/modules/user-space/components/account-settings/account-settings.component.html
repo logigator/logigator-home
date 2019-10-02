@@ -1,10 +1,17 @@
-<div class="user-info" *ngIf="userInfo$ | async as userInfo">
-	<div>
-		<h3>{{userInfo.user.username}}</h3>
-		<h4>{{userInfo.user.email}}</h4>
+<ng-container *ngIf="userInfo$ | async as userInfo">
+	<div class="user-info">
+		<div>
+			<h3>{{userInfo.user.username}}</h3>
+			<h4>{{userInfo.user.email}}</h4>
+		</div>
+		<img [src]="'/api/images/profile/' + userInfo.user.profile_image">
 	</div>
-	<img [src]="'/api/images/profile/' + userInfo.user.profile_image">
-</div>
-<div class="settings">
+
+	<form class="settings" [formGroup]="changeProfileForm" (ngSubmit)="submitSettings()">
+		<app-file-input formControlName="profilePicture" [defaultImage]="'/api/images/profile/' + userInfo.user.profile_image"></app-file-input>
+		<button type="submit" [disabled]="changeProfileForm.invalid">Change Profile</button>
+	</form>
+
+	<br>
 	<button (click)="openPasswordChangeDialog()">Change Password</button>
-</div>
+</ng-container>
