@@ -5,10 +5,10 @@ import {ApiService} from '../../../../../../shared/services/api/api.service';
 
 @Component({
 	selector: 'app-change-password',
-	templateUrl: './change-password.component.html',
-	styleUrls: ['./change-password.component.scss']
+	templateUrl: './change-username.component.html',
+	styleUrls: ['./change-username.component.scss']
 })
-export class ChangePasswordComponent extends PopupContentComp implements OnInit {
+export class ChangeUsernameComponent extends PopupContentComp implements OnInit {
 
 	public newCompForm: FormGroup;
 
@@ -18,25 +18,19 @@ export class ChangePasswordComponent extends PopupContentComp implements OnInit 
 
 	ngOnInit() {
 		this.newCompForm = this.formBuilder.group({
-			password: ['', [
+			username: ['', [
 				Validators.required,
-				Validators.minLength(8),
-				Validators.pattern('^(?=.*[A-Za-z])(?=.*[0-9]).*$')
-			]],
-			passwordRepeat: ['', [
-				Validators.required
+				Validators.minLength(2),
+				Validators.maxLength(20),
+				Validators.pattern('^[a-zA-Z0-9_\\-]+$')
 			]]
-		}, {
-			validators: ((x: FormGroup) => {
-				return (x.controls.password.value !== x.controls.passwordRepeat.value) ? {passwordMatch: {value: x.controls.password.value}} : null;
-			})
 		});
 	}
 
 	public async submit() {
 		if (this.newCompForm.invalid)
 			return;
-		await this.api.updateProfile({ password: this.newCompForm.controls.password.value }).toPromise();
+		await this.api.updateProfile({ username: this.newCompForm.controls.username.value }).toPromise();
 		this.requestClose.emit();
 	}
 

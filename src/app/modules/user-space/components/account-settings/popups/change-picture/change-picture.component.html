@@ -1,0 +1,17 @@
+<form [formGroup]="newCompForm" (ngSubmit)="submit()">
+	<image-cropper
+		[imageFile]="imageFile"
+		[maintainAspectRatio]="true"
+		[aspectRatio]="1 / 1"
+		[resizeToWidth]="512"
+		format="jpeg"
+		outputType="file"
+		backgroundColor="#FFFFFF"
+		(loadImageFailed)="onCropperFail()"
+		[onlyScaleDown]="true"
+		[class.hidden]="!imageFile">
+	</image-cropper>
+	<app-file-input formControlName="fileInput"></app-file-input>
+
+	<button type="submit" [disabled]="newCompForm.invalid">Submit</button>
+</form>

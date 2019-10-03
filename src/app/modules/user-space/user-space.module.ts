@@ -10,6 +10,8 @@ import { ChangePasswordComponent } from './components/account-settings/popups/ch
 import {ReactiveFormsModule} from '@angular/forms';
 import { FileInputComponent } from './components/account-settings/form-controls/file-input/file-input.component';
 import {ImageCropperModule} from 'ngx-image-cropper';
+import {ChangeUsernameComponent} from './components/account-settings/popups/change-username/change-username.component';
+import { ChangePictureComponent } from './components/account-settings/popups/change-picture/change-picture.component';
 
 @NgModule({
 	declarations: [
@@ -19,10 +21,14 @@ import {ImageCropperModule} from 'ngx-image-cropper';
 		ComponentListComponent,
 		AccountSettingsComponent,
 		ChangePasswordComponent,
-		FileInputComponent
+		FileInputComponent,
+		ChangeUsernameComponent,
+		ChangePictureComponent
 	],
 	entryComponents: [
-		ChangePasswordComponent
+		ChangePasswordComponent,
+		ChangeUsernameComponent,
+		ChangePictureComponent
 	],
 	imports: [
 		UserSpaceRoutingModule,

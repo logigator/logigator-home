@@ -1,0 +1,14 @@
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	app-file-input {
+		height: 5rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.hidden {
+	display: none;
+}

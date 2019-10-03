@@ -38,7 +38,9 @@ export class ApiService {
 		this._userComponents$ = this.http.get<HttpResponseData<UserComponent[]>>('/api/project/get-all-components-info').pipe(
 			map(data => data.result),
 			shareReplay(),
-			this.errorHandling.catchErrorOperator('Cannot get Components from Server', [])
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Could not get Components from Server: (${x.status}) ${x.error.error.description}`,
+				[])
 		);
 		return this._userComponents$;
 	}
@@ -50,15 +52,36 @@ export class ApiService {
 		this._userProjects$ = this.http.get<HttpResponseData<UserComponent[]>>('/api/project/get-all-projects-info').pipe(
 			map(data => data.result),
 			shareReplay(),
-			this.errorHandling.catchErrorOperator('Cannot get Projects from Server', [])
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Could not get Projects from Server: (${x.status}) ${x.error.error.description}`,
+				[])
 		);
 		return this._userProjects$;
 	}
 
-	public changePassword(password: string): Observable<boolean> {
-		return this.http.post<HttpResponseData<any>>('/api/user/change-password', { password }).pipe(
+	public changeProfilePicture(file: File): Observable<boolean> {
+		if (!this.auth.isLoggedIn)
+			return of(false);
+
+		const formData = new FormData();
+		formData.append('picture', file);
+		return this.http.post<HttpResponseData<any>>('/api/user/upload-picture', formData).pipe(
 			map(data => data.result.success),
-			this.errorHandling.catchErrorOperator('Could not change password', false)
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Picture upload failed: (${x.status}) ${x.error.error.description}`,
+				false)
+		);
+	}
+
+	public updateProfile(profile: {username?: string, email?: string, password?: string}): Observable<boolean> {
+		if (!this.auth.isLoggedIn)
+			return of(false);
+
+		return this.http.post<HttpResponseData<any>>('/api/user/update', profile).pipe(
+			map(data => data.result.success),
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Could not update profile: (${x.status}) ${x.error.error.description}`,
+				false)
 		);
 	}
 }

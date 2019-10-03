@@ -4,7 +4,9 @@ import {Observable} from 'rxjs';
 import {UserInfo} from '../../../../shared/models/http-responses/user-info';
 import {PopupService} from '../../../../shared/services/popup/popup.service';
 import {ChangePasswordComponent} from './popups/change-password/change-password.component';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ApiService} from '../../../../shared/services/api/api.service';
+import {ChangeUsernameComponent} from './popups/change-username/change-username.component';
+import {ChangePictureComponent} from './popups/change-picture/change-picture.component';
 
 @Component({
 	selector: 'app-account-settings',
@@ -13,22 +15,14 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class AccountSettingsComponent implements OnInit {
 
-	public changeProfileForm: FormGroup;
-
-	public pictureTouched = false;
-
 	constructor(
 		private auth: AuthService,
 		private popup: PopupService,
 		private componentFactoryResolver: ComponentFactoryResolver,
-		private formBuilder: FormBuilder
+		private api: ApiService
 	) { }
 
 	ngOnInit() {
-		this.changeProfileForm = this.formBuilder.group({
-			profilePicture: ['', [
-			]]
-		});
 	}
 
 	public get userInfo$(): Observable<UserInfo> {
@@ -39,7 +33,22 @@ export class AccountSettingsComponent implements OnInit {
 		this.popup.showPopup(ChangePasswordComponent, this.componentFactoryResolver, 'Change Password', false);
 	}
 
-	public submitSettings() {
-		console.log(this.changeProfileForm);
+	public openUsernameChangeDialog() {
+		this.popup.showPopup(ChangeUsernameComponent, this.componentFactoryResolver, 'Change Username', false);
+	}
+
+	public openPictureChangeDialog() {
+		this.popup.showPopup(ChangePictureComponent, this.componentFactoryResolver, 'Change Profile Picture', false);
+	}
+
+	public async submitSettings() {
+		/*const promises: Promise<any>[] = [];
+
+		if (this.changeProfileForm.controls.profilePicture.touched) {
+			promises.push(this.api.changeProfilePicture(this.changeProfileForm.controls.profilePicture.value).toPromise());
+		}
+
+		await Promise.all(promises);
+		this.changeProfileForm.controls.profilePicture.setValue(this.changeProfileForm.controls.profilePicture.value);*/
 	}
 }
