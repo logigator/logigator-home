@@ -1,0 +1,15 @@
+<form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+	<label for="change-email-email">Email</label>
+	<input [class.invalid]="newCompForm.controls.email.touched && newCompForm.controls.email.invalid" type="text" formControlName="email" id="change-email-email" required>
+	<br>
+
+	<ul>
+		<ng-container *ngIf="newCompForm.controls.email.touched">
+			<ng-container *ngIf="newCompForm.controls.email.errors as errors">
+				<li *ngIf="errors.pattern">Email is invalid.</li>
+			</ng-container>
+		</ng-container>
+	</ul>
+
+	<button type="submit" [disabled]="newCompForm.invalid">Submit</button>
+</form>

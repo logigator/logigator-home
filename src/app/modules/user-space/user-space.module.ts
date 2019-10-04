@@ -12,6 +12,7 @@ import { FileInputComponent } from './components/account-settings/form-controls/
 import {ImageCropperModule} from 'ngx-image-cropper';
 import {ChangeUsernameComponent} from './components/account-settings/popups/change-username/change-username.component';
 import { ChangePictureComponent } from './components/account-settings/popups/change-picture/change-picture.component';
+import {ChangeEmailComponent} from './components/account-settings/popups/change-email/change-email.component';
 
 @NgModule({
 	declarations: [
@@ -23,12 +24,14 @@ import { ChangePictureComponent } from './components/account-settings/popups/cha
 		ChangePasswordComponent,
 		FileInputComponent,
 		ChangeUsernameComponent,
-		ChangePictureComponent
+		ChangePictureComponent,
+		ChangeEmailComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent,
 		ChangeUsernameComponent,
-		ChangePictureComponent
+		ChangePictureComponent,
+		ChangeEmailComponent
 	],
 	imports: [
 		UserSpaceRoutingModule,

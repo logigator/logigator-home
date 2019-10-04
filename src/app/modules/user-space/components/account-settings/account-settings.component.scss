@@ -3,6 +3,7 @@
 .container {
 	display: flex;
 	flex-direction: row-reverse;
+	align-items: center;
 
 	@media (max-width: 800px) {
 		flex-direction: column;
@@ -27,6 +28,7 @@
 
 		h3, h4 {
 			margin-bottom: 0;
+			text-align: center;
 		}
 	}
 

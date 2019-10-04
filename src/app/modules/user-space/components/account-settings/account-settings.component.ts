@@ -8,6 +8,7 @@ import {ApiService} from '../../../../shared/services/api/api.service';
 import {ChangeUsernameComponent} from './popups/change-username/change-username.component';
 import {ChangePictureComponent} from './popups/change-picture/change-picture.component';
 import {map, switchMap} from "rxjs/operators";
+import {ChangeEmailComponent} from "./popups/change-email/change-email.component";
 
 @Component({
 	selector: 'app-account-settings',
@@ -38,22 +39,15 @@ export class AccountSettingsComponent implements OnInit {
 		this.popup.showPopup(ChangeUsernameComponent, this.componentFactoryResolver, 'Change Username', false);
 	}
 
+	public openEmailChangeDialog() {
+		this.popup.showPopup(ChangeEmailComponent, this.componentFactoryResolver, 'Change Email', false);
+	}
+
 	public openPictureChangeDialog() {
 		this.userInfo$.pipe(
 			map(x => `/api/images/profile/${x.user.profile_image}`)
 		).toPromise().then(x => {
 			this.popup.showPopup(ChangePictureComponent, this.componentFactoryResolver, 'Change Profile Picture', false, x);
 		});
-	}
-
-	public async submitSettings() {
-		/*const promises: Promise<any>[] = [];
-
-		if (this.changeProfileForm.controls.profilePicture.touched) {
-			promises.push(this.api.changeProfilePicture(this.changeProfileForm.controls.profilePicture.value).toPromise());
-		}
-
-		await Promise.all(promises);
-		this.changeProfileForm.controls.profilePicture.setValue(this.changeProfileForm.controls.profilePicture.value);*/
 	}
 }
