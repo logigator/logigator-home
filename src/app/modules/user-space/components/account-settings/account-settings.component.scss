@@ -1,20 +1,68 @@
 @import "themes";
 
-.user-info {
+.container {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 8rem;
-	margin: 1rem;
-	padding: 1rem;
-	border-radius: 0.5rem;
+	flex-direction: row-reverse;
 
-	@include themify() {
-		background-color: #CCCCCC;
+	@media (max-width: 800px) {
+		flex-direction: column;
 	}
 
-	img {
-		max-height: 100%;
-		max-width: 100%;
+	.user-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 1rem;
+		padding: 1rem;
+		border-radius: 0.5rem;
+
+		@include themify() {
+			background-color: #CCCCCC;
+		}
+
+		img {
+			width: 8rem;
+		}
+
+		h3, h4 {
+			margin-bottom: 0;
+		}
+	}
+
+	.account-settings {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 1rem;
+		flex: 1;
+
+		.setting {
+			height: 5rem;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 50rem;
+			width: 100%;
+
+			div {
+				h3 {
+					margin: 0;
+				}
+
+				p {
+					margin: 0;
+					font-size: 10pt;
+					@include themify() {
+						@if(isTheme('dark')) {
+							color: darken(themed('text'), 50);
+						} @else {
+							color: lighten(themed('text'), 50);
+						}
+					}
+				}
+			}
+		}
 	}
 }

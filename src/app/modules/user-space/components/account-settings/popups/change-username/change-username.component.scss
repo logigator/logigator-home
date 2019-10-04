@@ -2,11 +2,6 @@ form {
 	display: flex;
 	flex-direction: column;
 
-	input {
-		font: initial;
-		border: none;
-	}
-
 	.invalid {
 		outline: red 1px solid;
 	}

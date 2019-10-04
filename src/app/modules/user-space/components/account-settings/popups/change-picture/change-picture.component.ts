@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {PopupContentComp} from '../../../../../../shared/components/popup/popup-content-comp';
 import {ApiService} from '../../../../../../shared/services/api/api.service';
-import {ImageCroppedEvent} from 'ngx-image-cropper';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -12,14 +11,10 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ChangePictureComponent extends PopupContentComp implements OnInit {
 
-	// will be replaced
-	private defaultImageFile: File;
-	private defaultImage: string;
-
-	private cropperDisabled = false;
-
 	public newCompForm: FormGroup;
 	public imageFile: File;
+
+	private croppedImage: File;
 
 	constructor(private formBuilder: FormBuilder, private api: ApiService, private http: HttpClient) {
 		super();
@@ -30,12 +25,9 @@ export class ChangePictureComponent extends PopupContentComp implements OnInit {
 			fileInput: ['', [
 			]]
 		});
-		if (this.defaultImageFile) {
-			this.imageFile = this.defaultImageFile;
-		} else if (this.defaultImage) {
-			this.cropperDisabled = true;
-			this.imageFile = new File([ await this.http.get(this.defaultImage, { responseType: 'blob' }).toPromise() ],
-				this.defaultImage,
+		if (this.inputFromOpener) {
+			this.imageFile = new File([ await this.http.get(this.inputFromOpener, { responseType: 'blob' }).toPromise() ],
+				this.inputFromOpener,
 				{ type: 'image/jpeg' });
 		}
 		this.newCompForm.controls.fileInput.valueChanges.subscribe((x) => this.imageFile = x);
@@ -45,7 +37,14 @@ export class ChangePictureComponent extends PopupContentComp implements OnInit {
 		console.error('Failed to load image into cropper.');
 	}
 
-	public submit() {
-		console.log('!');
+	public onCrop(event) {
+		this.croppedImage = event.file;
+	}
+
+	public async submit() {
+		if (this.croppedImage) {
+			await this.api.changeProfilePicture(this.croppedImage).toPromise();
+			this.requestClose.emit();
+		}
 	}
 }

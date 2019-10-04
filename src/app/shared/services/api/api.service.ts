@@ -78,7 +78,10 @@ export class ApiService {
 			return of(false);
 
 		return this.http.post<HttpResponseData<any>>('/api/user/update', profile).pipe(
-			map(data => data.result.success),
+			map(data => {
+				this.auth.updateUserInfo();
+				return data.result.success;
+			}),
 			this.errorHandling.catchErrorOperatorDynamicMessage(
 				(x) => `Could not update profile: (${x.status}) ${x.error.error.description}`,
 				false)
