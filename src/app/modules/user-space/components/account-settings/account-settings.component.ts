@@ -7,7 +7,7 @@ import {ChangePasswordComponent} from './popups/change-password/change-password.
 import {ApiService} from '../../../../shared/services/api/api.service';
 import {ChangeUsernameComponent} from './popups/change-username/change-username.component';
 import {ChangePictureComponent} from './popups/change-picture/change-picture.component';
-import {map, switchMap} from "rxjs/operators";
+import {map, switchMap, take, tap} from 'rxjs/operators';
 import {ChangeEmailComponent} from "./popups/change-email/change-email.component";
 
 @Component({
@@ -45,8 +45,9 @@ export class AccountSettingsComponent implements OnInit {
 
 	public openPictureChangeDialog() {
 		this.userInfo$.pipe(
-			map(x => `/api/images/profile/${x.user.profile_image}`)
-		).toPromise().then(x => {
+			map(x => `/api/images/profile/${x.user.profile_image}`),
+			take(1)
+		).subscribe(x => {
 			this.popup.showPopup(ChangePictureComponent, this.componentFactoryResolver, 'Change Profile Picture', false, x);
 		});
 	}
