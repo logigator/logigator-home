@@ -1,15 +1,27 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, of, throwError} from 'rxjs';
-import {switchMap} from 'rxjs/operators';
+import {BehaviorSubject, Observable, of, Subject, throwError} from 'rxjs';
+import {map, share, shareReplay, switchMap, switchMapTo} from 'rxjs/operators';
 import {DOCUMENT} from '@angular/common';
+import {HttpResponseData} from '../../models/http-responses/http-response-data';
+import {UserInfo} from '../../models/http-responses/user-info';
+import {ErrorHandlingService} from '../error-handling/error-handling.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
 
-	constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document) { }
+	private _userInfo$: Observable<UserInfo>;
+	private _userSubject$ = new BehaviorSubject<void>(undefined);
+
+	constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document, private errorHandling: ErrorHandlingService) { }
+
+	public get userInfo$(): Observable<UserInfo> {
+		if (!this._userInfo$)
+			this.getUserInformation();
+		return this._userInfo$;
+	}
 
 	public async authenticateTwitter(): Promise<any> {
 		const authUtlResponse: any = await this.http.get('/api/auth/twitter-auth-url').toPromise();
@@ -114,23 +126,24 @@ export class AuthService {
 		});
 	}
 
-	/**
-	 * should be used for all HTTP Requests, because requests are only made if the client thinks he is logged in.
-	 */
-	public sendRequestIfLoggedIn<T>(observable: Observable<T>): Observable<T> {
-		return of(this.isLoggedIn).pipe(
-			switchMap(isLoggedIn => {
-				if (isLoggedIn) {
-					return observable;
-				}
-				return throwError({
-					status: 401,
-					error: {
-						status: 401,
-						error: 'not logged in'
-					}
-				});
-			})
+	public updateUserInfo() {
+		if (this._userInfo$)
+			this._userSubject$.next();
+	}
+
+	private getUserInformation() {
+		this._userInfo$ = this._userSubject$.pipe(
+			switchMapTo(of(this.isLoggedIn).pipe(
+				switchMap(isLoggedIn => {
+					if (!isLoggedIn) return of(undefined);
+
+					return this.http.get<HttpResponseData<UserInfo>>('/api/user/get').pipe(
+						map(response => response.result),
+						this.errorHandling.catchErrorOperator('Unable to get user info.', undefined)
+					);
+				})
+			)),
+			shareReplay(1)
 		);
 	}
 }

@@ -1,0 +1,19 @@
+@import "themes";
+
+div {
+	display: flex;
+	flex-direction: column;
+
+	a {
+		@include themify() {
+			border: themed("accent1") 1px solid;
+		}
+		line-height: 3rem;
+	}
+
+	a:nth-child(odd) {
+		@include themify() {
+			background-color: #CCCCCC;
+		}
+	}
+}
