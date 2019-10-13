@@ -8,7 +8,7 @@ import {ApiService} from '../../../../shared/services/api/api.service';
 import {ChangeUsernameComponent} from './popups/change-username/change-username.component';
 import {ChangePictureComponent} from './popups/change-picture/change-picture.component';
 import {map, switchMap, take, tap} from 'rxjs/operators';
-import {ChangeEmailComponent} from "./popups/change-email/change-email.component";
+import {ChangeEmailComponent} from './popups/change-email/change-email.component';
 
 @Component({
 	selector: 'app-account-settings',

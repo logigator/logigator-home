@@ -82,7 +82,9 @@ export class AuthService {
 		);
 	}
 
-	private pollingAuthPopup(popup: Window, type: 'twitter' | 'google'): Promise<{oauth_verifier: string, oauth_token: string} | {code: string}> {
+	private pollingAuthPopup(popup: Window, type: 'twitter' | 'google'):
+		Promise<{oauth_verifier: string, oauth_token: string} | {code: string}> {
+
 		const close = (polling) => {
 			popup.close();
 			clearInterval(polling);
