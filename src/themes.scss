@@ -4,7 +4,8 @@ $themes: (
 		primary: #2ED573,
 		accent1: #FFF,
 		accent2:#E5E5E5,
-		text: #000000,
+		text-primary: #000000,
+		text-secondary: #EFEFEF,
 		hover: #cc392f
 	),
 	dark: (
@@ -12,7 +13,8 @@ $themes: (
 		primary: #27AE60,
 		accent1: #1A1A1A,
 		accent2: #5D5D5D,
-		text: #FFFFFF,
+		text-primary: #EFEFEF,
+		text-secondary: #000000,
 		hover: #ad2f26
 	)
 );

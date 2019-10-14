@@ -58,9 +58,9 @@
 					font-size: 10pt;
 					@include themify() {
 						@if(isTheme('dark')) {
-							color: darken(themed('text'), 50);
+							color: darken(themed('text-primary'), 50);
 						} @else {
-							color: lighten(themed('text'), 50);
+							color: lighten(themed('text-primary'), 50);
 						}
 					}
 				}

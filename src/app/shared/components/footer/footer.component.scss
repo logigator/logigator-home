@@ -1,19 +1,21 @@
 @import "themes";
+@import "variables";
 
 footer {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
+	height: $footer-height;
+
 	@include themify() {
 		background-color: themed('primary');
 	}
-	padding-top: 3rem;
-	padding-bottom: 3rem;
 
 	a {
 		text-decoration: none;
 		@include themify() {
-			color: themed('text');
+			color: themed('text-primary');
 			&:hover {
 				color: themed('hover');
 			}

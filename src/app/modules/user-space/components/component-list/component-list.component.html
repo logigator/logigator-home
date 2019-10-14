@@ -1,17 +1,54 @@
-<div class="item-list">
-	<ng-container *ngIf="userComponents$ | async as components">
-		<ng-container *ngIf="components.length > 0; else noComponents">
-			<div class="item" *ngFor="let component of components">
-				<h2 class="component-title">{{component.name}} <span class="component-symbol">[{{component.symbol}}]</span></h2>
-				<p class="component-description">{{component.description}}</p>
-				<div class="date-box">
-					<p class="component-edited">Last Edited: {{component.last_edited}}</p>
-					<p class="component-created">Created: {{component.created_on}}</p>
+<div class="container">
+	<div class="item-list">
+		<h1>My Components</h1>
+		<ng-container *ngIf="userComponents$ | async as projects">
+			<ng-container *ngIf="projects.length > 0; else noProjects">
+				<div class="tiles">
+					<div class="tile-wrapper" *ngFor="let project of projects | slice:0:4;">
+						<div class="tile">
+							<h3 class="title">{{project.name}}</h3>
+							<img class="preview" src="/assets/icons/light/selection1.svg">
+							<div class="tile-hover">
+								<div class="icon icon-play"></div>
+								<div class="actions">
+									<div class="icon icon-share"></div>
+									<div class="icon icon-edit"></div>
+									<div class="icon icon-delete"></div>
+									<div class="icon icon-info"></div>
+									<div class="icon icon-more"></div>
+								</div>
+							</div>
+						</div>
+						<div class="details">
+							<p class="title">{{project.name}}</p>
+							<p class="edited">Last Edited: {{project.last_edited}}</p>
+							<div class="actions">
+								<div class="icon icon-share"></div>
+								<div class="icon icon-edit"></div>
+								<div class="icon icon-delete"></div>
+								<div class="icon icon-info"></div>
+								<div class="icon icon-more"></div>
+							</div>
+						</div>
+					</div>
+					<div class="tile empty-tile">
+						<div class="tile-hover"></div>
+						<div class="icon icon-add-new"></div>
+					</div>
 				</div>
-			</div>
+				<div class="item" *ngFor="let project of projects; odd as isOdd" [class.odd]="isOdd">
+					<p class="title">{{project.name}}</p>
+					<p class="edited">Last Edited: {{project.last_edited}}</p>
+					<div class="icon icon-share"></div>
+					<div class="icon icon-edit"></div>
+					<div class="icon icon-delete"></div>
+					<div class="icon icon-info"></div>
+					<div class="icon icon-more"></div>
+				</div>
+			</ng-container>
+			<ng-template #noProjects>
+				<p>You haven't defined any projects yet.</p>
+			</ng-template>
 		</ng-container>
-		<ng-template #noComponents>
-			<p>You haven't defined any custom components yet.</p>
-		</ng-template>
-	</ng-container>
+	</div>
 </div>

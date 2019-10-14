@@ -9,6 +9,7 @@ header{
 	padding: 1rem;
 	top: 0;
 	position: fixed;
+	z-index: 100;
 
 	@include themify() {
 		background-color: themed('primary');
@@ -17,7 +18,7 @@ header{
 	a {
 		text-decoration: none;
 		@include themify() {
-			color: themed('text');
+			color: themed('text-primary');
 			&:hover {
 				color: themed('hover');
 			}

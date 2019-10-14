@@ -16,7 +16,7 @@
 		@include themify() {
 			background-color: themed('background');
 			border: border('width') solid themed('accent2');
-			color: themed('text');
+			color: themed('text-primary');
 		}
 
 		border-radius: border('radius');

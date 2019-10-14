@@ -2,16 +2,9 @@
 @import "themes";
 
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-@font-face {
-	font-family: 'louis_george_cafregular';
-	src: url('/assets/fonts/louis_george_cafe-webfont.woff2') format('woff2'),
-	url('/assets/fonts/louis_george_cafe-webfont.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
 
 html, body {
-	margin: $header-height 0 0 0;
+	margin: ($header-height / 2) 0 0 0;
 	padding: 0;
 }
 
@@ -30,8 +23,11 @@ body::after{
 }
 
 @include themify() {
+	* {
+		color: themed('text-primary');
+	}
+
 	.btn-primary {
-		color: themed('text');
 		background-color: themed('primary');
 		border-radius: 0.25rem;
 		-webkit-box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
@@ -42,7 +38,6 @@ body::after{
 	}
 
 	.btn-secondary {
-		color: themed('text');
 		background-color: themed('accent1');
 		border-radius: 0.25rem;
 		-webkit-box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);

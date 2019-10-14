@@ -3,7 +3,7 @@
 section{
 	@include themify() {
 		background-color: themed('accent1');
-		color: themed('text');
+		color: themed('text-primary');
 	}
 
 	width: 100%;
