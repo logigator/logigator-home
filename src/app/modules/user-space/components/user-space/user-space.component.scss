@@ -7,7 +7,7 @@ app-user-space {
 			flex-grow: 1;
 		}
 
-		@media (max-width: 900px) {
+		@media (max-width: 767px) {
 			flex-direction: row;
 
 			> app-drawer {
