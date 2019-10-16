@@ -6,10 +6,11 @@ header{
 	height: $header-height;
 	display: flex;
 	justify-content: space-between;
-	padding: 1rem;
+	align-items: center;
 	top: 0;
 	position: fixed;
 	z-index: 100;
+	padding: 0.5rem;
 
 	@include themify() {
 		background-color: themed('primary');
@@ -25,4 +26,11 @@ header{
 		}
 	}
 
+	.logo {
+		height: 100%;
+
+		img {
+			height: 100%;
+		}
+	}
 }

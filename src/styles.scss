@@ -13,15 +13,6 @@ html, body {
 	font-family: Nunito, Arial, sans-serif;
 }
 
-body::after{
-	position:absolute;
-	width:0;
-	height:0;
-	overflow:hidden;
-	z-index:-1;
-	content: url(/assets/icons/dark/close.svg) url(/assets/icons/light/close.svg);
-}
-
 @include themify() {
 	* {
 		color: themed('text-primary');
@@ -47,6 +38,3 @@ body::after{
 		border: 1px solid themed('primary');
 	}
 }
-
-
-
