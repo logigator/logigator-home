@@ -1,0 +1,250 @@
+.item-list {
+	display: flex;
+	flex-direction: column;
+	margin-top: 5rem;
+	min-width: 50rem;
+
+	@media (max-width: 900px) {
+		min-width: 100%;
+	}
+
+	h1 {
+		@media (max-width: 900px) {
+			text-align: center;
+			line-height: 4rem;
+			width: 100%;
+			margin-top: -3rem;
+			@include themify() {
+				border-bottom: 1px solid themed('text-primary');
+			}
+		}
+	}
+
+	.item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@include themify() {
+			background-color: themed('background');
+			outline: 1px solid themed('text-primary');
+		}
+
+		p {
+			margin: 0.5rem;
+		}
+
+		&.odd {
+			@include themify() {
+				background-color: themed('accent2');
+			}
+		}
+
+		.title {
+			flex-grow: 1;
+		}
+
+		.icon {
+			height: 1rem;
+			width: 1rem;
+			margin: 0 0.25rem;
+		}
+	}
+
+	.tiles {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		@media (max-width: 900px) {
+			flex-direction: column;
+		}
+
+		margin: -0.5rem -0rem 0.5rem -0rem;
+
+		.tile-wrapper {
+			display: flex;
+		}
+
+		.details {
+			display: none;
+			@media (max-width: 900px) {
+				display: flex;
+			}
+			flex-direction: column;
+			justify-content: center;
+
+			p {
+				margin-top: 0;
+			}
+
+			.title {
+				font-weight: bold;
+			}
+
+			.actions {
+				display: flex;
+
+				.icon {
+					width: 1.5rem;
+					height: 1.5rem;
+					margin: 0.25rem;
+				}
+			}
+		}
+
+		.tile {
+			display: flex;
+			position: relative;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			width: 10rem;
+			height: 10rem;
+			padding: 0.5rem;
+			margin: 0.5rem;
+
+			@include themify() {
+				background-color: themed('background');
+				-webkit-box-shadow: inset 0 0 0 1px themed('text-primary');
+				-moz-box-shadow: inset 0 0 0 1px themed('text-primary');
+				box-shadow: inset 0 0 0 1px themed('text-primary');
+			}
+
+			.title {
+				@media (max-width: 900px) {
+					display: none;
+				}
+				text-align: center;
+				margin: 0.5rem;
+			}
+
+			.preview {
+				width: 100%;
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: contain;
+			}
+
+			.tile-hover {
+				display: none;
+				position: absolute;
+
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(255, 255, 255, 0.75);
+
+				.icon-play {
+					position: absolute;
+					top: calc(50% - 1rem);
+					left: calc(50% - 1rem);
+					width: 2rem;
+					height: 2rem;
+				}
+
+				.actions {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+
+					.icon {
+						width: 1rem;
+						height: 1rem;
+						margin: 0.5rem 0.25rem;
+					}
+				}
+			}
+
+			@media (min-width: 900px) {
+				justify-content: space-between;
+				&:hover {
+					.tile-hover {
+						display: block;
+					}
+				}
+			}
+		}
+
+		.empty-tile {
+			justify-content: center;
+
+			.icon {
+				width: 2rem;
+				height: 2rem;
+				z-index: 50;
+			}
+		}
+	}
+
+	.icon {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+
+	.icon-add-new {
+		@if (isTheme('dark')) {
+			background-image: url("/assets/icons/dark/selection1.svg");
+		} @else {
+			background-image: url("/assets/icons/light/selection1.svg");
+		}
+	}
+
+	.icon-play {
+		@if (isTheme('dark')) {
+			background-image: url("/assets/icons/dark/selection1.svg");
+		} @else {
+			background-image: url("/assets/icons/light/selection1.svg");
+		}
+	}
+
+	.icon-share {
+		@if (isTheme('dark')) {
+			background-image: url("/assets/icons/dark/selection1.svg");
+		} @else {
+			background-image: url("/assets/icons/light/selection1.svg");
+		}
+	}
+
+	.icon-edit {
+		@if (isTheme('dark')) {
+			background-image: url("/assets/icons/dark/selection1.svg");
+		} @else {
+			background-image: url("/assets/icons/light/selection1.svg");
+		}
+	}
+
+	.icon-delete {
+		@if (isTheme('dark')) {
+			background-image: url("/assets/icons/dark/selection1.svg");
+		} @else {
+			background-image: url("/assets/icons/light/selection1.svg");
+		}
+	}
+
+	.icon-info {
+		@if (isTheme('dark')) {
+			background-image: url("/assets/icons/dark/selection1.svg");
+		} @else {
+			background-image: url("/assets/icons/light/selection1.svg");
+		}
+	}
+
+	.icon-more {
+		@if (isTheme('dark')) {
+			background-image: url("/assets/icons/dark/selection1.svg");
+		} @else {
+			background-image: url("/assets/icons/light/selection1.svg");
+		}
+	}
+
+}
