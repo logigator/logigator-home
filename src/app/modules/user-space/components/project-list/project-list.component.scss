@@ -8,9 +8,10 @@
 		display: flex;
 		flex-direction: column;
 		margin-top: 5rem;
+		min-width: 50rem;
 
-		@media (min-width: 900px) {
-			min-width: 50rem;
+		@media (max-width: 900px) {
+			min-width: 100%;
 		}
 
 		h1 {
@@ -66,7 +67,7 @@
 				flex-direction: column;
 			}
 
-			margin: -0.5rem -0.5rem 0.5rem -0.5rem;
+			margin: -0.5rem -0rem 0.5rem -0rem;
 
 			.tile-wrapper {
 				display: flex;
@@ -92,9 +93,9 @@
 					display: flex;
 
 					.icon {
-						width: 2rem;
-						height: 2rem;
-						margin: 0.5rem;
+						width: 1.5rem;
+						height: 1.5rem;
+						margin: 0.25rem;
 					}
 				}
 			}
