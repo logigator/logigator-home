@@ -5,12 +5,12 @@
 
 	<div class="login">
 		<ng-container *ngIf="isLoggedIn">
-			<button class="btn-raised secondary" routerLink="/my">Userspace</button>
-			<button class="btn-raised secondary" (click)="logout()">Logout</button>
+			<button class="btn-raised secondary" routerLink="/my">USERSPACE</button>
+			<button class="btn-raised secondary" (click)="logout()">LOGOUT</button>
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn">
-			<button class="btn-raised secondary" (click)="loginGoogle()">Login Google</button>
-			<button class="btn-raised secondary" (click)="loginTwitter()">Login Twitter</button>
+			<button class="btn-raised secondary" (click)="loginGoogle()">LOGIN GOOGLE</button>
+			<button class="btn-raised secondary" (click)="loginTwitter()">LOGIN TWITTER</button>
 		</ng-container>
 	</div>
 </header>
