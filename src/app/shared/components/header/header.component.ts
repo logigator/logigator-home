@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
-import {DrawerService} from '../../services/drawer/drawer.service';
+import {DrawerService} from '../../services/burger-menu/burger-menu.service';
 
 @Component({
 	selector: 'app-header',
