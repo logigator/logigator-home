@@ -1,7 +1,8 @@
 <div class="outer">
-	<div class="inner">
-		<a routerLink="projects">Projects</a>
-		<a routerLink="components">Components</a>
-		<a routerLink="settings">Account Settings</a>
+	<div class="inner" [class.show]="drawerOpen">
+		<a routerLink="projects" (click)="drawerClose()">Projects</a>
+		<a routerLink="components" (click)="drawerClose()">Components</a>
+		<a routerLink="settings" (click)="drawerClose()">Account Settings</a>
 	</div>
 </div>
+<div class="hamburger-background" [class.show]="drawerOpen" (click)="drawerClose()"></div>

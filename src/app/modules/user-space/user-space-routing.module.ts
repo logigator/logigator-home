@@ -11,6 +11,10 @@ const routes: Routes = [
 		component: UserSpaceComponent,
 		children: [
 			{
+				path: '',
+				redirectTo: 'projects'
+			},
+			{
 				path: 'components',
 				component: ComponentListComponent
 			},

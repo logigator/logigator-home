@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { UserSpaceComponent } from './components/user-space/user-space.component';
 import {UserSpaceRoutingModule} from './user-space-routing.module';
 import { ProjectListComponent } from './components/project-list/project-list.component';
-import { DrawerComponent } from './components/drawer/drawer.component';
 import { ComponentListComponent } from './components/component-list/component-list.component';
 import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
 import { ChangePasswordComponent } from './components/account-settings/popups/change-password/change-password.component';
@@ -13,19 +12,20 @@ import {ImageCropperModule} from 'ngx-image-cropper';
 import {ChangeUsernameComponent} from './components/account-settings/popups/change-username/change-username.component';
 import { ChangePictureComponent } from './components/account-settings/popups/change-picture/change-picture.component';
 import {ChangeEmailComponent} from './components/account-settings/popups/change-email/change-email.component';
+import {DrawerComponent} from './components/drawer/drawer.component';
 
 @NgModule({
 	declarations: [
 		UserSpaceComponent,
 		ProjectListComponent,
-		DrawerComponent,
 		ComponentListComponent,
 		AccountSettingsComponent,
 		ChangePasswordComponent,
 		FileInputComponent,
 		ChangeUsernameComponent,
 		ChangePictureComponent,
-		ChangeEmailComponent
+		ChangeEmailComponent,
+		DrawerComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent,
