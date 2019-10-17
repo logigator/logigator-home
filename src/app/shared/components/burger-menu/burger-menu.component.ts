@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service';
 
 @Component({
 	selector: 'app-burger-menu',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BurgerMenuComponent implements OnInit {
 
-	public isOpen = false;
-
-	constructor() {
+	constructor(private burgerMenuService: BurgerMenuService) {
 	}
 
 	ngOnInit() {
+	}
+
+	public setOpen(state: boolean) {
+		this.burgerMenuService.setOpen = state;
+	}
+
+	public get getOpen() {
+		return this.burgerMenuService.getOpen;
 	}
 }

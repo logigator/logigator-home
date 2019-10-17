@@ -1,8 +1,8 @@
 <div class="outer">
-	<div class="inner" [class.show]="isOpen">
-		<a routerLink="my/projects" (click)="isOpen = false">Projects</a>
-		<a routerLink="my/components" (click)="isOpen = false">Components</a>
-		<a routerLink="my/settings" (click)="isOpen = false">Account Settings</a>
+	<div class="inner" [class.show]="getOpen">
+		<a routerLink="my/projects" (click)="setOpen(false)">Projects</a>
+		<a routerLink="my/components" (click)="setOpen(false)">Components</a>
+		<a routerLink="my/settings" (click)="setOpen(false)">Account Settings</a>
 	</div>
 </div>
-<div class="hamburger-background" [class.show]="isOpen" (click)="isOpen = false"></div>
+<div class="hamburger-background" [class.show]="getOpen" (click)="setOpen(false)"></div>
