@@ -1,7 +1,7 @@
 @import "themes";
 @import "variables";
 
-header{
+header {
 	width: 100%;
 	height: $header-height;
 	display: flex;
@@ -16,6 +16,26 @@ header{
 		background-color: themed('primary');
 	}
 
+	.left {
+		display: flex;
+		height: 100%;
+
+		> * {
+			margin-right: 0.5rem;
+		}
+
+		.logo {
+			height: 100%;
+		}
+
+		.burger-menu {
+			display: none;
+			@media (max-width: 767px) {
+				display: block;
+			}
+		}
+	}
+
 	a {
 		text-decoration: none;
 		@include themify() {
@@ -26,11 +46,7 @@ header{
 		}
 	}
 
-	.logo {
+	img {
 		height: 100%;
-
-		img {
-			height: 100%;
-		}
 	}
 }

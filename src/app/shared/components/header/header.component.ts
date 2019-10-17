@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
+import {DrawerService} from '../../services/drawer/drawer.service';
 
 @Component({
 	selector: 'app-header',
@@ -8,7 +9,7 @@ import {AuthService} from '../../services/auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-	constructor(private auth: AuthService) { }
+	constructor(private auth: AuthService, private drawer: DrawerService) { }
 
 	ngOnInit() {
 	}
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit {
 
 	public loginTwitter() {
 		this.auth.authenticateTwitter();
+	}
+
+	public switchBurgerMenu() {
+		this.drawer.setOpen = !this.drawer.getOpen;
 	}
 
 }

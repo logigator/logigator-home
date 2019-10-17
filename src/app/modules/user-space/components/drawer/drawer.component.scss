@@ -1,4 +1,5 @@
 @import "themes";
+@import "variables";
 
 .outer {
 	display: flex;
@@ -18,10 +19,21 @@
 		max-width: 70rem;
 
 		@media (max-width: 767px) {
+			justify-content: flex-start;
 			flex-direction: column;
 			width: 20rem;
-			max-width: 100vw;
-			display: none;
+			height: calc(100% - #{$header-height});
+			visibility: hidden;
+			display: flex;
+			position: absolute;
+			z-index: 1100;
+			left: -20rem;
+			transition: left 0.5s ease, visibility 0.5s;
+
+			&.show {
+				visibility: visible;
+				left: 0;
+			}
 		}
 
 		@include themify() {
@@ -32,6 +44,24 @@
 			line-height: 3rem;
 			text-decoration: none;
 			font-weight: bold;
+			margin-left: 1rem;
+		}
+	}
+}
+
+.hamburger-background {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1000;
+
+	&.show {
+		@media (max-width: 767px) {
+			display: block;
 		}
 	}
 }
