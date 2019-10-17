@@ -26,6 +26,10 @@ export class HeaderComponent implements OnInit {
 		this.auth.authenticateTwitter();
 	}
 
+	public logout() {
+		this.auth.logout();
+	}
+
 	public switchBurgerMenu() {
 		this.burgerMenu.setOpen = !this.burgerMenu.getOpen;
 	}

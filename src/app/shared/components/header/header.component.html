@@ -1,13 +1,17 @@
 <header>
-	<div class="left">
-		<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/selection1.svg">
-		<a routerLink="/" class="logo"><img alt="Logigator" src="/assets/logo.svg"></a>
-	</div>
+	<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/selection1.svg">
+
+	<a routerLink="/" class="logo"><img alt="Logigator" src="/assets/logo.svg"></a>
 
 	<div class="login">
-		<a routerLink="/my" *ngIf="isLoggedIn">Userspace</a>
-		<button (click)="loginGoogle()">Login Google</button>
-		<button (click)="loginTwitter()">Login Twitter</button>
+		<ng-container *ngIf="isLoggedIn">
+			<button class="btn-raised secondary" routerLink="/my">Userspace</button>
+			<button class="btn-raised secondary" (click)="logout()">Logout</button>
+		</ng-container>
+		<ng-container *ngIf="!isLoggedIn">
+			<button class="btn-raised secondary" (click)="loginGoogle()">Login Google</button>
+			<button class="btn-raised secondary" (click)="loginTwitter()">Login Twitter</button>
+		</ng-container>
 	</div>
 </header>
 

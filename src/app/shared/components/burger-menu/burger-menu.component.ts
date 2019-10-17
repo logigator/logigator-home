@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
 	selector: 'app-burger-menu',
@@ -8,7 +9,7 @@ import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service'
 })
 export class BurgerMenuComponent implements OnInit {
 
-	constructor(private burgerMenuService: BurgerMenuService) {
+	constructor(private burgerMenuService: BurgerMenuService, private auth: AuthService) {
 	}
 
 	ngOnInit() {
@@ -20,5 +21,22 @@ export class BurgerMenuComponent implements OnInit {
 
 	public get getOpen() {
 		return this.burgerMenuService.getOpen;
+	}
+
+	public async logout() {
+		await this.auth.logout();
+		this.setOpen(false);
+	}
+
+	public get isLoggedIn() {
+		return this.auth.isLoggedIn;
+	}
+
+	public loginTwitter() {
+		this.auth.authenticateTwitter();
+	}
+
+	public loginGoogle() {
+		this.auth.authenticateGoogle();
 	}
 }
