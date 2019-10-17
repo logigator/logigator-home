@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {DrawerService} from '../../../../shared/services/drawer/drawer.service';
 
 @Component({
 	selector: 'app-drawer',
@@ -8,17 +7,11 @@ import {DrawerService} from '../../../../shared/services/drawer/drawer.service';
 })
 export class DrawerComponent implements OnInit {
 
-	constructor(private drawerService: DrawerService) {
+	public isOpen = false;
+
+	constructor() {
 	}
 
 	ngOnInit() {
-	}
-
-	get drawerOpen() {
-		return this.drawerService.getOpen;
-	}
-
-	public drawerClose() {
-		this.drawerService.setOpen = false;
 	}
 }
