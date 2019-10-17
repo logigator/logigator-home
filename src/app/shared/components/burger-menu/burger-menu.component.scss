@@ -1,46 +1,36 @@
 @import "themes";
 @import "variables";
 
-.outer {
+.burger-menu {
 	display: flex;
-	justify-content: center;
-	flex-direction: row;
+	visibility: hidden;
+	justify-content: flex-start;
+	flex-direction: column;
+	width: 20rem;
+	height: calc(100% - #{$header-height});
+	position: fixed;
+	z-index: 1100;
+	left: -20rem;
+	transition: left 0.5s ease, visibility 0.5s;
+
+	&.show {
+		visibility: visible;
+		left: 0;
+	}
+
+	@media (min-width: 768px) {
+		display: none;
+	}
 
 	@include themify() {
 		background-color: themed('accent2');
 	}
 
-	.inner {
-		display: flex;
-		visibility: hidden;
-		justify-content: flex-start;
-		flex-direction: column;
-		width: 20rem;
-		height: calc(100% - #{$header-height});
-		position: absolute;
-		z-index: 1100;
-		left: -20rem;
-		transition: left 0.5s ease, visibility 0.5s;
-
-		&.show {
-			visibility: visible;
-			left: 0;
-		}
-
-		@media (min-width: 768px) {
-			display: none;
-		}
-
-		@include themify() {
-			background-color: themed('accent2');
-		}
-
-		a {
-			line-height: 3rem;
-			text-decoration: none;
-			font-weight: bold;
-			margin-left: 1rem;
-		}
+	a {
+		line-height: 3rem;
+		text-decoration: none;
+		font-weight: bold;
+		margin-left: 1rem;
 	}
 }
 

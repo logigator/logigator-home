@@ -1,8 +1,6 @@
-<div class="outer">
-	<div class="inner" [class.show]="getOpen">
+<div class="burger-menu" [class.show]="getOpen">
 		<a routerLink="my/projects" (click)="setOpen(false)">Projects</a>
 		<a routerLink="my/components" (click)="setOpen(false)">Components</a>
 		<a routerLink="my/settings" (click)="setOpen(false)">Account Settings</a>
-	</div>
 </div>
 <div class="hamburger-background" [class.show]="getOpen" (click)="setOpen(false)"></div>
