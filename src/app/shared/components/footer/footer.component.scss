@@ -14,12 +14,12 @@ footer {
 
 	a {
 		text-decoration: none;
-		@include themify() {
-			color: themed('text-primary');
-			&:hover {
-				color: themed('hover');
-			}
+		color: black;
+
+		&:hover {
+			text-decoration: underline;
 		}
+
 	}
 
 }
