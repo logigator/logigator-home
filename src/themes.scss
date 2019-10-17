@@ -1,12 +1,13 @@
 $themes: (
 	light: (
 		background: #F5F5F5,
-		primary: #2ED573,
-		accent1: #FFF,
-		accent2:#E5E5E5,
+		primary: #2ECC71,
+		accent1: #FFFFFF,
+		accent2: #d1d1d1,
 		text-primary: #000000,
-		text-secondary: #EFEFEF,
-		hover: #cc392f
+		text-secondary: #F5F5F5,
+		error: #DD3138,
+		button-text: #F5F5F5
 	),
 	dark: (
 		background: #2B2B2B,
@@ -15,7 +16,8 @@ $themes: (
 		accent2: #5D5D5D,
 		text-primary: #EFEFEF,
 		text-secondary: #000000,
-		hover: #ad2f26
+		error: #DD3138,
+		button-text: #F5F5F5
 	)
 );
 
