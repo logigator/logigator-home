@@ -12,28 +12,17 @@ header {
 	z-index: 100;
 	padding: 0.5rem;
 
+	@media (max-width: 767px) {
+		justify-content: center;
+	}
+
 	@include themify() {
 		background-color: themed('primary');
 	}
 
-	.left {
+	.logo {
 		display: flex;
 		height: 100%;
-
-		> * {
-			margin-right: 0.5rem;
-		}
-
-		.logo {
-			height: 100%;
-		}
-
-		.burger-menu {
-			display: none;
-			@media (max-width: 767px) {
-				display: block;
-			}
-		}
 	}
 
 	a {
@@ -48,5 +37,27 @@ header {
 
 	img {
 		height: 100%;
+	}
+
+	.burger-menu {
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: inherit;
+
+		display: none;
+		@media (max-width: 767px) {
+			display: block;
+		}
+	}
+
+	.login {
+		@media (max-width: 767px) {
+			display: none;
+		}
+
+		> * {
+			margin-left: 0.5rem;
+		}
 	}
 }

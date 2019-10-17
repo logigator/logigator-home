@@ -19,21 +19,7 @@
 		max-width: 70rem;
 
 		@media (max-width: 767px) {
-			justify-content: flex-start;
-			flex-direction: column;
-			width: 20rem;
-			height: calc(100% - #{$header-height});
-			visibility: hidden;
-			display: flex;
-			position: absolute;
-			z-index: 1100;
-			left: -20rem;
-			transition: left 0.5s ease, visibility 0.5s;
-
-			&.show {
-				visibility: visible;
-				left: 0;
-			}
+			display: none;
 		}
 
 		@include themify() {

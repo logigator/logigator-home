@@ -7,19 +7,22 @@ import {RouterModule} from '@angular/router';
 import {ErrorHandlingService} from './services/error-handling/error-handling.service';
 import {ApiService} from './services/api/api.service';
 import {PopupComponent} from './components/popup/popup.component';
+import {BurgerMenuComponent} from './components/burger-menu/burger-menu.component';
 
 @NgModule({
 	declarations: [
 		FooterComponent,
 		HeaderComponent,
-		PopupComponent
+		PopupComponent,
+		BurgerMenuComponent
 	],
 	entryComponents: [
 		PopupComponent
 	],
 	exports: [
 		HeaderComponent,
-		FooterComponent
+		FooterComponent,
+		BurgerMenuComponent
 	],
 	imports: [
 		CommonModule,
