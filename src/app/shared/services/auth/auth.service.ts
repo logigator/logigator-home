@@ -43,8 +43,8 @@ export class AuthService {
 		return this.http.post('/api/auth/register-email', {email, password}).toPromise();
 	}
 
-	public async loginEmail(email: string, password: string) {
-		return this.http.post('/api/auth/login-email', {email, password}).toPromise();
+	public async loginEmail(user: string, password: string) {
+		return this.http.post('/api/auth/login-email', {user, password}).toPromise();
 	}
 
 	public async logout() {
