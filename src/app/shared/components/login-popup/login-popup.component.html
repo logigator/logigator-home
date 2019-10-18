@@ -1,0 +1,12 @@
+<form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+	<label for="login-user">Username / Email</label>
+	<input [class.invalid]="newCompForm.controls.user.touched && newCompForm.controls.user.invalid" type="text" formControlName="user" id="login-user" required>
+
+	<label for="login-password">Password</label>
+	<input [class.invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid" type="password" formControlName="password" id="login-password" required>
+	<br>
+
+	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">Submit</button>
+</form>

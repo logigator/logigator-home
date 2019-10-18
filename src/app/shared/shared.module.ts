@@ -8,16 +8,20 @@ import {ErrorHandlingService} from './services/error-handling/error-handling.ser
 import {ApiService} from './services/api/api.service';
 import {PopupComponent} from './components/popup/popup.component';
 import {BurgerMenuComponent} from './components/burger-menu/burger-menu.component';
+import { LoginPopupComponent } from './components/login-popup/login-popup.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
 	declarations: [
 		FooterComponent,
 		HeaderComponent,
 		PopupComponent,
-		BurgerMenuComponent
+		BurgerMenuComponent,
+		LoginPopupComponent
 	],
 	entryComponents: [
-		PopupComponent
+		PopupComponent,
+		LoginPopupComponent
 	],
 	exports: [
 		HeaderComponent,
@@ -26,7 +30,8 @@ import {BurgerMenuComponent} from './components/burger-menu/burger-menu.componen
 	],
 	imports: [
 		CommonModule,
-		RouterModule
+		RouterModule,
+		ReactiveFormsModule
 	]
 })
 export class SharedModule {

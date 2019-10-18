@@ -9,8 +9,9 @@
 			<button class="btn-raised secondary" (click)="logout()">LOGOUT</button>
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn">
-			<button class="btn-raised secondary" (click)="loginGoogle()">LOGIN GOOGLE</button>
-			<button class="btn-raised secondary" (click)="loginTwitter()">LOGIN TWITTER</button>
+			<button class="btn-raised secondary" (click)="loginEmail()">LOGIN</button>
+			<button class="btn-raised secondary" (click)="loginGoogle()">LOGIN WITH GOOGLE</button>
+			<button class="btn-raised secondary" (click)="loginTwitter()">LOGIN WITH TWITTER</button>
 		</ng-container>
 	</div>
 </header>

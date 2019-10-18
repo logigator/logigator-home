@@ -23,6 +23,10 @@
 			</a>
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn">
+			<a class="entry" (click)="loginEmail(); setOpen(false)">
+				<img src="/assets/icons/light/selection1.svg">
+				<a>Login</a>
+			</a>
 			<a class="entry" (click)="loginGoogle(); setOpen(false)">
 				<img src="/assets/icons/light/selection1.svg">
 				<a>Login with Google</a>
