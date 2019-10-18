@@ -30,7 +30,6 @@ export class AuthGuard implements CanActivateChild, CanActivate {
 	}
 
 	private check(): boolean {
-		console.log(this.auth.isLoggedIn);
 		if (!this.auth.isLoggedIn) {
 			this.router.navigateByUrl('/');
 		}
