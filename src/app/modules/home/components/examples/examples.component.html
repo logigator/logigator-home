@@ -1,24 +1,19 @@
-<div class="examples">
-	<p>
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-		dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-		clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	</p>
-	<p>
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-		dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-		clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	</p>
-	<p>
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-		dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-		clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	</p>
-	<p>
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-		dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-		clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-	</p>
+<div class="examples-area">
+	<div class="examples">
+		<ng-container *ngIf="userProjects$ | async as projects">
+			<ng-container *ngFor="let project of projects">
+				<div class="project">
+					<div class=" tile">
+						<img class="preview" src="/assets/icons/light/selection1.svg">
+					</div>
+					<h4 class="title">{{project.name}}</h4>
+				</div>
+			</ng-container>
+		</ng-container>
+	</div>
+	<h3>Ein paar Beispielschaltungen zum ausprobieren...</h3>
 </div>
-<h3>Ein paar Beispielschaltungen zum ausprobieren...</h3>
+
+
+
 

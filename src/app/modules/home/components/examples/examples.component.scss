@@ -1,20 +1,63 @@
 @import "themes";
+.examples-area {
+	width: 100%;
 
-.examples {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	.examples {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 
-	@media (max-width: 1000px) {
+		@media (max-width: 1000px) {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	h3 {
+		margin-top: 0;
+		font-weight: normal;
+		font-size: 2rem;
+	}
+
+	.title{
+		margin-top: 0rem;
+		font-weight: normal;
+		font-size: 1.5rem;
+	}
+
+	.project{
+		display: flex;
+		position: relative;
 		flex-direction: column;
 		align-items: center;
-		text-align: center;
+		justify-content: center;
+
+		.tile {
+			display: flex;
+			position: relative;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			width: 10rem;
+			height: 10rem;
+			padding: 0.5rem;
+			margin: 0.5rem;
+
+			@include themify() {
+				background-color: themed('background');
+				-webkit-box-shadow: inset 0 0 0 1px themed('text-primary');
+				-moz-box-shadow: inset 0 0 0 1px themed('text-primary');
+				box-shadow: inset 0 0 0 1px themed('text-primary');
+			}
+
+			.preview {
+				width: 5rem;
+
+			}
+		}
 	}
-}
 
-h3 {
-	margin-top: 0;
-	font-weight: normal;
-	font-size: 2rem;
-}
 
+}
