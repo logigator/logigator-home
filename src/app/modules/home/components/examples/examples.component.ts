@@ -1,16 +1,47 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {fromEvent, Observable, Subject} from 'rxjs';
+import {UserProject} from '../../../../shared/models/http-responses/user-project';
+import {ApiService} from '../../../../shared/services/api/api.service';
+import {IImage} from 'ng-simple-slideshow';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
 	selector: 'app-examples',
 	templateUrl: './examples.component.html',
 	styleUrls: ['./examples.component.scss']
 })
-export class ExamplesComponent implements OnInit {
+export class ExamplesComponent implements OnInit, OnDestroy {
 
-	constructor() {
+	private _destroySubject = new Subject();
+
+	@ViewChild('slideshow', {static: true, read: ElementRef})
+	private _slideshow: ElementRef<HTMLDivElement>;
+
+	public autoPlay = true;
+	public imageUrls: IImage[] = [
+		{
+			url: 'https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+		},
+		{
+			url: 'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+		}
+	];
+
+	constructor(private api: ApiService) {
 	}
 
 	ngOnInit() {
+		fromEvent(this._slideshow.nativeElement, 'mouseenter').pipe(
+			takeUntil(this._destroySubject)
+		).subscribe((e: MouseEvent) => this.autoPlay = false);
+
+		fromEvent(this._slideshow.nativeElement, 'mouseleave').pipe(
+			takeUntil(this._destroySubject)
+		).subscribe((e: MouseEvent) => this.autoPlay = true);
 	}
 
+	ngOnDestroy(): void {
+		this._destroySubject.next();
+		this._destroySubject.unsubscribe();
+	}
 }

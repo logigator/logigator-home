@@ -1,20 +1,9 @@
 @import "themes";
 
-.examples {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-
-	@media (max-width: 1000px) {
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-	}
+.examples-area {
+	width: 100%;
 }
 
-h3 {
-	margin-top: 0;
-	font-weight: normal;
-	font-size: 2rem;
+slideshow {
+	width: 100%;
 }
-

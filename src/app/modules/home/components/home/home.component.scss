@@ -19,6 +19,7 @@
 
 section {
 	max-width: 1000px;
+	width: 100%;
 
 	display: flex;
 	justify-content: space-between;
@@ -39,6 +40,10 @@ section {
 		}
 		font-weight: normal;
 		font-size: 2rem;
+	}
+
+	app-examples {
+		width: 100%;
 	}
 }
 
