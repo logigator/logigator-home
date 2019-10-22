@@ -6,6 +6,7 @@ import { AuthCallbackComponent } from './components/auth-callback/auth-callback.
 import { ExamplesComponent } from './components/examples/examples.component';
 import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import {SharedModule} from '../../shared/shared.module';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 export const HOME_ROUTES: Routes = [
 	{
@@ -30,7 +31,8 @@ export const HOME_ROUTES: Routes = [
 	imports: [
 		RouterModule,
 		CommonModule,
-		SharedModule
+		SharedModule,
+		SlideshowModule
 	]
 })
 export class HomeModule { }

@@ -1,92 +1,9 @@
 @import "themes";
+
 .examples-area {
 	width: 100%;
+}
 
-	.examples {
-		overflow: hidden;
-		width: 44rem;
-		position: relative;
-		height: 14rem;
-
-		@media (max-width: 1000px) {
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
-	}
-
-	h3 {
-		margin-top: 0;
-		font-weight: normal;
-		font-size: 2rem;
-	}
-
-	.title {
-		margin-top: 0;
-		font-weight: normal;
-		font-size: 1.5rem;
-	}
-
-	.back, .forward {
-		position: absolute;
-		top: -1.5rem;
-		height: 100%;
-		width: 2rem;
-		z-index: 1;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-	}
-
-	.back {
-		left: 0;
-		background-image: url("/assets/icons/light/selection1.svg");
-	}
-
-	.forward {
-		right: 0;
-		background-image: url("/assets/icons/light/selection1.svg");
-	}
-
-	.slider {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: flex;
-		flex-direction: row;
-		transition: left ease 0.5s;
-
-		.project {
-			display: flex;
-			position: relative;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-
-			.tile {
-				display: flex;
-				position: relative;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-
-				width: 10rem;
-				height: 10rem;
-				padding: 0.5rem;
-				margin: 0.5rem;
-
-				@include themify() {
-					background-color: themed('background');
-					-webkit-box-shadow: inset 0 0 0 1px themed('text-primary');
-					-moz-box-shadow: inset 0 0 0 1px themed('text-primary');
-					box-shadow: inset 0 0 0 1px themed('text-primary');
-				}
-
-				.preview {
-					width: 5rem;
-
-				}
-			}
-		}
-	}
+slideshow {
+	width: 100%;
 }

@@ -1,20 +1,15 @@
 <div class="examples-area">
-	<div class="examples">
-		<div class="back"></div>
-		<div class="forward"></div>
-		<ng-container *ngIf="userProjects$ | async as projects">
-			<div class="slider">
-				<ng-container *ngFor="let project of projects">
-					<div class="project">
-						<div class="tile">
-							<img class="preview" src="/assets/icons/light/selection1.svg">
-						</div>
-						<h4 class="title">{{project.name}}</h4>
-					</div>
-				</ng-container>
-			</div>
-		</ng-container>
-	</div>
+	<slideshow
+		[imageUrls]="imageUrls"
+		[height]="'20rem'"
+		[minHeight]="'10rem'"
+		[autoPlay]="autoPlay"
+		[autoPlayInterval]="5000"
+		[stopAutoPlayOnSlide]="true"
+		[autoPlayWaitForLazyLoad]="true"
+		[lazyLoad]="true"
+		#slideshow>
+	</slideshow>
 	<h3>Ein paar Beispielschaltungen zum ausprobieren...</h3>
 </div>
 
