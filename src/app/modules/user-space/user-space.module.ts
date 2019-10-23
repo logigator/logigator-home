@@ -6,7 +6,7 @@ import { ProjectListComponent } from './components/project-list/project-list.com
 import { ComponentListComponent } from './components/component-list/component-list.component';
 import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
 import { ChangePasswordComponent } from './components/account-settings/popups/change-password/change-password.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FileInputComponent } from './components/account-settings/form-controls/file-input/file-input.component';
 import {ImageCropperModule} from 'ngx-image-cropper';
 import {ChangeUsernameComponent} from './components/account-settings/popups/change-username/change-username.component';
@@ -15,6 +15,7 @@ import {ChangeEmailComponent} from './components/account-settings/popups/change-
 import {DrawerComponent} from './components/drawer/drawer.component';
 import {ShareProjectComponent} from './components/share-project-dialog/share-project.component';
 import {TranslateModule} from '@ngx-translate/core';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
 	declarations: [
@@ -42,7 +43,9 @@ import {TranslateModule} from '@ngx-translate/core';
 		CommonModule,
 		ReactiveFormsModule,
 		ImageCropperModule,
-		TranslateModule
+		TranslateModule,
+		SharedModule,
+		FormsModule
 	]
 })
 export class UserSpaceModule { }

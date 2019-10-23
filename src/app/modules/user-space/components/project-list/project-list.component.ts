@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {PopupService} from '../../../../shared/services/popup/popup.service';
 import {ChangeEmailComponent} from '../account-settings/popups/change-email/change-email.component';
 import {ShareProjectComponent} from '../share-project-dialog/share-project.component';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
 	selector: 'app-project-list',
@@ -12,6 +13,8 @@ import {ShareProjectComponent} from '../share-project-dialog/share-project.compo
 	styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent implements OnInit {
+
+	public editorUrl = environment.editor;
 
 	constructor(private api: ApiService, private popup: PopupService, private componentFactoryResolver: ComponentFactoryResolver,) {
 	}
@@ -22,7 +25,7 @@ export class ProjectListComponent implements OnInit {
 		return this.api.userProjects$;
 	}
 
-	public openShareDialog() {
-		this.popup.showPopup(ShareProjectComponent, this.componentFactoryResolver, 'Share Project', false, 0);
+	public openShareDialog(project: number) {
+		this.popup.showPopup(ShareProjectComponent, this.componentFactoryResolver, 'Share Project', false, project);
 	}
 }
