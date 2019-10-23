@@ -13,6 +13,8 @@ import {ChangeUsernameComponent} from './components/account-settings/popups/chan
 import { ChangePictureComponent } from './components/account-settings/popups/change-picture/change-picture.component';
 import {ChangeEmailComponent} from './components/account-settings/popups/change-email/change-email.component';
 import {DrawerComponent} from './components/drawer/drawer.component';
+import {ShareProjectComponent} from './components/share-project-dialog/share-project.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
 	declarations: [
@@ -25,19 +27,22 @@ import {DrawerComponent} from './components/drawer/drawer.component';
 		ChangeUsernameComponent,
 		ChangePictureComponent,
 		ChangeEmailComponent,
-		DrawerComponent
+		DrawerComponent,
+		ShareProjectComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent,
 		ChangeUsernameComponent,
 		ChangePictureComponent,
-		ChangeEmailComponent
+		ChangeEmailComponent,
+		ShareProjectComponent
 	],
 	imports: [
 		UserSpaceRoutingModule,
 		CommonModule,
 		ReactiveFormsModule,
-		ImageCropperModule
+		ImageCropperModule,
+		TranslateModule
 	]
 })
 export class UserSpaceModule { }
