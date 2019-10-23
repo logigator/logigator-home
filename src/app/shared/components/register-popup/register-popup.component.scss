@@ -1,0 +1,21 @@
+form {
+	display: flex;
+	flex-direction: column;
+
+	width: 400px;
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+	padding: 2rem;
+
+	.invalid {
+		outline: red 1px solid;
+	}
+
+	.error {
+		margin-top: 0;
+		padding-left: 1rem;
+		font-size: 10pt;
+		color: red;
+	}
+}

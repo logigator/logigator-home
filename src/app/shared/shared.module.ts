@@ -10,6 +10,7 @@ import {PopupComponent} from './components/popup/popup.component';
 import {BurgerMenuComponent} from './components/burger-menu/burger-menu.component';
 import { LoginPopupComponent } from './components/login-popup/login-popup.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { RegisterPopupComponent } from './components/register-popup/register-popup.component';
 
 @NgModule({
 	declarations: [
@@ -17,11 +18,13 @@ import {ReactiveFormsModule} from '@angular/forms';
 		HeaderComponent,
 		PopupComponent,
 		BurgerMenuComponent,
-		LoginPopupComponent
+		LoginPopupComponent,
+		RegisterPopupComponent
 	],
 	entryComponents: [
 		PopupComponent,
-		LoginPopupComponent
+		LoginPopupComponent,
+		RegisterPopupComponent
 	],
 	exports: [
 		HeaderComponent,

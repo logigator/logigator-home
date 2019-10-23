@@ -3,6 +3,8 @@ import {AuthService} from '../../services/auth/auth.service';
 import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service';
 import {PopupService} from '../../services/popup/popup.service';
 import {LoginPopupComponent} from '../login-popup/login-popup.component';
+import {RegisterPopupComponent} from '../register-popup/register-popup.component';
+
 
 @Component({
 	selector: 'app-header',
@@ -27,6 +29,10 @@ export class HeaderComponent implements OnInit {
 
 	public loginEmail() {
 		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'Login', false);
+	}
+
+	public registerEmail() {
+		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'Register', false);
 	}
 
 	public loginGoogle() {
