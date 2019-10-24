@@ -2,6 +2,7 @@ import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {PopupContentComp} from '../../../../shared/components/popup/popup-content-comp';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SharingService} from '../../../../shared/services/sharing/sharing.service';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
 	selector: 'app-share-project',
@@ -144,7 +145,7 @@ export class ShareProjectComponent extends PopupContentComp<number> implements O
 	}
 
 	public getLinkFromShareAddress(shareId: string): string {
-		return '/share/' + shareId;
+		return environment.editor + '/share/' + shareId;
 	}
 
 	public cancel() {

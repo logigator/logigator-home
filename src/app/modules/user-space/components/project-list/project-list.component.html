@@ -9,7 +9,7 @@
 							<h3 class="title">{{project.name}}</h3>
 							<img class="preview" src="/assets/icons/light/selection1.svg">
 							<div class="tile-hover">
-								<a class="icon icon-play" [href]="editorUrl + '/board/' + project.pk_id"></a>
+								<a class="icon icon-play" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener"></a>
 								<div class="actions">
 									<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
 									<a class="icon icon-edit"></a>
@@ -20,7 +20,7 @@
 							</div>
 						</div>
 						<div class="details">
-							<p class="title">{{project.name}}</p>
+							<a class="title" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{project.name}}</a>
 							<p class="edited">Last Edited: {{project.last_edited}}</p>
 							<div class="actions">
 								<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
@@ -37,9 +37,9 @@
 					</div>
 				</div>
 				<div class="item" *ngFor="let project of projects; odd as isOdd" [class.odd]="isOdd">
-					<p class="title">{{project.name}}</p>
+					<a class="title" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{project.name}}</a>
 					<p class="edited">Last Edited: {{project.last_edited}}</p>
-					<div class="icon icon-share"></div>
+					<div class="icon icon-share" (click)="openShareDialog(project.pk_id)"></div>
 					<div class="icon icon-edit"></div>
 					<div class="icon icon-delete"></div>
 					<div class="icon icon-info"></div>
