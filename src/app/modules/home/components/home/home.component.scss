@@ -54,6 +54,7 @@ section:last-child {
 
 .introduction {
 	height: 50vh;
+	padding: 10vh 5% 5vh;
 
 	article {
 		width: 50%;
@@ -73,6 +74,9 @@ section:last-child {
 }
 
 .explanation {
+	height: 50vh;
+	padding: 5vh 5% 5vh;
+
 	article {
 		width: 45%;
 		@media (max-width: 767px) {
@@ -89,6 +93,11 @@ section:last-child {
 			width: 100%;
 		}
 	}
+}
+
+.examples{
+	height: 50vh;
+	padding: 5vh 5% 5vh;
 }
 
 .tutorials{
