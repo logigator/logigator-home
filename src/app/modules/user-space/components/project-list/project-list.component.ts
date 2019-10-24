@@ -16,7 +16,7 @@ export class ProjectListComponent implements OnInit {
 
 	public editorUrl = environment.editor;
 
-	constructor(private api: ApiService, private popup: PopupService, private componentFactoryResolver: ComponentFactoryResolver,) {
+	constructor(private api: ApiService, private popup: PopupService, private componentFactoryResolver: ComponentFactoryResolver) {
 	}
 
 	ngOnInit() {}
