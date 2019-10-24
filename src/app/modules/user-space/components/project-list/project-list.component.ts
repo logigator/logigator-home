@@ -3,9 +3,9 @@ import {UserProject} from '../../../../shared/models/http-responses/user-project
 import {ApiService} from '../../../../shared/services/api/api.service';
 import {Observable} from 'rxjs';
 import {PopupService} from '../../../../shared/services/popup/popup.service';
-import {ChangeEmailComponent} from '../account-settings/popups/change-email/change-email.component';
-import {ShareProjectComponent} from '../share-project-dialog/share-project.component';
+import {ShareProjectComponent} from '../dialogs/share-project/share-project.component';
 import {environment} from '../../../../../environments/environment';
+import {ProjectEditComponent} from '../dialogs/project-edit/project-edit.component';
 
 @Component({
 	selector: 'app-project-list',
@@ -27,5 +27,9 @@ export class ProjectListComponent implements OnInit {
 
 	public openShareDialog(project: number) {
 		this.popup.showPopup(ShareProjectComponent, this.componentFactoryResolver, 'Share Project', false, project);
+	}
+
+	public openProjectEditDialog(project: UserProject) {
+		this.popup.showPopup(ProjectEditComponent, this.componentFactoryResolver, 'Share Project', false, project);
 	}
 }

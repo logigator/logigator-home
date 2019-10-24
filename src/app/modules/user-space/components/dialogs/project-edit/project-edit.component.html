@@ -1,0 +1,23 @@
+<form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+	<app-input [class.invalid]="newCompForm.controls.name.touched && newCompForm.controls.name.invalid" label="Name" type="text" formControlName="name" id="project-edit-name"></app-input>
+	<br>
+
+	<label for="project-edit-description">Description</label>
+	<textarea [class.invalid]="newCompForm.controls.description.touched && newCompForm.controls.description.invalid" type="text" formControlName="description" id="project-edit-description" rows="4" cols="40" required></textarea>
+	<br>
+
+	<ul>
+		<ng-container *ngIf="newCompForm.controls.name.touched">
+			<ng-container *ngIf="newCompForm.controls.name.errors as errors">
+				<li *ngIf="errors.minLength">Name is too short.</li>
+				<li *ngIf="errors.maxLength">Name is too long.</li>
+				<li *ngIf="errors.pattern">Name is invalid.</li>
+			</ng-container>
+			<ng-container *ngIf="newCompForm.controls.description.errors as errors">
+				<li *ngIf="errors.maxLength">Description is too long.</li>
+			</ng-container>
+		</ng-container>
+	</ul>
+
+	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">Submit</button>
+</form>

@@ -1,8 +1,8 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {PopupContentComp} from '../../../../shared/components/popup/popup-content-comp';
+import {PopupContentComp} from '../../../../../shared/components/popup/popup-content-comp';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {SharingService} from '../../../../shared/services/sharing/sharing.service';
-import {environment} from '../../../../../environments/environment';
+import {SharingService} from '../../../../../shared/services/sharing/sharing.service';
+import {environment} from '../../../../../../environments/environment';
 
 @Component({
 	selector: 'app-share-project',

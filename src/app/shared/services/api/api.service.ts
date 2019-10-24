@@ -87,4 +87,18 @@ export class ApiService {
 				false)
 		);
 	}
+
+	public updateProject(changes: {name?: string, description?: string}) {
+		if (!this.auth.isLoggedIn)
+			return of(false);
+
+		return this.http.post<HttpResponseData<any>>('/api/project/update', changes).pipe(
+			map(data => {
+				return data.result.success;
+			}),
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Could not update project: (${x.status}) ${x.error.error.description}`,
+				false)
+		);
+	}
 }

@@ -13,9 +13,10 @@ import {ChangeUsernameComponent} from './components/account-settings/popups/chan
 import { ChangePictureComponent } from './components/account-settings/popups/change-picture/change-picture.component';
 import {ChangeEmailComponent} from './components/account-settings/popups/change-email/change-email.component';
 import {DrawerComponent} from './components/drawer/drawer.component';
-import {ShareProjectComponent} from './components/share-project-dialog/share-project.component';
+import {ShareProjectComponent} from './components/dialogs/share-project/share-project.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../shared/shared.module';
+import {ProjectEditComponent} from './components/dialogs/project-edit/project-edit.component';
 
 @NgModule({
 	declarations: [
@@ -29,14 +30,16 @@ import {SharedModule} from '../../shared/shared.module';
 		ChangePictureComponent,
 		ChangeEmailComponent,
 		DrawerComponent,
-		ShareProjectComponent
+		ShareProjectComponent,
+		ProjectEditComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent,
 		ChangeUsernameComponent,
 		ChangePictureComponent,
 		ChangeEmailComponent,
-		ShareProjectComponent
+		ShareProjectComponent,
+		ProjectEditComponent
 	],
 	imports: [
 		UserSpaceRoutingModule,
