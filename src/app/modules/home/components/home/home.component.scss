@@ -7,6 +7,11 @@
 	align-items: center;
 	background: none;
 
+	@media (max-width: 1200px) {
+		@include themify() {
+			background: themed('background');
+		}	}
+
 	hr{
 		@media (min-width: 1200px) {
 			display: none;

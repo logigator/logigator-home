@@ -19,7 +19,7 @@ svg {
 	text-anchor: middle;
 
 	@include themify() {
-		background-color: themed('accent1');
+		background-color: themed('background');
 		stroke: themed('primary');
 	}
 	stroke-width: 1px;
