@@ -6,6 +6,7 @@ import { AuthCallbackComponent } from './components/auth-callback/auth-callback.
 import { ExamplesComponent } from './components/examples/examples.component';
 import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import {SharedModule} from '../../shared/shared.module';
+import { BackgroundImageComponent } from './components/background-image/background-image.component';
 
 export const HOME_ROUTES: Routes = [
 	{
@@ -25,7 +26,8 @@ export const HOME_ROUTES: Routes = [
 		HomeComponent,
 		AuthCallbackComponent,
 		ExamplesComponent,
-		TutorialsComponent
+		TutorialsComponent,
+		BackgroundImageComponent
 	],
 	imports: [
 		RouterModule,
