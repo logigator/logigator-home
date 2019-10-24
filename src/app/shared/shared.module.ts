@@ -1,4 +1,4 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
+import {Input, ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {AuthService} from './services/auth/auth.service';
 import { FooterComponent } from './components/footer/footer.component';
@@ -9,7 +9,9 @@ import {ApiService} from './services/api/api.service';
 import {PopupComponent} from './components/popup/popup.component';
 import {BurgerMenuComponent} from './components/burger-menu/burger-menu.component';
 import { LoginPopupComponent } from './components/login-popup/login-popup.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SwitchComponent} from './components/switch/switch.component';
+import {InputComponent} from './components/input/input.component';
 
 @NgModule({
 	declarations: [
@@ -17,7 +19,9 @@ import {ReactiveFormsModule} from '@angular/forms';
 		HeaderComponent,
 		PopupComponent,
 		BurgerMenuComponent,
-		LoginPopupComponent
+		LoginPopupComponent,
+		SwitchComponent,
+		InputComponent
 	],
 	entryComponents: [
 		PopupComponent,
@@ -26,12 +30,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 	exports: [
 		HeaderComponent,
 		FooterComponent,
-		BurgerMenuComponent
+		BurgerMenuComponent,
+		SwitchComponent,
+		InputComponent
 	],
 	imports: [
 		CommonModule,
 		RouterModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		FormsModule
 	]
 })
 export class SharedModule {
