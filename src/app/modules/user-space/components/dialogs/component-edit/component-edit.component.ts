@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {PopupContentComp} from '../../../../../shared/components/popup/popup-content-comp';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../../../../shared/services/api/api.service';
-import {UserProject} from '../../../../../shared/models/http-responses/user-project';
+import {UserComponent} from '../../../../../shared/models/http-responses/user-component';
 
 @Component({
 	selector: 'app-project-edit',
-	templateUrl: './project-edit.component.html',
-	styleUrls: ['./project-edit.component.scss']
+	templateUrl: './component-edit.component.html',
+	styleUrls: ['./component-edit.component.scss']
 })
-export class ProjectEditComponent extends PopupContentComp<UserProject> implements OnInit {
+export class ComponentEditComponent extends PopupContentComp<UserComponent> implements OnInit {
 
 	public newCompForm: FormGroup;
 
@@ -24,6 +24,12 @@ export class ProjectEditComponent extends PopupContentComp<UserProject> implemen
 				Validators.minLength(2),
 				Validators.maxLength(20),
 				Validators.pattern('^[a-zA-Z0-9_\\- ]+$')
+			]],
+			symbol: [this.inputFromOpener.symbol, [
+				Validators.required,
+				Validators.minLength(1),
+				Validators.maxLength(5),
+				Validators.pattern('^[a-zA-Z0-9_\\-]+$')
 			]],
 			description: [this.inputFromOpener.description, [
 				Validators.maxLength(1000)
@@ -40,11 +46,14 @@ export class ProjectEditComponent extends PopupContentComp<UserProject> implemen
 		if (this.newCompForm.controls.name.dirty && this.newCompForm.controls.name.value !== this.inputFromOpener.name)
 			changes.name = this.newCompForm.controls.name.value;
 
+		if (this.newCompForm.controls.symbol.dirty && this.newCompForm.controls.symbol.value !== this.inputFromOpener.symbol)
+			changes.symbol = this.newCompForm.controls.symbol.value;
+
 		if (this.newCompForm.controls.description.dirty && this.newCompForm.controls.description.value !== this.inputFromOpener.description)
 			changes.description = this.newCompForm.controls.description.value;
 
 		if (Object.keys(changes).length > 0)
-			await this.api.updateProject(this.inputFromOpener.pk_id, changes).toPromise();
+			await this.api.updateComponent(this.inputFromOpener.pk_id, changes).toPromise();
 		this.requestClose.emit();
 	}
 }

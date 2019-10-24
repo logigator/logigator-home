@@ -17,6 +17,7 @@ import {ShareProjectComponent} from './components/dialogs/share-project/share-pr
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../shared/shared.module';
 import {ProjectEditComponent} from './components/dialogs/project-edit/project-edit.component';
+import {ComponentEditComponent} from './components/dialogs/component-edit/component-edit.component';
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,8 @@ import {ProjectEditComponent} from './components/dialogs/project-edit/project-ed
 		ChangeEmailComponent,
 		DrawerComponent,
 		ShareProjectComponent,
-		ProjectEditComponent
+		ProjectEditComponent,
+		ComponentEditComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent,
@@ -39,7 +41,8 @@ import {ProjectEditComponent} from './components/dialogs/project-edit/project-ed
 		ChangePictureComponent,
 		ChangeEmailComponent,
 		ShareProjectComponent,
-		ProjectEditComponent
+		ProjectEditComponent,
+		ComponentEditComponent
 	],
 	imports: [
 		UserSpaceRoutingModule,

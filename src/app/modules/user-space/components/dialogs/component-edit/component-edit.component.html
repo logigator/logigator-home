@@ -1,5 +1,8 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
-	<app-input [class.invalid]="newCompForm.controls.name.touched && newCompForm.controls.name.invalid" label="Name" type="text" formControlName="name" id="project-edit-name"></app-input>
+	<app-input [class.invalid]="newCompForm.controls.name.touched && newCompForm.controls.name.invalid" label="Name" type="text" formControlName="name"></app-input>
+	<br>
+
+	<app-input [class.invalid]="newCompForm.controls.symbol.touched && newCompForm.controls.symbol.invalid" label="Symbol" type="text" formControlName="symbol"></app-input>
 	<br>
 
 	<label for="project-edit-description">Description</label>
@@ -12,6 +15,11 @@
 				<li *ngIf="errors.minlength">Name is too short.</li>
 				<li *ngIf="errors.maxlength">Name is too long.</li>
 				<li *ngIf="errors.pattern">Name is invalid.</li>
+			</ng-container>
+			<ng-container *ngIf="newCompForm.controls.symbol.errors as errors">
+				<li *ngIf="errors.minlength">Symbol is too short.</li>
+				<li *ngIf="errors.maxlength">Symbol is too long.</li>
+				<li *ngIf="errors.pattern">Symbol is invalid.</li>
 			</ng-container>
 			<ng-container *ngIf="newCompForm.controls.description.errors as errors">
 				<li *ngIf="errors.maxlength">Description is too long.</li>

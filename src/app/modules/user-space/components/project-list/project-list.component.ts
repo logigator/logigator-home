@@ -30,6 +30,6 @@ export class ProjectListComponent implements OnInit {
 	}
 
 	public openProjectEditDialog(project: UserProject) {
-		this.popup.showPopup(ProjectEditComponent, this.componentFactoryResolver, 'Share Project', false, project);
+		this.popup.showPopup(ProjectEditComponent, this.componentFactoryResolver, 'Edit Project', false, project);
 	}
 }
