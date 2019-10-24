@@ -18,12 +18,12 @@
 
 .content-section {
 	max-width: 960px;
+	width: 100%;
 
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
 	padding: 10vh 5% 5vh;
-	overflow: hidden;
 
 	height: 40vh;
 
@@ -41,6 +41,10 @@
 		}
 		font-weight: normal;
 		font-size: 2rem;
+	}
+
+	app-examples {
+		width: 100%;
 	}
 }
 
