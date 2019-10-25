@@ -1,12 +1,25 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
-	<label class="label" for="register-email">Email</label>
-	<input class="input" [class.invalid]="newCompForm.controls.email.touched && newCompForm.controls.email.invalid" type="text" formControlName="email" id="register-email" required>
+	<div class="input-container">
+		<input class="input" [class.invalid]="newCompForm.controls.email.touched && newCompForm.controls.email.invalid"
+			   type="text" formControlName="email" id="register-email" required>
+		<label class="label" for="register-email">Email</label>
+	</div>
 
-	<label class="label" for="register-password">Password</label>
-	<input class="input" [class.invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid" type="password" formControlName="password" id="register-password" required>
+	<div class="input-container">
+		<input class="input"
+			   [class.invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid"
+			   type="password" formControlName="password" id="register-password" required>
+		<label class="label" for="register-password">Password</label>
+	</div>
 
-	<label class="label" for="register-password">Username</label>
-	<input class="input" [class.invalid]="newCompForm.controls.username.touched && newCompForm.controls.username.invalid" type="text" formControlName="username" id="register-username" required>
+	<div class="input-container">
+		<input class="input"
+			   [class.invalid]="newCompForm.controls.username.touched && newCompForm.controls.username.invalid"
+			   type="text"
+			   formControlName="username" id="register-username" required>
+		<label class="label" for="register-username">Username</label>
+	</div>
+
 	<br>
 
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>

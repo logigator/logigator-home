@@ -35,14 +35,6 @@ export class HeaderComponent implements OnInit {
 		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'Register', false);
 	}
 
-	public loginGoogle() {
-		this.auth.authenticateGoogle();
-	}
-
-	public loginTwitter() {
-		this.auth.authenticateTwitter();
-	}
-
 	public logout() {
 		this.auth.logout();
 	}

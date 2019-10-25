@@ -1,12 +1,32 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
-	<label class="label" for="login-user">Username / Email</label>
-	<input class="input" [class.invalid]="newCompForm.controls.user.touched && newCompForm.controls.user.invalid" type="text" formControlName="user" id="login-user" required>
-
-	<label class="label" for="login-password">Password</label>
-	<input class="input" [class.invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid" type="password" formControlName="password" id="login-password" required>
-	<br>
+	<div class="input-container">
+		<input [class.invalid]="newCompForm.controls.user.touched && newCompForm.controls.user.invalid"
+			   type="text" formControlName="user" id="login-user" required>
+		<label for="login-user">Username / Email</label>
+	</div>
+	<div class="input-container">
+		<input
+			[class.invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid"
+			type="password" formControlName="password" id="login-password" required>
+		<label for="login-password">Password</label>
+	</div>
 
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
 	<button type="submit" class="btn-raised primary form-button" [disabled]="newCompForm.invalid">LOGIN</button>
+
+	<br>
+
+
+	<br>
+
+	<div class="social-media-login">
+		<div class="alt-login"> LOGIN USING </div>
+		<div class="img-container">
+			<img class="btn-raised secondary" (click)="loginGoogle()" src="assets/icons/dark/google.svg" alt="google login icon">
+		</div>
+		<div class="img-container">
+			<img class="btn-raised secondary" (click)="loginTwitter()" src="assets/icons/dark/twitter.svg" alt="twitter login icon">
+		</div>
+	</div>
 </form>

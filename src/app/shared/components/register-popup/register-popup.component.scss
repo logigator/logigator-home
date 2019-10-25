@@ -1,6 +1,9 @@
+@import "themes";
+
 form {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 
 	width: 400px;
 	@media (max-width: 767px) {
@@ -8,9 +11,15 @@ form {
 	}
 	padding: 2rem;
 
-	.invalid {
-		outline: red 1px solid;
+	button {
+		padding: 0.7rem;
 	}
+
+	.invalid {
+		@include themify{
+			border-bottom: 1px solid themed('error');
+			color: themed('error');
+		}	}
 
 	.error {
 		margin-top: 0;

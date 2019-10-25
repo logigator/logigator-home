@@ -33,14 +33,14 @@
 .content-section {
 	max-width: 960px;
 	width: 100%;
+	height: 40vh;
+	padding: 5vh 5% 5vh;
 
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
 	align-items: center;
-	padding: 5vh 5% 5vh;
-
-	height: 40vh;
+	z-index: 0;
 
 	@media (max-width: 1200px) {
 		height: auto;

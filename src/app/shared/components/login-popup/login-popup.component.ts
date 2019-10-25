@@ -46,4 +46,12 @@ export class LoginPopupComponent extends PopupContentComp implements OnInit {
 		});
 	}
 
+	public loginGoogle() {
+		this.auth.authenticateGoogle();
+	}
+
+	public loginTwitter() {
+		this.auth.authenticateTwitter();
+	}
+
 }

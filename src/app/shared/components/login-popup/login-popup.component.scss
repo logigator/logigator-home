@@ -1,6 +1,9 @@
+@import "themes";
+
 form {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 
 	width: 400px;
 	@media (max-width: 767px) {
@@ -8,14 +11,53 @@ form {
 	}
 	padding: 2rem;
 
+	button {
+		padding: 0.7rem;
+	}
+
 	.invalid {
-		outline: red 1px solid;
+		@include themify {
+			border-bottom: 1px solid themed('error');
+			color: themed('error');
+		}
 	}
 
 	.error {
 		margin-top: 0;
 		padding-left: 1rem;
 		font-size: 10pt;
-		color: red;
+		@include themify {
+			color: themed('error');
+		}
+	}
+
+	.alt-login {
+		text-align: center;
+		padding-top: 2rem;
+	}
+
+	.social-media-login {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+		.img-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 4rem;
+			height: 4rem;
+			border-radius: 50%;
+			@include themify {
+				background-color: themed('primary');
+			}
+		}
+
+		img {
+			box-shadow: none;
+			@include themify {
+				background-color: themed('primary');
+			}
+		}
 	}
 }
