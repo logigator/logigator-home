@@ -7,12 +7,7 @@
 	align-items: center;
 	background: none;
 
-	@media (max-width: 1200px) {
-		@include themify() {
-			background: themed('background');
-		}	}
-
-	hr{
+	hr {
 		@media (min-width: 1200px) {
 			display: none;
 		}
@@ -114,7 +109,7 @@ section:last-child {
 		}
 	}
 
-	.iframe-container-container{
+	.iframe-container-container {
 		width: 50%;
 		position: relative;
 		margin-right: 2rem;
@@ -125,7 +120,7 @@ section:last-child {
 		}
 	}
 
-	.iframe-container{
+	.iframe-container {
 		width: 100%;
 		position: relative;
 		padding-bottom: 56.25%;
@@ -141,7 +136,7 @@ section:last-child {
 	}
 }
 
-.examples{
+.examples {
 	height: 50vh;
 	padding: 10vh 5% 5vh;
 
@@ -151,7 +146,7 @@ section:last-child {
 	}
 }
 
-.tutorials{
+.tutorials {
 	height: 100vh;
 	align-items: normal;
 
