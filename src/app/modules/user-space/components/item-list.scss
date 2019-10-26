@@ -93,6 +93,7 @@
 					width: 1.5rem;
 					height: 1.5rem;
 					margin: 0.25rem;
+					cursor: pointer;
 				}
 			}
 		}
@@ -198,57 +199,57 @@
 
 	.icon-add-new {
 		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/selection1.svg");
+			background-image: url("/assets/icons/dark/plus.svg");
 		} @else {
-			background-image: url("/assets/icons/light/selection1.svg");
+			background-image: url("/assets/icons/light/plus.svg");
 		}
 	}
 
 	.icon-play {
 		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/selection1.svg");
+			background-image: url("/assets/icons/dark/control-play.svg");
 		} @else {
-			background-image: url("/assets/icons/light/selection1.svg");
+			background-image: url("/assets/icons/light/control-play.svg");
 		}
 	}
 
 	.icon-share {
 		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/selection1.svg");
+			background-image: url("/assets/icons/dark/share.svg");
 		} @else {
-			background-image: url("/assets/icons/light/selection1.svg");
+			background-image: url("/assets/icons/light/share.svg");
 		}
 	}
 
 	.icon-edit {
 		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/selection1.svg");
+			background-image: url("/assets/icons/dark/pencil-alt.svg");
 		} @else {
-			background-image: url("/assets/icons/light/selection1.svg");
+			background-image: url("/assets/icons/light/pencil-alt.svg");
 		}
 	}
 
 	.icon-delete {
 		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/selection1.svg");
+			background-image: url("/assets/icons/dark/trash.svg");
 		} @else {
-			background-image: url("/assets/icons/light/selection1.svg");
+			background-image: url("/assets/icons/light/trash.svg");
 		}
 	}
 
 	.icon-info {
 		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/selection1.svg");
+			background-image: url("/assets/icons/dark/info.svg");
 		} @else {
-			background-image: url("/assets/icons/light/selection1.svg");
+			background-image: url("/assets/icons/light/info.svg");
 		}
 	}
 
 	.icon-more {
 		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/selection1.svg");
+			background-image: url("/assets/icons/dark/more.svg");
 		} @else {
-			background-image: url("/assets/icons/light/selection1.svg");
+			background-image: url("/assets/icons/light/more.svg");
 		}
 	}
 
