@@ -4,6 +4,9 @@ import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service'
 import {PopupService} from '../../services/popup/popup.service';
 import {LoginPopupComponent} from '../login-popup/login-popup.component';
 import {RegisterPopupComponent} from '../register-popup/register-popup.component';
+import {Observable} from 'rxjs';
+import {UserInfo} from '../../models/http-responses/user-info';
+import {map} from 'rxjs/operators';
 
 
 @Component({
@@ -12,6 +15,8 @@ import {RegisterPopupComponent} from '../register-popup/register-popup.component
 	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+	public settingsDropdown = false;
 
 	constructor(
 		private auth: AuthService,
@@ -25,6 +30,10 @@ export class HeaderComponent implements OnInit {
 
 	public get isLoggedIn() {
 		return this.auth.isLoggedIn;
+	}
+
+	public get userInfo(): Observable<UserInfo> {
+		return this.auth.userInfo$;
 	}
 
 	public loginEmail() {

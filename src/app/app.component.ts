@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {ThemingService} from './shared/services/theming/theming.service';
 
 @Component({
 	selector: 'app-root',
@@ -8,9 +9,11 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
 	constructor(
-		private translate: TranslateService
+		private translate: TranslateService,
+		private theming: ThemingService
 	) {
 		this.initTranslation();
+		this.theming.init();
 	}
 
 	private initTranslation() {

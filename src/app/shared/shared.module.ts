@@ -1,4 +1,4 @@
-import {Input, ModuleWithProviders, NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {AuthService} from './services/auth/auth.service';
 import { FooterComponent } from './components/footer/footer.component';
@@ -9,8 +9,8 @@ import {ApiService} from './services/api/api.service';
 import {PopupComponent} from './components/popup/popup.component';
 import {BurgerMenuComponent} from './components/burger-menu/burger-menu.component';
 import { LoginPopupComponent } from './components/login-popup/login-popup.component';
-import {ReactiveFormsModule} from '@angular/forms';
 import { RegisterPopupComponent } from './components/register-popup/register-popup.component';
+import {SettingsDropdownComponent} from './components/settings-dropdown/settings-dropdown.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SwitchComponent} from './components/switch/switch.component';
 import {InputComponent} from './components/input/input.component';
@@ -22,7 +22,9 @@ import {InputComponent} from './components/input/input.component';
 		PopupComponent,
 		BurgerMenuComponent,
 		LoginPopupComponent,
-		RegisterPopupComponent
+		RegisterPopupComponent,
+		SettingsDropdownComponent,
+		RegisterPopupComponent,
 		LoginPopupComponent,
 		SwitchComponent,
 		InputComponent
