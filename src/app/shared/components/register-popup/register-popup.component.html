@@ -1,9 +1,19 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
 	<h3> Register Email </h3>
+
 	<div class="input-container">
 		<input class="input" [class.invalid]="newCompForm.controls.email.touched && newCompForm.controls.email.invalid"
 			   type="text" formControlName="email" id="register-email" required>
 		<label class="label" for="register-email">Email</label>
+	</div>
+	<div *ngIf="newCompForm.controls.email.invalid && (newCompForm.controls.email.dirty || newCompForm.controls.email.touched)"
+		 class="error-message">
+		<div *ngIf="newCompForm.controls.email.errors.required">
+			Email is required.
+		</div>
+		<div *ngIf="newCompForm.controls.email.errors.email">
+			Please enter a valid email address.
+		</div>
 	</div>
 
 	<div class="input-container">
@@ -12,12 +22,27 @@
 			   type="password" formControlName="password" id="register-password" required>
 		<label class="label" for="register-password">Password</label>
 	</div>
+	<div *ngIf="newCompForm.controls.password.invalid && (newCompForm.controls.password.dirty || newCompForm.controls.password.touched)"
+		 class="error-message">
+		<div *ngIf="newCompForm.controls.password.errors.required">
+			Password is required.
+		</div>
+		<div *ngIf="newCompForm.controls.password.errors.minlength">
+			Password must be at least 8 characters long.
+		</div>
+	</div>
 
 	<div class="input-container">
 		<input class="input"
 			   [class.invalid]="newCompForm.controls.confirm_password.touched && newCompForm.controls.confirm_password.invalid"
 			   type="password" formControlName="confirm_password" id="confirm-password" required>
 		<label class="label" for="confirm-password">Repeat password</label>
+	</div>
+	<div *ngIf="newCompForm.controls.confirm_password.invalid && (newCompForm.controls.confirm_password.dirty || newCompForm.controls.confirm_password.touched)"
+		 class="error-message">
+		<div *ngIf="newCompForm.controls.confirm_password.errors.required">
+			Please repeat the password.
+		</div>
 	</div>
 
 	<div class="input-container">
@@ -27,8 +52,12 @@
 			   formControlName="username" id="register-username" required>
 		<label class="label" for="register-username">Username</label>
 	</div>
-
-	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+	<div *ngIf="newCompForm.controls.username.invalid && (newCompForm.controls.username.dirty || newCompForm.controls.username.touched)"
+		 class="error-message">
+		<div *ngIf="newCompForm.controls.username.errors.required">
+			Username is required.
+		</div>
+	</div>
 
 	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">REGISTER</button>
 

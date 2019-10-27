@@ -14,27 +14,31 @@ form {
 
 	button {
 		padding: 0.7rem;
+		margin-top: 2rem;
 	}
 
 	h3 {
 		font-weight: normal;
 		font-size: 2rem;
 		text-align: center;
-		margin-top: 0;
+		margin: 0;
+	}
+
+	.error-message{
+		font-size: 0.9rem;
+		margin-top: 0.5rem;
+
+		div{
+			@include themify {
+				color: themed('error');
+			}
+		}
 	}
 
 	.invalid {
 		@include themify {
 			border-bottom: 1px solid themed('error');
-			color: themed('error');
 		}
-	}
-
-	.error {
-		margin-top: 0;
-		padding-left: 1rem;
-		font-size: 10pt;
-		color: red;
 	}
 
 	.login-divider {
@@ -42,8 +46,7 @@ form {
 		flex-direction: row;
 		justify-content: space-around;
 		align-items: center;
-		margin-top: 1.5rem;
-		margin-bottom: 1.5rem;
+		margin-top: 2rem;
 
 		hr {
 			width: 45%;

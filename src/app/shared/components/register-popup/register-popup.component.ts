@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../services/api/api.service';
 import {PopupContentComp} from '../popup/popup-content-comp';
@@ -21,10 +21,12 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 	ngOnInit() {
 		this.newCompForm = this.formBuilder.group({
 			email: ['', [
-				Validators.required
+				Validators.required,
+				Validators.email
 			]],
 			password: ['', [
-				Validators.required
+				Validators.required,
+				Validators.minLength(8)
 			]],
 			confirm_password: ['', [
 				Validators.required

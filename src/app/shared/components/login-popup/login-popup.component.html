@@ -5,14 +5,25 @@
 			   type="text" formControlName="user" id="login-user" required>
 		<label for="login-user">Username / Email</label>
 	</div>
+	<div *ngIf="newCompForm.controls.user.invalid && (newCompForm.controls.user.dirty || newCompForm.controls.user.touched)"
+		 class="error-message">
+		<div *ngIf="newCompForm.controls.user.errors.required">
+			Username is required.
+		</div>
+	</div>
+
 	<div class="input-container">
 		<input
 			[class.invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid"
 			type="password" formControlName="password" id="login-password" required>
 		<label for="login-password">Password</label>
 	</div>
-
-	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+	<div *ngIf="newCompForm.controls.password.invalid && (newCompForm.controls.password.dirty || newCompForm.controls.password.touched)"
+		 class="error-message">
+		<div *ngIf="newCompForm.controls.password.errors.required">
+			Password is required.
+		</div>
+	</div>
 
 	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">LOGIN</button>
 
