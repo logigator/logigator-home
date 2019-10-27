@@ -10,12 +10,15 @@ import {NgControl} from '@angular/forms';
 export class InputErrorComponent {
 
 	@Input()
-	error: string;
+	error?: string;
 
 	constructor(private control: NgControl) { }
 
 	public get showError(): boolean {
-		return this.control.touched && this.control.errors && this.control.errors[this.error];
+		if (this.error) {
+			return this.control.touched && this.control.errors && this.control.errors[this.error];
+		}
+		return this.control.touched;
 	}
 
 }
