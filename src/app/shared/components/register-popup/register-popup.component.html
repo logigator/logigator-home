@@ -1,4 +1,5 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+	<h3> Register Email </h3>
 	<div class="input-container">
 		<input class="input" [class.invalid]="newCompForm.controls.email.touched && newCompForm.controls.email.invalid"
 			   type="text" formControlName="email" id="register-email" required>
@@ -14,15 +15,39 @@
 
 	<div class="input-container">
 		<input class="input"
+			   [class.invalid]="newCompForm.controls.confirm_password.touched && newCompForm.controls.confirm_password.invalid"
+			   type="password" formControlName="confirm_password" id="confirm-password" required>
+		<label class="label" for="confirm-password">Repeat password</label>
+	</div>
+
+	<div class="input-container">
+		<input class="input"
 			   [class.invalid]="newCompForm.controls.username.touched && newCompForm.controls.username.invalid"
 			   type="text"
 			   formControlName="username" id="register-username" required>
 		<label class="label" for="register-username">Username</label>
 	</div>
 
-	<br>
-
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
-	<button type="submit" class="btn-raised primary form-button" [disabled]="newCompForm.invalid">REGISTER</button>
+	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">REGISTER</button>
+
+	<div class="login-divider">
+		<hr>
+		<div>
+			or
+		</div>
+		<hr>
+	</div>
+
+	<div class="social-media-login">
+		<button class="btn-raised primary social-button google" (click)="loginGoogle()">
+			GOOGLE
+			<img class="btn-raised secondary"  src="assets/icons/dark/google.svg" alt="google login icon">
+		</button>
+		<button class="btn-raised primary social-button twitter" (click)="loginTwitter()">
+			TWITTER
+			<img class="btn-raised secondary" src="assets/icons/dark/twitter.svg" alt="twitter login icon">
+		</button>
+	</div>
 </form>

@@ -26,6 +26,9 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 			password: ['', [
 				Validators.required
 			]],
+			confirm_password: ['', [
+				Validators.required
+			]],
 			username: ['', [
 				Validators.required
 			]],
@@ -47,6 +50,14 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 					break;
 			}
 		});
+	}
+
+	public loginGoogle() {
+		this.auth.authenticateGoogle();
+	}
+
+	public loginTwitter() {
+		this.auth.authenticateTwitter();
 	}
 
 }
