@@ -1,14 +1,25 @@
-<form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+<form [formGroup]="registerForm" (ngSubmit)="submit()" autocomplete="off">
 	<h3> Register Email </h3>
 
-	<app-input type="text" formControlName="email" label="Email" [invalid]="newCompForm.controls.email.touched && newCompForm.controls.email.invalid"></app-input>
-	<app-input type="password" formControlName="password" label="Password" [invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid"></app-input>
-	<app-input type="password" formControlName="confirm_password" label="Repeat password" [invalid]="newCompForm.controls.confirm_password.touched && newCompForm.controls.confirm_password.invalid"></app-input>
-	<app-input type="text" formControlName="username" label="Username" [invalid]="newCompForm.controls.username.touched && newCompForm.controls.username.invalid"></app-input>
+	<app-input type="text" formControlName="email" label="Email">
+		<app-input-error error="required">Email is required</app-input-error>
+		<app-input-error error="email">Email is invalid</app-input-error>
+	</app-input>
+	<app-input type="password" formControlName="password" label="Password">
+		<app-input-error error="required">Password is required</app-input-error>
+		<app-input-error error="minlength">Password is to short</app-input-error>
+		<app-input-error error="pattern">Password is not complex enough</app-input-error>
+	</app-input>
+	<app-input type="password" formControlName="confirm_password" label="Repeat password"></app-input>
+	<app-input type="text" formControlName="username" label="Username">
+		<app-input-error error="required">Username is required</app-input-error>
+		<app-input-error error="minlength">Username is to short</app-input-error>
+		<app-input-error error="maxlength">Username is to long</app-input-error>
+	</app-input>
 
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
-	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">REGISTER</button>
+	<button type="submit" class="btn-raised primary" [disabled]="registerForm.invalid">REGISTER</button>
 
 	<div class="login-divider">
 		<hr>

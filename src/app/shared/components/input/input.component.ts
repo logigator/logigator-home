@@ -22,7 +22,9 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 	public type = 'text';
 
 	@Input()
-	public invalid: boolean;
+	public formControlName: string;
+
+	private control: AbstractControl;
 
 	public state: string;
 	public disabled = false;
@@ -30,9 +32,16 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 	private onChange = (value: unknown) => {};
 	private onTouched = () => {};
 
-	constructor(private cdr: ChangeDetectorRef) { }
+	constructor(private cdr: ChangeDetectorRef, @Optional() @Host() @SkipSelf() private controlContainer: ControlContainer) { }
 
 	ngOnInit() {
+		if (this.controlContainer) {
+			this.control = this.controlContainer.control.get(this.formControlName);
+		}
+	}
+
+	public get invalid(): boolean {
+		return this.control.touched && this.control.invalid;
 	}
 
 	registerOnChange(fn: any): void {
