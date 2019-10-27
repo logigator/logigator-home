@@ -1,9 +1,9 @@
 <form [formGroup]="loginForm" (ngSubmit)="submit()" autocomplete="off">
 	<h3> Please sign in </h3>
 
-	<app-input type="text" formControlName="user" label="Username / Email" [invalid]="loginForm.controls.user.touched && loginForm.controls.user.invalid"></app-input>
+	<app-input type="text" formControlName="user" label="Username / Email"></app-input>
 
-	<app-input type="password" formControlName="password" label="Password" [invalid]="loginForm.controls.user.touched && loginForm.touched && loginForm.controls.password.invalid"></app-input>
+	<app-input type="password" formControlName="password" label="Password"></app-input>
 
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 

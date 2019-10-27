@@ -11,7 +11,7 @@ import {AuthService} from '../../services/auth/auth.service';
 })
 export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 
-	public newCompForm: FormGroup;
+	public registerForm: FormGroup;
 	public errorMessage = '';
 
 	constructor(private formBuilder: FormBuilder, private auth: AuthService) {
@@ -19,7 +19,7 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 	}
 
 	ngOnInit() {
-		this.newCompForm = this.formBuilder.group({
+		this.registerForm = this.formBuilder.group({
 			email: ['', [
 				Validators.required, Validators.email
 			]],
@@ -40,9 +40,9 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 	}
 
 	public async submit() {
-		if (this.newCompForm.invalid)
+		if (this.registerForm.invalid)
 			return;
-		this.auth.registerEmail(this.newCompForm.controls.email.value, this.newCompForm.controls.password.value).then(() => {
+		this.auth.registerEmail(this.registerForm.controls.email.value, this.registerForm.controls.password.value).then(() => {
 			this.requestClose.emit();
 		}).catch(e => {
 			switch (e.status) {

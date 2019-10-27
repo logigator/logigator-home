@@ -12,6 +12,17 @@
 		</ng-container>
 	</div>
 	<div class="bottom">
+		<div class="entry">
+			<select [(ngModel)]="currentLang" (ngModelChange)="languageChange()">
+				<option value="en">{{'LANGUAGE.EN'}}</option>
+				<option value="de">{{'LANGUAGE.DE'}}</option>
+			</select>
+			<a>Language</a>
+		</div>
+		<div class="entry">
+			<app-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></app-switch>
+			<p>Dark Mode</p>
+		</div>
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/settings" (click)="setOpen(false)">
 				<img src="/assets/icons/light/user.svg">

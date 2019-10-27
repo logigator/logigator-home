@@ -14,6 +14,7 @@ import {SettingsDropdownComponent} from './components/settings-dropdown/settings
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SwitchComponent} from './components/switch/switch.component';
 import {InputComponent} from './components/input/input.component';
+import { InputErrorComponent } from './components/input-error/input-error.component';
 
 @NgModule({
 	declarations: [
@@ -27,7 +28,8 @@ import {InputComponent} from './components/input/input.component';
 		RegisterPopupComponent,
 		LoginPopupComponent,
 		SwitchComponent,
-		InputComponent
+		InputComponent,
+		InputErrorComponent
 	],
 	entryComponents: [
 		PopupComponent,
