@@ -1,4 +1,5 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+	<h3> Please sign in </h3>
 	<div class="input-container">
 		<input [class.invalid]="newCompForm.controls.user.touched && newCompForm.controls.user.invalid"
 			   type="text" formControlName="user" id="login-user" required>
@@ -13,20 +14,24 @@
 
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
-	<button type="submit" class="btn-raised primary form-button" [disabled]="newCompForm.invalid">LOGIN</button>
+	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">LOGIN</button>
 
-	<br>
-
-
-	<br>
+	<div class="login-divider">
+		<hr>
+		<div>
+			or
+		</div>
+		<hr>
+	</div>
 
 	<div class="social-media-login">
-		<div class="alt-login"> LOGIN USING </div>
-		<div class="img-container">
-			<img class="btn-raised secondary" (click)="loginGoogle()" src="assets/icons/dark/google.svg" alt="google login icon">
-		</div>
-		<div class="img-container">
-			<img class="btn-raised secondary" (click)="loginTwitter()" src="assets/icons/dark/twitter.svg" alt="twitter login icon">
-		</div>
+		<button class="btn-raised primary social-button google" (click)="loginGoogle()">
+			GOOGLE
+			<img class="btn-raised secondary"  src="assets/icons/dark/google.svg" alt="google login icon">
+		</button>
+		<button class="btn-raised primary social-button twitter" (click)="loginTwitter()">
+			TWITTER
+			<img class="btn-raised secondary" src="assets/icons/dark/twitter.svg" alt="twitter login icon">
+		</button>
 	</div>
 </form>
