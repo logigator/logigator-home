@@ -6,6 +6,7 @@ import {DOCUMENT} from '@angular/common';
 import {HttpResponseData} from '../../models/http-responses/http-response-data';
 import {UserInfo} from '../../models/http-responses/user-info';
 import {ErrorHandlingService} from '../error-handling/error-handling.service';
+import {Router} from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
@@ -15,7 +16,12 @@ export class AuthService {
 	private _userInfo$: Observable<UserInfo>;
 	private _userSubject$ = new BehaviorSubject<void>(undefined);
 
-	constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document, private errorHandling: ErrorHandlingService) { }
+	constructor(
+		private http: HttpClient,
+		@Inject(DOCUMENT) private document: Document,
+		private errorHandling: ErrorHandlingService,
+		private router: Router
+	) { }
 
 	public get userInfo$(): Observable<UserInfo> {
 		if (!this._userInfo$)
@@ -52,6 +58,7 @@ export class AuthService {
 			throw Error('not logged in');
 		}
 		await this.http.get('/api/auth/logout').toPromise();
+		this.router.navigate(['/']);
 	}
 
 	public get isLoggedIn(): boolean {
