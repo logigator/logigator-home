@@ -1,31 +1,13 @@
-<form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+<form [formGroup]="loginForm" (ngSubmit)="submit()" autocomplete="off">
 	<h3> Please sign in </h3>
-	<div class="input-container">
-		<input [class.invalid]="newCompForm.controls.user.touched && newCompForm.controls.user.invalid"
-			   type="text" formControlName="user" id="login-user" required>
-		<label for="login-user">Username / Email</label>
-	</div>
-	<div *ngIf="newCompForm.controls.user.invalid && (newCompForm.controls.user.dirty || newCompForm.controls.user.touched)"
-		 class="error-message">
-		<div *ngIf="newCompForm.controls.user.errors.required">
-			Username is required.
-		</div>
-	</div>
 
-	<div class="input-container">
-		<input
-			[class.invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid"
-			type="password" formControlName="password" id="login-password" required>
-		<label for="login-password">Password</label>
-	</div>
-	<div *ngIf="newCompForm.controls.password.invalid && (newCompForm.controls.password.dirty || newCompForm.controls.password.touched)"
-		 class="error-message">
-		<div *ngIf="newCompForm.controls.password.errors.required">
-			Password is required.
-		</div>
-	</div>
+	<app-input type="text" formControlName="user" label="Username / Email" [invalid]="loginForm.controls.user.touched && loginForm.controls.user.invalid"></app-input>
 
-	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">LOGIN</button>
+	<app-input type="password" formControlName="password" label="Password" [invalid]="loginForm.controls.user.touched && loginForm.touched && loginForm.controls.password.invalid"></app-input>
+
+	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+	<button type="submit" class="btn-raised primary" [disabled]="loginForm.invalid">LOGIN</button>
 
 	<div class="login-divider">
 		<hr>

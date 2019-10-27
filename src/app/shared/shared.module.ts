@@ -9,8 +9,11 @@ import {ApiService} from './services/api/api.service';
 import {PopupComponent} from './components/popup/popup.component';
 import {BurgerMenuComponent} from './components/burger-menu/burger-menu.component';
 import { LoginPopupComponent } from './components/login-popup/login-popup.component';
-import {ReactiveFormsModule} from '@angular/forms';
 import { RegisterPopupComponent } from './components/register-popup/register-popup.component';
+import {SettingsDropdownComponent} from './components/settings-dropdown/settings-dropdown.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SwitchComponent} from './components/switch/switch.component';
+import {InputComponent} from './components/input/input.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +22,12 @@ import { RegisterPopupComponent } from './components/register-popup/register-pop
 		PopupComponent,
 		BurgerMenuComponent,
 		LoginPopupComponent,
-		RegisterPopupComponent
+		RegisterPopupComponent,
+		SettingsDropdownComponent,
+		RegisterPopupComponent,
+		LoginPopupComponent,
+		SwitchComponent,
+		InputComponent
 	],
 	entryComponents: [
 		PopupComponent,
@@ -29,12 +37,15 @@ import { RegisterPopupComponent } from './components/register-popup/register-pop
 	exports: [
 		HeaderComponent,
 		FooterComponent,
-		BurgerMenuComponent
+		BurgerMenuComponent,
+		SwitchComponent,
+		InputComponent
 	],
 	imports: [
 		CommonModule,
 		RouterModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		FormsModule
 	]
 })
 export class SharedModule {

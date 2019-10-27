@@ -70,27 +70,33 @@ $border-styles: (
 	@return $themeForTestFunction == $theme;
 }
 
-@mixin scrollbar($width) {
-	&::-webkit-scrollbar-track {
+@mixin scrollbar($width, $height: -1) {
+	&::-webkit-scrollbar-track
+	{
 		@include themify() {
-			background-color: themed('construction-box-background');
+			background-color: themed('background');
 		}
 	}
 
-	&::-webkit-scrollbar {
+	&::-webkit-scrollbar
+	{
 		width: $width;
+		@if ($height != -1) {
+			height: $height;
+		}
 	}
 
-	&::-webkit-scrollbar-thumb {
+	&::-webkit-scrollbar-thumb
+	{
 		border-radius: 2px;
 		@include themify() {
-			background-color: themed('scrollbar');
+			background-color: themed('secondary');
 		}
 	}
 
 	scrollbar-width: thin;
 	@include themify() {
-		scrollbar-color: themed('scrollbar') themed('construction-box-background');
+		scrollbar-color: themed('secondary') themed('background');
 	}
 
 }

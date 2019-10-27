@@ -44,6 +44,14 @@ export class BurgerMenuComponent implements OnInit {
 		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'Login', false);
 	}
 
+	public loginTwitter() {
+		this.auth.authenticateTwitter();
+	}
+
+	public loginGoogle() {
+		this.auth.authenticateGoogle();
+	}
+
 	public registerEmail() {
 		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'Register', false);
 	}

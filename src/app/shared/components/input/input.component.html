@@ -1,0 +1,11 @@
+<div class="input-container">
+	<input
+		[type]="type"
+		[name]="label"
+		[id]="label + 'id'"
+		[(ngModel)]="state"
+		(ngModelChange)="stateChange()"
+		[disabled]="disabled"
+		[class.invalid]="invalid">
+	<label [for]="label + 'id'" [class.has-value]="state">{{label}}</label>
+</div>

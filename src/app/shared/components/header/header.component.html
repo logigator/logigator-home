@@ -1,17 +1,21 @@
 <header>
-	<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/selection1.svg">
+	<div (click)="settingsDropdown = false;" *ngIf="settingsDropdown" class="background"></div>
+
+	<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/menu.svg">
 
 	<a routerLink="/" class="logo"><img alt="Logigator" src="/assets/logo.svg"></a>
 
 	<div class="login">
-		<ng-container *ngIf="isLoggedIn">
-			<button class="btn-outline secondary btn-login" routerLink="/my">USERSPACE</button>
-			<button class="btn-outline secondary btn-login" (click)="logout()">LOGOUT</button>
+		<ng-container *ngIf="isLoggedIn && (userInfo | async) as userInfo">
+			<a class="username" routerLink="/my">{{userInfo.user.username}}</a>
+			<img class="user-img" [src]="'/api/images/profile/' + userInfo.user.profile_image" (click)="settingsDropdown = !settingsDropdown">
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn">
 			<button class="btn-outline secondary btn-login" (click)="loginEmail()">LOGIN</button>
 			<button class="btn-outline secondary btn-login" (click)="registerEmail()">REGISTER</button>
+			<div class="more" (click)="settingsDropdown = !settingsDropdown"></div>
 		</ng-container>
+		<app-settings-dropdown *ngIf="settingsDropdown" (requestClosed)="settingsDropdown = false;"></app-settings-dropdown>
 	</div>
 </header>
 
