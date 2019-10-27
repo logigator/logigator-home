@@ -11,7 +11,7 @@ import {AuthService} from '../../services/auth/auth.service';
 })
 export class LoginPopupComponent extends PopupContentComp implements OnInit {
 
-	public newCompForm: FormGroup;
+	public loginForm: FormGroup;
 	public errorMessage = '';
 
 	constructor(private formBuilder: FormBuilder, private auth: AuthService) {
@@ -19,20 +19,16 @@ export class LoginPopupComponent extends PopupContentComp implements OnInit {
 	}
 
 	ngOnInit() {
-		this.newCompForm = this.formBuilder.group({
-			user: ['', [
-				Validators.required
-			]],
-			password: ['', [
-				Validators.required
-			]]
+		this.loginForm = this.formBuilder.group({
+			user: ['', [Validators.required]],
+			password: ['', [Validators.required]]
 		});
 	}
 
 	public async submit() {
-		if (this.newCompForm.invalid)
+		if (this.loginForm.invalid)
 			return;
-		this.auth.loginEmail(this.newCompForm.controls.user.value, this.newCompForm.controls.password.value).then(() => {
+		this.auth.loginEmail(this.loginForm.controls.user.value, this.loginForm.controls.password.value).then(() => {
 			this.requestClose.emit();
 		}).catch(e => {
 			switch (e.status) {
@@ -46,12 +42,14 @@ export class LoginPopupComponent extends PopupContentComp implements OnInit {
 		});
 	}
 
-	public loginGoogle() {
-		this.auth.authenticateGoogle();
+	public async loginGoogle() {
+		await this.auth.authenticateGoogle();
+		this.requestClose.emit();
 	}
 
-	public loginTwitter() {
-		this.auth.authenticateTwitter();
+	public async loginTwitter() {
+		await this.auth.authenticateTwitter();
+		this.requestClose.emit();
 	}
 
 }

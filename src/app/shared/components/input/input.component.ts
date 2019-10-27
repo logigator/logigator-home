@@ -1,5 +1,5 @@
-import {ChangeDetectorRef, Component, forwardRef, Input, OnInit} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {ChangeDetectorRef, Component, forwardRef, Host, Input, OnInit, Optional, Self, SkipSelf} from '@angular/core';
+import {AbstractControl, ControlContainer, ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
 
 @Component({
 	selector: 'app-input',
@@ -21,7 +21,10 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 	@Input()
 	public type = 'text';
 
-	public state: unknown;
+	@Input()
+	public invalid: boolean;
+
+	public state: string;
 	public disabled = false;
 
 	private onChange = (value: unknown) => {};
@@ -44,7 +47,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 		this.disabled = isDisabled;
 	}
 
-	writeValue(value: unknown): void {
+	writeValue(value: string): void {
 		this.state = value;
 		this.cdr.detectChanges();
 	}

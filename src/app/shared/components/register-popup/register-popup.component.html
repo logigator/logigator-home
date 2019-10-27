@@ -1,32 +1,10 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
 	<h3> Register Email </h3>
-	<div class="input-container">
-		<input class="input" [class.invalid]="newCompForm.controls.email.touched && newCompForm.controls.email.invalid"
-			   type="text" formControlName="email" id="register-email" required>
-		<label class="label" for="register-email">Email</label>
-	</div>
 
-	<div class="input-container">
-		<input class="input"
-			   [class.invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid"
-			   type="password" formControlName="password" id="register-password" required>
-		<label class="label" for="register-password">Password</label>
-	</div>
-
-	<div class="input-container">
-		<input class="input"
-			   [class.invalid]="newCompForm.controls.confirm_password.touched && newCompForm.controls.confirm_password.invalid"
-			   type="password" formControlName="confirm_password" id="confirm-password" required>
-		<label class="label" for="confirm-password">Repeat password</label>
-	</div>
-
-	<div class="input-container">
-		<input class="input"
-			   [class.invalid]="newCompForm.controls.username.touched && newCompForm.controls.username.invalid"
-			   type="text"
-			   formControlName="username" id="register-username" required>
-		<label class="label" for="register-username">Username</label>
-	</div>
+	<app-input type="text" formControlName="email" label="Email" [invalid]="newCompForm.controls.email.touched && newCompForm.controls.email.invalid"></app-input>
+	<app-input type="password" formControlName="password" label="Password" [invalid]="newCompForm.controls.password.touched && newCompForm.controls.password.invalid"></app-input>
+	<app-input type="password" formControlName="confirm_password" label="Repeat password" [invalid]="newCompForm.controls.confirm_password.touched && newCompForm.controls.confirm_password.invalid"></app-input>
+	<app-input type="text" formControlName="username" label="Username" [invalid]="newCompForm.controls.username.touched && newCompForm.controls.username.invalid"></app-input>
 
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 

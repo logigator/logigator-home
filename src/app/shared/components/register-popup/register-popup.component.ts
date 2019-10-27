@@ -21,17 +21,21 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 	ngOnInit() {
 		this.newCompForm = this.formBuilder.group({
 			email: ['', [
-				Validators.required
+				Validators.required, Validators.email
 			]],
 			password: ['', [
-				Validators.required
+				Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[A-Za-z])(?=.*[0-9]).*$')
 			]],
 			confirm_password: ['', [
 				Validators.required
 			]],
 			username: ['', [
-				Validators.required
+				Validators.required, Validators.minLength(2), Validators.maxLength(20)
 			]],
+		}, {
+			validators: ((x: FormGroup) => {
+				return (x.controls.password.value !== x.controls.confirm_password.value) ? {passwordMatch: {value: x.controls.password.value}} : null;
+			})
 		});
 	}
 

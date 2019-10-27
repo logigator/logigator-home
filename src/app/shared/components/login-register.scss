@@ -23,13 +23,6 @@ form {
 		margin-top: 0;
 	}
 
-	.invalid {
-		@include themify {
-			border-bottom: 1px solid themed('error');
-			color: themed('error');
-		}
-	}
-
 	.error {
 		margin-top: 0;
 		padding-left: 1rem;
