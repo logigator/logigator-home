@@ -20,10 +20,55 @@ svg {
 	}
 }
 
-text{
+text {
 	alignment-baseline: middle;
 	stroke: none;
 	@include themify() {
 		fill: themed('primary');
 	}
 }
+
+.step-1 {
+	animation: cable-active 24s steps(1, end) 0s infinite;
+}
+
+.step-2 {
+	animation: cable-active 24s steps(1, end) 3s infinite;
+}
+
+.step-3 {
+	animation: cable-active 24s steps(1, end) 6s infinite;
+}
+
+.step-4 {
+	animation: cable-active 24s steps(1, end) 9s infinite;
+}
+
+.step-5 {
+	animation: cable-active 24s steps(1, end) 12s infinite;
+}
+
+.step-6 {
+	animation: cable-active 24s steps(1, end) 15s infinite;
+}
+
+.step-7 {
+	animation: cable-active 24s steps(1, end) 18s infinite;
+}
+
+@keyframes cable-active {
+	0% {
+		stroke-width: 1px;
+	}
+	12.5% {
+		stroke-width: 4px;
+	}
+	25% {
+		stroke-width: 1px;
+	}
+	100% {
+		stroke-width: 1px;
+	}
+}
+
+
