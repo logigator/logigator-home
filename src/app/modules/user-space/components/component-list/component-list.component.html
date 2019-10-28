@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="item-list">
+		<h1>My Components</h1>
+		<ng-container *ngIf="userComponents$ | async as projects">
+			<ng-container *ngIf="projects.length > 0; else noProjects">
+				<div class="tiles">
+					<div class="tile-wrapper" *ngFor="let project of projects | slice:0:4;">
+						<div class="tile">
+							<h3 class="title">{{project.name}}</h3>
+							<img class="preview" src="/assets/icons/light/selection1.svg">
+							<div class="tile-hover">
+								<a class="icon icon-play" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener"></a>
+								<div class="actions">
+									<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
+									<a class="icon icon-edit" (click)="openProjectEditDialog(project)"></a>
+									<a class="icon icon-delete"></a>
+									<a class="icon icon-info"></a>
+									<a class="icon icon-more"></a>
+								</div>
+							</div>
+						</div>
+						<div class="details">
+							<a class="title" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{project.name}}</a>
+							<p class="edited">Last Edited: {{project.last_edited}}</p>
+							<div class="actions">
+								<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
+								<a class="icon icon-edit" (click)="openProjectEditDialog(project)"></a>
+								<a class="icon icon-delete"></a>
+								<a class="icon icon-info"></a>
+								<a class="icon icon-more"></a>
+							</div>
+						</div>
+					</div>
+					<div class="tile empty-tile">
+						<div class="tile-hover"></div>
+						<div class="icon icon-add-new"></div>
+					</div>
+				</div>
+				<div class="item" *ngFor="let project of projects; odd as isOdd" [class.odd]="isOdd">
+					<a class="title" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{project.name}}</a>
+					<p class="edited">Last Edited: {{project.last_edited}}</p>
+					<div class="icon icon-share" (click)="openShareDialog(project.pk_id)"></div>
+					<div class="icon icon-edit" (click)="openProjectEditDialog(project)"></div>
+					<div class="icon icon-delete"></div>
+					<div class="icon icon-info"></div>
+					<div class="icon icon-more"></div>
+				</div>
+			</ng-container>
+			<ng-template #noProjects>
+				<p>You haven't defined any projects yet.</p>
+			</ng-template>
+		</ng-container>
+	</div>
+</div>

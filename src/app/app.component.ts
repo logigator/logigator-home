@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	title = 'logigator-home';
+	constructor(
+		private translate: TranslateService
+	) {
+		this.initTranslation();
+	}
+
+	private initTranslation() {
+		this.translate.addLangs(['en', 'de']);
+		this.translate.setDefaultLang('en');
+		this.translate.use('en');
+	}
 }

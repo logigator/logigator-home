@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import { AuthCallbackComponent } from './components/auth-callback/auth-callback.component';
+import { ExamplesComponent } from './components/examples/examples.component';
+import { TutorialsComponent } from './components/tutorials/tutorials.component';
+import {SharedModule} from '../../shared/shared.module';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 export const HOME_ROUTES: Routes = [
 	{
@@ -20,11 +24,15 @@ export const HOME_ROUTES: Routes = [
 @NgModule({
 	declarations: [
 		HomeComponent,
-		AuthCallbackComponent
+		AuthCallbackComponent,
+		ExamplesComponent,
+		TutorialsComponent
 	],
 	imports: [
 		RouterModule,
-		CommonModule
+		CommonModule,
+		SharedModule,
+		SlideshowModule
 	]
 })
 export class HomeModule { }

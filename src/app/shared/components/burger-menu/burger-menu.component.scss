@@ -1,0 +1,75 @@
+@import "themes";
+@import "variables";
+
+.burger-menu {
+	display: flex;
+	visibility: hidden;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 20rem;
+	height: calc(100% - #{$header-height});
+	position: fixed;
+	z-index: 1100;
+	left: -20rem;
+	transition: left 0.5s ease, visibility 0.5s;
+	padding: 0.5rem 0;
+
+	&.show {
+		visibility: visible;
+		left: 0;
+	}
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+
+	@include themify() {
+		background-color: themed('accent2');
+	}
+
+	.top, .bottom {
+		display: flex;
+		flex-direction: column;
+
+		.entry {
+			display: flex;
+			align-items: center;
+			height: 3rem;
+			text-decoration: none;
+			font-weight: bold;
+			padding: 0.5rem 1rem;
+			cursor: pointer;
+
+			img {
+				height: 100%;
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: contain;
+				margin-right: 0.5rem;
+			}
+
+			&:hover {
+				@include themify() {
+					background-color: darken(themed('accent2'), 10);
+				}
+			}
+		}
+	}
+}
+
+.hamburger-background {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1000;
+
+	&.show {
+		@media (max-width: 767px) {
+			display: block;
+		}
+	}
+}

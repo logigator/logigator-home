@@ -1,0 +1,19 @@
+<header>
+	<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/menu.svg">
+
+	<a routerLink="/" class="logo"><img alt="Logigator" src="/assets/logo.svg"></a>
+
+	<div class="login">
+		<ng-container *ngIf="isLoggedIn">
+			<button class="btn-raised secondary" routerLink="/my">USERSPACE</button>
+			<button class="btn-raised secondary" (click)="logout()">LOGOUT</button>
+		</ng-container>
+		<ng-container *ngIf="!isLoggedIn">
+			<button class="btn-raised secondary" (click)="loginEmail()">LOGIN</button>
+			<button class="btn-raised secondary" (click)="loginGoogle()">LOGIN WITH GOOGLE</button>
+			<button class="btn-raised secondary" (click)="loginTwitter()">LOGIN WITH TWITTER</button>
+		</ng-container>
+	</div>
+</header>
+
+

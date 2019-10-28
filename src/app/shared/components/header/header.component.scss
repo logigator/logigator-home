@@ -1,0 +1,63 @@
+@import "themes";
+@import "variables";
+
+header {
+	width: 100%;
+	height: $header-height;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	top: 0;
+	position: fixed;
+	z-index: 100;
+	padding: 0.5rem;
+
+	@media (max-width: 767px) {
+		justify-content: center;
+	}
+
+	@include themify() {
+		background-color: themed('primary');
+	}
+
+	.logo {
+		display: flex;
+		height: 100%;
+	}
+
+	a {
+		text-decoration: none;
+		@include themify() {
+			color: themed('text-primary');
+			&:hover {
+				color: themed('hover');
+			}
+		}
+	}
+
+	img {
+		height: 100%;
+	}
+
+	.burger-menu {
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: inherit;
+
+		display: none;
+		@media (max-width: 767px) {
+			display: block;
+		}
+	}
+
+	.login {
+		@media (max-width: 767px) {
+			display: none;
+		}
+
+		> * {
+			margin-left: 0.5rem;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+app-user-space {
+	> div {
+		display: flex;
+		flex-direction: column;
+
+		> :last-child {
+			flex-grow: 1;
+		}
+
+		@media (max-width: 767px) {
+			flex-direction: row;
+		}
+	}
+}

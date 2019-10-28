@@ -1,0 +1,25 @@
+@import "themes";
+@import "variables";
+
+footer {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: $footer-height;
+
+	@include themify() {
+		background-color: themed('primary');
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+	}
+
+}

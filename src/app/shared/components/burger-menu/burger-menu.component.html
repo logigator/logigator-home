@@ -1,0 +1,41 @@
+<div class="burger-menu" [class.show]="getOpen">
+	<div class="top">
+		<ng-container *ngIf="isLoggedIn">
+			<a class="entry" routerLink="my/projects" (click)="setOpen(false)">
+				<img src="/assets/icons/light/archive.svg">
+				<p>Projects</p>
+			</a>
+			<a class="entry" routerLink="my/components" (click)="setOpen(false)">
+				<img src="/assets/icons/light/archive.svg">
+				<p>Components</p>
+			</a>
+		</ng-container>
+	</div>
+	<div class="bottom">
+		<ng-container *ngIf="isLoggedIn">
+			<a class="entry" routerLink="my/settings" (click)="setOpen(false)">
+				<img src="/assets/icons/light/user.svg">
+				<a>Account</a>
+			</a>
+			<a class="entry" (click)="logout(); setOpen(false)">
+				<img src="/assets/icons/light/logout.svg">
+				<a>Logout</a>
+			</a>
+		</ng-container>
+		<ng-container *ngIf="!isLoggedIn">
+			<a class="entry" (click)="loginEmail(); setOpen(false)">
+				<img src="/assets/icons/light/login.svg">
+				<a>Login</a>
+			</a>
+			<a class="entry" (click)="loginGoogle(); setOpen(false)">
+				<img src="/assets/icons/light/google.svg">
+				<a>Login with Google</a>
+			</a>
+			<a class="entry" (click)="loginTwitter(); setOpen(false)">
+				<img src="/assets/icons/light/twitter.svg">
+				<a>Login with Twitter</a>
+			</a>
+		</ng-container>
+	</div>
+</div>
+<div class="hamburger-background" [class.show]="getOpen" (click)="setOpen(false)"></div>

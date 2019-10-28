@@ -1,0 +1,17 @@
+<form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+	<label for="change-username-username">Username</label>
+	<input [class.invalid]="newCompForm.controls.username.touched && newCompForm.controls.username.invalid" type="text" formControlName="username" id="change-username-username" required>
+	<br>
+
+	<ul>
+		<ng-container *ngIf="newCompForm.controls.username.touched">
+			<ng-container *ngIf="newCompForm.controls.username.errors as errors">
+				<li *ngIf="errors.minlength">Username must be at least 2 characters long.</li>
+				<li *ngIf="errors.maxlength">Username must be at most 20 characters long.</li>
+				<li *ngIf="errors.pattern">Username is invalid.</li>
+			</ng-container>
+		</ng-container>
+	</ul>
+
+	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">Submit</button>
+</form>
