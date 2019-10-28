@@ -19,11 +19,8 @@ export class ChangeUsernameComponent extends PopupContentComp implements OnInit 
 	ngOnInit() {
 		this.newCompForm = this.formBuilder.group({
 			username: ['', [
-				Validators.required,
-				Validators.minLength(2),
-				Validators.maxLength(20),
-				Validators.pattern('^[a-zA-Z0-9_\\-]+$')
-			]]
+				Validators.required, Validators.minLength(2), Validators.maxLength(20)
+			]],
 		});
 	}
 
