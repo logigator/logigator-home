@@ -22,7 +22,12 @@ const routes: Routes = [
 		loadChildren: () => import('./modules/user-space/user-space.module').then(m => m.UserSpaceModule),
 		canActivate: [ AuthGuard ],
 		canActivateChild: [ AuthGuard ]
-	}
+	},
+	{
+		path: '404',
+		loadChildren: () => import('./modules/not-found/not-found.module').then((m => m.NotFoundModule))
+	},
+	{path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
