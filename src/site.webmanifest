@@ -1,0 +1,20 @@
+{
+    "name": "Logigator",
+    "short_name": "Logigator",
+    "icons": [
+        {
+            "src": "/assets/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#27ae60",
+    "background_color": "#27ae60",
+    "start_url": "https://logigator.com",
+    "display": "standalone"
+}
