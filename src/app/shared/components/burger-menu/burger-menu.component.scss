@@ -95,3 +95,23 @@
 		}
 	}
 }
+
+.light{
+	@include themify(){
+		@if(isTheme('light')){
+			display: block;
+		}@else {
+			display: none;
+		}
+	}
+}
+
+.dark{
+	@include themify(){
+		@if(isTheme('dark')){
+			display: block;
+		}@else {
+			display: none;
+		}
+	}
+}

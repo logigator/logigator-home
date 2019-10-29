@@ -2,11 +2,13 @@
 	<div class="top">
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/projects" (click)="setOpen(false)">
-				<img src="/assets/icons/light/archive.svg">
+				<img class="light" src="/assets/icons/light/archive.svg">
+				<img class="dark" src="/assets/icons/dark/archive.svg">
 				<p>Projects</p>
 			</a>
 			<a class="entry" routerLink="my/components" (click)="setOpen(false)">
-				<img src="/assets/icons/light/archive.svg">
+				<img class="light" src="/assets/icons/light/archive.svg">
+				<img class="dark" src="/assets/icons/dark/archive.svg">
 				<p>Components</p>
 			</a>
 		</ng-container>
@@ -25,29 +27,35 @@
 		</div>
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/settings" (click)="setOpen(false)">
-				<img src="/assets/icons/light/user.svg">
+				<img class="light" src="/assets/icons/light/user.svg">
+				<img class="dark" src="/assets/icons/dark/user.svg">
 				<a>Account</a>
 			</a>
 			<a class="entry" (click)="logout(); setOpen(false)">
-				<img src="/assets/icons/light/logout.svg">
+				<img class="light" src="/assets/icons/light/user.svg">
+				<img class="dark" src="/assets/icons/dark/user.svg">
 				<a>Logout</a>
 			</a>
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn">
 			<a class="entry" (click)="loginEmail(); setOpen(false)">
-				<img src="/assets/icons/light/login.svg">
+				<img class="light" src="/assets/icons/light/login.svg">
+				<img class="dark" src="/assets/icons/dark/login.svg">
 				<a>Login</a>
 			</a>
 			<a class="entry" (click)="registerEmail(); setOpen(false)">
-				<img src="/assets/icons/light/selection1.svg">
+				<img class="light" src="/assets/icons/light/selection1.svg">
+				<img class="dark" src="/assets/icons/dark/selection1.svg">
 				<a>Register</a>
 			</a>
 			<a class="entry" (click)="loginGoogle(); setOpen(false)">
-				<img src="/assets/icons/light/google.svg">
+				<img class="light" src="/assets/icons/light/google.svg">
+				<img class="dark" src="/assets/icons/dark/google.svg">
 				<a>Login with Google</a>
 			</a>
 			<a class="entry" (click)="loginTwitter(); setOpen(false)">
-				<img src="/assets/icons/light/twitter.svg">
+				<img class="light" src="/assets/icons/light/twitter.svg">
+				<img class="dark" src="/assets/icons/dark/twitter.svg">
 				<a>Login with Twitter</a>
 			</a>
 		</ng-container>
