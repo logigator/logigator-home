@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HomeModule} from './modules/home/home.module';
 import {SharedModule} from './shared/shared.module';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {MissingTranslationHandler, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {createTranslateLoader} from './shared/models/translation/translation-loader-factory';
 import {AppMissingTranslationHandler} from './shared/models/translation/missing-translation-handler';
+import {CredentialsInterceptor} from './shared/interceptors/credentials';
 
 @NgModule({
 	declarations: [
@@ -32,7 +33,13 @@ import {AppMissingTranslationHandler} from './shared/models/translation/missing-
 			}
 		})
 	],
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: CredentialsInterceptor,
+			multi: true
+		}
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
