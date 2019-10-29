@@ -59,13 +59,18 @@ section:last-child {
 		}
 	}
 
-	button {
+	a {
 		width: 45%;
 		align-self: flex-end;
 		@media (max-width: 1000px) {
 			width: 100%;
 		}
 		height: 3rem;
+
+		button {
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 
