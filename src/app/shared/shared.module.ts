@@ -41,7 +41,8 @@ import { InputErrorComponent } from './components/input-error/input-error.compon
 		FooterComponent,
 		BurgerMenuComponent,
 		SwitchComponent,
-		InputComponent
+		InputComponent,
+		InputErrorComponent
 	],
 	imports: [
 		CommonModule,

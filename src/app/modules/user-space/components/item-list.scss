@@ -9,6 +9,9 @@
 	}
 
 	h1 {
+		font-size: 2rem;
+		font-weight: normal;
+
 		@media (max-width: 767px) {
 			text-align: center;
 			line-height: 4rem;

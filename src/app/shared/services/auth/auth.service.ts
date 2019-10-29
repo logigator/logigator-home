@@ -45,8 +45,8 @@ export class AuthService {
 		return await this.http.post('/api/auth/verify-google-credentials', oauthData).toPromise();
 	}
 
-	public async registerEmail(email: string, password: string) {
-		return this.http.post('/api/auth/register-email', {email, password}).toPromise();
+	public async registerEmail(username: string, email: string, password: string) {
+		return this.http.post('/api/auth/register-email', {username, email, password}).toPromise();
 	}
 
 	public async loginEmail(user: string, password: string) {

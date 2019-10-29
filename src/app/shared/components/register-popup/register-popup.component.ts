@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ApiService} from '../../services/api/api.service';
 import {PopupContentComp} from '../popup/popup-content-comp';
 import {AuthService} from '../../services/auth/auth.service';
 
@@ -42,7 +41,8 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 	public async submit() {
 		if (this.registerForm.invalid)
 			return;
-		this.auth.registerEmail(this.registerForm.controls.email.value, this.registerForm.controls.password.value).then(() => {
+		// tslint:disable-next-line:max-line-length
+		this.auth.registerEmail(this.registerForm.controls.username.value, this.registerForm.controls.email.value, this.registerForm.controls.password.value).then(() => {
 			this.requestClose.emit();
 		}).catch(e => {
 			switch (e.status) {
