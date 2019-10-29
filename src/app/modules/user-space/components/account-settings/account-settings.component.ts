@@ -9,6 +9,7 @@ import {ChangeUsernameComponent} from './popups/change-username/change-username.
 import {ChangePictureComponent} from './popups/change-picture/change-picture.component';
 import {map, switchMap, take, tap} from 'rxjs/operators';
 import {ChangeEmailComponent} from './popups/change-email/change-email.component';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
 	selector: 'app-account-settings',
@@ -45,10 +46,10 @@ export class AccountSettingsComponent implements OnInit {
 
 	public openPictureChangeDialog() {
 		this.userInfo$.pipe(
-			map(x => `/api/images/profile/${x.user.profile_image}`),
+			map(data => data.user.profile_image),
 			take(1)
-		).subscribe(x => {
-			this.popup.showPopup(ChangePictureComponent, this.componentFactoryResolver, 'Change Profile Picture', false, x);
+		).subscribe(img => {
+			this.popup.showPopup(ChangePictureComponent, this.componentFactoryResolver, 'Change Profile Picture', false, img);
 		});
 	}
 }

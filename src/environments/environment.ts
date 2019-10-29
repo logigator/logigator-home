@@ -4,7 +4,8 @@
 
 export const environment = {
 	production: false,
-	editor: 'https://editor.logigator-local-dev.com'
+	editor: 'https://editor.logigator-local-dev.com',
+	apiPrefix: 'http://api.logigator-local-dev.com'
 };
 
 /*

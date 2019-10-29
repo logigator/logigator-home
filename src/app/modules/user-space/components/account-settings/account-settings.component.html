@@ -1,6 +1,6 @@
 <div class="container" *ngIf="userInfo$ | async as userInfo">
 	<div class="user-info">
-		<img [src]="'/api/images/profile/' + userInfo.user.profile_image">
+		<img [src]="userInfo.user.profile_image">
 		<div>
 			<h3>{{userInfo.user.username}}</h3>
 			<h4>{{userInfo.user.email}}</h4>
