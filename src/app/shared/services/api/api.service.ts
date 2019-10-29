@@ -8,6 +8,7 @@ import {UserInfo} from '../../models/http-responses/user-info';
 import {UserComponent} from '../../models/http-responses/user-component';
 import {AuthService} from '../auth/auth.service';
 import {UserProject} from '../../models/http-responses/user-project';
+import {environment} from '../../../../environments/environment';
 
 @Injectable({
 	providedIn: 'root'
@@ -40,7 +41,7 @@ export class ApiService {
 
 		this._userComponents$ = this._userComponentsSubject$.pipe(
 			switchMapTo(
-				this.http.get<HttpResponseData<UserComponent[]>>('/api/project/get-all-components-info').pipe(
+				this.http.get<HttpResponseData<UserComponent[]>>(environment.apiPrefix + '/project/get-all-components-info').pipe(
 					map(data => data.result),
 					this.errorHandling.catchErrorOperatorDynamicMessage(
 						(x) => `Could not get Components from Server: (${x.status}) ${x.error.error.description}`,
@@ -58,7 +59,7 @@ export class ApiService {
 
 		this._userProjects$ = this._userProjectsSubject$.pipe(
 			switchMapTo(
-				this.http.get<HttpResponseData<UserComponent[]>>('/api/project/get-all-projects-info').pipe(
+				this.http.get<HttpResponseData<UserComponent[]>>(environment.apiPrefix + '/project/get-all-projects-info').pipe(
 					map(data => data.result),
 					this.errorHandling.catchErrorOperatorDynamicMessage(
 						(x) => `Could not get Projects from Server: (${x.status}) ${x.error.error.description}`,
@@ -76,7 +77,7 @@ export class ApiService {
 
 		const formData = new FormData();
 		formData.append('picture', file);
-		return this.http.post<HttpResponseData<any>>('/api/user/upload-picture', formData).pipe(
+		return this.http.post<HttpResponseData<any>>(environment.apiPrefix + '/user/upload-picture', formData).pipe(
 			map(data => data.result.success),
 			this.errorHandling.catchErrorOperatorDynamicMessage(
 				(x) => `Picture upload failed: (${x.status}) ${x.error.error.description}`,
@@ -88,7 +89,7 @@ export class ApiService {
 		if (!this.auth.isLoggedIn)
 			return of(false);
 
-		return this.http.post<HttpResponseData<any>>('/api/user/update', profile).pipe(
+		return this.http.post<HttpResponseData<any>>(environment.apiPrefix + '/user/update', profile).pipe(
 			map(data => {
 				this.auth.updateUserInfo();
 				return data.result.success;
@@ -103,7 +104,7 @@ export class ApiService {
 		if (!this.auth.isLoggedIn)
 			return of(false);
 
-		return this.http.post<HttpResponseData<any>>(`/api/project/update/${id}`, changes).pipe(
+		return this.http.post<HttpResponseData<any>>(environment.apiPrefix + `/project/update/${id}`, changes).pipe(
 			map(data => {
 				this._userProjectsSubject$.next();
 				return data.result.success;
@@ -118,7 +119,7 @@ export class ApiService {
 		if (!this.auth.isLoggedIn)
 			return of(false);
 
-		return this.http.post<HttpResponseData<any>>(`/api/project/update/${id}`, changes).pipe(
+		return this.http.post<HttpResponseData<any>>(environment.apiPrefix + `/project/update/${id}`, changes).pipe(
 			map(data => {
 				this._userComponentsSubject$.next();
 				return data.result.success;

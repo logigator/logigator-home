@@ -6,6 +6,7 @@ import {DOCUMENT} from '@angular/common';
 import {HttpResponseData} from '../../models/http-responses/http-response-data';
 import {UserInfo} from '../../models/http-responses/user-info';
 import {ErrorHandlingService} from '../error-handling/error-handling.service';
+import {environment} from '../../../../environments/environment';
 
 @Injectable({
 	providedIn: 'root'
@@ -24,34 +25,34 @@ export class AuthService {
 	}
 
 	public async authenticateTwitter(): Promise<any> {
-		const authUtlResponse: any = await this.http.get('/api/auth/twitter-auth-url').toPromise();
+		const authUtlResponse: any = await this.http.get(environment.apiPrefix + '/auth/twitter-auth-url').toPromise();
 		const popup = this.openPopUp();
 		popup.location.href = authUtlResponse.result.url;
 		const oauthData = await this.pollingAuthPopup(popup, 'twitter');
-		return await this.http.post('/api/auth/verify-twitter-credentials', oauthData).toPromise();
+		return await this.http.post(environment.apiPrefix + '/auth/verify-twitter-credentials', oauthData).toPromise();
 	}
 
 	public async authenticateGoogle(): Promise<any> {
-		const authUrlResponse: any = await this.http.get('/api/auth/google-auth-url').toPromise();
+		const authUrlResponse: any = await this.http.get(environment.apiPrefix + '/auth/google-auth-url').toPromise();
 		const popup = this.openPopUp();
 		popup.location.href = authUrlResponse.result.url;
 		const oauthData = await this.pollingAuthPopup(popup, 'google');
-		return await this.http.post('/api/auth/verify-google-credentials', oauthData).toPromise();
+		return await this.http.post(environment.apiPrefix + '/auth/verify-google-credentials', oauthData).toPromise();
 	}
 
 	public async registerEmail(email: string, password: string) {
-		return this.http.post('/api/auth/register-email', {email, password}).toPromise();
+		return this.http.post(environment.apiPrefix + '/auth/register-email', {email, password}).toPromise();
 	}
 
 	public async loginEmail(user: string, password: string) {
-		return this.http.post('/api/auth/login-email', {user, password}).toPromise();
+		return this.http.post(environment.apiPrefix + '/auth/login-email', {user, password}).toPromise();
 	}
 
 	public async logout() {
 		if (!this.isLoggedIn) {
 			throw Error('not logged in');
 		}
-		await this.http.get('/api/auth/logout').toPromise();
+		await this.http.get(environment.apiPrefix + '/auth/logout').toPromise();
 	}
 
 	public get isLoggedIn(): boolean {
@@ -137,8 +138,12 @@ export class AuthService {
 				switchMap(isLoggedIn => {
 					if (!isLoggedIn) return of(undefined);
 
-					return this.http.get<HttpResponseData<UserInfo>>('/api/user/get').pipe(
+					return this.http.get<HttpResponseData<UserInfo>>(environment.apiPrefix + '/user/get').pipe(
 						map(response => response.result),
+						map(data => {
+							data.user.profile_image = environment.apiPrefix + '/images/profile/' + data.user.profile_image;
+							return data;
+						}),
 						this.errorHandling.catchErrorOperator('Unable to get user info.', undefined)
 					);
 				})
