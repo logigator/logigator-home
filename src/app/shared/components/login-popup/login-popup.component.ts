@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../services/api/api.service';
 import {PopupContentComp} from '../popup/popup-content-comp';
 import {AuthService} from '../../services/auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
 	selector: 'app-login-popup',
@@ -14,7 +15,7 @@ export class LoginPopupComponent extends PopupContentComp implements OnInit {
 	public loginForm: FormGroup;
 	public errorMessage = '';
 
-	constructor(private formBuilder: FormBuilder, private auth: AuthService) {
+	constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router) {
 		super();
 	}
 
@@ -39,17 +40,20 @@ export class LoginPopupComponent extends PopupContentComp implements OnInit {
 					this.errorMessage = 'We\'re sorry, an unknown error occurred while trying to log you in. :(';
 					break;
 			}
+			this.router.navigate(['my']);
 		});
 	}
 
 	public async loginGoogle() {
 		await this.auth.authenticateGoogle();
 		this.requestClose.emit();
+		await this.router.navigate(['my']);
 	}
 
 	public async loginTwitter() {
 		await this.auth.authenticateTwitter();
 		this.requestClose.emit();
+		await this.router.navigate(['my']);
 	}
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PopupContentComp} from '../popup/popup-content-comp';
 import {AuthService} from '../../services/auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
 	selector: 'app-register-popup',
@@ -13,7 +14,7 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 	public registerForm: FormGroup;
 	public errorMessage = '';
 
-	constructor(private formBuilder: FormBuilder, private auth: AuthService) {
+	constructor(private formBuilder: FormBuilder, private auth: AuthService,  private router: Router) {
 		super();
 	}
 
@@ -54,14 +55,19 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 					break;
 			}
 		});
+		await this.router.navigate(['my']);
 	}
 
-	public loginGoogle() {
-		this.auth.authenticateGoogle();
+	public async loginGoogle() {
+		await this.auth.authenticateGoogle();
+		this.requestClose.emit();
+		await this.router.navigate(['my']);
 	}
 
-	public loginTwitter() {
-		this.auth.authenticateTwitter();
+	public async loginTwitter() {
+		await this.auth.authenticateTwitter();
+		this.requestClose.emit();
+		await this.router.navigate(['my']);
 	}
 
 }
