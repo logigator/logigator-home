@@ -8,16 +8,8 @@ import {AuthService} from '../../../../shared/services/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-	constructor(private auth: AuthService) { }
+	constructor() { }
 
 	ngOnInit() {
-	}
-
-	public loginGoogle() {
-		this.auth.authenticateGoogle();
-	}
-
-	public loginTwitter() {
-		this.auth.authenticateTwitter();
 	}
 }

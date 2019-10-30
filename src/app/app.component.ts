@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Inject, PLATFORM_ID} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {NavigationEnd, Router} from '@angular/router';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
 	selector: 'app-root',
@@ -10,10 +11,12 @@ import {NavigationEnd, Router} from '@angular/router';
 export class AppComponent {
 	constructor(
 		private translate: TranslateService,
-		private router: Router
+		private router: Router,
+		@Inject(PLATFORM_ID) platformId: string
 	) {
 		this.initTranslation();
 
+		if (!isPlatformBrowser(platformId)) return;
 		this.router.events.subscribe(e => {
 			if (e instanceof NavigationEnd) {
 				gtag('config', 'UA-151071040-2', {

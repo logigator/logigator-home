@@ -16,7 +16,7 @@ import {CredentialsInterceptor} from './shared/interceptors/credentials';
 		AppComponent
 	],
 	imports: [
-		BrowserModule,
+		BrowserModule.withServerTransition({ appId: 'serverApp' }),
 		SharedModule.forRoot(),
 		HomeModule,
 		AppRoutingModule,
