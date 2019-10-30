@@ -7,6 +7,7 @@ import {HttpResponseData} from '../../models/http-responses/http-response-data';
 import {UserInfo} from '../../models/http-responses/user-info';
 import {ErrorHandlingService} from '../error-handling/error-handling.service';
 import {environment} from '../../../../environments/environment';
+import {WINDOW} from '../../injectable-window';
 
 @Injectable({
 	providedIn: 'root'
@@ -19,6 +20,7 @@ export class AuthService {
 	constructor(
 		private http: HttpClient,
 		@Inject(DOCUMENT) private document: Document,
+		@Inject(WINDOW) private window: Window,
 		@Inject(PLATFORM_ID) private platformId: string,
 		private errorHandling: ErrorHandlingService
 	) { }
@@ -30,6 +32,7 @@ export class AuthService {
 	}
 
 	public async authenticateTwitter(): Promise<any> {
+		if (!this.window) return;
 		const authUrlResponse: any = await this.http.get(environment.apiPrefix + '/auth/twitter-auth-url').toPromise();
 		const popup = this.openPopUp(authUrlResponse.result.url);
 		const oauthData = await this.pollingAuthPopup(popup, 'twitter');
@@ -37,6 +40,7 @@ export class AuthService {
 	}
 
 	public async authenticateGoogle(): Promise<any> {
+		if (!this.window) return;
 		const authUrlResponse: any = await this.http.get(environment.apiPrefix + '/auth/google-auth-url').toPromise();
 		const popup = this.openPopUp(authUrlResponse.result.url);
 		const oauthData = await this.pollingAuthPopup(popup, 'google');
@@ -68,7 +72,7 @@ export class AuthService {
 	}
 
 	private openPopUp(url: string): Window {
-		return window.open(url, '_blank');
+		return this.window.open(url, '_blank');
 	}
 
 	private pollingAuthPopup(popup: Window, type: 'twitter' | 'google'):
