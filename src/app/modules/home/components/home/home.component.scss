@@ -28,8 +28,8 @@
 .content-section {
 	max-width: 960px;
 	width: 100%;
-	height: 40vh;
-	padding: 5vh 5% 5vh;
+	height: 27rem;
+	padding: 3.375rem 5% 3.375rem;
 
 	display: flex;
 	justify-content: space-between;
@@ -69,8 +69,8 @@ section:last-child {
 }
 
 .introduction {
-	height: 50vh;
-	padding: 10vh 5% 5vh;
+	height: 33.75rem;
+	padding: 6.75rem 5% 3.375rem;
 
 	@media (max-width: 1200px) {
 		height: auto;
@@ -95,7 +95,7 @@ section:last-child {
 }
 
 .explanation {
-	height: 50vh;
+	height: 33.75rem;
 
 	@media (max-width: 1200px) {
 		height: auto;
@@ -137,8 +137,8 @@ section:last-child {
 }
 
 .examples {
-	height: 50vh;
-	padding: 10vh 5% 5vh;
+	height: 33.75rem;
+	padding: 6.75rem 5% 3.375rem;
 
 	@media (max-width: 1200px) {
 		height: auto;
@@ -147,7 +147,7 @@ section:last-child {
 }
 
 .tutorials {
-	height: 100vh;
+	height: 67.5rem;
 	align-items: normal;
 
 	@media (max-width: 1200px) {
