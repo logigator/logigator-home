@@ -13,7 +13,7 @@
 								<div class="actions">
 									<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
 									<a class="icon icon-edit" (click)="openProjectEditDialog(project)"></a>
-									<a class="icon icon-delete"></a>
+									<a class="icon icon-delete" (click)="openProjectDeleteDialog(project)"></a>
 									<a class="icon icon-info"></a>
 									<a class="icon icon-more"></a>
 								</div>
@@ -25,7 +25,7 @@
 							<div class="actions">
 								<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
 								<a class="icon icon-edit" (click)="openProjectEditDialog(project)"></a>
-								<a class="icon icon-delete"></a>
+								<a class="icon icon-delete" (click)="openProjectDeleteDialog(project)"></a>
 								<a class="icon icon-info"></a>
 								<a class="icon icon-more"></a>
 							</div>
@@ -41,7 +41,7 @@
 					<p class="edited">Last Edited: {{project.last_edited}}</p>
 					<div class="icon icon-share" (click)="openShareDialog(project.pk_id)"></div>
 					<div class="icon icon-edit" (click)="openProjectEditDialog(project)"></div>
-					<div class="icon icon-delete"></div>
+					<div class="icon icon-delete" (click)="openProjectDeleteDialog(project)"></div>
 					<div class="icon icon-info"></div>
 					<div class="icon icon-more"></div>
 				</div>

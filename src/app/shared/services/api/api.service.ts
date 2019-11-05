@@ -100,7 +100,7 @@ export class ApiService {
 		);
 	}
 
-	public updateProject(id: number, changes: {name?: string, description?: string}) {
+	public updateProject(id: number, changes: {name?: string, description?: string}): Observable<boolean> {
 		if (!this.auth.isLoggedIn)
 			return of(false);
 
@@ -115,7 +115,7 @@ export class ApiService {
 		);
 	}
 
-	public updateComponent(id: number, changes: {name?: string, description?: string, symbol?: string}) {
+	public updateComponent(id: number, changes: {name?: string, description?: string, symbol?: string}): Observable<boolean> {
 		if (!this.auth.isLoggedIn)
 			return of(false);
 
@@ -126,6 +126,37 @@ export class ApiService {
 			}),
 			this.errorHandling.catchErrorOperatorDynamicMessage(
 				(x) => `Could not update project: (${x.status}) ${x.error.error.description}`,
+				false)
+		);
+	}
+
+	public deleteProject(id: number): Observable<boolean> {
+		if (!this.auth.isLoggedIn)
+			return of(false);
+
+		return this.http.get<HttpResponseData<any>>(environment.apiPrefix + `/project/delete/${id}`).pipe(
+			map(data => {
+				this._userProjectsSubject$.next();
+				return data.result.success;
+			}),
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Could not delete project: (${x.status}) ${x.error.error.description}`,
+				false)
+		);
+	}
+
+	// TODO: Check if component is in use
+	public deleteComponent(id: number): Observable<boolean> {
+		if (!this.auth.isLoggedIn)
+			return of(false);
+
+		return this.http.get<HttpResponseData<any>>(environment.apiPrefix + `/project/delete/${id}`).pipe(
+			map(data => {
+				this._userComponentsSubject$.next();
+				return data.result.success;
+			}),
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Could not delete component: (${x.status}) ${x.error.error.description}`,
 				false)
 		);
 	}
