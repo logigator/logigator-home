@@ -6,7 +6,7 @@ import {PopupService} from '../../../../shared/services/popup/popup.service';
 import {ShareProjectComponent} from '../dialogs/share-project/share-project.component';
 import {environment} from '../../../../../environments/environment';
 import {ProjectEditComponent} from '../dialogs/project-edit/project-edit.component';
-import {ProjectDeleteComponent} from "../dialogs/project-delete/project-delete.component";
+import {ProjectDeleteComponent} from '../dialogs/project-delete/project-delete.component';
 
 @Component({
 	selector: 'app-project-list',

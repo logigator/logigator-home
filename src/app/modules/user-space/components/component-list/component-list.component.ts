@@ -7,8 +7,7 @@ import {UserProject} from '../../../../shared/models/http-responses/user-project
 import {PopupService} from '../../../../shared/services/popup/popup.service';
 import {ComponentEditComponent} from '../dialogs/component-edit/component-edit.component';
 import {environment} from '../../../../../environments/environment';
-import {ProjectDeleteComponent} from "../dialogs/project-delete/project-delete.component";
-import {ComponentDeleteComponent} from "../dialogs/component-delete/component-delete.component";
+import {ComponentDeleteComponent} from '../dialogs/component-delete/component-delete.component';
 
 @Component({
 	selector: 'app-component-list',
