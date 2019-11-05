@@ -27,7 +27,7 @@
 		width: 600px;
 		@media (max-width: 767px){
 			width: 100%;
-			height: 67.5rem;
+			height: 100%;
 		}
 		border-radius: border('radius');
 		min-width: 15rem;
@@ -39,6 +39,7 @@
 			@media (max-width: 767px){
 				width: 100%;
 			}
+			overflow: auto;
 		}
 
 		.header {
