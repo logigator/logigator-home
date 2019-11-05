@@ -13,7 +13,7 @@ export class AppComponent {
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
-		@Inject(PLATFORM_ID) platformId: string
+		@Inject(PLATFORM_ID) platformId: string,
 		private theming: ThemingService
 	) {
 		this.initTranslation();
