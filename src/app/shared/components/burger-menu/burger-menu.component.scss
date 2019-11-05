@@ -48,9 +48,31 @@
 				margin-right: 0.5rem;
 			}
 
+			app-switch, select {
+				margin-right: 0.5rem;
+			}
+
+			select {
+				font-size: 1rem;
+				outline: none;
+				border: none;
+				@include themify() {
+					color: themed('primary-text');
+					background-color: themed('accent2');
+				}
+			}
+
+			p {
+				margin: 0;
+			}
+
 			&:hover {
 				@include themify() {
 					background-color: darken(themed('accent2'), 10);
+
+					select {
+						background-color: darken(themed('accent2'), 10);
+					}
 				}
 			}
 		}
@@ -70,6 +92,26 @@
 	&.show {
 		@media (max-width: 767px) {
 			display: block;
+		}
+	}
+}
+
+.light{
+	@include themify(){
+		@if(isTheme('light')){
+			display: block;
+		}@else {
+			display: none;
+		}
+	}
+}
+
+.dark{
+	@include themify(){
+		@if(isTheme('dark')){
+			display: block;
+		}@else {
+			display: none;
 		}
 	}
 }

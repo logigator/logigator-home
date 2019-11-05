@@ -1,23 +1,18 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
-	<app-input [class.invalid]="newCompForm.controls.name.touched && newCompForm.controls.name.invalid" label="Name" type="text" formControlName="name" id="project-edit-name"></app-input>
-	<br>
+	<app-input type="text" formControlName="name" label="Name">
+		<app-input-error error="required">Name is required</app-input-error>
+		<app-input-error error="minlength">Name is to short</app-input-error>
+		<app-input-error error="maxlength">Name is to long</app-input-error>
+		<app-input-error error="pattern"> May only contain letters, digits, underscores and dashes</app-input-error>
+	</app-input>
 
 	<label for="project-edit-description">Description</label>
-	<textarea [class.invalid]="newCompForm.controls.description.touched && newCompForm.controls.description.invalid" type="text" formControlName="description" id="project-edit-description" rows="4" cols="40"></textarea>
-	<br>
+	<textarea class="textarea" [class.invalid]="newCompForm.controls.description.touched && newCompForm.controls.description.invalid"
+			  type="text" formControlName="description" id="project-edit-description" rows="4" cols="40"></textarea>
+	<ng-container *ngIf="newCompForm.controls.description.errors as errors">
+		<p *ngIf="errors.maxlength" class="invalid">Description is too long.</p>
+	</ng-container>
 
-	<ul>
-		<ng-container *ngIf="newCompForm.controls.name.touched">
-			<ng-container *ngIf="newCompForm.controls.name.errors as errors">
-				<li *ngIf="errors.minlength">Name is too short.</li>
-				<li *ngIf="errors.maxlength">Name is too long.</li>
-				<li *ngIf="errors.pattern">Name is invalid.</li>
-			</ng-container>
-			<ng-container *ngIf="newCompForm.controls.description.errors as errors">
-				<li *ngIf="errors.maxlength">Description is too long.</li>
-			</ng-container>
-		</ng-container>
-	</ul>
 
 	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">Submit</button>
 </form>

@@ -1,6 +1,11 @@
 @import "variables";
+@import "themes";
 
 .content {
 	min-height: calc(100vh - #{$footer-height + $header-height});
 	padding-bottom: 5rem;
+	@include themify(){
+		background: themed('background');
+		color: themed('text-primary');
+	}
 }

@@ -1,5 +1,6 @@
 <div class="page">
-	<section class="introduction">
+	<app-background-image></app-background-image>
+	<section class="introduction content-section">
 		<article>
 			<h3>Was ist Logigator</h3>
 			<p>
@@ -10,30 +11,34 @@
 				befriedigen konnten.
 			</p>
 		</article>
-		<a href="https://editor.logigator.com/" target="_blank" rel="noopener"><button>ZUM EDITOR</button></a>
+		<a href="https://editor.logigator.com/" target="_blank" rel="noopener"><button class="btn-raised primary">ZUM EDITOR</button></a>
 	</section>
 	<hr>
-	<section class="explanation">
-		<iframe width="560" height="315" src="" frameborder="0"
-		        title="video-home"
-				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
+	<section class="explanation content-section">
+		<div class="iframe-container-container">
+			<div class="iframe-container">
+				<iframe width="560" height="340" src="" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen>
+				</iframe>
+			</div>
+		</div>
 		<article>
 			<h3>Eine kurze Erklärung</h3>
 			<p>
 				Wenn Sie sich jetzt Fragen was logische Gatter überhaupt sind, dann ist das ganz normal. Kurzgesagt sind
 				logische Gatter jene Bausteine mit aus denen die Recheneinheiten eines Computers aufgebaut sind. Aber
-				weil das als Erklärung nicht reicht und sie vermutlich keinen mehrseitigen Artikel lesen möchten haben
-				wir ein Video animiert in dem die Grundprinzipen unserer Diplomarbeit verständlich erklärt werden.
+				weil das als Erklärung nicht reicht haben wir ein Video animiert in dem die Grundprinzipen unserer
+				Diplomarbeit verständlich erklärt werden.
 			</p>
 		</article>
 	</section>
 	<hr>
-	<section>
+	<section class="content-section examples">
 		<app-examples></app-examples>
 	</section>
 	<hr>
-	<section>
+	<section class="content-section tutorials">
 		<app-tutorials></app-tutorials>
 	</section>
 </div>

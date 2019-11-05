@@ -1,5 +1,6 @@
 import {Component, Inject, PLATFORM_ID} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {ThemingService} from './shared/services/theming/theming.service';
 import {NavigationEnd, Router} from '@angular/router';
 import {isPlatformBrowser} from '@angular/common';
 
@@ -13,6 +14,7 @@ export class AppComponent {
 		private translate: TranslateService,
 		private router: Router,
 		@Inject(PLATFORM_ID) platformId: string
+		private theming: ThemingService
 	) {
 		this.initTranslation();
 
@@ -24,6 +26,7 @@ export class AppComponent {
 				});
 			}
 		});
+		this.theming.init();
 	}
 
 	private initTranslation() {

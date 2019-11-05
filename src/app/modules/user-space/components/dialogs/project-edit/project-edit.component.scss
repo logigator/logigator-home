@@ -1,16 +1,41 @@
+@import "themes";
+
 form {
 	display: flex;
 	flex-direction: column;
-	margin-top: 1rem;
+	justify-content: space-between;
+
+	width: 400px;
+	@media (max-width: 767px) {
+		width: 100%;
+		padding: 0;
+	}
+	padding: 2rem;
+
+	button {
+		padding: 0.7rem;
+	}
+
+	.textarea{
+		margin: 1rem 0;
+		@include themify(){
+			background-color: themed('background');
+			border: 1px solid themed('text-primary');
+			color: themed('text-primary');
+		}
+	}
+
+	&:first-child{
+		padding-top: 1rem;
+	}
 
 	.invalid {
-		outline: red 1px solid;
+		margin-top: 0;
+		font-size: 0.9rem;
+		@include themify(){
+			color: themed('error');
+			border-color: themed('error');
+		}
 	}
 
-	ul {
-		margin-top: 0;
-		padding-left: 1rem;
-		font-size: 10pt;
-		color: red;
-	}
 }

@@ -6,6 +6,7 @@ import {DOCUMENT, isPlatformBrowser} from '@angular/common';
 import {HttpResponseData} from '../../models/http-responses/http-response-data';
 import {UserInfo} from '../../models/http-responses/user-info';
 import {ErrorHandlingService} from '../error-handling/error-handling.service';
+import {Router} from '@angular/router';
 import {environment} from '../../../../environments/environment';
 import {WINDOW} from '../../injectable-window';
 
@@ -22,7 +23,8 @@ export class AuthService {
 		@Inject(DOCUMENT) private document: Document,
 		@Inject(WINDOW) private window: Window,
 		@Inject(PLATFORM_ID) private platformId: string,
-		private errorHandling: ErrorHandlingService
+		private errorHandling: ErrorHandlingService,
+		private router: Router
 	) { }
 
 	public get userInfo$(): Observable<UserInfo> {
@@ -47,8 +49,8 @@ export class AuthService {
 		return await this.http.post(environment.apiPrefix + '/auth/verify-google-credentials', oauthData).toPromise();
 	}
 
-	public async registerEmail(email: string, password: string) {
-		return this.http.post(environment.apiPrefix + '/auth/register-email', {email, password}).toPromise();
+	public async registerEmail(username: string, email: string, password: string) {
+		return this.http.post(environment.apiPrefix + '/auth/register-email', {username, email, password}).toPromise();
 	}
 
 	public async loginEmail(user: string, password: string) {
@@ -60,6 +62,7 @@ export class AuthService {
 			throw Error('not logged in');
 		}
 		await this.http.get(environment.apiPrefix + '/auth/logout').toPromise();
+		this.router.navigate(['/']);
 	}
 
 	public get isLoggedIn(): boolean {

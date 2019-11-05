@@ -3,6 +3,11 @@ import {AuthService} from '../../services/auth/auth.service';
 import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service';
 import {PopupService} from '../../services/popup/popup.service';
 import {LoginPopupComponent} from '../login-popup/login-popup.component';
+import {RegisterPopupComponent} from '../register-popup/register-popup.component';
+import {Observable} from 'rxjs';
+import {UserInfo} from '../../models/http-responses/user-info';
+import {map} from 'rxjs/operators';
+
 
 @Component({
 	selector: 'app-header',
@@ -10,6 +15,8 @@ import {LoginPopupComponent} from '../login-popup/login-popup.component';
 	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+	public settingsDropdown = false;
 
 	constructor(
 		private auth: AuthService,
@@ -25,16 +32,16 @@ export class HeaderComponent implements OnInit {
 		return this.auth.isLoggedIn;
 	}
 
+	public get userInfo(): Observable<UserInfo> {
+		return this.auth.userInfo$;
+	}
+
 	public loginEmail() {
 		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'Login', false);
 	}
 
-	public loginGoogle() {
-		this.auth.authenticateGoogle();
-	}
-
-	public loginTwitter() {
-		this.auth.authenticateTwitter();
+	public registerEmail() {
+		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'Register', false);
 	}
 
 	public logout() {

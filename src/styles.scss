@@ -1,6 +1,5 @@
 @import "variables";
 @import "themes";
-
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
@@ -29,13 +28,14 @@ html, body {
 	&:hover {
 		cursor: pointer;
 	}
+
 	&:disabled {
 		cursor: default;
 	}
 }
 
 @function secondaryButtonBgColor() {
-	@if(isTheme('dark')) {
+	@if (isTheme('dark')) {
 		@return lighten(themed('accent2'), 35%);
 	} @else {
 		@return darken(themed('accent2'), 35%)
@@ -55,9 +55,11 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(themed('primary'), 0.1);
 			}
+
 			&:active {
 				background-color: rgba(themed('primary'), 0.2);
 			}
+
 			&:disabled {
 				color: rgba(themed('primary'), 0.7) !important;
 				border: 1px solid rgba(themed('primary'), 0.7) !important;
@@ -73,9 +75,11 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(secondaryButtonBgColor(), 0.1);
 			}
+
 			&:active {
 				background-color: rgba(secondaryButtonBgColor(), 0.2);
 			}
+
 			&:disabled {
 				color: rgba(secondaryButtonBgColor(), 0.7) !important;
 				border: 1px solid rgba(secondaryButtonBgColor(), 0.7) !important;
@@ -91,9 +95,11 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(themed('error'), 0.1);
 			}
+
 			&:active {
 				background-color: rgba(themed('error'), 0.2);
 			}
+
 			&:disabled {
 				color: rgba(themed('error'), 0.7) !important;
 				border: 1px solid rgba(themed('error'), 0.7) !important;
@@ -114,9 +120,11 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(themed('primary'), 0.7);
 			}
+
 			&:active {
 				background-color: themed('primary');
 			}
+
 			&:disabled {
 				background-color: rgba(themed('primary'), 0.7) !important;
 			}
@@ -130,9 +138,11 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(secondaryButtonBgColor(), 0.7);
 			}
+
 			&:active {
 				background-color: secondaryButtonBgColor();
 			}
+
 			&:disabled {
 				background-color: rgba(secondaryButtonBgColor(), 0.7) !important;
 			}
@@ -146,9 +156,11 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(themed('error'), 0.7);
 			}
+
 			&:active {
 				background-color: themed('error');
 			}
+
 			&:disabled {
 				background-color: rgba(themed('error'), 0.7) !important;
 			}
@@ -166,6 +178,7 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(themed('primary'), 0.1);
 			}
+
 			&:active {
 				background-color: rgba(themed('primary'), 0.2)
 			}
@@ -178,6 +191,7 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(secondaryButtonBgColor(), 0.1);
 			}
+
 			&:active {
 				background-color: rgba(secondaryButtonBgColor(), 0.2)
 			}
@@ -190,6 +204,7 @@ html, body {
 				transition: background-color 100ms;
 				background-color: rgba(themed('error'), 0.1);
 			}
+
 			&:active {
 				background-color: rgba(themed('error'), 0.2)
 			}
@@ -200,3 +215,4 @@ html, body {
 .small.btn {
 	padding: 0.2rem 0.6rem;
 }
+

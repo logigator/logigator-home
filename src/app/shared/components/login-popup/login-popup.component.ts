@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../services/api/api.service';
 import {PopupContentComp} from '../popup/popup-content-comp';
 import {AuthService} from '../../services/auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
 	selector: 'app-login-popup',
@@ -11,28 +12,24 @@ import {AuthService} from '../../services/auth/auth.service';
 })
 export class LoginPopupComponent extends PopupContentComp implements OnInit {
 
-	public newCompForm: FormGroup;
+	public loginForm: FormGroup;
 	public errorMessage = '';
 
-	constructor(private formBuilder: FormBuilder, private auth: AuthService) {
+	constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router) {
 		super();
 	}
 
 	ngOnInit() {
-		this.newCompForm = this.formBuilder.group({
-			user: ['', [
-				Validators.required
-			]],
-			password: ['', [
-				Validators.required
-			]]
+		this.loginForm = this.formBuilder.group({
+			user: ['', [Validators.required]],
+			password: ['', [Validators.required]]
 		});
 	}
 
 	public async submit() {
-		if (this.newCompForm.invalid)
+		if (this.loginForm.invalid)
 			return;
-		this.auth.loginEmail(this.newCompForm.controls.user.value, this.newCompForm.controls.password.value).then(() => {
+		this.auth.loginEmail(this.loginForm.controls.user.value, this.loginForm.controls.password.value).then(() => {
 			this.requestClose.emit();
 		}).catch(e => {
 			switch (e.status) {
@@ -43,7 +40,20 @@ export class LoginPopupComponent extends PopupContentComp implements OnInit {
 					this.errorMessage = 'We\'re sorry, an unknown error occurred while trying to log you in. :(';
 					break;
 			}
+			this.router.navigate(['my']);
 		});
+	}
+
+	public async loginGoogle() {
+		await this.auth.authenticateGoogle();
+		this.requestClose.emit();
+		await this.router.navigate(['my']);
+	}
+
+	public async loginTwitter() {
+		await this.auth.authenticateTwitter();
+		this.requestClose.emit();
+		await this.router.navigate(['my']);
 	}
 
 }

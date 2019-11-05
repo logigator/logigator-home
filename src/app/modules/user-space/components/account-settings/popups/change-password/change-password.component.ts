@@ -19,16 +19,14 @@ export class ChangePasswordComponent extends PopupContentComp implements OnInit 
 	ngOnInit() {
 		this.newCompForm = this.formBuilder.group({
 			password: ['', [
-				Validators.required,
-				Validators.minLength(8),
-				Validators.pattern('^(?=.*[A-Za-z])(?=.*[0-9]).*$')
+				Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[A-Za-z])(?=.*[0-9]).*$')
 			]],
-			passwordRepeat: ['', [
+			confirm_password: ['', [
 				Validators.required
 			]]
 		}, {
 			validators: ((x: FormGroup) => {
-				return (x.controls.password.value !== x.controls.passwordRepeat.value) ? {passwordMatch: {value: x.controls.password.value}} : null;
+				return (x.controls.password.value !== x.controls.confirm_password.value) ? {passwordMatch: {value: x.controls.password.value}} : null;
 			})
 		});
 	}
