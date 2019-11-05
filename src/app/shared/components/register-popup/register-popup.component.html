@@ -1,0 +1,44 @@
+<form [formGroup]="registerForm" (ngSubmit)="submit()" autocomplete="off">
+	<h3> Register Email </h3>
+
+	<app-input type="text" formControlName="email" label="Email">
+		<app-input-error error="required">Email is required</app-input-error>
+		<app-input-error error="email">Email is invalid</app-input-error>
+	</app-input>
+	<app-input type="password" formControlName="password" label="Password">
+		<app-input-error error="required">Password is required</app-input-error>
+		<app-input-error error="minlength">Password is to short</app-input-error>
+		<app-input-error error="pattern">Password is not complex enough</app-input-error>
+	</app-input>
+	<app-input type="password" formControlName="confirm_password" label="Repeat password">
+		<app-input-error *ngIf="registerForm.errors?.passwordMatch">Passwords do not match</app-input-error>
+	</app-input>
+	<app-input type="text" formControlName="username" label="Username">
+		<app-input-error error="required">Username is required</app-input-error>
+		<app-input-error error="minlength">Username is to short</app-input-error>
+		<app-input-error error="maxlength">Username is to long</app-input-error>
+	</app-input>
+
+	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+	<button type="submit" class="btn-raised primary" [disabled]="registerForm.invalid">REGISTER</button>
+
+	<div class="login-divider">
+		<hr>
+		<div>
+			or
+		</div>
+		<hr>
+	</div>
+
+	<div class="social-media-login">
+		<button class="btn-raised primary social-button google" (click)="loginGoogle()">
+			GOOGLE
+			<img class="btn-raised secondary"  src="assets/icons/dark/google.svg" alt="google login icon">
+		</button>
+		<button class="btn-raised primary social-button twitter" (click)="loginTwitter()">
+			TWITTER
+			<img class="btn-raised secondary" src="assets/icons/dark/twitter.svg" alt="twitter login icon">
+		</button>
+	</div>
+</form>

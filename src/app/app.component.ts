@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, Inject, PLATFORM_ID} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {ThemingService} from './shared/services/theming/theming.service';
 import {NavigationEnd, Router} from '@angular/router';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
 	selector: 'app-root',
@@ -10,10 +12,13 @@ import {NavigationEnd, Router} from '@angular/router';
 export class AppComponent {
 	constructor(
 		private translate: TranslateService,
-		private router: Router
+		private router: Router,
+		@Inject(PLATFORM_ID) platformId: string,
+		private theming: ThemingService
 	) {
 		this.initTranslation();
 
+		if (!isPlatformBrowser(platformId)) return;
 		this.router.events.subscribe(e => {
 			if (e instanceof NavigationEnd) {
 				gtag('config', 'UA-151071040-2', {
@@ -21,6 +26,7 @@ export class AppComponent {
 				});
 			}
 		});
+		this.theming.init();
 	}
 
 	private initTranslation() {

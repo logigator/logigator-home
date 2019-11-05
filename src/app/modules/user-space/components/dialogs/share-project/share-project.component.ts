@@ -1,8 +1,9 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
 import {PopupContentComp} from '../../../../../shared/components/popup/popup-content-comp';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SharingService} from '../../../../../shared/services/sharing/sharing.service';
 import {environment} from '../../../../../../environments/environment';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
 	selector: 'app-share-project',
@@ -30,7 +31,8 @@ export class ShareProjectComponent extends PopupContentComp<number> implements O
 	constructor(
 		private fromBuilder: FormBuilder,
 		private sharingSer: SharingService,
-		private cdr: ChangeDetectorRef
+		private cdr: ChangeDetectorRef,
+		@Inject(DOCUMENT) private document: Document
 	) {
 		super();
 	}
@@ -69,11 +71,11 @@ export class ShareProjectComponent extends PopupContentComp<number> implements O
 	}
 
 	public copyLink() {
-		const textArea = document.createElement('textarea');
+		const textArea = this.document.createElement('textarea');
 		textArea.value = this.getLinkFromShareAddress(this.address);
-		document.body.appendChild(textArea);
+		this.document.body.appendChild(textArea);
 		textArea.select();
-		document.execCommand('copy');
+		this.document.execCommand('copy');
 		textArea.remove();
 	}
 

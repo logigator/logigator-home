@@ -1,0 +1,64 @@
+@import "themes";
+@import "variables";
+
+.dropdown {
+	position: absolute;
+	z-index: 200;
+	width: max-content;
+	min-width: 20rem;
+	display: flex;
+	flex-direction: column;
+	right: 0;
+	top: $header-height;
+
+	&.hidden {
+		display: none;
+	}
+
+	@include themify() {
+		background-color: themed('background');
+		color: themed('primary-text');
+		border: border('width') solid themed(secondary);
+		border-radius: border('radius');
+
+		.switch {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0.5rem;
+		}
+
+		.select {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0.5rem;
+
+			select {
+				width: 40%;
+				font-size: 0.9rem;
+				outline: none;
+				border: none;
+				border-bottom: 1px solid themed('primary-text');
+				color: themed('primary-text');
+				background-color: themed('background');
+			}
+		}
+
+		.link {
+			padding: 0.5rem;
+		}
+
+		hr {
+			width: 100%;
+			margin: auto;
+			border-width: 0;
+			border-bottom-width: 1px;
+			border-style: solid;
+
+			border-color: themed('secondary');
+		}
+	}
+}

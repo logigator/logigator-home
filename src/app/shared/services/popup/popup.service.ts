@@ -1,7 +1,7 @@
 import {
 	ApplicationRef,
 	ComponentFactoryResolver,
-	EmbeddedViewRef,
+	EmbeddedViewRef, Inject,
 	Injectable,
 	Injector,
 	TemplateRef,
@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import {PopupContentComp} from '../../components/popup/popup-content-comp';
 import {PopupComponent} from '../../components/popup/popup.component';
+import {DOCUMENT} from '@angular/common';
 
 @Injectable({
 	providedIn: 'root'
@@ -18,7 +19,8 @@ export class PopupService {
 	constructor(
 		private componentFactoryResolver: ComponentFactoryResolver,
 		private appRef: ApplicationRef,
-		private injector: Injector
+		private injector: Injector,
+		@Inject(DOCUMENT) private document: Document
 	) { }
 
 	public showPopup(
@@ -37,7 +39,7 @@ export class PopupService {
 			popupRef.instance.contentComp = componentFactoryResolver.resolveComponentFactory(popupContentComp);
 			this.appRef.attachView(popupRef.hostView);
 			const domElem = (popupRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
-			document.body.appendChild(domElem);
+			this.document.body.appendChild(domElem);
 
 			const subscription = popupRef.instance.requestClose.subscribe(output => {
 				this.appRef.detachView(popupRef.hostView);

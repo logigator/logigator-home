@@ -1,12 +1,14 @@
-import {Inject, Injectable} from '@angular/core';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable, of, Subject, throwError} from 'rxjs';
 import {map, share, shareReplay, switchMap, switchMapTo} from 'rxjs/operators';
-import {DOCUMENT} from '@angular/common';
+import {DOCUMENT, isPlatformBrowser} from '@angular/common';
 import {HttpResponseData} from '../../models/http-responses/http-response-data';
 import {UserInfo} from '../../models/http-responses/user-info';
 import {ErrorHandlingService} from '../error-handling/error-handling.service';
+import {Router} from '@angular/router';
 import {environment} from '../../../../environments/environment';
+import {WINDOW} from '../../injectable-window';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +18,14 @@ export class AuthService {
 	private _userInfo$: Observable<UserInfo>;
 	private _userSubject$ = new BehaviorSubject<void>(undefined);
 
-	constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document, private errorHandling: ErrorHandlingService) { }
+	constructor(
+		private http: HttpClient,
+		@Inject(DOCUMENT) private document: Document,
+		@Inject(WINDOW) private window: Window,
+		@Inject(PLATFORM_ID) private platformId: string,
+		private errorHandling: ErrorHandlingService,
+		private router: Router
+	) { }
 
 	public get userInfo$(): Observable<UserInfo> {
 		if (!this._userInfo$)
@@ -25,23 +34,23 @@ export class AuthService {
 	}
 
 	public async authenticateTwitter(): Promise<any> {
-		const authUtlResponse: any = await this.http.get(environment.apiPrefix + '/auth/twitter-auth-url').toPromise();
-		const popup = this.openPopUp();
-		popup.location.href = authUtlResponse.result.url;
+		if (!this.window) return;
+		const authUrlResponse: any = await this.http.get(environment.apiPrefix + '/auth/twitter-auth-url').toPromise();
+		const popup = this.openPopUp(authUrlResponse.result.url);
 		const oauthData = await this.pollingAuthPopup(popup, 'twitter');
 		return await this.http.post(environment.apiPrefix + '/auth/verify-twitter-credentials', oauthData).toPromise();
 	}
 
 	public async authenticateGoogle(): Promise<any> {
+		if (!this.window) return;
 		const authUrlResponse: any = await this.http.get(environment.apiPrefix + '/auth/google-auth-url').toPromise();
-		const popup = this.openPopUp();
-		popup.location.href = authUrlResponse.result.url;
+		const popup = this.openPopUp(authUrlResponse.result.url);
 		const oauthData = await this.pollingAuthPopup(popup, 'google');
 		return await this.http.post(environment.apiPrefix + '/auth/verify-google-credentials', oauthData).toPromise();
 	}
 
-	public async registerEmail(email: string, password: string) {
-		return this.http.post(environment.apiPrefix + '/auth/register-email', {email, password}).toPromise();
+	public async registerEmail(username: string, email: string, password: string) {
+		return this.http.post(environment.apiPrefix + '/auth/register-email', {username, email, password}).toPromise();
 	}
 
 	public async loginEmail(user: string, password: string) {
@@ -53,9 +62,11 @@ export class AuthService {
 			throw Error('not logged in');
 		}
 		await this.http.get(environment.apiPrefix + '/auth/logout').toPromise();
+		this.router.navigate(['/']);
 	}
 
 	public get isLoggedIn(): boolean {
+		if (!isPlatformBrowser(this.platformId)) return false;
 		const isLoggedIn = this.document.cookie.match('(^|[^;]+)\\s*' + 'isLoggedIn' + '\\s*=\\s*([^;]+)');
 		if (!isLoggedIn) {
 			return false;
@@ -63,24 +74,8 @@ export class AuthService {
 		return isLoggedIn[0] !== '' && isLoggedIn[0].endsWith('true');
 	}
 
-	private openPopUp(): Window {
-		const w = 450;
-		const h = 620;
-		const left = screen.width / 2 - w / 2;
-		const top = screen.height / 2 - h / 2;
-
-		return window.open(
-			'',
-			'',
-			'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' +
-			w +
-			', height=' +
-			h +
-			', top=' +
-			top +
-			', left=' +
-			left
-		);
+	private openPopUp(url: string): Window {
+		return this.window.open(url, '_blank');
 	}
 
 	private pollingAuthPopup(popup: Window, type: 'twitter' | 'google'):

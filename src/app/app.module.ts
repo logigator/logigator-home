@@ -10,13 +10,14 @@ import {MissingTranslationHandler, TranslateLoader, TranslateModule} from '@ngx-
 import {createTranslateLoader} from './shared/models/translation/translation-loader-factory';
 import {AppMissingTranslationHandler} from './shared/models/translation/missing-translation-handler';
 import {CredentialsInterceptor} from './shared/interceptors/credentials';
+import {WINDOW, windowFactory} from './shared/injectable-window';
 
 @NgModule({
 	declarations: [
 		AppComponent
 	],
 	imports: [
-		BrowserModule,
+		BrowserModule.withServerTransition({ appId: 'serverApp' }),
 		SharedModule.forRoot(),
 		HomeModule,
 		AppRoutingModule,
@@ -38,6 +39,10 @@ import {CredentialsInterceptor} from './shared/interceptors/credentials';
 			provide: HTTP_INTERCEPTORS,
 			useClass: CredentialsInterceptor,
 			multi: true
+		},
+		{
+			provide: WINDOW,
+			useFactory: windowFactory
 		}
 	],
 	bootstrap: [AppComponent]

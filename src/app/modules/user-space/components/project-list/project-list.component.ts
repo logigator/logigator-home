@@ -6,6 +6,7 @@ import {PopupService} from '../../../../shared/services/popup/popup.service';
 import {ShareProjectComponent} from '../dialogs/share-project/share-project.component';
 import {environment} from '../../../../../environments/environment';
 import {ProjectEditComponent} from '../dialogs/project-edit/project-edit.component';
+import {ProjectDeleteComponent} from '../dialogs/project-delete/project-delete.component';
 
 @Component({
 	selector: 'app-project-list',
@@ -31,5 +32,9 @@ export class ProjectListComponent implements OnInit {
 
 	public openProjectEditDialog(project: UserProject) {
 		this.popup.showPopup(ProjectEditComponent, this.componentFactoryResolver, 'Edit Project', false, project);
+	}
+
+	public openProjectDeleteDialog(project: UserProject) {
+		this.popup.showPopup(ProjectDeleteComponent, this.componentFactoryResolver, 'Confirm Delete', false, project);
 	}
 }

@@ -1,3 +1,5 @@
+@import "themes";
+
 .item-list {
 	display: flex;
 	flex-direction: column;
@@ -9,6 +11,9 @@
 	}
 
 	h1 {
+		font-size: 2rem;
+		font-weight: normal;
+
 		@media (max-width: 767px) {
 			text-align: center;
 			line-height: 4rem;
@@ -28,22 +33,18 @@
 
 		@include themify() {
 			background-color: themed('background');
-			outline: 1px solid themed('text-primary');
+			border-bottom: 1px solid themed('text-primary');
 		}
 
 		p {
-			margin: 0.5rem;
-		}
-
-		&.odd {
-			@include themify() {
-				background-color: themed('accent2');
-			}
+			margin: 1rem;
 		}
 
 		.title {
 			flex-grow: 1;
 			margin-left: 0.25rem;
+			text-decoration: none;
+			font-size: 1.2rem;
 		}
 
 		.icon {
@@ -82,10 +83,6 @@
 				margin-top: 0;
 			}
 
-			.title {
-				font-weight: bold;
-			}
-
 			.actions {
 				display: flex;
 
@@ -109,6 +106,11 @@
 			height: 10rem;
 			padding: 0.5rem;
 			margin: 0.5rem;
+
+			h3 {
+				font-size: 1.2rem;
+				font-weight: normal;
+			}
 
 			@include themify() {
 				background-color: themed('background');
@@ -140,7 +142,15 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background-color: rgba(255, 255, 255, 0.75);
+
+				@include themify() {
+					@if (isTheme('dark')) {
+						background-color: lighten(themed('background'), 10);
+					} @else {
+						background-color: darken(themed('background'), 10);
+					}
+					border: 1px solid themed('text-primary');
+				}
 
 				.icon-play {
 					position: absolute;
@@ -198,59 +208,73 @@
 	}
 
 	.icon-add-new {
-		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/plus.svg");
-		} @else {
-			background-image: url("/assets/icons/light/plus.svg");
+		@include themify {
+			@if (isTheme('dark')) {
+				background-image: url("/assets/icons/dark/plus.svg");
+			} @else {
+				background-image: url("/assets/icons/light/plus.svg");
+			}
 		}
 	}
 
 	.icon-play {
-		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/control-play.svg");
-		} @else {
-			background-image: url("/assets/icons/light/control-play.svg");
+		@include themify {
+			@if (isTheme('dark')) {
+				background-image: url("/assets/icons/dark/control-play.svg");
+			} @else {
+				background-image: url("/assets/icons/light/control-play.svg");
+			}
 		}
 	}
+}
 
-	.icon-share {
+.icon-share {
+	@include themify {
 		@if (isTheme('dark')) {
 			background-image: url("/assets/icons/dark/share.svg");
 		} @else {
 			background-image: url("/assets/icons/light/share.svg");
 		}
 	}
+}
 
-	.icon-edit {
+.icon-edit {
+	@include themify {
 		@if (isTheme('dark')) {
 			background-image: url("/assets/icons/dark/pencil-alt.svg");
 		} @else {
 			background-image: url("/assets/icons/light/pencil-alt.svg");
 		}
 	}
+}
 
-	.icon-delete {
+.icon-delete {
+	@include themify {
 		@if (isTheme('dark')) {
 			background-image: url("/assets/icons/dark/trash.svg");
 		} @else {
 			background-image: url("/assets/icons/light/trash.svg");
 		}
 	}
+}
 
-	.icon-info {
+.icon-info {
+	@include themify {
 		@if (isTheme('dark')) {
 			background-image: url("/assets/icons/dark/info.svg");
 		} @else {
 			background-image: url("/assets/icons/light/info.svg");
 		}
 	}
+}
 
-	.icon-more {
+.icon-more {
+	@include themify {
 		@if (isTheme('dark')) {
 			background-image: url("/assets/icons/dark/more.svg");
 		} @else {
 			background-image: url("/assets/icons/light/more.svg");
 		}
 	}
-
 }
+
