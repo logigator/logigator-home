@@ -18,6 +18,8 @@ import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../shared/shared.module';
 import {ProjectEditComponent} from './components/dialogs/project-edit/project-edit.component';
 import {ComponentEditComponent} from './components/dialogs/component-edit/component-edit.component';
+import {ProjectDeleteComponent} from './components/dialogs/project-delete/project-delete.component';
+import {ComponentDeleteComponent} from './components/dialogs/component-delete/component-delete.component';
 
 @NgModule({
 	declarations: [
@@ -33,7 +35,9 @@ import {ComponentEditComponent} from './components/dialogs/component-edit/compon
 		DrawerComponent,
 		ShareProjectComponent,
 		ProjectEditComponent,
-		ComponentEditComponent
+		ComponentEditComponent,
+		ProjectDeleteComponent,
+		ComponentDeleteComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent,
@@ -42,7 +46,9 @@ import {ComponentEditComponent} from './components/dialogs/component-edit/compon
 		ChangeEmailComponent,
 		ShareProjectComponent,
 		ProjectEditComponent,
-		ComponentEditComponent
+		ComponentEditComponent,
+		ProjectDeleteComponent,
+		ComponentDeleteComponent
 	],
 	imports: [
 		UserSpaceRoutingModule,
