@@ -10,7 +10,7 @@
 		"LOGIN": "Login",
 		"LOGIN_GOOGLE": "Login with Google",
 		"LOGIN_TWITTER": "Login with Twitter",
-		"REGISTER": "Register",
+		"REGISTER": "Sign up",
 		"LOGOUT": "Logout",
 		"PROJECTS": "Projects",
 		"COMPONENTS": "Components",
@@ -85,8 +85,8 @@
 			"OR": "or"
 		},
 		"REGISTER": {
-			"TITLE": "Register",
-			"HEADLINE": "Register here",
+			"TITLE": "Sign up",
+			"HEADLINE": "Sign up here",
 			"EMAIL": "Email",
 			"EMAIL_ERR_REQUIRED": "Email is required.",
 			"EMAIL_ERR_INVALID": "Please enter a valid email address.",
@@ -100,7 +100,7 @@
 			"PASSWORD_ERR_COMPLEXITY": "Password mus contain letters and digits.",
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwords do not match",
-			"REGISTER_BUTTON": "REGISTER",
+			"REGISTER_BUTTON": "SIGN UP",
 			"OR": "or"
 		},
 		"SHARE": {
