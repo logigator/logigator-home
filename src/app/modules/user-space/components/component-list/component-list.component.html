@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="item-list">
-		<h1>My Components</h1>
+		<h1>{{'USERSPACE.COMPONENTS.TITLE' | translate}}</h1>
 		<ng-container *ngIf="userComponents$ | async as projects">
 			<ng-container *ngIf="projects.length > 0; else noProjects">
 				<div class="tiles">
@@ -21,7 +21,7 @@
 						</div>
 						<div class="details">
 							<a class="title" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{project.name}}</a>
-							<p class="edited">Last Edited: {{project.last_edited}}</p>
+							<p class="edited">{{'USERSPACE.COMPONENTS.LAST_EDITED' | translate}} {{project.last_edited}}</p>
 							<div class="actions">
 								<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
 								<a class="icon icon-edit" (click)="openProjectEditDialog(project)"></a>
@@ -38,7 +38,7 @@
 				</div>
 				<div class="item" *ngFor="let project of projects; odd as isOdd" [class.odd]="isOdd">
 					<a class="title" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{project.name}}</a>
-					<p class="edited">Last Edited: {{project.last_edited}}</p>
+					<p class="edited">{{'USERSPACE.PROJECTS.LAST_EDITED' | translate}} {{project.last_edited}}</p>
 					<div class="icon icon-share" (click)="openShareDialog(project.pk_id)"></div>
 					<div class="icon icon-edit" (click)="openProjectEditDialog(project)"></div>
 					<div class="icon icon-delete" (click)="openProjectDeleteDialog(project)"></div>
@@ -47,7 +47,7 @@
 				</div>
 			</ng-container>
 			<ng-template #noProjects>
-				<p>You haven't defined any projects yet.</p>
+				<p>	{{'USERSPACE.COMPONENTS.ERROR' | translate}}</p>
 			</ng-template>
 		</ng-container>
 	</div>
