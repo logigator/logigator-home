@@ -68,6 +68,6 @@ export class BurgerMenuComponent implements OnInit {
 	}
 
 	public registerEmail() {
-		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'POPUP.REGISTER.TITlE', false);
+		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'POPUP.REGISTER.TITLE', false);
 	}
 }
