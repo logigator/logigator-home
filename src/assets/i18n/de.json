@@ -1,159 +1,152 @@
 {
 	"LANGUAGE": {
-		"DE": "German",
-		"EN": "English"
+		"DE": "Deutsch",
+		"EN": "Englisch"
 	},
-	"DROPDOWN": {
-		"FILE": {
-			"TITLE": "File",
-			"NEW_PROJECT": "New Project",
-			"NEW_COMPONENT": "New Component",
-			"OPEN": "Open",
-			"SAVE": "Save",
-			"EXPORT": "Export to file",
-			"SCREENSHOT": "Screenshot",
-			"SHARE": "Teilen"
+	"OPTIONS": {
+		"DARK_MODE": "Dunkles Design",
+		"LANGUAGE": "Sprache",
+		"USERSPACE": "Benutzerraum",
+		"LOGIN": "Anmelden",
+		"LOGIN_GOOGLE": "Mit Google anmelden",
+		"LOGIN_TWITTER": "Mit Twitter anmelden",
+		"REGISTER": "Registrieren",
+		"LOGOUT": "Abmelden"
+	},
+	"FOOTER": {
+		"DATA_POLICY": "Datenschutzerklärung",
+		"IMPRINT": "Impressum",
+		"PROJECT_SITE": "Projektwebseite"
+	},
+	"HOME": {
+		"INTRO": {
+			"TITLE": "Was ist Logigator",
+			"DESCRIPTION": "Logigator ist ein Online-Editor für den Bau und die Simulation von Logikschaltungen. Die Idee entstand nachdem die auf dem Markt verfügbaren Produkte, unseren Wunsch nach einem intuitiven, skalierbaren und performanten Tool, nicht oder nur teilweise befriedigen konnten. Umgesetzt wurde das Projekt im Zuge einer Diplomarbeit der HTL 3 Rennweg. ",
+			"BUTTON": "ZUM EDITOR"
 		},
-		"EDIT": {
-			"TITLE": "Edit",
-			"UNDO": "Undo",
-			"REDO": "Redo",
-			"COPY": "Copy",
-			"PASTE": "Paste",
-			"CUT": "Cut",
-			"DELETE": "Delete"
+		"EXPLANATION": {
+			"TITLE": "Eine kurze Erklärung",
+			"DESCRIPTION": "Wenn Sie sich jetzt Fragen, was logische Gatter überhaupt sind, dann ist das ganz normal. Kurzgesagt sind logische Gatter jene Bausteine, aus denen die Recheneinheiten eines Computers aufgebaut sind. Aber weil das als Erklärung nicht reicht, haben wir ein Video animiert in dem die Grundprinzipien unserer Diplomarbeit verständlich erklärt werden."
 		},
-		"VIEW": {
-			"TITLE": "View",
-			"ZOOM_IN": "Zoom in",
-			"ZOOM_OUT": "Zoom out",
-			"100": "100%",
-			"FULLSCREEN": "Fullscreen"
+		"EXAMPLES": {
+			"TITLE": "Ein paar Beispielschaltungen zum ausprobieren..."
 		},
-		"HELP": {
-			"TITLE": "Help"
-		},
-		"SETTINGS": {
-			"DARK_MODE": "Dark Mode",
-			"SHOW_GRID": "Show Grid",
-			"LANGUAGE": "Language",
-			"SHORTCUTS": "Customize Shortcuts",
-			"ACCOUNT": "Account Settings"
+		"TUTORIALS": {
+			"LAYOUT": {
+				"TITLE": "Editoroberfläche",
+				"DESCRIPTION": "Dieses Tutorial zeigt die Möglichkeiten unserer Editoroberfläche auf und bietet einen Überblick über sämtliche verfügbare Funktionen."
+			},
+			"EDIT_MODE": {
+				"TITLE": "Editiermodus",
+				"DESCRIPTION": "Lerne die Bedienelemente des Editors kennen. In diesem Tutorial werden sämtliche Prinzipien vom Platzieren einer Komponente, bis zum Definieren benutzerdefinierter Komponenten mit frei gewählten Eingängen erklärt."
+			},
+			"SIMULATION_MODE": {
+				"TITLE": "Simulationsmodus",
+				"DESCRIPTION": "Der Simulationsmodus bietet einiges an Funktionen, und selbst falls man einmal die Übersicht verliert, hilft dieses Tutorial ganz schnell wieder den richtigen Weg zu finden."
+			}
 		}
 	},
-	"TOOLBAR": {
-		"START_SIM": "Start Simulation",
-		"EXIT_SIM": "Exit Simulation"
-	},
-	"TOP_BAR": {
-		"LOGIN": "Login",
-		"REGISTER": "Register"
-	},
-	"CONST_BOX": {
-		"SEARCH": "Search",
-		"CATEGORIES": {
-			"BASIC": "Basic Components",
-			"IO": "IO Components",
-			"PLUG": "Plug Components",
-			"USER": "User Defined"
+	"USERSPACE": {
+		"HEADER": {
+			"PROJECTS": "Projekte",
+			"COMPONENTS": "Komponenten",
+			"ACCOUNT_SETTINGS": "Account-Einstellungen"
+		},
+		"PROJECTS": {
+			"TITLE": "Meine Projekte",
+			"LAST_EDITED": "Zuletzt bearbeitet: ",
+			"ERROR": "Noch keine Projekte definiert."
+		},
+		"COMPONENTS": {
+			"TITLE": "Meine Komponenten",
+			"LAST_EDITED": "Zuletzt bearbeitet: ",
+			"ERROR": "Noch keine Komponenten definiert."
+		},
+		"ACCOUNT_SETTINGS": {
+			"USERNAME": "Benutzername",
+			"EMAIL": "E-Mail",
+			"PASSWORD": "Password",
+			"AVATAR": "Profilbild",
+			"CHANGE": "ÄNDERN"
 		}
 	},
 	"POPUP": {
-		"NEW_COMP": {
-			"TITLE": "New Component",
-			"NAME": "Name",
-			"SYMBOL": "Symbol",
-			"CREATE": "Create"
+		"LOGIN": {
+			"TITLE": "Anmelden",
+			"HEADLINE": "Melde dich hier an",
+			"USERNAME": "Benutzername / E-Mail",
+			"USERNAME_ERR_REQUIRED": "Benutzername / E-Mail muss angegeben werden",
+			"PASSWORD": "Passwort",
+			"PASSWORD_ERR_REQUIRED": "Passwort muss angegeben werden",
+			"LOGIN_BUTTON": "ANMELDEN",
+			"OR": "ODER"
 		},
-		"SAVE": {
-			"TITLE": "Save Project",
-			"NAME": "Name",
-			"DOWNLOAD": "Download Project File",
-			"CLOUD": "Save in Cloud"
+		"REGISTER": {
+			"TITLE": "Registrieren",
+			"HEADLINE": "Registriere dich hier",
+			"EMAIL": "E-Mail",
+			"EMAIL_ERR_REQUIRED": "E-Mail muss angegeben werden",
+			"EMAIL_ERR_INVALID": "Bitte geben Sie eine valide E-Mail an",
+			"USERNAME": "Benutzername",
+			"USERNAME_ERR_REQUIRED": "Benutzername muss angegeben werden",
+			"USERNAME_ERR_MIN": "Benutzername muss mindestens zwei Zeichen enthalten",
+			"USERNAME_ERR_MAX": "Benutzername darf maximal 20 Zeichen enthalten",
+			"PASSWORD": "Passwort",
+			"PASSWORD_ERR_REQUIRED": "Passwort muss angegeben werden",
+			"PASSWORD_ERR_MIN": "Passwort muss mindestens acht Zeichen enthalten",
+			"PASSWORD_ERR_COMPLEXITY": "Passwort muss Ziffern und Buchstaben enthalten",
+			"PASSWORD_REPEAT": "Repeat password",
+			"PASSWORD_REPEAT_ERR": "Passwörter stimmen nicht überein",
+			"REGISTER_BUTTON": "REGISTRIEREN",
+			"OR": "ODER"
 		},
-		"OPEN": {
-			"TITLE": "Open Project"
+		"SHARE": {
+			"TITLE": "Projekt teilen {{project}}",
+			"SHARE_ENABLE": "Dieses Projekt mit anderen teilen",
+			"PUBLIC": "Öffentlich teilen",
+			"INFO_TEXT": "Bitte geben Sie die E-Mail der Personen an mit denen Sie teilen möchten.",
+			"EMAIL_USER": "E-Mail / Benutzername",
+			"EMAIL_USER_ALREADY_ADDED": "E-Mail Adresse oder Benutzername bereits hinzugefügt",
+			"ADD_EMAIL": "NEU",
+			"REMOVE_EMAIL": "ENTFERNEN",
+			"INVITATIONS": "E-Mail-Einladungen an Nutzer senden",
+			"NOT_FOUND_ERROR": "Einige Benutzernamen oder E-Mail Adressen konnten nicht gefunden werden. Die Teilrichtlinie wurde trotzdem geändert oder erstellt.",
+			"SUCCESS": "Teilrichtlinie erfolgreich geändert oder erstellt.",
+			"LINK": "Link zum teilen",
+			"COPY": "KOPIEREN",
+			"SAVE": "EINSTELLUNGEN SPEICHERN",
+			"CANCEL": "ABBRECHEN"
 		},
-		"RELOAD": {
-			"TITLE": "Reload Required",
-			"QUESTION": "For this change to take effect, the editor has to be reloaded.<br>Do you want to reload this page now?",
-			"YES": "Yes",
-			"POSTPONE": "No, I'll reload later",
-			"CANCEL": "Cancel"
+		"CHANGE_EMAIL": {
+			"TITLE": "E-Mail ändern",
+			"EMAIL": "E-Mail",
+			"EMAIL_ERR_REQUIRED": "E-Mail muss angegeben werden",
+			"EMAIL_ERR_INVALID": "Bitte geben Sie eine valide E-Mail an",
+			"SAVE_BUTTON": "SPEICHERN"
 		},
-		"SHORTCUTS": {
-			"TITLE": "Customize Shortcuts",
-			"SAVE": "Save",
-			"DESCRIPTION": {
-				"copy": "Copy",
-				"paste": "Paste",
-				"cut": "Cut",
-				"delete": "Delete selected items",
-				"undo": "Undo",
-				"redo": "Redo",
-				"zoom100": "Zoom to 100%",
-				"zoomIn": "Zoom in",
-				"zoomOut": "Zoom out",
-				"fullscreen": "enter fullscreen mode",
-				"connWireMode": "Connect wires mode",
-				"wireMode": "Place wires mode",
-				"selectMode": "selection mode",
-				"newComp": "Create new custom component",
-				"textMode": "text mode",
-				"save": "Save"
-			}
-		}
-	},
-	"SETTINGS_INFO": {
-		"INPUTS": "Inputs",
-		"DIRECTION": "Direction",
-		"DIRECTIONS": {
-			"LEFT": "Left",
-			"DOWN": "Down",
-			"UP": "Up",
-			"RIGHT": "Right"
+		"CHANGE_PASSWORD": {
+			"TITLE": "Passwort ändern",
+			"PASSWORD": "Passwort",
+			"PASSWORD_ERR_REQUIRED": "Passwort muss angegeben werden",
+			"PASSWORD_ERR_MIN": "Passwort muss mindestens acht Zeichen enthalten",
+			"PASSWORD_ERR_COMPLEXITY": "Passwort muss Ziffern und Buchstaben enthalten",
+			"PASSWORD_REPEAT": "Repeat password",
+			"PASSWORD_REPEAT_ERR": "Passwörter stimmen nicht überein",
+			"SAVE_BUTTON": "SPEICHERN"
 		},
-		"DESCRIPTION": "Description",
-		"EDIT": "Edit"
-	},
-	"ELEMENT_TYPE": {
-		"BASIC": {
-			"AND": {
-				"NAME": "AND Gate",
-				"DESCRIPTION": ""
-			},
-			"NOT": {
-				"NAME": "NOT Gate",
-				"DESCRIPTION": "I am a not"
-			},
-			"OR": {
-				"NAME": "OR Gate",
-				"DESCRIPTION": ""
-			},
-			"XOR": {
-				"NAME": "XOR Gate",
-				"DESCRIPTION": ""
-			}
+		"CHANGE_USERNAME": {
+			"TITLE": "Benutzernamen ändern",
+			"USERNAME": "Benutzername",
+			"USERNAME_ERR_REQUIRED": "Benutzername muss angegeben werden",
+			"USERNAME_ERR_MIN": "Benutzername muss mindestens zwei Zeichen enthalten",
+			"USERNAME_ERR_MAX": "Benutzername darf maximal 20 Zeichen enthalten",
+			"SAVE_BUTTON": "SPEICHERN"
 		},
-		"IO": {
-			"BUTTON": {
-				"NAME": "Button",
-				"DESCRIPTION": ""
-			},
-			"LEVER": {
-				"NAME": "Lever",
-				"DESCRIPTION": ""
-			}
-		},
-		"PLUG": {
-			"INPUT": {
-				"NAME": "Input Plug",
-				"DESCRIPTION": "Place this where the inputs of you self-defined components should be"
-			},
-			"OUTPUT": {
-				"NAME": "Output Plug",
-				"DESCRIPTION": "Place this where the outputs of you self-defined components should be"
-			}
+		"CHANGE_PICTURE": {
+			"TITLE": "Profilbild ändern",
+			"IMAGE_CROP": "Bild zuschneiden",
+			"IMAGE_UPLOAD": "Bild hochladen",
+			"SAVE_BUTTON": "SPEICHERN"
 		}
 	}
 }

@@ -11,29 +11,29 @@
 	<div class="account-settings" *ngIf="userInfo$ | async as userInfo">
 		<div class="setting">
 			<div>
-				<h3>Username</h3>
+				<h3>{{'USERSPACE.ACCOUNT_SETTINGS.USERNAME' | translate}}</h3>
 				<p>{{userInfo.user.username}}</p>
 			</div>
-			<button class="btn-raised primary" (click)="openUsernameChangeDialog()">CHANGE</button>
+			<button class="btn-raised primary" (click)="openUsernameChangeDialog()">{{'USERSPACE.ACCOUNT_SETTINGS.CHANGE' | translate}}</button>
 		</div>
 		<div class="setting">
 			<div>
-				<h3>Email</h3>
+				<h3>{{'USERSPACE.ACCOUNT_SETTINGS.EMAIL' | translate}}</h3>
 				<p>{{userInfo.user.email}}</p>
 			</div>
-			<button class="btn-raised primary" (click)="openEmailChangeDialog()">CHANGE</button>
+			<button class="btn-raised primary" (click)="openEmailChangeDialog()">{{'USERSPACE.ACCOUNT_SETTINGS.CHANGE' | translate}}</button>
 		</div>
 		<div class="setting">
 			<div>
-				<h3>Password</h3>
+				<h3>{{'USERSPACE.ACCOUNT_SETTINGS.PASSWORD' | translate}}</h3>
 			</div>
-			<button class="btn-raised primary" (click)="openPasswordChangeDialog()">CHANGE</button>
+			<button class="btn-raised primary" (click)="openPasswordChangeDialog()">{{'USERSPACE.ACCOUNT_SETTINGS.CHANGE' | translate}}</button>
 		</div>
 		<div class="setting">
 			<div>
-				<h3>Avatar</h3>
+				<h3>{{'USERSPACE.ACCOUNT_SETTINGS.AVATAR' | translate}}</h3>
 			</div>
-			<button class="btn-raised primary" (click)="openPictureChangeDialog()">CHANGE</button>
+			<button class="btn-raised primary" (click)="openPictureChangeDialog()">{{'USERSPACE.ACCOUNT_SETTINGS.CHANGE' | translate}}</button>
 		</div>
 	</div>
 </div>
