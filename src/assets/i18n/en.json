@@ -11,7 +11,10 @@
 		"LOGIN_GOOGLE": "Login with Google",
 		"LOGIN_TWITTER": "Login with Twitter",
 		"REGISTER": "Register",
-		"LOGOUT": "Logout"
+		"LOGOUT": "Logout",
+		"PROJECTS": "Projects",
+		"COMPONENTS": "Components",
+		"ACCOUNT": "Account"
 	},
 	"FOOTER": {
 		"DATA_POLICY": "Data Policy",
@@ -79,7 +82,7 @@
 			"PASSWORD": "Password",
 			"PASSWORD_ERR_REQUIRED": "Password is required.",
 			"LOGIN_BUTTON": "LOGIN",
-			"OR": "OR"
+			"OR": "or"
 		},
 		"REGISTER": {
 			"TITLE": "Register",
@@ -98,7 +101,7 @@
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwords do not match",
 			"REGISTER_BUTTON": "REGISTER",
-			"OR": "OR"
+			"OR": "or"
 		},
 		"SHARE": {
 			"TITLE": "Share Project {{project}}",
