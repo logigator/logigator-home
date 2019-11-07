@@ -15,7 +15,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SwitchComponent} from './components/switch/switch.component';
 import {InputComponent} from './components/input/input.component';
 import { InputErrorComponent } from './components/input-error/input-error.component';
-import {TranslateModule} from "@ngx-translate/core";
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
 	declarations: [
