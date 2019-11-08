@@ -55,12 +55,12 @@
      style="fill:#ffffff;fill-opacity:1" />
   <path
      d="M0,0V8H8V0ZM7,7H1V1H7Z"
-     fill="#ffffff"
+     fill="#cccccc"
      id="path6"
      style="fill:#ffffff;fill-opacity:1" />
   <path
      d="M4,9.06v1H3v-1Zm0,2v1H3V11Zm0,2v1H3V13Z"
-     fill="#ffffff"
+     fill="#cccccc"
      id="path8"
      style="fill:#ffffff;fill-opacity:1" />
   <rect
@@ -68,12 +68,12 @@
      y="7.57"
      width="1"
      height="0.5"
-     fill="#ffffff"
+     fill="#cccccc"
      id="rect10"
      style="fill:#ffffff;fill-opacity:1" />
   <path
      d="M8,14H7V13H8ZM6,14H5V13H6Z"
-     fill="#ffffff"
+     fill="#cccccc"
      id="path12"
      style="fill:#ffffff;fill-opacity:1" />
   <rect

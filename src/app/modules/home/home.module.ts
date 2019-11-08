@@ -8,6 +8,7 @@ import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import {SharedModule} from '../../shared/shared.module';
 import { BackgroundImageComponent } from './components/background-image/background-image.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
+import {TranslateModule} from '@ngx-translate/core';
 
 export const HOME_ROUTES: Routes = [
 	{
@@ -34,7 +35,8 @@ export const HOME_ROUTES: Routes = [
 		RouterModule,
 		CommonModule,
 		SharedModule,
-		SlideshowModule
+		SlideshowModule,
+		TranslateModule.forChild()
 	]
 })
 export class HomeModule { }

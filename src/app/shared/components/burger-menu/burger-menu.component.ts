@@ -56,7 +56,7 @@ export class BurgerMenuComponent implements OnInit {
 	}
 
 	public loginEmail() {
-		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'Login', false);
+		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'POPUP.LOGIN.TITLE', false);
 	}
 
 	public loginTwitter() {
@@ -68,6 +68,6 @@ export class BurgerMenuComponent implements OnInit {
 	}
 
 	public registerEmail() {
-		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'Register', false);
+		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'POPUP.REGISTER.TITLE', false);
 	}
 }

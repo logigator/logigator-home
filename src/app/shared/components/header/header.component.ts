@@ -6,8 +6,6 @@ import {LoginPopupComponent} from '../login-popup/login-popup.component';
 import {RegisterPopupComponent} from '../register-popup/register-popup.component';
 import {Observable} from 'rxjs';
 import {UserInfo} from '../../models/http-responses/user-info';
-import {map} from 'rxjs/operators';
-
 
 @Component({
 	selector: 'app-header',
@@ -37,11 +35,11 @@ export class HeaderComponent implements OnInit {
 	}
 
 	public loginEmail() {
-		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'Login', false);
+		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'POPUP.LOGIN.TITLE', false);
 	}
 
 	public registerEmail() {
-		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'Register', false);
+		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'POPUP.REGISTER.TITLE', false);
 	}
 
 	public logout() {

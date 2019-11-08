@@ -1,24 +1,24 @@
 <div class="dropdown" [class.hidden]="!showDropDown">
 	<div class="switch">
-		<label>{{'Dark mode'}}</label>
+		<label>{{'OPTIONS.DARK_MODE' | translate}}</label>
 		<app-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></app-switch>
 	</div>
 	<hr>
 	<div class="select">
-		<label>{{'Language'}}</label>
+		<label>{{'OPTIONS.LANGUAGE' | translate}}</label>
 		<select [(ngModel)]="currentLang" (ngModelChange)="languageChange()">
-			<option value="en">{{'LANGUAGE.EN'}}</option>
-			<option value="de">{{'LANGUAGE.DE'}}</option>
+			<option value="en">{{'LANGUAGE.EN' | translate}}</option>
+			<option value="de">{{'LANGUAGE.DE' | translate}}</option>
 		</select>
 	</div>
 	<ng-container *ngIf="isLoggedIn">
 		<hr>
 		<div class="link">
-			<button class="btn-outline secondary small" routerLink="/my" (click)="close()">{{'Userspace'}}</button>
+			<button class="btn-outline secondary small" routerLink="/my" (click)="close()">{{'OPTIONS.USERSPACE' | translate}}</button>
 		</div>
 		<hr>
 		<div class="link">
-			<button class="btn-outline secondary small" routerLink="/my" (click)="logout()">{{'Logout'}}</button>
+			<button class="btn-outline secondary small" routerLink="/my" (click)="logout()">{{'OPTIONS.LOGOUT' | translate}}</button>
 		</div>
 	</ng-container>
 </div>
