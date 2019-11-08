@@ -33,15 +33,15 @@ export class AccountSettingsComponent implements OnInit {
 	}
 
 	public openPasswordChangeDialog() {
-		this.popup.showPopup(ChangePasswordComponent, this.componentFactoryResolver, 'Change Password', false);
+		this.popup.showPopup(ChangePasswordComponent, this.componentFactoryResolver, 'POPUP.CHANGE_PASSWORD.TITLE', false);
 	}
 
 	public openUsernameChangeDialog() {
-		this.popup.showPopup(ChangeUsernameComponent, this.componentFactoryResolver, 'Change Username', false);
+		this.popup.showPopup(ChangeUsernameComponent, this.componentFactoryResolver, 'POPUP.CHANGE_USERNAME.TITLE', false);
 	}
 
 	public openEmailChangeDialog() {
-		this.popup.showPopup(ChangeEmailComponent, this.componentFactoryResolver, 'Change Email', false);
+		this.popup.showPopup(ChangeEmailComponent, this.componentFactoryResolver, 'POPUP.CHANGE_EMAIL.TITLE', false);
 	}
 
 	public openPictureChangeDialog() {
@@ -49,7 +49,7 @@ export class AccountSettingsComponent implements OnInit {
 			map(data => data.user.profile_image),
 			take(1)
 		).subscribe(img => {
-			this.popup.showPopup(ChangePictureComponent, this.componentFactoryResolver, 'Change Profile Picture', false, img);
+			this.popup.showPopup(ChangePictureComponent, this.componentFactoryResolver, 'POPUP.CHANGE_PICTURE.TITLE', false, img);
 		});
 	}
 }

@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SwitchComponent} from './components/switch/switch.component';
 import {InputComponent} from './components/input/input.component';
 import { InputErrorComponent } from './components/input-error/input-error.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
 	declarations: [
@@ -48,7 +49,8 @@ import { InputErrorComponent } from './components/input-error/input-error.compon
 		CommonModule,
 		RouterModule,
 		ReactiveFormsModule,
-		FormsModule
+		FormsModule,
+		TranslateModule.forChild()
 	]
 })
 export class SharedModule {

@@ -1,32 +1,32 @@
 <form [formGroup]="registerForm" (ngSubmit)="submit()" autocomplete="off">
-	<h3> Register Email </h3>
+	<h3> {{'POPUP.REGISTER.HEADLINE' | translate}} </h3>
 
-	<app-input type="text" formControlName="email" label="Email">
-		<app-input-error error="required">Email is required</app-input-error>
-		<app-input-error error="email">Email is invalid</app-input-error>
+	<app-input type="text" formControlName="email" label="{{'POPUP.REGISTER.EMAIL' | translate}}">
+		<app-input-error error="required">{{'POPUP.REGISTER.EMAIL_ERR_REQUIRED' | translate}}</app-input-error>
+		<app-input-error error="email">{{'POPUP.REGISTER.EMAIL_ERR_INVALID' | translate}}</app-input-error>
 	</app-input>
-	<app-input type="password" formControlName="password" label="Password">
-		<app-input-error error="required">Password is required</app-input-error>
-		<app-input-error error="minlength">Password is to short</app-input-error>
-		<app-input-error error="pattern">Password is not complex enough</app-input-error>
+	<app-input type="password" formControlName="password" label="{{'POPUP.REGISTER.PASSWORD' | translate}}">
+		<app-input-error error="required">{{'POPUP.REGISTER.PASSWORD_ERR_REQUIRED' | translate}}</app-input-error>
+		<app-input-error error="minlength">{{'POPUP.REGISTER.PASSWORD_ERR_MIN' | translate}}</app-input-error>
+		<app-input-error error="pattern">{{'POPUP.REGISTER.PASSWORD_ERR_COMPLEXITY' | translate}}</app-input-error>
 	</app-input>
-	<app-input type="password" formControlName="confirm_password" label="Repeat password">
-		<app-input-error *ngIf="registerForm.errors?.passwordMatch">Passwords do not match</app-input-error>
+	<app-input type="password" formControlName="confirm_password" label="{{'POPUP.REGISTER.PASSWORD_REPEAT' | translate}}">
+		<app-input-error *ngIf="registerForm.errors?.passwordMatch">{{'POPUP.REGISTER.PASSWORD_REPEAT_ERR' | translate}}</app-input-error>
 	</app-input>
 	<app-input type="text" formControlName="username" label="Username">
-		<app-input-error error="required">Username is required</app-input-error>
-		<app-input-error error="minlength">Username is to short</app-input-error>
-		<app-input-error error="maxlength">Username is to long</app-input-error>
+		<app-input-error error="required">{{'POPUP.REGISTER.USERNAME_ERR_REQUIRED' | translate}}</app-input-error>
+		<app-input-error error="minlength">{{'POPUP.REGISTER.USERNAME_ERR_MIN' | translate}}</app-input-error>
+		<app-input-error error="maxlength">{{'POPUP.REGISTER.USERNAME_ERR_MAX' | translate}}</app-input-error>
 	</app-input>
 
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
-	<button type="submit" class="btn-raised primary" [disabled]="registerForm.invalid">REGISTER</button>
+	<button type="submit" class="btn-raised primary" [disabled]="registerForm.invalid">{{'POPUP.REGISTER.REGISTER_BUTTON' | translate}}</button>
 
 	<div class="login-divider">
 		<hr>
 		<div>
-			or
+			{{'POPUP.REGISTER.OR' | translate}}
 		</div>
 		<hr>
 	</div>
