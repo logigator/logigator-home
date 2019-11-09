@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 8201 --disableHostCheck --proxy-config proxyconfig.json",
+    "start": "ng serve --port 8201 --disableHostCheck --proxy-config proxyconfig.json --host 0.0.0.0",
     "build": "ng build --prod && ng run logigator-home:server -c production && node prerender.js",
     "test": "ng test",
     "lint": "ng lint",
