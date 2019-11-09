@@ -6,9 +6,12 @@
 	flex-direction: column;
 	align-items: center;
 	background: none;
+	max-width: 1700px;
+	width: 100%;
+	margin: auto;
 
 	hr {
-		@media (min-width: 1200px) {
+		@media (min-width: 1100px) {
 			display: none;
 		}
 	}
@@ -16,7 +19,7 @@
 	@include themify() {
 		color: themed('text-primary');
 		hr {
-			width: 70%;
+			width: 75%;
 			border-top: 0;
 			border-right: 0;
 			border-left: 0;
@@ -26,10 +29,11 @@
 }
 
 .content-section {
-	max-width: 960px;
-	width: 100%;
-	height: 27rem;
-	padding: 3.375rem 5% 3.375rem;
+	width: 75%;
+
+	@media (max-width: 1100px) {
+		width: 90%;
+	}
 
 	display: flex;
 	justify-content: space-between;
@@ -37,12 +41,7 @@
 	align-items: center;
 	z-index: 0;
 
-	@media (max-width: 1200px) {
-		height: auto;
-		padding: 2rem;
-	}
-
-	@media (max-width: 767px) {
+	@media (max-width: 886px) {
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
@@ -52,7 +51,7 @@
 	h3 {
 		margin-top: 0;
 		margin-bottom: 0;
-		@media (max-width: 767px) {
+		@media (max-width: 886px) {
 			margin: 1rem;
 		}
 		font-weight: normal;
@@ -69,17 +68,23 @@ section:last-child {
 }
 
 .introduction {
-	height: 33.75rem;
-	padding: 6.75rem 5% 3.375rem;
+	margin-top: 4vw;
+	height: 35.6vw;
+	padding: 3rem;
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1100px) {
 		height: auto;
-		padding: 2rem;
+		margin-top: 0;
+	}
+
+	@media (min-width: 1700px) {
+		height: 38.2rem;
+		margin-top: 4.2rem
 	}
 
 	article {
 		width: 50%;
-		@media (max-width: 767px) {
+		@media (max-width: 886px) {
 			width: 100%;
 		}
 	}
@@ -87,7 +92,7 @@ section:last-child {
 	a {
 		width: 45%;
 		align-self: flex-end;
-		@media (max-width: 767px) {
+		@media (max-width: 886px) {
 			width: 100%;
 		}
 		height: 3rem;
@@ -100,16 +105,19 @@ section:last-child {
 }
 
 .explanation {
-	height: 33.75rem;
+	height: 35.4vw;
 
-	@media (max-width: 1200px) {
+	@media (max-width: 886px) {
 		height: auto;
-		padding: 2rem;
+	}
+
+	@media (min-width: 1700px) {
+		height: 38.3rem;
 	}
 
 	article {
 		width: 50%;
-		@media (max-width: 767px) {
+		@media (max-width: 886px) {
 			width: 100%;
 		}
 	}
@@ -119,7 +127,7 @@ section:last-child {
 		position: relative;
 		margin-right: 2rem;
 
-		@media (max-width: 767px) {
+		@media (max-width: 886px) {
 			width: 100%;
 			margin-right: 0;
 		}
@@ -141,24 +149,42 @@ section:last-child {
 	}
 }
 
-.examples {
-	height: 33.75rem;
-	padding: 6.75rem 5% 3.375rem;
+.explanation-examples-divider {
+	height: 3.8vw;
 
-	@media (max-width: 1200px) {
+	@media (max-width: 886px) {
+		display: none;
+	}
+
+	@media (min-width: 1700px) {
+		height: 4.4rem;
+	}
+}
+
+.examples {
+	height: 39.6vw;
+	padding: 2rem 3rem;
+
+	@media (max-width: 1100px) {
+		height: 25rem;
+	}
+
+	@media (max-width: 886px) {
 		height: auto;
-		padding: 2rem;
+	}
+
+	@media (min-width: 1700px) {
+		height: 42.5rem;
+	}
+
+	app-examples {
+		height: 100%;
 	}
 }
 
 .tutorials {
-	height: 67.5rem;
+	padding: 3rem;
 	align-items: normal;
-
-	@media (max-width: 1200px) {
-		height: auto;
-		padding: 2rem;
-	}
 }
 
 img {

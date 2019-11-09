@@ -1,75 +1,83 @@
 @import "themes";
 @import "variables";
 
-svg {
-	left: 0;
+div {
 	position: absolute;
-	width: 100%;
-	height: 168.75rem;
-	font-size: 1.5rem;
-	text-anchor: middle;
+	left: 0;
+	width: 99vw;
+	overflow: hidden;
+	display: flex;
 
-	@include themify() {
-		stroke: themed('primary');
+	svg {
+		width: 100%;
+		max-width: 1700px;
+		margin: auto;
+		height: auto;
+		font-size: 1.5rem;
+		text-anchor: middle;
+
+		@include themify() {
+			stroke: themed('primary');
+		}
+		stroke-width: 1px;
+		fill: none;
+
+		@media (max-width: 1100px) {
+			display: none;
+		}
 	}
-	stroke-width: 1px;
-	fill: none;
 
-	@media (max-width: 1200px) {
-		display: none;
+	text {
+		alignment-baseline: middle;
+		stroke: none;
+		@include themify() {
+			fill: themed('primary');
+		}
 	}
-}
 
-text {
-	alignment-baseline: middle;
-	stroke: none;
-	@include themify() {
-		fill: themed('primary');
+	.output-1, .output-2, .output-3{
+		visibility: hidden;
 	}
-}
 
-.output-1, .output-2, .output-3{
-	visibility: hidden;
-}
+	.step-1 {
+		animation: cable-active 24s steps(1, end) 0s infinite;
+	}
 
-.step-1 {
-	animation: cable-active 24s steps(1, end) 0s infinite;
-}
+	.step-2 {
+		animation: cable-active 24s steps(1, end) 3s infinite;
+	}
 
-.step-2 {
-	animation: cable-active 24s steps(1, end) 3s infinite;
-}
+	.step-3 {
+		animation: cable-active 24s steps(1, end) 6s infinite;
+	}
 
-.step-3 {
-	animation: cable-active 24s steps(1, end) 6s infinite;
-}
+	.step-4 {
+		animation: cable-active 24s steps(1, end) 9s infinite;
+	}
 
-.step-4 {
-	animation: cable-active 24s steps(1, end) 9s infinite;
-}
+	.step-5 {
+		animation: cable-active 24s steps(1, end) 12s infinite;
+	}
 
-.step-5 {
-	animation: cable-active 24s steps(1, end) 12s infinite;
-}
+	.step-6 {
+		animation: cable-active 24s steps(1, end) 15s infinite;
+	}
 
-.step-6 {
-	animation: cable-active 24s steps(1, end) 15s infinite;
-}
+	.step-7 {
+		animation: cable-active 24s steps(1, end) 18s infinite;
+	}
 
-.step-7 {
-	animation: cable-active 24s steps(1, end) 18s infinite;
-}
+	.output-1 {
+		animation: output-active-1 24s steps(1, end) 9s infinite;
+	}
 
-.output-1 {
-	animation: output-active-1 24s steps(1, end) 9s infinite;
-}
+	.output-2 {
+		animation: output-active-2 24s steps(1, end) 18s infinite;
+	}
 
-.output-2 {
-	animation: output-active-2 24s steps(1, end) 18s infinite;
-}
-
-.output-3 {
-	animation: output-active-3 24s steps(1, end) 21s infinite;
+	.output-3 {
+		animation: output-active-3 24s steps(1, end) 21s infinite;
+	}
 }
 
 @keyframes cable-active {
