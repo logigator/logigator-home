@@ -20,7 +20,7 @@ export class AppComponent {
 
 		if (!isPlatformBrowser(platformId)) return;
 		this.router.events.subscribe(e => {
-			if (e instanceof NavigationEnd) {
+			if (e instanceof NavigationEnd && !e.urlAfterRedirects.includes('auth-callback')) {
 				gtag('config', 'UA-151071040-2', {
 					page_path: e.urlAfterRedirects
 				});
