@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ThemingService} from '../../../../shared/services/theming/theming.service';
 
 @Component({
 	selector: 'app-home',
@@ -7,8 +8,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-	constructor() { }
+	constructor(private theming: ThemingService) { }
 
 	ngOnInit() {
+	}
+
+	public get theme() {
+		return this.theming.currentTheme;
 	}
 }
