@@ -4,16 +4,13 @@
 div {
 	position: absolute;
 	left: 0;
-	width: 99vw;
-	overflow: hidden;
+	width: 100%;
 	display: flex;
 
 	svg {
 		width: 100%;
 		max-width: 1700px;
 		margin: auto;
-		height: auto;
-		font-size: 1.5rem;
 		text-anchor: middle;
 
 		@include themify() {

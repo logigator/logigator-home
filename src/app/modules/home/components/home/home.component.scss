@@ -9,6 +9,7 @@
 	max-width: 1700px;
 	width: 100%;
 	margin: auto;
+	padding-bottom: 1rem;
 
 	hr {
 		@media (min-width: 1100px) {
@@ -106,6 +107,7 @@ section:last-child {
 
 .explanation {
 	height: 35.4vw;
+	padding: 0 3rem;
 
 	@media (max-width: 886px) {
 		height: auto;
