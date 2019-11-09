@@ -8,7 +8,7 @@
 	<div class="login">
 		<ng-container *ngIf="isLoggedIn && (userInfo | async) as userInfo">
 			<a class="username" routerLink="/my">{{userInfo.user.username}}</a>
-			<img class="user-img" [src]="userInfo.user.profile_image" (click)="settingsDropdown = !settingsDropdown">
+			<img class="user-img" alt="User image" [src]="userInfo.user.profile_image" (click)="settingsDropdown = !settingsDropdown">
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn">
 			<button class="btn-outline secondary btn-login" (click)="loginEmail()">{{'OPTIONS.LOGIN' | translate}}</button>
