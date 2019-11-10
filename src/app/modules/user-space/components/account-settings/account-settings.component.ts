@@ -3,13 +3,12 @@ import {AuthService} from '../../../../shared/services/auth/auth.service';
 import {Observable} from 'rxjs';
 import {UserInfo} from '../../../../shared/models/http-responses/user-info';
 import {PopupService} from '../../../../shared/services/popup/popup.service';
-import {ChangePasswordComponent} from './popups/change-password/change-password.component';
 import {ApiService} from '../../../../shared/services/api/api.service';
-import {ChangeUsernameComponent} from './popups/change-username/change-username.component';
-import {ChangePictureComponent} from './popups/change-picture/change-picture.component';
 import {map, switchMap, take, tap} from 'rxjs/operators';
-import {ChangeEmailComponent} from './popups/change-email/change-email.component';
-import {environment} from '../../../../../environments/environment';
+import {ChangePasswordComponent} from '../dialogs/change-password/change-password.component';
+import {ChangeUsernameComponent} from '../dialogs/change-username/change-username.component';
+import {ChangeEmailComponent} from '../dialogs/change-email/change-email.component';
+import {ChangePictureComponent} from '../dialogs/change-picture/change-picture.component';
 
 @Component({
 	selector: 'app-account-settings',

@@ -30,18 +30,27 @@
 		flex-direction: row;
 		align-items: center;
 		padding: 0 0.25rem;
+		margin: 0 0.5rem;
 
 		@include themify() {
 			background-color: themed('background');
 			border-bottom: 1px solid themed('text-primary');
 		}
 
-		p {
-			margin: 1rem;
+		a {
+			line-height: 3rem;
+		}
+
+		.edited {
+			margin: 0 1rem;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
 		}
 
 		.title {
-			flex-grow: 1;
+			margin-right: auto;
 			margin-left: 0.25rem;
 			text-decoration: none;
 			font-size: 1.2rem;
@@ -63,9 +72,10 @@
 
 		@media (max-width: 767px) {
 			flex-direction: column;
+
 		}
 
-		margin: -0.5rem -0rem 0.5rem -0rem;
+		margin: -0.5rem 0.5rem 0.5rem 0.5rem;
 
 		.tile-wrapper {
 			display: flex;

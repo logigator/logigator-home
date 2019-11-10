@@ -1,6 +1,6 @@
 @import "themes";
 @include themify() {
-	app-input-error {
+	app-input-error > div {
 		margin-top: 0.25rem;
 		font-size: 0.9rem;
 		color: themed('error');
