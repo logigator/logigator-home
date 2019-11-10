@@ -9,7 +9,6 @@
 	max-width: 1700px;
 	width: 100%;
 	margin: auto;
-	padding-bottom: 1rem;
 
 	hr {
 		@media (min-width: 1100px) {
@@ -69,8 +68,8 @@ section:last-child {
 }
 
 .introduction {
-	margin-top: 4vw;
-	height: 35.6vw;
+	margin-top: 4.5vw;
+	height: 38.6vw;
 	padding: 3rem;
 
 	@media (max-width: 1100px) {
@@ -79,8 +78,8 @@ section:last-child {
 	}
 
 	@media (min-width: 1700px) {
-		height: 38.2rem;
-		margin-top: 4.2rem
+		height: 41.8rem;
+		margin-top: 4.6rem
 	}
 
 	article {
@@ -106,15 +105,15 @@ section:last-child {
 }
 
 .explanation {
-	height: 35.4vw;
-	padding: 0 3rem;
+	height: 38.9vw;
+	padding: 2rem 3rem;
 
 	@media (max-width: 886px) {
 		height: auto;
 	}
 
 	@media (min-width: 1700px) {
-		height: 38.3rem;
+		height: 42rem;
 	}
 
 	article {
@@ -152,19 +151,19 @@ section:last-child {
 }
 
 .explanation-examples-divider {
-	height: 3.8vw;
+	height: 4.4vw;
 
 	@media (max-width: 886px) {
 		display: none;
 	}
 
 	@media (min-width: 1700px) {
-		height: 4.4rem;
+		height: 4.5rem;
 	}
 }
 
 .examples {
-	height: 39.6vw;
+	height: 43.2vw;
 	padding: 2rem 3rem;
 
 	@media (max-width: 1100px) {
@@ -176,7 +175,7 @@ section:last-child {
 	}
 
 	@media (min-width: 1700px) {
-		height: 42.5rem;
+		height: 46.5rem;
 	}
 
 	app-examples {
