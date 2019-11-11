@@ -150,6 +150,11 @@
 			"IMAGE_CROP": "Bild zuschneiden",
 			"IMAGE_UPLOAD": "Bild hochladen",
 			"SAVE_BUTTON": "SPEICHERN"
+		},
+		"COOKIE_CONSENT": {
+			"MESSAGE": "Wir verwenden Cookies. Wenn Sie auf unserer Seite weitersurfen, stimmen Sie der Cookie-Nutzung zu.",
+			"DISMISS": "Akzeptieren",
+			"LINK": "Mehr erfahren"
 		}
 	}
 }
