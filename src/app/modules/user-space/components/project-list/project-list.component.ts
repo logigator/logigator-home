@@ -7,6 +7,8 @@ import {ShareProjectComponent} from '../dialogs/share-project/share-project.comp
 import {environment} from '../../../../../environments/environment';
 import {ProjectEditComponent} from '../dialogs/project-edit/project-edit.component';
 import {ProjectDeleteComponent} from '../dialogs/project-delete/project-delete.component';
+import {ComponentInfoComponent} from '../dialogs/component-info/component-info.component';
+import {ProjectInfoComponent} from '../dialogs/project-info/project-info.component';
 
 @Component({
 	selector: 'app-project-list',
@@ -36,5 +38,9 @@ export class ProjectListComponent implements OnInit {
 
 	public openProjectDeleteDialog(project: UserProject) {
 		this.popup.showPopup(ProjectDeleteComponent, this.componentFactoryResolver, 'Confirm Delete', false, project);
+	}
+
+	public openProjectInfoDialog(project: UserProject) {
+		this.popup.showPopup(ProjectInfoComponent, this.componentFactoryResolver, 'Information', false, project);
 	}
 }

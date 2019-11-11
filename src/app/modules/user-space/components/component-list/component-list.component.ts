@@ -8,6 +8,7 @@ import {PopupService} from '../../../../shared/services/popup/popup.service';
 import {ComponentEditComponent} from '../dialogs/component-edit/component-edit.component';
 import {environment} from '../../../../../environments/environment';
 import {ComponentDeleteComponent} from '../dialogs/component-delete/component-delete.component';
+import {ComponentInfoComponent} from '../dialogs/component-info/component-info.component';
 
 @Component({
 	selector: 'app-component-list',
@@ -34,7 +35,11 @@ export class ComponentListComponent implements OnInit {
 		this.popup.showPopup(ComponentEditComponent, this.componentFactoryResolver, 'Edit Component', false, project);
 	}
 
-	public openProjectDeleteDialog(project: UserProject) {
+	public openProjectDeleteDialog(project: UserComponent) {
 		this.popup.showPopup(ComponentDeleteComponent, this.componentFactoryResolver, 'Confirm Delete', false, project);
+	}
+
+	public openProjectInfoDialog(project: UserComponent) {
+		this.popup.showPopup(ComponentInfoComponent, this.componentFactoryResolver, 'Information', false, project);
 	}
 }
