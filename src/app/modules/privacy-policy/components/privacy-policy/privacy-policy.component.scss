@@ -1,0 +1,23 @@
+@import "themes";
+
+.privacy-policy {
+	padding: 2rem;
+	@include themify(){
+		color: themed('text-primary');
+	}
+
+	h1{
+		font-weight: normal;
+		font-size: 2.5rem;
+	}
+
+	h2{
+		font-weight: normal;
+		font-size: 2rem;
+	}
+
+	h3{
+		font-weight: normal;
+		font-size: 1.5rem;
+	}
+}
