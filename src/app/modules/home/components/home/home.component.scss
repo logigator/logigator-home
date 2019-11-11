@@ -6,7 +6,7 @@
 	flex-direction: column;
 	align-items: center;
 	background: none;
-	max-width: 1700px;
+	max-width: 1500px;
 	width: 100%;
 	margin: auto;
 
@@ -77,7 +77,7 @@ section:last-child {
 		margin-top: 0;
 	}
 
-	@media (min-width: 1700px) {
+	@media (min-width: 1600px) {
 		height: 41.8rem;
 		margin-top: 4.6rem
 	}
@@ -112,7 +112,7 @@ section:last-child {
 		height: auto;
 	}
 
-	@media (min-width: 1700px) {
+	@media (min-width: 1600px) {
 		height: 42rem;
 	}
 
@@ -157,14 +157,14 @@ section:last-child {
 		display: none;
 	}
 
-	@media (min-width: 1700px) {
+	@media (min-width: 1600px) {
 		height: 4.5rem;
 	}
 }
 
 .examples {
 	height: 43.2vw;
-	padding: 2rem 3rem;
+	padding: 5rem 3rem;
 
 	@media (max-width: 1100px) {
 		height: 25rem;
@@ -174,7 +174,7 @@ section:last-child {
 		height: auto;
 	}
 
-	@media (min-width: 1700px) {
+	@media (min-width: 1600px) {
 		height: 46.5rem;
 	}
 
