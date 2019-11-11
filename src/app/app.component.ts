@@ -11,27 +11,7 @@ import {WINDOW} from './shared/injectable-window';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-	async ngOnInit() {
-		const cc = window as any;
-		cc.cookieconsent.initialise({
-			palette: {
-				popup: {
-					background: this.theming.currentTheme === 'dark' ? '#3a4042' : '#d1d1d1'
-				},
-				button: {
-					background: this.theming.currentTheme === 'dark' ? '#27AE60' : '#2ECC71',
-					text: '#000000'
-				}
-			},
-			theme: 'classic',
-			content: {
-				message: await this.translate.get('POPUP.COOKIE_CONSENT.MESSAGE').toPromise(),
-				dismiss: await this.translate.get('POPUP.COOKIE_CONSENT.DISMISS').toPromise(),
-				link: await this.translate.get('POPUP.COOKIE_CONSENT.LINK').toPromise(),
-				href: '/privacy-policy'
-			}
-		});
-	}
+
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
@@ -50,6 +30,29 @@ export class AppComponent implements OnInit {
 			}
 		});
 		this.theming.init();
+	}
+
+	async ngOnInit() {
+		if (!isPlatformBrowser(this.platformId)) return;
+
+		(this.window as any).cookieconsent.initialise({
+			palette: {
+				popup: {
+					background: this.theming.currentTheme === 'dark' ? '#3a4042' : '#d1d1d1'
+				},
+				button: {
+					background: this.theming.currentTheme === 'dark' ? '#27AE60' : '#2ECC71',
+					text: '#000000'
+				}
+			},
+			theme: 'classic',
+			content: {
+				message: await this.translate.get('POPUP.COOKIE_CONSENT.MESSAGE').toPromise(),
+				dismiss: await this.translate.get('POPUP.COOKIE_CONSENT.DISMISS').toPromise(),
+				link: await this.translate.get('POPUP.COOKIE_CONSENT.LINK').toPromise(),
+				href: '/privacy-policy'
+			}
+		});
 	}
 
 	private initTranslation() {
