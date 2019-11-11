@@ -150,6 +150,11 @@
 			"IMAGE_CROP": "Crop image",
 			"IMAGE_UPLOAD": "Upload image",
 			"SAVE_BUTTON": "SAVE"
+		},
+		"COOKIE_CONSENT": {
+			"MESSAGE": "This website uses cookies to ensure you get the best experience on our website.",
+			"DISMISS": "Got it!",
+			"LINK": "Learn more"
 		}
 	}
 }

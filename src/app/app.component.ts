@@ -1,4 +1,4 @@
-import {Component, Inject, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
 import {ThemingService} from './shared/services/theming/theming.service';
 import {NavigationEnd, Router} from '@angular/router';
@@ -10,7 +10,28 @@ import {WINDOW} from './shared/injectable-window';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+	async ngOnInit() {
+		const cc = window as any;
+		cc.cookieconsent.initialise({
+			palette: {
+				popup: {
+					background: this.theming.currentTheme === 'dark' ? '#3a4042' : '#d1d1d1'
+				},
+				button: {
+					background: this.theming.currentTheme === 'dark' ? '#27AE60' : '#2ECC71',
+					text: '#000000'
+				}
+			},
+			theme: 'classic',
+			content: {
+				message: await this.translate.get('POPUP.COOKIE_CONSENT.MESSAGE').toPromise(),
+				dismiss: await this.translate.get('POPUP.COOKIE_CONSENT.DISMISS').toPromise(),
+				link: await this.translate.get('POPUP.COOKIE_CONSENT.LINK').toPromise(),
+				href: '/privacy-policy'
+			}
+		});
+	}
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
