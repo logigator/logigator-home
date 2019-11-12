@@ -71,6 +71,16 @@ header {
 			display: none;
 		}
 
+		div {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
 		button {
 			margin-left: 0.5rem;
 		}
@@ -84,10 +94,6 @@ header {
 			height: $header-height - 1rem;
 			width: $header-height - 1rem;
 			outline: none;
-
-			&:hover {
-				cursor: pointer;
-			}
 		}
 
 		.more {
