@@ -41,7 +41,7 @@
 	align-items: center;
 	z-index: 0;
 
-	@media (max-width: 886px) {
+	@media (max-width: 768px) {
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
@@ -78,7 +78,7 @@ section:last-child {
 		width: 100%;
 		padding: 3rem;
 
-		@media (max-width: 886px) {
+		@media (max-width: 768px) {
 			padding: 0
 		}
 	}
@@ -90,7 +90,7 @@ section:last-child {
 			font-size: 1.2rem;
 			margin-top: 6vw;
 
-			@media (max-width: 886px) {
+			@media (max-width: 768px) {
 				width: 90%;
 				margin-top: 2rem;
 			}
@@ -106,7 +106,7 @@ section:last-child {
 	height: 38.9vw;
 	padding: 2rem 3rem;
 
-	@media (max-width: 886px) {
+	@media (max-width: 768px) {
 		height: auto;
 	}
 
@@ -116,14 +116,14 @@ section:last-child {
 
 	article {
 		width: 50%;
-		@media (max-width: 886px) {
+		@media (max-width: 768px) {
 			width: 100%;
 		}
 
 		h3 {
 			margin-top: 0;
 			margin-bottom: 0;
-			@media (max-width: 886px) {
+			@media (max-width: 768px) {
 				margin: 1rem;
 			}
 			font-weight: normal;
@@ -136,7 +136,7 @@ section:last-child {
 		position: relative;
 		margin-right: 2rem;
 
-		@media (max-width: 886px) {
+		@media (max-width: 768px) {
 			width: 100%;
 			margin-right: 0;
 		}
@@ -161,7 +161,7 @@ section:last-child {
 .explanation-examples-divider {
 	height: 4.4vw;
 
-	@media (max-width: 886px) {
+	@media (max-width: 768px) {
 		display: none;
 	}
 
@@ -178,7 +178,7 @@ section:last-child {
 		height: 25rem;
 	}
 
-	@media (max-width: 886px) {
+	@media (max-width: 768px) {
 		height: auto;
 	}
 
