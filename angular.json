@@ -32,14 +32,17 @@
 							"src/sitemap.xml"
 						],
 						"styles": [
-							"src/styles.scss"
+							"src/styles.scss",
+							"node_modules/cookieconsent/build/cookieconsent.min.css"
 						],
 						"stylePreprocessorOptions": {
 							"includePaths": [
 								"src/"
 							]
 						},
-						"scripts": []
+						"scripts": [
+							"node_modules/cookieconsent/build/cookieconsent.min.js"
+						]
 					},
 					"configurations": {
 						"production": {
