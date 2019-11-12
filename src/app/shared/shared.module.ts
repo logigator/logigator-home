@@ -16,6 +16,7 @@ import {SwitchComponent} from './components/switch/switch.component';
 import {InputComponent} from './components/input/input.component';
 import { InputErrorComponent } from './components/input-error/input-error.component';
 import {TranslateModule} from '@ngx-translate/core';
+import { LazyLoadDirective } from './directives/lazy-load/lazy-load.directive';
 
 @NgModule({
 	declarations: [
@@ -30,7 +31,8 @@ import {TranslateModule} from '@ngx-translate/core';
 		LoginPopupComponent,
 		SwitchComponent,
 		InputComponent,
-		InputErrorComponent
+		InputErrorComponent,
+		LazyLoadDirective
 	],
 	entryComponents: [
 		PopupComponent,
@@ -43,7 +45,8 @@ import {TranslateModule} from '@ngx-translate/core';
 		BurgerMenuComponent,
 		SwitchComponent,
 		InputComponent,
-		InputErrorComponent
+		InputErrorComponent,
+		LazyLoadDirective
 	],
 	imports: [
 		CommonModule,
