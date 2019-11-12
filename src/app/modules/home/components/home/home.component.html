@@ -1,10 +1,8 @@
 <div class="page">
 	<app-background-image></app-background-image>
 	<section class="introduction content-section">
-		<article>
-			<h3>{{'HOME.INTRO.TITLE' | translate}}</h3>
-			<p>{{'HOME.INTRO.DESCRIPTION' | translate}}</p>
-		</article>
+		<img *ngIf="theme === 'dark'" src="/assets/logo_light.svg" alt="lage Logo">
+		<img *ngIf="theme === 'light'" src="/assets/logo.svg" alt="large Logo">
 		<a href="https://editor.logigator.com/" target="_blank" rel="noopener">
 			<button class="btn-raised primary">{{'HOME.INTRO.BUTTON' | translate}}</button>
 		</a>
@@ -26,6 +24,7 @@
 			<p>{{'HOME.EXPLANATION.DESCRIPTION' | translate}}</p>
 		</article>
 	</section>
+	<div class="explanation-examples-divider content-section"></div>
 	<hr>
 	<section class="content-section examples">
 		<app-examples></app-examples>

@@ -1,89 +1,141 @@
 @import "themes";
 @import "variables";
 
-svg {
-	left: 0;
+.out-container {
 	position: absolute;
 	width: 100%;
-	height: 168.75rem;
-	font-size: 1.5rem;
-	text-anchor: middle;
+	left: 0;
+	display: flex;
 
-	@include themify() {
-		stroke: themed('primary');
+	.in-container {
+		position: relative;
+		left: 0;
+		width: 100%;
+		max-width: 1700px;
+		height: 0;
+		margin: auto;
+		pointer-events: none;
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			@include themify() {
+				stroke: themed('primary');
+			}
+			fill: none;
+
+			@media (max-width: 1100px) {
+				display: none;
+			}
+
+			line, rect {
+				stroke-width: 0.002vw;
+			}
+		}
+
+		text {
+			text-anchor: middle;
+			text-align: center;
+			stroke: none;
+			@include themify() {
+				fill: themed('primary');
+			}
+		}
+
+		.output-1, .output-2, .output-3{
+			visibility: hidden;
+		}
+
+		.step-1 {
+			animation: cable-active 24s steps(1, end) 0s infinite;
+		}
+
+		.step-2 {
+			animation: cable-active 24s steps(1, end) 3s infinite;
+		}
+
+		.step-3 {
+			animation: cable-active 24s steps(1, end) 6s infinite;
+		}
+
+		.step-4 {
+			animation: cable-active 24s steps(1, end) 9s infinite;
+		}
+
+		.step-5 {
+			animation: cable-active 24s steps(1, end) 12s infinite;
+		}
+
+		.step-6 {
+			animation: cable-active 24s steps(1, end) 15s infinite;
+		}
+
+		.step-7 {
+			animation: cable-active 24s steps(1, end) 18s infinite;
+		}
+
+		.output-1 {
+			animation: output-active-1 24s steps(1, end) 9s infinite;
+		}
+
+		.output-2 {
+			animation: output-active-2 24s steps(1, end) 18s infinite;
+		}
+
+		.output-3 {
+			animation: output-active-3 24s steps(1, end) 21s infinite;
+		}
 	}
-	stroke-width: 1px;
-	fill: none;
+}
 
-	@media (max-width: 1200px) {
-		display: none;
+@media (max-width: 1400px) {
+	@keyframes cable-active {
+		0% {
+			stroke-width: 0.002vw;
+		}
+		12.5% {
+			stroke-width: 0.01vw;
+		}
+		25% {
+			stroke-width: 0.002vw;
+		}
+		100% {
+			stroke-width: 0.002vw;
+		}
 	}
 }
-
-text {
-	alignment-baseline: middle;
-	stroke: none;
-	@include themify() {
-		fill: themed('primary');
+@media (min-width: 1401px) {
+	@keyframes cable-active {
+		0% {
+			stroke-width: 0.002vw;
+		}
+		12.5% {
+			stroke-width: 0.006vw;
+		}
+		25% {
+			stroke-width: 0.002vw;
+		}
+		100% {
+			stroke-width: 0.002vw;
+		}
 	}
 }
-
-.output-1, .output-2, .output-3{
-	visibility: hidden;
-}
-
-.step-1 {
-	animation: cable-active 24s steps(1, end) 0s infinite;
-}
-
-.step-2 {
-	animation: cable-active 24s steps(1, end) 3s infinite;
-}
-
-.step-3 {
-	animation: cable-active 24s steps(1, end) 6s infinite;
-}
-
-.step-4 {
-	animation: cable-active 24s steps(1, end) 9s infinite;
-}
-
-.step-5 {
-	animation: cable-active 24s steps(1, end) 12s infinite;
-}
-
-.step-6 {
-	animation: cable-active 24s steps(1, end) 15s infinite;
-}
-
-.step-7 {
-	animation: cable-active 24s steps(1, end) 18s infinite;
-}
-
-.output-1 {
-	animation: output-active-1 24s steps(1, end) 9s infinite;
-}
-
-.output-2 {
-	animation: output-active-2 24s steps(1, end) 18s infinite;
-}
-
-.output-3 {
-	animation: output-active-3 24s steps(1, end) 21s infinite;
-}
-
-@keyframes cable-active {
-	0% {
-		stroke-width: 1px;
-	}
-	12.5% {
-		stroke-width: 4px;
-	}
-	25% {
-		stroke-width: 1px;
-	}
-	100% {
-		stroke-width: 1px;
+	@media (min-width: 1801px) {
+	@keyframes cable-active {
+		0% {
+			stroke-width: 0.002vw;
+		}
+		12.5% {
+			stroke-width: 0.005vw;
+		}
+		25% {
+			stroke-width: 0.002vw;
+		}
+		100% {
+			stroke-width: 0.002vw;
+		}
 	}
 }
 
