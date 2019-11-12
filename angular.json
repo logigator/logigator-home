@@ -29,7 +29,8 @@
 							"src/site.webmanifest",
 							"src/browserconfig.xml",
 							"src/robots.txt",
-							"src/sitemap.xml"
+							"src/sitemap.xml",
+							"src/auth-callback"
 						],
 						"styles": [
 							"src/styles.scss",
