@@ -10,31 +10,34 @@
 		<app-input-error error="minlength">{{'POPUP.REGISTER.PASSWORD_ERR_MIN' | translate}}</app-input-error>
 		<app-input-error error="pattern">{{'POPUP.REGISTER.PASSWORD_ERR_COMPLEXITY' | translate}}</app-input-error>
 	</app-input>
-	<app-input type="password" formControlName="confirm_password" label="{{'POPUP.REGISTER.PASSWORD_REPEAT' | translate}}">
-		<app-input-error *ngIf="registerForm.errors?.passwordMatch">{{'POPUP.REGISTER.PASSWORD_REPEAT_ERR' | translate}}</app-input-error>
+	<app-input type="password" formControlName="confirm_password"
+			   label="{{'POPUP.REGISTER.PASSWORD_REPEAT' | translate}}">
+		<app-input-error
+			*ngIf="registerForm.errors?.passwordMatch">{{'POPUP.REGISTER.PASSWORD_REPEAT_ERR' | translate}}</app-input-error>
 	</app-input>
 	<app-input type="text" formControlName="username" label="Username">
 		<app-input-error error="required">{{'POPUP.REGISTER.USERNAME_ERR_REQUIRED' | translate}}</app-input-error>
 		<app-input-error error="minlength">{{'POPUP.REGISTER.USERNAME_ERR_MIN' | translate}}</app-input-error>
 		<app-input-error error="maxlength">{{'POPUP.REGISTER.USERNAME_ERR_MAX' | translate}}</app-input-error>
 	</app-input>
-
+	<p class="agreement"> {{'POPUP.REGISTER.PRIVACY_POLICY' | translate}} </p>
 	<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
-	<button type="submit" class="btn-raised primary" [disabled]="registerForm.invalid">{{'POPUP.REGISTER.REGISTER_BUTTON' | translate}}</button>
+	<button type="submit" class="btn-raised primary"
+			[disabled]="registerForm.invalid">{{'POPUP.REGISTER.REGISTER_BUTTON' | translate}}</button>
 
 	<div class="login-divider">
-		<hr>
+		<div class="divider"></div>
 		<div>
 			{{'POPUP.REGISTER.OR' | translate}}
 		</div>
-		<hr>
+		<div class="divider"></div>
 	</div>
 
 	<div class="social-media-login">
 		<button class="btn-raised primary social-button google" (click)="loginGoogle()">
 			GOOGLE
-			<img class="btn-raised secondary"  src="assets/icons/dark/google.svg" alt="google login icon">
+			<img class="btn-raised secondary" src="assets/icons/dark/google.svg" alt="google login icon">
 		</button>
 		<button class="btn-raised primary social-button twitter" (click)="loginTwitter()">
 			TWITTER
