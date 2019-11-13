@@ -24,7 +24,7 @@
 	"HOME": {
 		"INTRO": {
 			"TITLE": "What is Logigator",
-			"DESCRIPTION": "Logigator is an online-editor used for building and simulating logical circuits. The idea originated because the available tools did not satisfy our wish for a intuitive and scalable tool with high-performance. This vision was realized as a graduation project of the HTL 3 Rennweg. ",
+			"DESCRIPTION": "The editor for logical circuits...",
 			"BUTTON": "GO TO EDITOR"
 		},
 		"EXPLANATION": {

@@ -24,7 +24,7 @@
 	"HOME": {
 		"INTRO": {
 			"TITLE": "Was ist Logigator",
-			"DESCRIPTION": "Logigator ist ein Online-Editor für den Bau und die Simulation von Logikschaltungen. Die Idee entstand nachdem die auf dem Markt verfügbaren Produkte, unseren Wunsch nach einem intuitiven, skalierbaren und performanten Tool, nicht oder nur teilweise befriedigen konnten. Umgesetzt wurde das Projekt im Zuge einer Diplomarbeit der HTL 3 Rennweg. ",
+			"DESCRIPTION": "Der Editor für Logikschaltungen...",
 			"BUTTON": "ZUM EDITOR"
 		},
 		"EXPLANATION": {
