@@ -33,6 +33,16 @@
 			line, rect {
 				stroke-width: 0.002vw;
 			}
+
+			.cross {
+				@include themify() {
+					fill: themed('primary');
+				}
+			}
+
+			.max{
+
+			}
 		}
 
 		text {
@@ -44,7 +54,7 @@
 			}
 		}
 
-		.output-1, .output-2, .output-3{
+		.output-1, .output-2, .output-3 {
 			visibility: hidden;
 		}
 
@@ -106,6 +116,7 @@
 		}
 	}
 }
+
 @media (min-width: 1401px) {
 	@keyframes cable-active {
 		0% {
@@ -122,7 +133,8 @@
 		}
 	}
 }
-	@media (min-width: 1801px) {
+
+@media (min-width: 1801px) {
 	@keyframes cable-active {
 		0% {
 			stroke-width: 0.002vw;
