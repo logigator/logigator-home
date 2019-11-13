@@ -39,10 +39,10 @@ form {
 		margin-top: 1.5rem;
 		margin-bottom: 1.5rem;
 
-		hr {
-			width: 45%;
+		.divider {
+			width: 42%;
 			@include themify {
-				border-bottom: 1px solid themed('accent1');
+				border-bottom: 1px solid themed('secondary-text');
 			}
 		}
 	}
