@@ -152,6 +152,18 @@
 			"IMAGE_UPLOAD": "Upload image",
 			"SAVE_BUTTON": "SAVE"
 		},
+		"NEW_COMP": {
+			"NAME": "Name",
+			"SYMBOL": "Symbol",
+			"NAME_REQUIRED": "Name is required.",
+			"NAME_MIN_LENGTH": "Name has to have at least two characters.",
+			"NAME_MAX_LENGTH": "Name may contain a maximum of 20 characters.",
+			"NAME_PATTERN": "Name is invalid.",
+			"SYMBOL_REQUIRED": "Symbol is required.",
+			"SYMBOL_MAX_LENGTH": "Symbol may contain a maximum of 5 characters.",
+			"SYMBOL_PATTERN": "Symbol is invalid.",
+			"CREATE": "SAVE"
+    },
 		"COOKIE_CONSENT": {
 			"MESSAGE": "This website uses cookies to ensure you get the best experience on our website.",
 			"DISMISS": "Got it!",

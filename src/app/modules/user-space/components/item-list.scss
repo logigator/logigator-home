@@ -72,7 +72,6 @@
 
 		@media (max-width: 767px) {
 			flex-direction: column;
-
 		}
 
 		margin: -0.5rem 0.5rem 0.5rem 0.5rem;
@@ -114,6 +113,8 @@
 
 			width: 10rem;
 			height: 10rem;
+			min-width: 10rem;
+			min-height: 10rem;
 			padding: 0.5rem;
 			margin: 0.5rem;
 
