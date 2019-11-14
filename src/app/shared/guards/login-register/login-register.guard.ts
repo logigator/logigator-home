@@ -5,7 +5,8 @@ import {
 	RouterStateSnapshot,
 	UrlTree,
 	Router,
-	CanActivateChild, CanLoad, Route, UrlSegment
+	Route,
+	UrlSegment, CanLoad, CanActivateChild
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import {AuthService} from '../../services/auth/auth.service';
@@ -13,8 +14,7 @@ import {AuthService} from '../../services/auth/auth.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class AuthGuard implements CanActivateChild, CanActivate, CanLoad {
-
+export class LoginRegisterGuard implements CanActivate, CanActivateChild, CanLoad {
 	constructor(private auth: AuthService, private router: Router) { }
 
 	canActivate(
@@ -34,9 +34,9 @@ export class AuthGuard implements CanActivateChild, CanActivate, CanLoad {
 	}
 
 	private check(): boolean {
-		if (!this.auth.isLoggedIn) {
+		if (this.auth.isLoggedIn) {
 			this.router.navigateByUrl('/');
 		}
-		return this.auth.isLoggedIn;
+		return !this.auth.isLoggedIn;
 	}
 }

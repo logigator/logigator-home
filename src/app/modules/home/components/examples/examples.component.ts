@@ -23,7 +23,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
 			url: '/assets/comingsoon_dark.jpg'
 		},
 		{
-			url: '/assets/comingsoon_light.jpg'
+			url: '/assets/comingsoon_dark.jpg'
 		}
 	];
 

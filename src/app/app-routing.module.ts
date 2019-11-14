@@ -21,7 +21,8 @@ const routes: Routes = [
 		path: 'my',
 		loadChildren: () => import('./modules/user-space/user-space.module').then(m => m.UserSpaceModule),
 		canActivate: [ AuthGuard ],
-		canActivateChild: [ AuthGuard ]
+		canActivateChild: [ AuthGuard ],
+		canLoad: [ AuthGuard ]
 	},
 	{
 		path: '404',

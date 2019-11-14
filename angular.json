@@ -29,17 +29,21 @@
 							"src/site.webmanifest",
 							"src/browserconfig.xml",
 							"src/robots.txt",
-							"src/sitemap.xml"
+							"src/sitemap.xml",
+							"src/auth-callback"
 						],
 						"styles": [
-							"src/styles.scss"
+							"src/styles.scss",
+							"node_modules/cookieconsent/build/cookieconsent.min.css"
 						],
 						"stylePreprocessorOptions": {
 							"includePaths": [
 								"src/"
 							]
 						},
-						"scripts": []
+						"scripts": [
+							"node_modules/cookieconsent/build/cookieconsent.min.js"
+						]
 					},
 					"configurations": {
 						"production": {
