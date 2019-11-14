@@ -42,20 +42,27 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 	public async submit() {
 		if (this.registerForm.invalid)
 			return;
-		// tslint:disable-next-line:max-line-length
-		this.auth.registerEmail(this.registerForm.controls.username.value, this.registerForm.controls.email.value, this.registerForm.controls.password.value).then(() => {
-			this.requestClose.emit();
-		}).catch(e => {
-			switch (e.status) {
-				case 401:
-					this.errorMessage = 'Incorrect email or password.';
-					break;
-				default:
-					this.errorMessage = 'We\'re sorry, an unknown error occurred while trying to log you in. :(';
-					break;
-			}
+
+		// @ts-ignore
+		grecaptcha.ready(() => {
+			// @ts-ignore
+			grecaptcha.execute('6Le9BbgUAAAAAHJupU1XiAa8n1Z0M2YFHL89OMMp', {action: 'register'}).then((token) => {
+				// tslint:disable-next-line:max-line-length
+				this.auth.registerEmail(this.registerForm.controls.username.value, this.registerForm.controls.email.value, this.registerForm.controls.password.value, token).then(() => {
+					this.requestClose.emit();
+				}).catch(e => {
+					switch (e.status) {
+						case 401:
+							this.errorMessage = 'Incorrect email or password.';
+							break;
+						default:
+							this.errorMessage = 'We\'re sorry, an unknown error occurred while trying to log you in. :(';
+							break;
+					}
+				});
+				this.router.navigate(['my']);
+			});
 		});
-		await this.router.navigate(['my']);
 	}
 
 	public async loginGoogle() {
@@ -69,5 +76,4 @@ export class RegisterPopupComponent extends PopupContentComp implements OnInit {
 		this.requestClose.emit();
 		await this.router.navigate(['my']);
 	}
-
 }

@@ -152,6 +152,18 @@
 			"IMAGE_UPLOAD": "Bild hochladen",
 			"SAVE_BUTTON": "SPEICHERN"
 		},
+		"NEW_COMP": {
+			"NAME": "Name",
+			"SYMBOL": "Symbol",
+			"NAME_REQUIRED": "Name muss angegeben werden",
+			"NAME_MIN_LENGTH": "Name muss mindestens zwei Zeichen enthalten",
+			"NAME_MAX_LENGTH": "Name darf maximal 20 Zeichen enthalten",
+			"NAME_PATTERN": "Name ist ungültig",
+			"SYMBOL_REQUIRED": "Symbol muss angegeben werden",
+			"SYMBOL_MAX_LENGTH": "Symbol darf maximal fünf Zeichen enthalten",
+			"SYMBOL_PATTERN": "Symbol ist ungültig",
+			"CREATE": "ERSTELLEN"
+    },
 		"COOKIE_CONSENT": {
 			"MESSAGE": "Wir verwenden Cookies. Wenn Sie auf unserer Seite weitersurfen, stimmen Sie der Cookie-Nutzung zu.",
 			"DISMISS": "Akzeptieren",

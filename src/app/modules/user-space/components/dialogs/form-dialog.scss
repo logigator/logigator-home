@@ -5,11 +5,11 @@ form {
 	flex-direction: column;
 	justify-content: space-between;
 
-	width: 400px;
 	@media (max-width: 767px) {
 		width: 100%;
+		padding: 1rem;
 	}
-	padding: 2rem;
+	padding: 2rem 5rem;
 
 	>:last-child {
 		padding: 0.7rem;
