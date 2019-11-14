@@ -1,24 +1,25 @@
 <div class="page">
 	<app-background-image></app-background-image>
 	<section class="introduction content-section">
-		<article>
-			<h3>{{'HOME.INTRO.TITLE' | translate}}</h3>
-			<p>{{'HOME.INTRO.DESCRIPTION' | translate}}</p>
-		</article>
-		<a href="https://editor.logigator.com/" target="_blank" rel="noopener">
-			<button class="btn-raised primary">{{'HOME.INTRO.BUTTON' | translate}}</button>
-		</a>
+		<img *ngIf="theme === 'dark'" src="/assets/logo_light.svg" alt="lage Logo">
+		<img *ngIf="theme === 'light'" src="/assets/logo.svg" alt="large Logo">
+		<div class="intro-headline">
+			<h3>{{'HOME.INTRO.DESCRIPTION' | translate}}</h3>
+			<a href="https://editor.logigator.com/" target="_blank" rel="noopener">
+				<button class="btn-raised primary">{{'HOME.INTRO.BUTTON' | translate}}</button>
+			</a>
+		</div>
 	</section>
 	<hr>
 	<section class="explanation content-section">
 		<div class="iframe-container-container">
 			<div class="iframe-container">
-			<!--<iframe width="560" height="340" src="" frameborder="0"
+			<!--<iframe width="560" height="340" appLazyLoad dataSrc="" frameborder="0"
 						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen>
 				</iframe>-->
-				<img *ngIf="theme === 'dark'" src="/assets/comingsoon_dark.jpg">
-				<img *ngIf="theme === 'light'" src="/assets/comingsoon_light.jpg">
+				<img *ngIf="theme === 'dark'" src="/assets/comingsoon_dark.png" alt="placeholder-image for a soon coming video">
+				<img *ngIf="theme === 'light'" src="/assets/comingsoon_light.png" alt="placeholder-image for a soon coming video">
 			</div>
 		</div>
 		<article>
@@ -26,6 +27,7 @@
 			<p>{{'HOME.EXPLANATION.DESCRIPTION' | translate}}</p>
 		</article>
 	</section>
+	<div class="explanation-examples-divider content-section"></div>
 	<hr>
 	<section class="content-section examples">
 		<app-examples></app-examples>

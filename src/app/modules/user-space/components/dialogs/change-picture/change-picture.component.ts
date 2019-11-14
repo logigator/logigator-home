@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {PopupContentComp} from '../../../../../../shared/components/popup/popup-content-comp';
-import {ApiService} from '../../../../../../shared/services/api/api.service';
 import {HttpClient} from '@angular/common/http';
+import {PopupContentComp} from '../../../../../shared/components/popup/popup-content-comp';
+import {ApiService} from '../../../../../shared/services/api/api.service';
 
 @Component({
 	selector: 'app-change-picture',

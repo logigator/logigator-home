@@ -24,7 +24,7 @@
 	"HOME": {
 		"INTRO": {
 			"TITLE": "What is Logigator",
-			"DESCRIPTION": "Logigator is an online-editor used for building and simulating logical circuits. The idea originated because the available tools did not satisfy our wish for a intuitive and scalable tool with high-performance. This vision was realized as a graduation project of the HTL 3 Rennweg. ",
+			"DESCRIPTION": "The editor for logical circuits...",
 			"BUTTON": "GO TO EDITOR"
 		},
 		"EXPLANATION": {
@@ -100,6 +100,7 @@
 			"PASSWORD_ERR_COMPLEXITY": "Password mus contain letters and digits.",
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwords do not match",
+			"PRIVACY_POLICY": "By clicking on \"SIGN UP\" you agree that you have read and accepted our data policy.",
 			"REGISTER_BUTTON": "SIGN UP",
 			"OR": "or"
 		},
@@ -150,6 +151,23 @@
 			"IMAGE_CROP": "Crop image",
 			"IMAGE_UPLOAD": "Upload image",
 			"SAVE_BUTTON": "SAVE"
+		},
+		"NEW_COMP": {
+			"NAME": "Name",
+			"SYMBOL": "Symbol",
+			"NAME_REQUIRED": "Name is required.",
+			"NAME_MIN_LENGTH": "Name has to have at least two characters.",
+			"NAME_MAX_LENGTH": "Name may contain a maximum of 20 characters.",
+			"NAME_PATTERN": "Name is invalid.",
+			"SYMBOL_REQUIRED": "Symbol is required.",
+			"SYMBOL_MAX_LENGTH": "Symbol may contain a maximum of 5 characters.",
+			"SYMBOL_PATTERN": "Symbol is invalid.",
+			"CREATE": "SAVE"
+    },
+		"COOKIE_CONSENT": {
+			"MESSAGE": "This website uses cookies to ensure you get the best experience on our website.",
+			"DISMISS": "Got it!",
+			"LINK": "Learn more"
 		}
 	}
 }

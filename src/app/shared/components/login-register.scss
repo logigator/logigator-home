@@ -5,12 +5,13 @@ form {
 	flex-direction: column;
 	justify-content: space-between;
 
-	width: 400px;
 	@media (max-width: 767px) {
 		width: 100%;
-		padding: 0;
+		padding: 1rem;
 	}
+  
 	padding: 2rem;
+	margin: auto;
 
 	button {
 		padding: 0.7rem;
@@ -38,10 +39,10 @@ form {
 		margin-top: 1.5rem;
 		margin-bottom: 1.5rem;
 
-		hr {
-			width: 45%;
+		.divider {
+			width: 42%;
 			@include themify {
-				border-bottom: 1px solid themed('accent1');
+				border-bottom: 1px solid themed('secondary-text');
 			}
 		}
 	}
@@ -80,7 +81,5 @@ form {
 				background-color: #1da1f2;
 			}
 		}
-
-
 	}
 }

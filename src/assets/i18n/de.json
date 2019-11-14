@@ -24,7 +24,7 @@
 	"HOME": {
 		"INTRO": {
 			"TITLE": "Was ist Logigator",
-			"DESCRIPTION": "Logigator ist ein Online-Editor für den Bau und die Simulation von Logikschaltungen. Die Idee entstand nachdem die auf dem Markt verfügbaren Produkte, unseren Wunsch nach einem intuitiven, skalierbaren und performanten Tool, nicht oder nur teilweise befriedigen konnten. Umgesetzt wurde das Projekt im Zuge einer Diplomarbeit der HTL 3 Rennweg. ",
+			"DESCRIPTION": "Der Editor für Logikschaltungen...",
 			"BUTTON": "ZUM EDITOR"
 		},
 		"EXPLANATION": {
@@ -100,6 +100,7 @@
 			"PASSWORD_ERR_COMPLEXITY": "Passwort muss Ziffern und Buchstaben enthalten",
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwörter stimmen nicht überein",
+			"PRIVACY_POLICY": "Durch klicken auf \"Registrieren\" stimmen Sie zu, dass Sie die Datenschutzerklärung gelesen haben akzeptieren.",
 			"REGISTER_BUTTON": "REGISTRIEREN",
 			"OR": "oder"
 		},
@@ -150,6 +151,23 @@
 			"IMAGE_CROP": "Bild zuschneiden",
 			"IMAGE_UPLOAD": "Bild hochladen",
 			"SAVE_BUTTON": "SPEICHERN"
+		},
+		"NEW_COMP": {
+			"NAME": "Name",
+			"SYMBOL": "Symbol",
+			"NAME_REQUIRED": "Name muss angegeben werden",
+			"NAME_MIN_LENGTH": "Name muss mindestens zwei Zeichen enthalten",
+			"NAME_MAX_LENGTH": "Name darf maximal 20 Zeichen enthalten",
+			"NAME_PATTERN": "Name ist ungültig",
+			"SYMBOL_REQUIRED": "Symbol muss angegeben werden",
+			"SYMBOL_MAX_LENGTH": "Symbol darf maximal fünf Zeichen enthalten",
+			"SYMBOL_PATTERN": "Symbol ist ungültig",
+			"CREATE": "ERSTELLEN"
+    },
+		"COOKIE_CONSENT": {
+			"MESSAGE": "Wir verwenden Cookies. Wenn Sie auf unserer Seite weitersurfen, stimmen Sie der Cookie-Nutzung zu.",
+			"DISMISS": "Akzeptieren",
+			"LINK": "Mehr erfahren"
 		}
 	}
 }

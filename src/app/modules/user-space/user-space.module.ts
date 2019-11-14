@@ -5,13 +5,9 @@ import {UserSpaceRoutingModule} from './user-space-routing.module';
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { ComponentListComponent } from './components/component-list/component-list.component';
 import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
-import { ChangePasswordComponent } from './components/account-settings/popups/change-password/change-password.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FileInputComponent } from './components/account-settings/form-controls/file-input/file-input.component';
 import {ImageCropperModule} from 'ngx-image-cropper';
-import {ChangeUsernameComponent} from './components/account-settings/popups/change-username/change-username.component';
-import { ChangePictureComponent } from './components/account-settings/popups/change-picture/change-picture.component';
-import {ChangeEmailComponent} from './components/account-settings/popups/change-email/change-email.component';
 import {DrawerComponent} from './components/drawer/drawer.component';
 import {ShareProjectComponent} from './components/dialogs/share-project/share-project.component';
 import {TranslateModule} from '@ngx-translate/core';
@@ -20,6 +16,14 @@ import {ProjectEditComponent} from './components/dialogs/project-edit/project-ed
 import {ComponentEditComponent} from './components/dialogs/component-edit/component-edit.component';
 import {ProjectDeleteComponent} from './components/dialogs/project-delete/project-delete.component';
 import {ComponentDeleteComponent} from './components/dialogs/component-delete/component-delete.component';
+import {ChangePasswordComponent} from './components/dialogs/change-password/change-password.component';
+import {ChangeEmailComponent} from './components/dialogs/change-email/change-email.component';
+import {ChangeUsernameComponent} from './components/dialogs/change-username/change-username.component';
+import {ChangePictureComponent} from './components/dialogs/change-picture/change-picture.component';
+import {ComponentInfoComponent} from './components/dialogs/component-info/component-info.component';
+import {ProjectInfoComponent} from './components/dialogs/project-info/project-info.component';
+import {NewComponentComponent} from './components/dialogs/new-component/new-component.component';
+import {NewProjectComponent} from './components/dialogs/new-project/new-project.component';
 
 @NgModule({
 	declarations: [
@@ -37,7 +41,11 @@ import {ComponentDeleteComponent} from './components/dialogs/component-delete/co
 		ProjectEditComponent,
 		ComponentEditComponent,
 		ProjectDeleteComponent,
-		ComponentDeleteComponent
+		ComponentDeleteComponent,
+		ComponentInfoComponent,
+		ProjectInfoComponent,
+		NewComponentComponent,
+		NewProjectComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent,
@@ -48,7 +56,11 @@ import {ComponentDeleteComponent} from './components/dialogs/component-delete/co
 		ProjectEditComponent,
 		ComponentEditComponent,
 		ProjectDeleteComponent,
-		ComponentDeleteComponent
+		ComponentDeleteComponent,
+		ComponentInfoComponent,
+		ProjectInfoComponent,
+		NewComponentComponent,
+		NewProjectComponent
 	],
 	imports: [
 		UserSpaceRoutingModule,

@@ -1,41 +1,18 @@
 @import "themes";
+@import "../form-dialog";
 
 form {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	min-width: 400px;
+	width: initial;
+	max-width: 100%;
 
-	width: 400px;
-	@media (max-width: 767px) {
-		width: 100%;
-		padding: 0;
-	}
-	padding: 2rem;
-
-	button {
-		padding: 0.7rem;
-	}
-
-	.textarea{
-		margin: 1rem 0;
+	.textarea {
+		min-width: 400px;
+		margin-bottom: 2rem;
 		@include themify(){
 			background-color: themed('background');
 			border: 1px solid themed('text-primary');
 			color: themed('text-primary');
 		}
 	}
-
-	&:first-child{
-		padding-top: 1rem;
-	}
-
-	.invalid {
-		margin-top: 0;
-		font-size: 0.9rem;
-		@include themify(){
-			color: themed('error');
-			border-color: themed('error');
-		}
-	}
-
 }

@@ -1,0 +1,40 @@
+@import "themes";
+
+.info {
+	@media (max-width: 767px) {
+		padding: 1rem;
+	}
+	width: 100%;
+	padding: 2rem 5rem;
+
+	.item {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+
+		> :first-child {
+			margin-right: 2rem;
+		}
+	}
+
+	.description {
+		display: block;
+		@media (min-width: 768px){
+			max-width: 30rem;
+		}
+
+		p {
+			word-break: break-word;
+			white-space: pre-line;
+		}
+	}
+
+	hr {
+		border-width: 1px;
+		border-style: none;
+		border-top-style: solid;
+		@include themify() {
+			border-color: themed('text-primary');
+		}
+	}
+}

@@ -14,8 +14,8 @@
 									<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
 									<a class="icon icon-edit" (click)="openProjectEditDialog(project)"></a>
 									<a class="icon icon-delete" (click)="openProjectDeleteDialog(project)"></a>
-									<a class="icon icon-info"></a>
-									<a class="icon icon-more"></a>
+									<a class="icon icon-info" (click)="openProjectInfoDialog(project)"></a>
+									<!--<a class="icon icon-more"></a>-->
 								</div>
 							</div>
 						</div>
@@ -26,14 +26,14 @@
 								<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
 								<a class="icon icon-edit" (click)="openProjectEditDialog(project)"></a>
 								<a class="icon icon-delete" (click)="openProjectDeleteDialog(project)"></a>
-								<a class="icon icon-info"></a>
-								<a class="icon icon-more"></a>
+								<a class="icon icon-info" (click)="openProjectInfoDialog(project)"></a>
+								<!--<a class="icon icon-more"></a>-->
 							</div>
 						</div>
 					</div>
 					<div class="tile empty-tile">
 						<div class="tile-hover"></div>
-						<div class="icon icon-add-new"></div>
+						<div class="icon icon-add-new" (click)="openProjectAddDialog()"></div>
 					</div>
 				</div>
 				<div class="item" *ngFor="let project of projects; odd as isOdd" [class.odd]="isOdd">
@@ -42,8 +42,8 @@
 					<div class="icon icon-share" (click)="openShareDialog(project.pk_id)"></div>
 					<div class="icon icon-edit" (click)="openProjectEditDialog(project)"></div>
 					<div class="icon icon-delete" (click)="openProjectDeleteDialog(project)"></div>
-					<div class="icon icon-info"></div>
-					<div class="icon icon-more"></div>
+					<div class="icon icon-info" (click)="openProjectInfoDialog(project)"></div>
+					<!--<div class="icon icon-more"></div>-->
 				</div>
 			</ng-container>
 			<ng-template #noProjects>

@@ -7,10 +7,10 @@ import {HomeModule} from './modules/home/home.module';
 import {SharedModule} from './shared/shared.module';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {MissingTranslationHandler, TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {createTranslateLoader} from './shared/models/translation/translation-loader-factory';
 import {AppMissingTranslationHandler} from './shared/models/translation/missing-translation-handler';
 import {CredentialsInterceptor} from './shared/interceptors/credentials';
 import {WINDOW, windowFactory} from './shared/injectable-window';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 @NgModule({
 	declarations: [
@@ -25,7 +25,7 @@ import {WINDOW, windowFactory} from './shared/injectable-window';
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
-				useFactory: createTranslateLoader,
+				useClass: TranslateHttpLoader,
 				deps: [HttpClient]
 			},
 			missingTranslationHandler: {

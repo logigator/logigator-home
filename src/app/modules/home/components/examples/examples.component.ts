@@ -20,10 +20,10 @@ export class ExamplesComponent implements OnInit, OnDestroy {
 	public autoPlay = true;
 	public imageUrls: IImage[] = [
 		{
-			url: '/assets/comingsoon_dark.jpg'
+			url: '/assets/comingsoon_dark.png'
 		},
 		{
-			url: '/assets/comingsoon_light.jpg'
+			url: '/assets/comingsoon_dark.png'
 		}
 	];
 
