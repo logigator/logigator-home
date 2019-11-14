@@ -113,7 +113,7 @@ html, body {
 		box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
 
 		&.primary {
-			color: themed('button-text');
+			color: #000000;
 			background-color: themed('primary');
 
 			&:hover {
