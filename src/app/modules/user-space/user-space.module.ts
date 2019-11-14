@@ -22,6 +22,8 @@ import {ChangeUsernameComponent} from './components/dialogs/change-username/chan
 import {ChangePictureComponent} from './components/dialogs/change-picture/change-picture.component';
 import {ComponentInfoComponent} from './components/dialogs/component-info/component-info.component';
 import {ProjectInfoComponent} from './components/dialogs/project-info/project-info.component';
+import {NewComponentComponent} from './components/dialogs/new-component/new-component.component';
+import {NewProjectComponent} from './components/dialogs/new-project/new-project.component';
 
 @NgModule({
 	declarations: [
@@ -41,7 +43,9 @@ import {ProjectInfoComponent} from './components/dialogs/project-info/project-in
 		ProjectDeleteComponent,
 		ComponentDeleteComponent,
 		ComponentInfoComponent,
-		ProjectInfoComponent
+		ProjectInfoComponent,
+		NewComponentComponent,
+		NewProjectComponent
 	],
 	entryComponents: [
 		ChangePasswordComponent,
@@ -54,7 +58,9 @@ import {ProjectInfoComponent} from './components/dialogs/project-info/project-in
 		ProjectDeleteComponent,
 		ComponentDeleteComponent,
 		ComponentInfoComponent,
-		ProjectInfoComponent
+		ProjectInfoComponent,
+		NewComponentComponent,
+		NewProjectComponent
 	],
 	imports: [
 		UserSpaceRoutingModule,

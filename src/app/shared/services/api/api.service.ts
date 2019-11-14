@@ -160,4 +160,41 @@ export class ApiService {
 				false)
 		);
 	}
+
+	public newProject(name: string) {
+		if (!this.auth.isLoggedIn)
+			return of(false);
+
+		return this.http.post<HttpResponseData<any>>(environment.apiPrefix + `/project/create`, {
+			name,
+			isComponent: false,
+		}).pipe(
+			map(data => {
+				this._userProjectsSubject$.next();
+				return data.result.success;
+			}),
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Could not create project: (${x.status}) ${x.error.error.description}`,
+				false)
+		);
+	}
+
+	public newComponent(name: string, symbol: string) {
+		if (!this.auth.isLoggedIn)
+			return of(false);
+
+		return this.http.post<HttpResponseData<any>>(environment.apiPrefix + `/project/create`, {
+			name,
+			isComponent: true,
+			symbol
+		}).pipe(
+			map(data => {
+				this._userComponentsSubject$.next();
+				return data.result.success;
+			}),
+			this.errorHandling.catchErrorOperatorDynamicMessage(
+				(x) => `Could not create component: (${x.status}) ${x.error.error.description}`,
+				false)
+		);
+	}
 }

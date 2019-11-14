@@ -9,6 +9,7 @@ import {ComponentEditComponent} from '../dialogs/component-edit/component-edit.c
 import {environment} from '../../../../../environments/environment';
 import {ComponentDeleteComponent} from '../dialogs/component-delete/component-delete.component';
 import {ComponentInfoComponent} from '../dialogs/component-info/component-info.component';
+import {NewComponentComponent} from '../dialogs/new-component/new-component.component';
 
 @Component({
 	selector: 'app-component-list',
@@ -41,5 +42,9 @@ export class ComponentListComponent implements OnInit {
 
 	public openProjectInfoDialog(project: UserComponent) {
 		this.popup.showPopup(ComponentInfoComponent, this.componentFactoryResolver, 'Information', false, project);
+	}
+
+	public openProjectAddDialog() {
+		this.popup.showPopup(NewComponentComponent, this.componentFactoryResolver, 'New Component', false);
 	}
 }

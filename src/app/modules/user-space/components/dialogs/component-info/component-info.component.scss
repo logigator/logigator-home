@@ -2,9 +2,9 @@
 
 .info {
 	@media (max-width: 767px) {
-		width: 100%;
 		padding: 1rem;
 	}
+	width: 100%;
 	padding: 2rem 5rem;
 
 	.item {
@@ -19,6 +19,14 @@
 
 	.description {
 		display: block;
+		@media (min-width: 768px){
+			max-width: 30rem;
+		}
+
+		p {
+			word-break: break-word;
+			white-space: pre-line;
+		}
 	}
 
 	hr {
