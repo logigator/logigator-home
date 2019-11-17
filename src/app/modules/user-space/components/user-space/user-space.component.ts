@@ -1,8 +1,6 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {AuthService} from '../../../../shared/services/auth/auth.service';
-import {Observable} from 'rxjs';
-import {UserInfo} from '../../../../shared/models/http-responses/user-info';
-import {ApiService} from '../../../../shared/services/api/api.service';
+import {Component, Inject, inject, OnInit, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
+import {WINDOW} from '../../../../shared/injectable-window';
 
 @Component({
 	selector: 'app-user-space',
@@ -10,13 +8,15 @@ import {ApiService} from '../../../../shared/services/api/api.service';
 	styleUrls: ['./user-space.component.scss'],
 	encapsulation: ViewEncapsulation.None
 })
-export class UserSpaceComponent implements OnInit {
+export class UserSpaceComponent {
 
-	constructor(private auth: AuthService, private api: ApiService) { }
-
-	ngOnInit() { }
+	constructor(
+		@Inject(WINDOW) private window: Window,
+		@Inject(PLATFORM_ID) private platformId: string
+	) { }
 
 	public onActivate(event) {
-		window.scroll(0, 0);
+		if (isPlatformBrowser(this.platformId))
+			this.window.scroll(0, 0);
 	}
 }

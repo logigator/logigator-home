@@ -7,7 +7,7 @@
 	justify-content: space-between;
 	flex-direction: column;
 	width: 20rem;
-	height: calc(100vh - #{$header-height});
+	height: calc(100% - #{$header-height});
 	position: fixed;
 	z-index: 1100;
 	left: -20rem;

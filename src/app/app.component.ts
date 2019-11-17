@@ -76,6 +76,7 @@ export class AppComponent implements OnInit {
 	}
 
 	public onActivate(event) {
-		window.scroll(0, 0);
+		if (isPlatformBrowser(this.platformId))
+			this.window.scroll(0, 0);
 	}
 }
