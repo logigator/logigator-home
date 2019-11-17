@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-burger-menu></app-burger-menu>
 <div class="content">
-	<router-outlet></router-outlet>
+	<router-outlet (activate)="onActivate($event)"></router-outlet>
 </div>
 <app-footer></app-footer>

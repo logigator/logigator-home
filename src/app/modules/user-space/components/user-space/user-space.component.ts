@@ -15,4 +15,8 @@ export class UserSpaceComponent implements OnInit {
 	constructor(private auth: AuthService, private api: ApiService) { }
 
 	ngOnInit() { }
+
+	public onActivate(event) {
+		window.scroll(0, 0);
+	}
 }

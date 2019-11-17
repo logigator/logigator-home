@@ -74,4 +74,8 @@ export class AppComponent implements OnInit {
 			this.translate.use('en');
 		}
 	}
+
+	public onActivate(event) {
+		window.scroll(0, 0);
+	}
 }
