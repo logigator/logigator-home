@@ -2,12 +2,16 @@
 @import "../form-dialog";
 
 form {
-	min-width: 400px;
 	width: initial;
 	max-width: 100%;
 
 	.textarea {
 		min-width: 400px;
+		@media (max-width: 767px) {
+			min-width: 100%;
+			max-width: 100%;
+		}
+
 		margin-bottom: 2rem;
 		@include themify(){
 			background-color: themed('background');
