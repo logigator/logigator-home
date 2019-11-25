@@ -4,12 +4,13 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	max-width: 50rem;
 
 	@media (max-width: 767px) {
 		width: 100%;
 		padding: 1rem;
 	}
-  
+
 	padding: 2rem;
 	margin: auto;
 
