@@ -39,13 +39,10 @@
 		z-index: 600;
 
 		.body {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
+			margin: auto;
 			padding: 0.5rem;
 			overflow: auto;
 			width: 100%;
-			flex: 1;
 		}
 
 		.header {
