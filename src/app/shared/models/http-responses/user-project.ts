@@ -4,4 +4,5 @@ export interface UserProject {
 	description: string;
 	last_edited: string;
 	created_on: string;
+	location: string;
 }

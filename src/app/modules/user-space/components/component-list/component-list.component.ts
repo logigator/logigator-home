@@ -19,6 +19,7 @@ import {NewComponentComponent} from '../dialogs/new-component/new-component.comp
 export class ComponentListComponent implements OnInit {
 
 	public editorUrl = environment.editor;
+	public apiUrl = environment.apiPrefix;
 
 	constructor(private api: ApiService, private popup: PopupService, private componentFactoryResolver: ComponentFactoryResolver) { }
 

@@ -18,6 +18,7 @@ import {NewProjectComponent} from '../dialogs/new-project/new-project.component'
 export class ProjectListComponent implements OnInit {
 
 	public editorUrl = environment.editor;
+	public apiUrl = environment.apiPrefix;
 
 	constructor(private api: ApiService, private popup: PopupService, private componentFactoryResolver: ComponentFactoryResolver) {
 	}
