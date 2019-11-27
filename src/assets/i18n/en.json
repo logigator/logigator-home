@@ -97,7 +97,7 @@
 			"PASSWORD": "Password",
 			"PASSWORD_ERR_REQUIRED": "Password is required.",
 			"PASSWORD_ERR_MIN": "Password must contain at least eight characters.",
-			"PASSWORD_ERR_COMPLEXITY": "Password mus contain letters and digits.",
+			"PASSWORD_ERR_COMPLEXITY": "Password must contain letters and digits.",
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwords do not match",
 			"PRIVACY_POLICY": "By clicking on \"SIGN UP\" you agree that you have read and accepted our data policy.",
@@ -133,7 +133,7 @@
 			"PASSWORD": "Password",
 			"PASSWORD_ERR_REQUIRED": "Password is required.",
 			"PASSWORD_ERR_MIN": "Password must contain at least eight characters.",
-			"PASSWORD_ERR_COMPLEXITY": "Password mus contain letters and digits.",
+			"PASSWORD_ERR_COMPLEXITY": "Password must contain letters and digits.",
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwords do not match",
 			"SAVE_BUTTON": "SAVE"
