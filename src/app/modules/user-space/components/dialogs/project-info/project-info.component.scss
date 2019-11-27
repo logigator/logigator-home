@@ -7,6 +7,13 @@
 	width: 100%;
 	padding: 2rem 5rem;
 
+	img {
+		width: 100%;
+		max-height: 256px;
+		object-fit: contain;
+		margin-bottom: 1rem;
+	}
+
 	.item {
 		display: flex;
 		justify-content: space-between;

@@ -3,6 +3,7 @@ import {PopupContentComp} from '../../../../../shared/components/popup/popup-con
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../../../../shared/services/api/api.service';
 import {UserProject} from '../../../../../shared/models/http-responses/user-project';
+import {environment} from '../../../../../../environments/environment';
 
 @Component({
 	selector: 'app-project-info',
@@ -12,6 +13,7 @@ import {UserProject} from '../../../../../shared/models/http-responses/user-proj
 export class ProjectInfoComponent extends PopupContentComp<UserProject> implements OnInit {
 
 	public project: UserProject;
+	public apiPath = environment.apiPrefix;
 
 	constructor() {
 		super();
