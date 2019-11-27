@@ -10,8 +10,8 @@ const routes: Routes = [
 		children: HOME_ROUTES
 	},
 	{
-		path: 'impressum',
-		loadChildren: () => import('./modules/impressum/impressum.module').then(m => m.ImpressumModule)
+		path: 'imprint',
+		loadChildren: () => import('./modules/imprint/imprint.module').then(m => m.ImprintModule)
 	},
 	{
 		path: 'privacy-policy',

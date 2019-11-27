@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ImprintComponent} from './imprint.component';
 
-import { ImpressumComponent } from './impressum.component';
-
-describe('ImpressumComponent', () => {
-	let component: ImpressumComponent;
-	let fixture: ComponentFixture<ImpressumComponent>;
+describe('ImprintComponent', () => {
+	let component: ImprintComponent;
+	let fixture: ComponentFixture<ImprintComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ ImpressumComponent ]
+			declarations: [ ImprintComponent ]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(ImpressumComponent);
+		fixture = TestBed.createComponent(ImprintComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

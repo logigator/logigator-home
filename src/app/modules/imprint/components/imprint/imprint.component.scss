@@ -1,22 +1,22 @@
 @import "themes";
 
-.impressum {
+.imprint {
 	padding: 2rem;
-	@include themify(){
+	@include themify() {
 		color: themed('text-primary');
 	}
 
-	h1{
+	h1 {
 		font-weight: normal;
 		font-size: 2.5rem;
 	}
 
-	h2{
+	h2 {
 		font-weight: normal;
 		font-size: 2rem;
 	}
 
-	h3{
+	h3 {
 		font-weight: normal;
 		font-size: 1.5rem;
 	}

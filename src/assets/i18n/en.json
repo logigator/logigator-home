@@ -163,11 +163,31 @@
 			"SYMBOL_MAX_LENGTH": "Symbol may contain a maximum of 5 characters.",
 			"SYMBOL_PATTERN": "Symbol is invalid.",
 			"CREATE": "SAVE"
-    },
+		},
 		"COOKIE_CONSENT": {
 			"MESSAGE": "This website uses cookies to ensure you get the best experience on our website.",
 			"DISMISS": "Got it!",
 			"LINK": "Learn more"
 		}
+	},
+	"IMPRINT" : {
+		"HEAD": "Imprint",
+		"INFORMATION_OBLIGATION": "Information obligation according to §5 E-Commerce Law, §14 Corporate Code, §63 Trade Regulations and Disclosure Obligation according to §25 Media Act.",
+		"COLLEGE": "Higher Technical College Vienna 3",
+		"VIENNA": "Vienna",
+		"AUSTRIA": "Austria",
+		"SOURCE_1": "Source: Created with the imprint generator of",
+		"SOURCE_2": "in cooperation with",
+		"CONTENTS_HEAD": "Liability for contents of this website",
+		"CONTENTS_1": "We are constantly developing the contents of this website and strive to provide correct and up-to-date information. Unfortunately, we can not assume any liability for the correctness of all content on this website, especially for those provided by third parties.",
+		"CONTENTS_2": "If you notice any problematic or unlawful content, please contact us immediately, you will find the contact details in the imprint.",
+		"LINKS_HEAD": "Liability for links on this website",
+		"LINKS_1": "Our website contains links to other websites whose content we are not responsible for. Liability for linked websites does not exist for us according to",
+		"LINKS_1_1": ", because we did not have knowledge of illegal activities and have not noticed such illegality and we would remove links immediately if we become aware of any illegalities.",
+		"LINKS_2": "If you notice unlawful links on our website, we ask you to contact us, you will find the contact details in the imprint.",
+		"COPYRIGHT_HEAD": "Copyright Notice",
+		"COPYRIGHT_1": "Icons made by",
+		"COPYRIGHT_1_1": "from",
+		"COPYRIGHT_2": "All contents of this website (pictures, photos, texts, videos) are subject to copyright. If necessary, we will legally pursue the unauthorized use of parts of the contents of our site."
 	}
 }
