@@ -146,6 +146,9 @@
 					max-height: 100%;
 				}
 				object-fit: contain;
+				@include themify() {
+					filter: drop-shadow(0px 0px 2px darken(themed('background'), 30));
+				}
 			}
 
 			.tile-hover {
@@ -159,9 +162,9 @@
 
 				@include themify() {
 					@if (isTheme('dark')) {
-						background-color: lighten(themed('background'), 10);
+						backdrop-filter: blur(2px) contrast(80%);
 					} @else {
-						background-color: darken(themed('background'), 10);
+						backdrop-filter: blur(2px) contrast(80%);
 					}
 					border: 1px solid themed('text-primary');
 				}
