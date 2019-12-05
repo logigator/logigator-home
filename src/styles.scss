@@ -1,8 +1,15 @@
 @import "~@logigator/logigator-shared-comps/styles/main";
 @import "~@logigator/logigator-shared-comps/styles/buttons";
 @import "variables";
+@import "themes";
 
 html, body {
 	margin: ($header-height / 2) 0 0 0;
 	padding: 0;
+}
+
+@include themify() {
+	* {
+		color: themed('text-primary');
+	}
 }
