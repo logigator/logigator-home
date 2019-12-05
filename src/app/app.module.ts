@@ -11,7 +11,7 @@ import {AppMissingTranslationHandler} from './shared/models/translation/missing-
 import {CredentialsInterceptor} from './shared/interceptors/credentials';
 import {WINDOW, windowFactory} from './shared/injectable-window';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {LogigatorSharedCompsModule} from '@logigator/logigator-shared-comps';
+import {LogigatorSharedCompsModule, SharedCompsAuthService, SharedCompsThemingService} from '@logigator/logigator-shared-comps';
 import {ThemingService} from './shared/services/theming/theming.service';
 import {AuthService} from './shared/services/auth/auth.service';
 
@@ -37,8 +37,14 @@ import {AuthService} from './shared/services/auth/auth.service';
 			}
 		}),
 		LogigatorSharedCompsModule.forRoot({
-			themingService: ThemingService,
-			authService: AuthService
+			themingService: {
+				provide: SharedCompsThemingService,
+				useExisting: ThemingService
+			},
+			authService: {
+				provide: SharedCompsAuthService,
+				useExisting: AuthService
+			}
 		})
 	],
 	providers: [

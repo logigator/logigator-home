@@ -146,7 +146,8 @@
 						"tsConfig": "tsconfig.server.json",
 						"stylePreprocessorOptions": {
 							"includePaths": [
-								"src/"
+								"src/",
+								"node_modules/@logigator/logigator-shared-comps/styles"
 							]
 						}
 					},
