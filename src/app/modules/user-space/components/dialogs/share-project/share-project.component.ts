@@ -1,9 +1,9 @@
 import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
-import {PopupContentComp} from '../../../../../shared/components/popup/popup-content-comp';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SharingService} from '../../../../../shared/services/sharing/sharing.service';
 import {environment} from '../../../../../../environments/environment';
 import {DOCUMENT} from '@angular/common';
+import {PopupContentComp} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-share-project',

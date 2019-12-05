@@ -2,13 +2,12 @@ import {Component, ComponentFactoryResolver, OnInit} from '@angular/core';
 import {AuthService} from '../../../../shared/services/auth/auth.service';
 import {Observable} from 'rxjs';
 import {UserInfo} from '../../../../shared/models/http-responses/user-info';
-import {PopupService} from '../../../../shared/services/popup/popup.service';
-import {ApiService} from '../../../../shared/services/api/api.service';
-import {map, switchMap, take, tap} from 'rxjs/operators';
+import {map, take} from 'rxjs/operators';
 import {ChangePasswordComponent} from '../dialogs/change-password/change-password.component';
 import {ChangeUsernameComponent} from '../dialogs/change-username/change-username.component';
 import {ChangeEmailComponent} from '../dialogs/change-email/change-email.component';
 import {ChangePictureComponent} from '../dialogs/change-picture/change-picture.component';
+import {PopupService} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-account-settings',
@@ -21,7 +20,6 @@ export class AccountSettingsComponent implements OnInit {
 		private auth: AuthService,
 		private popup: PopupService,
 		private componentFactoryResolver: ComponentFactoryResolver,
-		private api: ApiService
 	) { }
 
 	ngOnInit() {
@@ -32,15 +30,15 @@ export class AccountSettingsComponent implements OnInit {
 	}
 
 	public openPasswordChangeDialog() {
-		this.popup.showPopup(ChangePasswordComponent, this.componentFactoryResolver, 'POPUP.CHANGE_PASSWORD.TITLE', false);
+		this.popup.showPopup(ChangePasswordComponent, 'POPUP.CHANGE_PASSWORD.TITLE', false, this.componentFactoryResolver);
 	}
 
 	public openUsernameChangeDialog() {
-		this.popup.showPopup(ChangeUsernameComponent, this.componentFactoryResolver, 'POPUP.CHANGE_USERNAME.TITLE', false);
+		this.popup.showPopup(ChangeUsernameComponent, 'POPUP.CHANGE_USERNAME.TITLE', false, this.componentFactoryResolver);
 	}
 
 	public openEmailChangeDialog() {
-		this.popup.showPopup(ChangeEmailComponent, this.componentFactoryResolver, 'POPUP.CHANGE_EMAIL.TITLE', false);
+		this.popup.showPopup(ChangeEmailComponent, 'POPUP.CHANGE_EMAIL.TITLE', false, this.componentFactoryResolver);
 	}
 
 	public openPictureChangeDialog() {
@@ -48,7 +46,7 @@ export class AccountSettingsComponent implements OnInit {
 			map(data => data.user.profile_image),
 			take(1)
 		).subscribe(img => {
-			this.popup.showPopup(ChangePictureComponent, this.componentFactoryResolver, 'POPUP.CHANGE_PICTURE.TITLE', false, img);
+			this.popup.showPopup(ChangePictureComponent, 'POPUP.CHANGE_PICTURE.TITLE', false, img, this.componentFactoryResolver);
 		});
 	}
 }

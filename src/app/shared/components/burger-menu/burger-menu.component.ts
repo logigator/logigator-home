@@ -1,11 +1,9 @@
 import {Component, ComponentFactoryResolver, OnInit} from '@angular/core';
 import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service';
 import {AuthService} from '../../services/auth/auth.service';
-import {LoginPopupComponent} from '../login-popup/login-popup.component';
-import {PopupService} from '../../services/popup/popup.service';
-import {RegisterPopupComponent} from '../register-popup/register-popup.component';
 import {ThemingService} from '../../services/theming/theming.service';
 import {TranslateService} from '@ngx-translate/core';
+import {LoginPopupComponent, PopupService, RegisterPopupComponent} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-burger-menu',
@@ -56,7 +54,7 @@ export class BurgerMenuComponent implements OnInit {
 	}
 
 	public loginEmail() {
-		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'POPUP.LOGIN.TITLE', false);
+		this.popup.showPopup(LoginPopupComponent, 'POPUP.LOGIN.TITLE', false, null, this.componentFactoryResolver);
 	}
 
 	public loginTwitter() {
@@ -68,6 +66,6 @@ export class BurgerMenuComponent implements OnInit {
 	}
 
 	public registerEmail() {
-		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'POPUP.REGISTER.TITLE', false);
+		this.popup.showPopup(RegisterPopupComponent, 'POPUP.REGISTER.TITLE', false, null, this.componentFactoryResolver);
 	}
 }

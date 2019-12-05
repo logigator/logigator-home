@@ -1,10 +1,10 @@
 <form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
-	<app-input type="text" formControlName="name" label="Name">
-		<app-input-error error="required">Name is required</app-input-error>
-		<app-input-error error="minlength">Name is to short</app-input-error>
-		<app-input-error error="maxlength">Name is to long</app-input-error>
-		<app-input-error error="pattern"> May only contain letters, digits, underscores and dashes</app-input-error>
-	</app-input>
+	<logi-input type="text" formControlName="name" label="Name">
+		<logi-input-error error="required">Name is required</logi-input-error>
+		<logi-input-error error="minlength">Name is to short</logi-input-error>
+		<logi-input-error error="maxlength">Name is to long</logi-input-error>
+		<logi-input-error error="pattern"> May only contain letters, digits, underscores and dashes</logi-input-error>
+	</logi-input>
 
 	<label for="project-edit-description">Description</label>
 	<textarea class="textarea" [class.invalid]="newCompForm.controls.description.touched && newCompForm.controls.description.invalid"

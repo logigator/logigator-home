@@ -22,7 +22,7 @@
 			<a>{{'OPTIONS.LANGUAGE' | translate}}</a>
 		</div>
 		<div class="entry">
-			<app-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></app-switch>
+			<logi-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></logi-switch>
 			<p>{{'OPTIONS.DARK_MODE' | translate}}</p>
 		</div>
 		<ng-container *ngIf="isLoggedIn">

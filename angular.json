@@ -23,6 +23,7 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.app.json",
 						"aot": false,
+						"preserveSymlinks": true,
 						"assets": [
 							"src/favicon.ico",
 							"src/assets",
@@ -38,7 +39,8 @@
 						],
 						"stylePreprocessorOptions": {
 							"includePaths": [
-								"src/"
+								"src/",
+								"node_modules/@logigator/logigator-shared-comps/styles"
 							]
 						},
 						"scripts": [
