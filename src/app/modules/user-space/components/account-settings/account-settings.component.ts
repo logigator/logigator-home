@@ -30,15 +30,15 @@ export class AccountSettingsComponent implements OnInit {
 	}
 
 	public openPasswordChangeDialog() {
-		this.popup.showPopup(ChangePasswordComponent, 'POPUP.CHANGE_PASSWORD.TITLE', false, this.componentFactoryResolver);
+		this.popup.showPopup(ChangePasswordComponent, 'POPUP.CHANGE_PASSWORD.TITLE', false, null, this.componentFactoryResolver);
 	}
 
 	public openUsernameChangeDialog() {
-		this.popup.showPopup(ChangeUsernameComponent, 'POPUP.CHANGE_USERNAME.TITLE', false, this.componentFactoryResolver);
+		this.popup.showPopup(ChangeUsernameComponent, 'POPUP.CHANGE_USERNAME.TITLE', false, null, this.componentFactoryResolver);
 	}
 
 	public openEmailChangeDialog() {
-		this.popup.showPopup(ChangeEmailComponent, 'POPUP.CHANGE_EMAIL.TITLE', false, this.componentFactoryResolver);
+		this.popup.showPopup(ChangeEmailComponent, 'POPUP.CHANGE_EMAIL.TITLE', false, null, this.componentFactoryResolver);
 	}
 
 	public openPictureChangeDialog() {

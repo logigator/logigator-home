@@ -46,6 +46,6 @@ export class ProjectListComponent implements OnInit {
 	}
 
 	public openProjectAddDialog() {
-		this.popup.showPopup(NewProjectComponent, 'New Project', false, this.componentFactoryResolver);
+		this.popup.showPopup(NewProjectComponent, 'New Project', false, null, this.componentFactoryResolver);
 	}
 }
