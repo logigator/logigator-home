@@ -20,7 +20,7 @@
 		"@angular/platform-browser-dynamic": "~8.2.3",
 		"@angular/platform-server": "~8.2.3",
 		"@angular/router": "~8.2.3",
-		"@logigator/logigator-shared-comps": "0.0.6",
+		"@logigator/logigator-shared-comps": "0.0.7",
 		"@ngx-translate/core": "^11.0.1",
 		"@ngx-translate/http-loader": "^4.0.0",
 		"cookieconsent": "^3.1.1",
