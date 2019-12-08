@@ -8,9 +8,8 @@ import {SharedModule} from '../../shared/shared.module';
 import { BackgroundImageComponent } from './components/background-image/background-image.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import {TranslateModule} from '@ngx-translate/core';
-import {LoginPopupComponent} from '../../shared/components/login-popup/login-popup.component';
-import {RegisterPopupComponent} from '../../shared/components/register-popup/register-popup.component';
 import {LoginRegisterGuard} from '../../shared/guards/login-register/login-register.guard';
+import {LoginPopupComponent, RegisterPopupComponent} from '@logigator/logigator-shared-comps';
 
 export const HOME_ROUTES: Routes = [
 	{

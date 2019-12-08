@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {PopupContentComp} from '../../../../../shared/components/popup/popup-content-comp';
 import {ApiService} from '../../../../../shared/services/api/api.service';
+import {PopupContentComp} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-new-component',

@@ -1,7 +1,7 @@
 <div class="dropdown" [class.hidden]="!showDropDown">
 	<div class="switch">
 		<label>{{'OPTIONS.DARK_MODE' | translate}}</label>
-		<app-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></app-switch>
+		<logi-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></logi-switch>
 	</div>
 	<hr>
 	<div class="select">
