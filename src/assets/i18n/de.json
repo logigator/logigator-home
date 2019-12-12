@@ -98,7 +98,7 @@
 			"PASSWORD_ERR_REQUIRED": "Passwort muss angegeben werden",
 			"PASSWORD_ERR_MIN": "Passwort muss mindestens acht Zeichen enthalten",
 			"PASSWORD_ERR_COMPLEXITY": "Passwort muss Ziffern und Buchstaben enthalten",
-			"PASSWORD_REPEAT": "Repeat password",
+			"PASSWORD_REPEAT": "Passwort wiederholen",
 			"PASSWORD_REPEAT_ERR": "Passwörter stimmen nicht überein",
 			"PRIVACY_POLICY": "Durch klicken auf \"Registrieren\" stimmen Sie zu, dass Sie die Datenschutzerklärung gelesen haben akzeptieren.",
 			"REGISTER_BUTTON": "REGISTRIEREN",
