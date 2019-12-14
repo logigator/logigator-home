@@ -15,7 +15,7 @@
 
 	<label for="project-edit-description">Description</label>
 	<textarea class="textarea" [class.invalid]="newCompForm.controls.description.touched && newCompForm.controls.description.invalid"
-			  type="text" formControlName="description" id="project-edit-description" rows="4" cols="40"></textarea>
+			  type="text" formControlName="description" id="project-edit-description" rows="6" cols="40"></textarea>
 	<ng-container *ngIf="newCompForm.controls.description.errors as errors">
 		<p *ngIf="errors.maxlength" class="invalid">Description is too long.</p>
 	</ng-container>

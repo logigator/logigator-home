@@ -37,6 +37,10 @@ export class SettingsDropdownComponent implements OnInit {
 		this.theming.toggleTheme();
 	}
 
+	public get currentTheme() {
+		return this.theming.currentTheme;
+	}
+
 	public get isLoggedIn(): boolean {
 		return this.auth.isLoggedIn;
 	}

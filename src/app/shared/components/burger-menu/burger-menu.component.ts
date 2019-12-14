@@ -32,6 +32,10 @@ export class BurgerMenuComponent implements OnInit {
 		this.theming.toggleTheme();
 	}
 
+	public get currentTheme() {
+		return this.theming.currentTheme;
+	}
+
 	public languageChange() {
 		this.translate.use(this.currentLang);
 	}

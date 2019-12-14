@@ -1,10 +1,9 @@
 <div class="dropdown" [class.hidden]="!showDropDown">
-	<div class="switch">
+	<div class="switch item">
 		<label>{{'OPTIONS.DARK_MODE' | translate}}</label>
 		<logi-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></logi-switch>
 	</div>
-	<hr>
-	<div class="select">
+	<div class="select item">
 		<label>{{'OPTIONS.LANGUAGE' | translate}}</label>
 		<select [(ngModel)]="currentLang" (ngModelChange)="languageChange()">
 			<option value="en">{{'LANGUAGE.EN' | translate}}</option>
@@ -13,12 +12,26 @@
 	</div>
 	<ng-container *ngIf="isLoggedIn">
 		<hr>
-		<div class="link">
-			<button class="btn-outline secondary small" routerLink="/my" (click)="close()">{{'OPTIONS.USERSPACE' | translate}}</button>
-		</div>
+		<a class="link item" href="" routerLink="/my/projects" (click)="close()">
+			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg">
+			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg">
+			{{'OPTIONS.PROJECTS' | translate}}
+		</a>
+		<a class="link item" href="" routerLink="/my/components" (click)="close()">
+			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg">
+			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg">
+			{{'OPTIONS.COMPONENTS' | translate}}
+		</a>
 		<hr>
-		<div class="link">
-			<button class="btn-outline secondary small" routerLink="/my" (click)="logout()">{{'OPTIONS.LOGOUT' | translate}}</button>
-		</div>
+		<a class="link item" href="" routerLink="/my/settings" (click)="close()">
+			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/user.svg">
+			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/user.svg">
+			{{'OPTIONS.ACCOUNT' | translate}}
+		</a>
+		<a class="link item" href="" (click)="logout()">
+			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/logout.svg">
+			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/logout.svg">
+			{{'OPTIONS.LOGOUT' | translate}}
+		</a>
 	</ng-container>
 </div>
