@@ -10,7 +10,6 @@ header {
 	top: 0;
 	position: fixed;
 	z-index: 100;
-	padding: 0.5rem;
 
 	.background {
 		position: fixed;
@@ -20,6 +19,14 @@ header {
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0);
 		z-index: 100;
+	}
+
+	> * {
+		padding: 0.5rem;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 
 	@media (max-width: 767px) {
@@ -35,16 +42,6 @@ header {
 		height: 100%;
 	}
 
-	a {
-		text-decoration: none;
-		@include themify() {
-			color: themed('text-primary');
-			&:hover {
-				color: themed('hover');
-			}
-		}
-	}
-
 	img {
 		height: 100%;
 	}
@@ -53,7 +50,6 @@ header {
 		position: absolute;
 		left: 0;
 		top: 0;
-		padding: inherit;
 
 		display: none;
 		@media (max-width: 767px) {
@@ -75,10 +71,6 @@ header {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-
-			&:hover {
-				cursor: pointer;
-			}
 		}
 
 		button {
