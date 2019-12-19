@@ -80,37 +80,39 @@
 }
 
 .hamburger-background {
-	display: none;
-	position: absolute;
-	top: 0;
+	visibility: hidden;
+	position: fixed;
+	top: $header-height;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0);
 	z-index: 1000;
+	transition: ease 0.5s;
 
 	&.show {
 		@media (max-width: 767px) {
-			display: block;
+			visibility: visible;
+			background-color: rgba(0, 0, 0, 0.5);
 		}
 	}
 }
 
-.light{
-	@include themify(){
-		@if(isTheme('light')){
+.light {
+	@include themify() {
+		@if(isTheme('light')) {
 			display: block;
-		}@else {
+		} @else {
 			display: none;
 		}
 	}
 }
 
-.dark{
-	@include themify(){
-		@if(isTheme('dark')){
+.dark {
+	@include themify() {
+		@if(isTheme('dark')) {
 			display: block;
-		}@else {
+		} @else {
 			display: none;
 		}
 	}
