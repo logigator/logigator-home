@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ImprintComponent} from './imprint.component';
 
-import { RegisterPopupComponent } from './register-popup.component';
-
-describe('RegisterPopupComponent', () => {
-	let component: RegisterPopupComponent;
-	let fixture: ComponentFixture<RegisterPopupComponent>;
+describe('ImprintComponent', () => {
+	let component: ImprintComponent;
+	let fixture: ComponentFixture<ImprintComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ RegisterPopupComponent ]
+			declarations: [ ImprintComponent ]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(RegisterPopupComponent);
+		fixture = TestBed.createComponent(ImprintComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

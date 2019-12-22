@@ -6,7 +6,6 @@ import { ProjectListComponent } from './components/project-list/project-list.com
 import { ComponentListComponent } from './components/component-list/component-list.component';
 import { AccountSettingsComponent } from './components/account-settings/account-settings.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { FileInputComponent } from './components/account-settings/form-controls/file-input/file-input.component';
 import {ImageCropperModule} from 'ngx-image-cropper';
 import {DrawerComponent} from './components/drawer/drawer.component';
 import {ShareProjectComponent} from './components/dialogs/share-project/share-project.component';
@@ -24,6 +23,7 @@ import {ComponentInfoComponent} from './components/dialogs/component-info/compon
 import {ProjectInfoComponent} from './components/dialogs/project-info/project-info.component';
 import {NewComponentComponent} from './components/dialogs/new-component/new-component.component';
 import {NewProjectComponent} from './components/dialogs/new-project/new-project.component';
+import {LogigatorSharedCompsModule} from '@logigator/logigator-shared-comps';
 
 @NgModule({
 	declarations: [
@@ -32,7 +32,6 @@ import {NewProjectComponent} from './components/dialogs/new-project/new-project.
 		ComponentListComponent,
 		AccountSettingsComponent,
 		ChangePasswordComponent,
-		FileInputComponent,
 		ChangeUsernameComponent,
 		ChangePictureComponent,
 		ChangeEmailComponent,
@@ -69,7 +68,8 @@ import {NewProjectComponent} from './components/dialogs/new-project/new-project.
 		ImageCropperModule,
 		TranslateModule,
 		SharedModule,
-		FormsModule
+		FormsModule,
+		LogigatorSharedCompsModule
 	]
 })
 export class UserSpaceModule { }

@@ -74,4 +74,9 @@ export class AppComponent implements OnInit {
 			this.translate.use('en');
 		}
 	}
+
+	public onActivate(event) {
+		if (isPlatformBrowser(this.platformId))
+			this.window.scroll(0, 0);
+	}
 }

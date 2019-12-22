@@ -23,7 +23,7 @@ const fs = require('fs-extra');
 const ROUTES = [
 	'/',
 	'/privacy-policy',
-	'/impressum',
+	'/imprint',
 ];
 
 

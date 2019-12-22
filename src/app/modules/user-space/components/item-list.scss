@@ -35,14 +35,20 @@
 		@include themify() {
 			background-color: themed('background');
 			border-bottom: 1px solid themed('text-primary');
+
+			&:hover {
+				background-color: themed('accent2');
+			}
 		}
 
 		a {
 			line-height: 3rem;
+			text-decoration: none;
 		}
 
 		.edited {
-			margin: 0 1rem;
+			margin: 0;
+			padding: 0 1rem;
 
 			@media (max-width: 767px) {
 				display: none;
@@ -50,14 +56,13 @@
 		}
 
 		.title {
-			margin-right: auto;
-			margin-left: 0.25rem;
-			text-decoration: none;
+			flex: 1;
+			padding-left: 0.25rem;
 			font-size: 1.2rem;
 		}
 
 		.icon {
-			height: 1rem;
+			height: 3rem;
 			width: 1rem;
 			margin: 0 0.25rem;
 			cursor: pointer;
@@ -139,10 +144,16 @@
 			}
 
 			.preview {
-				height: 100%;
+				width: 100%;
 				max-width: 100%;
-				max-height: 100%;
+				max-height: calc(100% - 2.5rem);
+				@media (max-width: 767px) {
+					max-height: 100%;
+				}
 				object-fit: contain;
+				@include themify() {
+					filter: drop-shadow(0px 0px 2px darken(themed('background'), 30));
+				}
 			}
 
 			.tile-hover {
@@ -155,11 +166,7 @@
 				height: 100%;
 
 				@include themify() {
-					@if (isTheme('dark')) {
-						background-color: lighten(themed('background'), 10);
-					} @else {
-						background-color: darken(themed('background'), 10);
-					}
+					background-color: themed('accent2');
 					border: 1px solid themed('text-primary');
 				}
 
@@ -216,6 +223,10 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
+
+		&:hover {
+			filter: invert(0.25);
+		}
 	}
 
 	.icon-add-new {

@@ -1,11 +1,9 @@
 import {Component, ComponentFactoryResolver, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
 import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service';
-import {PopupService} from '../../services/popup/popup.service';
-import {LoginPopupComponent} from '../login-popup/login-popup.component';
-import {RegisterPopupComponent} from '../register-popup/register-popup.component';
 import {Observable} from 'rxjs';
 import {UserInfo} from '../../models/http-responses/user-info';
+import {LoginPopupComponent, PopupService, RegisterPopupComponent} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-header',
@@ -35,11 +33,11 @@ export class HeaderComponent implements OnInit {
 	}
 
 	public loginEmail() {
-		this.popup.showPopup(LoginPopupComponent, this.componentFactoryResolver, 'POPUP.LOGIN.TITLE', false);
+		this.popup.showPopup(LoginPopupComponent, 'POPUP.LOGIN.TITLE', false, null, this.componentFactoryResolver);
 	}
 
 	public registerEmail() {
-		this.popup.showPopup(RegisterPopupComponent, this.componentFactoryResolver, 'POPUP.REGISTER.TITLE', false);
+		this.popup.showPopup(RegisterPopupComponent, 'POPUP.REGISTER.TITLE', false, null, this.componentFactoryResolver);
 	}
 
 	public logout() {

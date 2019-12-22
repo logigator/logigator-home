@@ -2,13 +2,13 @@
 	<div class="top">
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/projects" (click)="setOpen(false)">
-				<img class="light" src="/assets/icons/light/archive.svg">
-				<img class="dark" src="/assets/icons/dark/archive.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg">
 				<p>{{'OPTIONS.PROJECTS' | translate}}</p>
 			</a>
 			<a class="entry" routerLink="my/components" (click)="setOpen(false)">
-				<img class="light" src="/assets/icons/light/archive.svg">
-				<img class="dark" src="/assets/icons/dark/archive.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg">
 				<p>{{'OPTIONS.COMPONENTS' | translate}}</p>
 			</a>
 		</ng-container>
@@ -22,40 +22,40 @@
 			<a>{{'OPTIONS.LANGUAGE' | translate}}</a>
 		</div>
 		<div class="entry">
-			<app-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></app-switch>
+			<logi-switch [checked]="this.theming.currentTheme === 'dark'" (click)="changeTheme()"></logi-switch>
 			<p>{{'OPTIONS.DARK_MODE' | translate}}</p>
 		</div>
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/settings" (click)="setOpen(false)">
-				<img class="light" src="/assets/icons/light/user.svg">
-				<img class="dark" src="/assets/icons/dark/user.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/user.svg">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/user.svg">
 				<a>{{'OPTIONS.ACCOUNT' | translate}}</a>
 			</a>
 			<a class="entry" (click)="logout(); setOpen(false)">
-				<img class="light" src="/assets/icons/light/logout.svg">
-				<img class="dark" src="/assets/icons/dark/logout.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/logout.svg">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/logout.svg">
 				<a>{{'OPTIONS.LOGOUT' | translate}}</a>
 			</a>
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn">
 			<a class="entry" (click)="loginEmail(); setOpen(false)">
-				<img class="light" src="/assets/icons/light/login.svg">
-				<img class="dark" src="/assets/icons/dark/login.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/login.svg">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/login.svg">
 				<a>{{'OPTIONS.LOGIN' | translate}}</a>
 			</a>
 			<a class="entry" (click)="registerEmail(); setOpen(false)">
-				<img class="light" src="/assets/icons/light/pencil-alt.svg">
-				<img class="dark" src="/assets/icons/dark/pencil-alt.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/pencil-alt.svg">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/pencil-alt.svg">
 				<a>{{'OPTIONS.REGISTER' | translate}}</a>
 			</a>
 			<a class="entry" (click)="loginGoogle(); setOpen(false)">
-				<img class="light" src="/assets/icons/light/google.svg">
-				<img class="dark" src="/assets/icons/dark/google.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/google.svg">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/google.svg">
 				<a>{{'OPTIONS.LOGIN_GOOGLE' | translate}}</a>
 			</a>
 			<a class="entry" (click)="loginTwitter(); setOpen(false)">
-				<img class="light" src="/assets/icons/light/twitter.svg">
-				<img class="dark" src="/assets/icons/dark/twitter.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/twitter.svg">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/twitter.svg">
 				<a>{{'OPTIONS.LOGIN_TWITTER' | translate}}</a>
 			</a>
 		</ng-container>

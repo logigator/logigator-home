@@ -31,6 +31,12 @@
 			text-decoration: none;
 			font-size: 1.2rem;
 			margin-left: 1rem;
+
+			&:hover {
+				@include themify() {
+					color: themed('primary');
+				}
+			}
 		}
 	}
 }

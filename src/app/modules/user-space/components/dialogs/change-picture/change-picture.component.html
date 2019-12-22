@@ -13,7 +13,7 @@
 		[class.hidden]="!imageFile">
 	</image-cropper>
 	<h3> {{'POPUP.CHANGE_PICTURE.IMAGE_UPLOAD' | translate}} </h3>
-	<app-file-input formControlName="fileInput"></app-file-input>
+	<logi-file-input formControlName="fileInput"></logi-file-input>
 
 	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid && newCompForm.controls.cropper.value">{{'POPUP.CHANGE_PICTURE.SAVE_BUTTON' | translate}}</button>
 </form>

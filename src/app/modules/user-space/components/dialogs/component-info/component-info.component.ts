@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {PopupContentComp} from '../../../../../shared/components/popup/popup-content-comp';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ApiService} from '../../../../../shared/services/api/api.service';
 import {UserComponent} from '../../../../../shared/models/http-responses/user-component';
+import {environment} from '../../../../../../environments/environment';
+import {PopupContentComp} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-project-info',
@@ -12,6 +11,7 @@ import {UserComponent} from '../../../../../shared/models/http-responses/user-co
 export class ComponentInfoComponent extends PopupContentComp<UserComponent> implements OnInit {
 
 	public project: UserComponent;
+	public apiPath = environment.apiPrefix;
 
 	constructor() {
 		super();

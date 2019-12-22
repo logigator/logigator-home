@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ThemingService} from '../../services/theming/theming.service';
-import {PopupService} from '../../services/popup/popup.service';
 import {AuthService} from '../../services/auth/auth.service';
 import {TranslateService} from '@ngx-translate/core';
+import {PopupService} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-settings-dropdown',
@@ -35,6 +35,10 @@ export class SettingsDropdownComponent implements OnInit {
 
 	public changeTheme() {
 		this.theming.toggleTheme();
+	}
+
+	public get currentTheme() {
+		return this.theming.currentTheme;
 	}
 
 	public get isLoggedIn(): boolean {
