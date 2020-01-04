@@ -189,5 +189,15 @@
 		"COPYRIGHT_1": "Icons erstellt von",
 		"COPYRIGHT_1_1": "von",
 		"COPYRIGHT_2": "Alle Inhalte dieser Webseite (Bilder, Fotos, Texte, Videos) unterliegen dem Urheberrecht. Falls notwendig, werden wir die unerlaubte Nutzung von Teilen der Inhalte unserer Seite rechtlich verfolgen."
+	},
+	"ERROR": {
+		"LOGIN": {
+			"NO_USER": "Benutzername exsistiert nicht",
+			"INVALID_PW": "Password ist falsch",
+			"EMAIL_NOT_VERIFIED": "Email Adresse nicht verifiziert",
+			"EMAIL_TAKEN": "Email Adresse wird bereits verwendet",
+			"USERNAME_TAKEN": "Benutzername wird bereits verwedet",
+			"OTHER": "Ein unbekannter Fehler ist aufgetreten"
+		}
 	}
 }
