@@ -9,8 +9,8 @@ import {AuthService} from '../../../../shared/services/auth/auth.service';
 })
 export class VerifyEmailComponent implements OnInit {
 
-	private success = false;
-	private loading = true;
+	public success = false;
+	public loading = true;
 
 	constructor(
 		private auth: AuthService,
