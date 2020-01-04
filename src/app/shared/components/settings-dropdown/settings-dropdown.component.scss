@@ -17,7 +17,7 @@
 
 	@include themify() {
 		background-color: themed('background');
-		color: themed('primary-text');
+		color: themed('text-primary');
 		border: border('width') solid themed('accent2');;
 		border-radius: border('radius');
 
@@ -27,14 +27,13 @@
 
 		.select {
 			justify-content: space-between;
-
 			select {
 				width: 40%;
 				font-size: 0.9rem;
 				outline: none;
 				border: none;
-				border-bottom: 1px solid themed('primary-text');
-				color: themed('primary-text');
+				border-bottom: 1px solid themed('text-primary');
+				color: themed('text-primary');
 				background-color: themed('background');
 			}
 		}
