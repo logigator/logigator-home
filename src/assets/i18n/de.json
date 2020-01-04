@@ -190,6 +190,11 @@
 		"COPYRIGHT_1_1": "von",
 		"COPYRIGHT_2": "Alle Inhalte dieser Webseite (Bilder, Fotos, Texte, Videos) unterliegen dem Urheberrecht. Falls notwendig, werden wir die unerlaubte Nutzung von Teilen der Inhalte unserer Seite rechtlich verfolgen."
 	},
+	"VERIFY_MAIL": {
+		"VERIFYING": "Email wird verifiezirt",
+		"SUCCESS": "Email erfolgreich verifiziert.",
+		"ERROR": "Fehler beim verifizieren der Email"
+	},
 	"ERROR": {
 		"LOGIN": {
 			"NO_USER": "Benutzername exsistiert nicht",

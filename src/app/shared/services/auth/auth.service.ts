@@ -49,11 +49,11 @@ export class AuthService {
 		return await this.http.post(environment.apiPrefix + '/auth/verify-google-credentials', oauthData).toPromise();
 	}
 
-	public async registerEmail(username: string, email: string, password: string, recaptcha: string) {
+	public registerEmail(username: string, email: string, password: string, recaptcha: string) {
 		return this.http.post(environment.apiPrefix + '/auth/register-email', {username, email, password, recaptcha}).toPromise();
 	}
 
-	public async loginEmail(user: string, password: string) {
+	public loginEmail(user: string, password: string) {
 		return this.http.post(environment.apiPrefix + '/auth/login-email', {user, password}).toPromise();
 	}
 
@@ -72,6 +72,10 @@ export class AuthService {
 			return false;
 		}
 		return isLoggedIn[0] !== '' && isLoggedIn[0].endsWith('true');
+	}
+
+	public verifyEmail(token: string) {
+		return this.http.get(environment.apiPrefix + '/auth/verify-email/' + token).toPromise();
 	}
 
 	private openPopUp(url: string): Window {
