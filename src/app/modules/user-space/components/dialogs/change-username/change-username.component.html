@@ -1,9 +1,18 @@
-<form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+<form [formGroup]="newUsernameForm" (ngSubmit)="submit()" autocomplete="off" *ngIf="!showSuccessMessage; else changeSuccess">
 	<logi-input type="text" formControlName="username" label="{{'POPUP.CHANGE_USERNAME.USERNAME' | translate}}">
 		<logi-input-error error="required">{{'POPUP.CHANGE_USERNAME.USERNAME_ERR_REQUIRED' | translate}}</logi-input-error>
 		<logi-input-error error="minlength">{{'POPUP.CHANGE_USERNAME.USERNAME_ERR_MIN' | translate}}</logi-input-error>
 		<logi-input-error error="maxlength">{{'POPUP.CHANGE_USERNAME.USERNAME_ERR_MAX' | translate}}</logi-input-error>
 	</logi-input>
 
-	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">{{'POPUP.CHANGE_USERNAME.SAVE_BUTTON' | translate}}</button>
+	<p class="error">{{errorMessage}}</p>
+
+	<button type="submit" class="btn-raised primary" [disabled]="newUsernameForm.invalid">{{'POPUP.CHANGE_USERNAME.SAVE_BUTTON' | translate}}</button>
 </form>
+
+<ng-template #changeSuccess>
+	<div class="success">
+		<h3>{{'POPUP.CHANGE_USERNAME.SUCCESS' | translate}}</h3>
+		<button type="button" class="btn-raised primary" (click)="close()">{{'POPUP.CHANGE_USERNAME.SUCCESS_OK_BUTTON' | translate}}</button>
+	</div>
+</ng-template>

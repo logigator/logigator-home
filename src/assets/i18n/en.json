@@ -128,7 +128,10 @@
 			"EMAIL": "Email",
 			"EMAIL_ERR_REQUIRED": "Email is required.",
 			"EMAIL_ERR_INVALID": "Please enter a valid email address.",
-			"SAVE_BUTTON": "SAVE"
+			"SAVE_BUTTON": "SAVE",
+			"SUCCESS_1": "Email changed successfully.",
+			"SUCCESS_2": "Please check your mailbox and verify your new email.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_PASSWORD": {
 			"TITLE": "Change password",
@@ -138,7 +141,9 @@
 			"PASSWORD_ERR_COMPLEXITY": "Password must contain letters and digits.",
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwords do not match",
-			"SAVE_BUTTON": "SAVE"
+			"SAVE_BUTTON": "SAVE",
+			"SUCCESS": "Password changed successfully.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_USERNAME": {
 			"TITLE": "Change username",
@@ -146,13 +151,17 @@
 			"USERNAME_ERR_REQUIRED": "Username is required.",
 			"USERNAME_ERR_MIN": "Username has to have at least two characters.",
 			"USERNAME_ERR_MAX": "Username may contain a maximum of 20 characters.",
-			"SAVE_BUTTON": "SAVE"
+			"SAVE_BUTTON": "SAVE",
+			"SUCCESS": "Username changed successfully.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_PICTURE": {
 			"TITLE": "Change picture",
 			"IMAGE_CROP": "Crop image",
 			"IMAGE_UPLOAD": "Upload image",
-			"SAVE_BUTTON": "SAVE"
+			"SAVE_BUTTON": "SAVE",
+			"SUCCESS": "Avatar changed successfully.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"NEW_COMP": {
 			"NAME": "Name",
@@ -198,13 +207,14 @@
 		"ERROR": "Error verifying email."
 	},
 	"ERROR": {
-		"LOGIN": {
+		"ACCOUNT": {
 			"NO_USER": "Username does not exist",
 			"INVALID_PW": "Password is incorrect",
 			"EMAIL_NOT_VERIFIED": "Email address is not verified",
 			"EMAIL_TAKEN": "Email has already been taken",
 			"USERNAME_TAKEN": "Username has already been taken",
-			"OTHER": "An unknown error occurred while trying to log you in"
+			"MAX_FILE_SIZE": "Max file size exceeded.",
+			"OTHER": "An unknown error occurred."
 		}
 	}
 }

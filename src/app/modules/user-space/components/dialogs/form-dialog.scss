@@ -16,9 +16,23 @@ form {
 	}
 
 	.error {
+		font-size: 1rem;
 		margin-top: 0;
-		padding-left: 1rem;
-		font-size: 10pt;
-		color: red;
+		@include themify() {
+			color: themed('error');
+		}
+	}
+}
+
+.success {
+	margin: 1rem;
+
+	h3 {
+		font-size: 1.6rem;
+		margin-bottom: 0.5rem;
+	}
+
+	p {
+		margin-top: 1rem;
 	}
 }

@@ -78,10 +78,7 @@ export class ApiService {
 		const formData = new FormData();
 		formData.append('picture', file);
 		return this.http.post<HttpResponseData<any>>(environment.apiPrefix + '/user/upload-picture', formData).pipe(
-			map(data => data.result.success),
-			this.errorHandling.catchErrorOperatorDynamicMessage(
-				(x) => `Picture upload failed: (${x.status}) ${x.error.error.description}`,
-				false)
+			map(data => data.result.success)
 		);
 	}
 
@@ -93,10 +90,7 @@ export class ApiService {
 			map(data => {
 				this.auth.updateUserInfo();
 				return data.result.success;
-			}),
-			this.errorHandling.catchErrorOperatorDynamicMessage(
-				(x) => `Could not update profile: (${x.status}) ${x.error.error.description}`,
-				false)
+			})
 		);
 	}
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../../../../shared/services/api/api.service';
-import {PopupContentComp} from '@logigator/logigator-shared-comps';
+import {PopupContentComp, AccountActionErrorResolverService} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-change-password',
@@ -10,14 +10,21 @@ import {PopupContentComp} from '@logigator/logigator-shared-comps';
 })
 export class ChangeUsernameComponent extends PopupContentComp implements OnInit {
 
-	public newCompForm: FormGroup;
+	public newUsernameForm: FormGroup;
 
-	constructor(private formBuilder: FormBuilder, private api: ApiService) {
+	public errorMessage = '';
+	public showSuccessMessage = false;
+
+	constructor(
+		private formBuilder: FormBuilder,
+		private api: ApiService,
+		private accountActionErrorResolver: AccountActionErrorResolverService
+	) {
 		super();
 	}
 
 	ngOnInit() {
-		this.newCompForm = this.formBuilder.group({
+		this.newUsernameForm = this.formBuilder.group({
 			username: ['', [
 				Validators.required, Validators.minLength(2), Validators.maxLength(20)
 			]],
@@ -25,9 +32,17 @@ export class ChangeUsernameComponent extends PopupContentComp implements OnInit 
 	}
 
 	public async submit() {
-		if (this.newCompForm.invalid)
+		if (this.newUsernameForm.invalid)
 			return;
-		await this.api.updateProfile({ username: this.newCompForm.controls.username.value }).toPromise();
+		try {
+			await this.api.updateProfile({username: this.newUsernameForm.controls.username.value}).toPromise();
+			this.showSuccessMessage = true;
+		} catch (e) {
+			this.errorMessage = await this.accountActionErrorResolver.getErrorMessage(e);
+		}
+	}
+
+	public close() {
 		this.requestClose.emit();
 	}
 
