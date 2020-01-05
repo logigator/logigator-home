@@ -104,7 +104,8 @@
 			"REGISTER_BUTTON": "REGISTRIEREN",
 			"OR": "oder",
 			"SUCCESS_1": "Account erfolgreich erstellt.",
-			"SUCCESS_2": "Bitte überprüfe deinen Posteingang und verifiziere deine Email Adresse."
+			"SUCCESS_2": "Bitte überprüfe deinen Posteingang und verifiziere deine Email Adresse.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"SHARE": {
 			"TITLE": "Projekt teilen {{project}}",

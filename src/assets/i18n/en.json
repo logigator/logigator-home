@@ -104,7 +104,8 @@
 			"REGISTER_BUTTON": "SIGN UP",
 			"OR": "or",
 			"SUCCESS_1": "Account created successfully.",
-			"SUCCESS_2": "Please check your mailbox and verify your email."
+			"SUCCESS_2": "Please check your mailbox and verify your email.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"SHARE": {
 			"TITLE": "Share Project {{project}}",
