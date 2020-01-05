@@ -108,7 +108,7 @@
 			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"SHARE": {
-			"TITLE": "Share Project {{project}}",
+			"TITLE": "Share",
 			"SHARE_ENABLE": "Share this project with others",
 			"PUBLIC": "Public share",
 			"INFO_TEXT": "Please type in the email-addresses or usernames of the users, with whom you want to share this project.",
@@ -164,9 +164,13 @@
 			"SUCCESS": "Avatar changed successfully.",
 			"SUCCESS_OK_BUTTON": "OK"
 		},
+		"NEW_PROJECT": {
+			"TITLE": "New Project"
+		},
 		"NEW_COMP": {
-			"NAME": "Name",
+			"TITLE": "New Component",
 			"SYMBOL": "Symbol",
+			"NAME": "Name",
 			"NAME_REQUIRED": "Name is required.",
 			"NAME_MIN_LENGTH": "Name has to have at least two characters.",
 			"NAME_MAX_LENGTH": "Name may contain a maximum of 20 characters.",
@@ -175,6 +179,38 @@
 			"SYMBOL_MAX_LENGTH": "Symbol may contain a maximum of 5 characters.",
 			"SYMBOL_PATTERN": "Symbol is invalid.",
 			"CREATE": "SAVE"
+		},
+		"COMP_EDIT": {
+			"TITLE": "Edit Component"
+		},
+		"PROJECT_EDIT": {
+			"TITLE": "Edit Project",
+			"NAME": "Name",
+			"NAME_ERR_REQUIRED": "Name is required",
+			"NAME_ERR_MIN": "Name is to short",
+			"NAME_ERR_MAX": "Name is to long",
+			"NAME_ERR_PATTERN": "May only contain letters, digits, underscores and dashes",
+			"DESCRIPTION": "Description",
+			"DESCRIPTION_ERR_MAX": "Description is too long",
+			"SAVE": "SAVE"
+		},
+		"COMP_INFO": {
+			"TITLE": "Information",
+			"NAME": "Name",
+			"CREATED": "Created",
+			"MODIFIED": "last modified",
+			"INPUTS": "Inputs",
+			"OUTPUTS": "Outputs",
+			"DESCRIPTION": "Description"
+		},
+		"PROJECT_DELETE": {
+			"TITLE": "Confirm Delete",
+			"DELETE": "Confirm Delete"
+		},
+		"COMP_DELETE": {
+			"TITLE": "Confirm Delete",
+			"WARNING": "Please ensure that the component is not used in any of your projects.",
+			"DELETE": "Confirm Delete"
 		},
 		"COOKIE_CONSENT": {
 			"MESSAGE": "This website uses cookies to ensure you get the best experience on our website.",

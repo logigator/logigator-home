@@ -29,22 +29,22 @@ export class ComponentListComponent implements OnInit {
 	}
 
 	public openShareDialog(project: number) {
-		this.popup.showPopup(ShareProjectComponent, 'Share Component', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ShareProjectComponent, 'POPUP.SHARE.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectEditDialog(project: UserComponent) {
-		this.popup.showPopup(ComponentEditComponent, 'Edit Component', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ComponentEditComponent, 'POPUP.COMP_EDIT.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectDeleteDialog(project: UserComponent) {
-		this.popup.showPopup(ComponentDeleteComponent, 'Confirm Delete', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ComponentDeleteComponent, 'POPUP.COMP_DELETE.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectInfoDialog(project: UserComponent) {
-		this.popup.showPopup(ComponentInfoComponent, 'Information', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ComponentInfoComponent, 'POPUP.COMP_INFO.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectAddDialog() {
-		this.popup.showPopup(NewComponentComponent, 'New Component', false, null, this.componentFactoryResolver);
+		this.popup.showPopup(NewComponentComponent, 'POPUP.NEW_COMP.TITLE', false, null, this.componentFactoryResolver);
 	}
 }

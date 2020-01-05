@@ -30,22 +30,22 @@ export class ProjectListComponent implements OnInit {
 	}
 
 	public openShareDialog(project: number) {
-		this.popup.showPopup(ShareProjectComponent, 'Share Project', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ShareProjectComponent, 'POPUP.SHARE.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectEditDialog(project: UserProject) {
-		this.popup.showPopup(ProjectEditComponent, 'Edit Project', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ProjectEditComponent, 'POPUP.PROJECT_EDIT.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectDeleteDialog(project: UserProject) {
-		this.popup.showPopup(ProjectDeleteComponent, 'Confirm Delete', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ProjectDeleteComponent, 'POPUP.PROJECT_DELETE.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectInfoDialog(project: UserProject) {
-		this.popup.showPopup(ProjectInfoComponent, 'Information', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ProjectInfoComponent, 'POPUP.COMP_INFO.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectAddDialog() {
-		this.popup.showPopup(NewProjectComponent, 'New Project', false, null, this.componentFactoryResolver);
+		this.popup.showPopup(NewProjectComponent, 'POPUP.NEW_PROJECT.TITLE', false, null, this.componentFactoryResolver);
 	}
 }

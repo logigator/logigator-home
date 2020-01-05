@@ -108,7 +108,7 @@
 			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"SHARE": {
-			"TITLE": "Projekt teilen {{project}}",
+			"TITLE": "Teilen",
 			"SHARE_ENABLE": "Teile dieses Projekt mit anderen",
 			"PUBLIC": "Öffentlich teilen",
 			"INFO_TEXT": "Bitte geben Sie die E-Mail-Adressen und Benutzernamen der Nutzer an, mit denen Sie das Projekt teilen möchten.",
@@ -164,9 +164,13 @@
 			"SUCCESS": "Profilbild erfolgreich geändert.",
 			"SUCCESS_OK_BUTTON": "OK"
 		},
+		"NEW_PROJECT": {
+			"TITLE": "Neues Projekt"
+		},
 		"NEW_COMP": {
-			"NAME": "Name",
+			"TITLE": "Neue Komponente",
 			"SYMBOL": "Symbol",
+			"NAME": "Name",
 			"NAME_REQUIRED": "Name muss angegeben werden",
 			"NAME_MIN_LENGTH": "Name muss mindestens zwei Zeichen enthalten",
 			"NAME_MAX_LENGTH": "Name darf maximal 20 Zeichen enthalten",
@@ -175,7 +179,39 @@
 			"SYMBOL_MAX_LENGTH": "Symbol darf maximal fünf Zeichen enthalten",
 			"SYMBOL_PATTERN": "Symbol ist ungültig",
 			"CREATE": "ERSTELLEN"
-    },
+		},
+		"COMP_EDIT": {
+			"TITLE": "Komponente bearbeiten"
+		},
+		"PROJECT_EDIT": {
+			"TITLE": "Projekt bearbeiten",
+			"NAME": "Name",
+			"NAME_ERR_REQUIRED": "Name muss angegeben werden",
+			"NAME_ERR_MIN": "Name ist zu kurz",
+			"NAME_ERR_MAX": "Name ist zu lang",
+			"NAME_ERR_PATTERN": "Darf nur Buchstaben, Zahlen, Untersctriche und Bindestriche enthalten",
+			"DESCRIPTION": "Bschreibung",
+			"DESCRIPTION_ERR_MAX": "Bschreibung ist zu lang",
+			"SAVE": "SPEICHERN"
+		},
+		"COMP_INFO": {
+			"TITLE": "Informationen",
+			"NAME": "Name",
+			"CREATED": "Erstellt",
+			"MODIFIED": "Zuletzt bearbeitet",
+			"INPUTS": "Eingänge",
+			"OUTPUTS": "Ausgänge",
+			"DESCRIPTION": "Beschreibung"
+		},
+		"PROJECT_DELETE": {
+			"TITLE": "Löschen bestätigen",
+			"DELETE": "Löschen bestätigen"
+		},
+		"COMP_DELETE": {
+			"TITLE": "Löschen bestätigen",
+			"WARNING": "Bitte verischere dich, dass die Komponente in keinen Projekten verwendet wird.",
+			"DELETE": "Löschen bestätigen"
+		},
 		"COOKIE_CONSENT": {
 			"MESSAGE": "Wir verwenden Cookies. Wenn Sie auf unserer Seite weitersurfen, stimmen Sie der Cookie-Nutzung zu.",
 			"DISMISS": "Akzeptieren",
