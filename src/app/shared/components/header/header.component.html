@@ -7,7 +7,7 @@
 
 	<div class="login">
 		<ng-container *ngIf="isLoggedIn && (userInfo | async) as userInfo">
-			<div (click)="settingsDropdown = !settingsDropdown">
+			<div (click)="settingsDropdown = !settingsDropdown" class="userspace">
 				<a class="username">{{userInfo.user.username}}</a>
 				<img class="user-img" alt="User image" [src]="userInfo.user.profile_image">
 			</div>
