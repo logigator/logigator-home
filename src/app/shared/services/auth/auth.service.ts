@@ -1,6 +1,6 @@
 import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable, of, Subject, throwError} from 'rxjs';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 import {map, share, shareReplay, switchMap, switchMapTo} from 'rxjs/operators';
 import {DOCUMENT, isPlatformBrowser} from '@angular/common';
 import {HttpResponseData} from '../../models/http-responses/http-response-data';
@@ -9,11 +9,12 @@ import {ErrorHandlingService} from '../error-handling/error-handling.service';
 import {Router} from '@angular/router';
 import {environment} from '../../../../environments/environment';
 import {WINDOW} from '../../injectable-window';
+import {SharedCompsAuthService} from '@logigator/logigator-shared-comps';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements SharedCompsAuthService {
 
 	private _userInfo$: Observable<UserInfo>;
 	private _userSubject$ = new BehaviorSubject<void>(undefined);
@@ -49,20 +50,24 @@ export class AuthService {
 		return await this.http.post(environment.apiPrefix + '/auth/verify-google-credentials', oauthData).toPromise();
 	}
 
-	public registerEmail(username: string, email: string, password: string, recaptcha: string) {
+	public registerEmail(username: string, email: string, password: string, recaptcha: string): Promise<any> {
 		return this.http.post(environment.apiPrefix + '/auth/register-email', {username, email, password, recaptcha}).toPromise();
 	}
 
-	public loginEmail(user: string, password: string) {
+	public loginEmail(user: string, password: string): Promise<any> {
 		return this.http.post(environment.apiPrefix + '/auth/login-email', {user, password}).toPromise();
 	}
 
-	public async logout() {
+	async resendVerificationMail(user: string, password: string): Promise<any> {
+		return this.http.post(environment.apiPrefix + '/auth/resend-verification-mail', {user, password}).toPromise();
+	}
+
+	public async logout(): Promise<any> {
 		if (!this.isLoggedIn) {
 			throw Error('not logged in');
 		}
 		await this.http.get(environment.apiPrefix + '/auth/logout').toPromise();
-		this.router.navigate(['/']);
+		await this.router.navigate(['/']);
 	}
 
 	public get isLoggedIn(): boolean {
