@@ -9,6 +9,7 @@ import {ComponentDeleteComponent} from '../dialogs/component-delete/component-de
 import {ComponentInfoComponent} from '../dialogs/component-info/component-info.component';
 import {NewComponentComponent} from '../dialogs/new-component/new-component.component';
 import {PopupService} from '@logigator/logigator-shared-comps';
+import {Title} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-component-list',
@@ -20,9 +21,16 @@ export class ComponentListComponent implements OnInit {
 	public editorUrl = environment.editor;
 	public apiUrl = environment.apiPrefix;
 
-	constructor(private api: ApiService, private popup: PopupService, private componentFactoryResolver: ComponentFactoryResolver) { }
+	constructor(
+		private api: ApiService,
+		private popup: PopupService,
+		private componentFactoryResolver: ComponentFactoryResolver,
+		private titleService: Title
+	) { }
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.titleService.setTitle('Logigator - Components');
+	}
 
 	public get userComponents$(): Observable<UserComponent[]> {
 		return this.api.userComponents$;

@@ -9,6 +9,7 @@ import {ProjectDeleteComponent} from '../dialogs/project-delete/project-delete.c
 import {ProjectInfoComponent} from '../dialogs/project-info/project-info.component';
 import {NewProjectComponent} from '../dialogs/new-project/new-project.component';
 import {PopupService} from '@logigator/logigator-shared-comps';
+import {Title} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-project-list',
@@ -20,10 +21,17 @@ export class ProjectListComponent implements OnInit {
 	public editorUrl = environment.editor;
 	public apiUrl = environment.apiPrefix;
 
-	constructor(private api: ApiService, private popup: PopupService, private componentFactoryResolver: ComponentFactoryResolver) {
+	constructor(
+		private api: ApiService,
+		private popup: PopupService,
+		private componentFactoryResolver: ComponentFactoryResolver,
+		private titleService: Title
+	) {
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.titleService.setTitle('Logigator - Projects');
+	}
 
 	public get userProjects$(): Observable<UserProject[]> {
 		return this.api.userProjects$;

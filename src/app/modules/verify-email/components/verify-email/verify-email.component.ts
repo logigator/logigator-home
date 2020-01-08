@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {AuthService} from '../../../../shared/services/auth/auth.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-verify-email',
@@ -14,10 +15,12 @@ export class VerifyEmailComponent implements OnInit {
 
 	constructor(
 		private auth: AuthService,
-		private activatedRoute: ActivatedRoute
+		private activatedRoute: ActivatedRoute,
+		private titleService: Title
 	) { }
 
 	ngOnInit() {
+		this.titleService.setTitle('Logigator - Verify Mail');
 		this.auth.verifyEmail(this.activatedRoute.snapshot.paramMap.get('token')).then(() => {
 			this.success = true;
 			this.loading = false;
