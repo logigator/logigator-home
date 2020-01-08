@@ -2,13 +2,13 @@
 	<div class="top">
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/projects" (click)="setOpen(false)">
-				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg">
-				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg" alt="my Projects Link">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg" alt="my Projects Link">
 				<p>{{'OPTIONS.PROJECTS' | translate}}</p>
 			</a>
 			<a class="entry" routerLink="my/components" (click)="setOpen(false)">
-				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg">
-				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg" alt="my Components Link">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg" alt="my Components Link">
 				<p>{{'OPTIONS.COMPONENTS' | translate}}</p>
 			</a>
 		</ng-container>
@@ -27,35 +27,35 @@
 		</div>
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/settings" (click)="setOpen(false)">
-				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/user.svg">
-				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/user.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/user.svg" alt="Settings Link">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/user.svg" alt="Settings Link">
 				<a>{{'OPTIONS.ACCOUNT' | translate}}</a>
 			</a>
 			<a class="entry" (click)="logout(); setOpen(false)">
-				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/logout.svg">
-				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/logout.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/logout.svg" alt="Logout Link">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/logout.svg" alt="Logout Link">
 				<a>{{'OPTIONS.LOGOUT' | translate}}</a>
 			</a>
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn">
 			<a class="entry" (click)="loginEmail(); setOpen(false)">
-				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/login.svg">
-				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/login.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/login.svg" alt="Login Link">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/login.svg" alt="Login Link">
 				<a>{{'OPTIONS.LOGIN' | translate}}</a>
 			</a>
 			<a class="entry" (click)="registerEmail(); setOpen(false)">
-				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/pencil-alt.svg">
-				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/pencil-alt.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/pencil-alt.svg" alt="Register Link">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/pencil-alt.svg" alt="Register Link">
 				<a>{{'OPTIONS.REGISTER' | translate}}</a>
 			</a>
 			<a class="entry" (click)="loginGoogle(); setOpen(false)">
-				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/google.svg">
-				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/google.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/google.svg" alt="Google Login Link">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/google.svg" alt="Google Login Link">
 				<a>{{'OPTIONS.LOGIN_GOOGLE' | translate}}</a>
 			</a>
 			<a class="entry" (click)="loginTwitter(); setOpen(false)">
-				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/twitter.svg">
-				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/twitter.svg">
+				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/twitter.svg" alt="Twitter Login Link">
+				<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/twitter.svg" alt="Twitter Login Link">
 				<a>{{'OPTIONS.LOGIN_TWITTER' | translate}}</a>
 			</a>
 		</ng-container>

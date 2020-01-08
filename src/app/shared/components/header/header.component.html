@@ -1,7 +1,7 @@
 <header>
 	<div (click)="settingsDropdown = false;" *ngIf="settingsDropdown" class="background"></div>
 
-	<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/menu.svg">
+	<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/menu.svg" alt="burger menu open">
 
 	<a routerLink="/" class="logo"><img alt="Logigator" src="/assets/logo.svg"></a>
 
@@ -20,5 +20,3 @@
 		<app-settings-dropdown *ngIf="settingsDropdown" (requestClosed)="settingsDropdown = false;"></app-settings-dropdown>
 	</div>
 </header>
-
-
