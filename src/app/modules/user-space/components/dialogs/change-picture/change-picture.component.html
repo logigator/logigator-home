@@ -1,4 +1,4 @@
-<form [formGroup]="newCompForm" (ngSubmit)="submit()">
+<form [formGroup]="newCompForm" (ngSubmit)="submit()" *ngIf="!showSuccessMessage; else changeSuccess">
 	<h3>{{'POPUP.CHANGE_PICTURE.IMAGE_CROP' | translate}}</h3>
 	<image-cropper
 		[imageFile]="imageFile"
@@ -15,5 +15,14 @@
 	<h3> {{'POPUP.CHANGE_PICTURE.IMAGE_UPLOAD' | translate}} </h3>
 	<logi-file-input formControlName="fileInput"></logi-file-input>
 
+	<p class="error">{{errorMessage}}</p>
+
 	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid && newCompForm.controls.cropper.value">{{'POPUP.CHANGE_PICTURE.SAVE_BUTTON' | translate}}</button>
 </form>
+
+<ng-template #changeSuccess>
+	<div class="success">
+		<h3>{{'POPUP.CHANGE_PICTURE.SUCCESS' | translate}}</h3>
+		<button type="button" class="btn-raised primary" (click)="close()">{{'POPUP.CHANGE_PICTURE.SUCCESS_OK_BUTTON' | translate}}</button>
+	</div>
+</ng-template>

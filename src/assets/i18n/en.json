@@ -82,6 +82,10 @@
 			"PASSWORD": "Password",
 			"PASSWORD_ERR_REQUIRED": "Password is required.",
 			"LOGIN_BUTTON": "LOGIN",
+			"RESEND_BUTTON": "Resend Mail",
+			"RESEND_SUCCESS_1": "Email resent successfully",
+			"RESEND_SUCCESS_2": "Please check your mailbox and verify your email.",
+			"RESEND_SUCCESS_OK_BUTTON": "OK",
 			"OR": "or"
 		},
 		"REGISTER": {
@@ -102,10 +106,13 @@
 			"PASSWORD_REPEAT_ERR": "Passwords do not match",
 			"PRIVACY_POLICY": "By clicking on \"SIGN UP\" you agree that you have read and accepted our data policy.",
 			"REGISTER_BUTTON": "SIGN UP",
-			"OR": "or"
+			"OR": "or",
+			"SUCCESS_1": "Account created successfully.",
+			"SUCCESS_2": "Please check your mailbox and verify your email.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"SHARE": {
-			"TITLE": "Share Project {{project}}",
+			"TITLE": "Share",
 			"SHARE_ENABLE": "Share this project with others",
 			"PUBLIC": "Public share",
 			"INFO_TEXT": "Please type in the email-addresses or usernames of the users, with whom you want to share this project.",
@@ -126,7 +133,10 @@
 			"EMAIL": "Email",
 			"EMAIL_ERR_REQUIRED": "Email is required.",
 			"EMAIL_ERR_INVALID": "Please enter a valid email address.",
-			"SAVE_BUTTON": "SAVE"
+			"SAVE_BUTTON": "SAVE",
+			"SUCCESS_1": "Email changed successfully.",
+			"SUCCESS_2": "Please check your mailbox and verify your new email.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_PASSWORD": {
 			"TITLE": "Change password",
@@ -136,7 +146,9 @@
 			"PASSWORD_ERR_COMPLEXITY": "Password must contain letters and digits.",
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwords do not match",
-			"SAVE_BUTTON": "SAVE"
+			"SAVE_BUTTON": "SAVE",
+			"SUCCESS": "Password changed successfully.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_USERNAME": {
 			"TITLE": "Change username",
@@ -144,17 +156,25 @@
 			"USERNAME_ERR_REQUIRED": "Username is required.",
 			"USERNAME_ERR_MIN": "Username has to have at least two characters.",
 			"USERNAME_ERR_MAX": "Username may contain a maximum of 20 characters.",
-			"SAVE_BUTTON": "SAVE"
+			"SAVE_BUTTON": "SAVE",
+			"SUCCESS": "Username changed successfully.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_PICTURE": {
 			"TITLE": "Change picture",
 			"IMAGE_CROP": "Crop image",
 			"IMAGE_UPLOAD": "Upload image",
-			"SAVE_BUTTON": "SAVE"
+			"SAVE_BUTTON": "SAVE",
+			"SUCCESS": "Avatar changed successfully.",
+			"SUCCESS_OK_BUTTON": "OK"
+		},
+		"NEW_PROJECT": {
+			"TITLE": "New Project"
 		},
 		"NEW_COMP": {
-			"NAME": "Name",
+			"TITLE": "New Component",
 			"SYMBOL": "Symbol",
+			"NAME": "Name",
 			"NAME_REQUIRED": "Name is required.",
 			"NAME_MIN_LENGTH": "Name has to have at least two characters.",
 			"NAME_MAX_LENGTH": "Name may contain a maximum of 20 characters.",
@@ -163,6 +183,38 @@
 			"SYMBOL_MAX_LENGTH": "Symbol may contain a maximum of 5 characters.",
 			"SYMBOL_PATTERN": "Symbol is invalid.",
 			"CREATE": "SAVE"
+		},
+		"COMP_EDIT": {
+			"TITLE": "Edit Component"
+		},
+		"PROJECT_EDIT": {
+			"TITLE": "Edit Project",
+			"NAME": "Name",
+			"NAME_ERR_REQUIRED": "Name is required",
+			"NAME_ERR_MIN": "Name is to short",
+			"NAME_ERR_MAX": "Name is to long",
+			"NAME_ERR_PATTERN": "May only contain letters, digits, underscores and dashes",
+			"DESCRIPTION": "Description",
+			"DESCRIPTION_ERR_MAX": "Description is too long",
+			"SAVE": "SAVE"
+		},
+		"COMP_INFO": {
+			"TITLE": "Information",
+			"NAME": "Name",
+			"CREATED": "Created",
+			"MODIFIED": "last modified",
+			"INPUTS": "Inputs",
+			"OUTPUTS": "Outputs",
+			"DESCRIPTION": "Description"
+		},
+		"PROJECT_DELETE": {
+			"TITLE": "Confirm Delete",
+			"DELETE": "Confirm Delete"
+		},
+		"COMP_DELETE": {
+			"TITLE": "Confirm Delete",
+			"WARNING": "Please ensure that the component is not used in any of your projects.",
+			"DELETE": "Confirm Delete"
 		},
 		"COOKIE_CONSENT": {
 			"MESSAGE": "This website uses cookies to ensure you get the best experience on our website.",
@@ -189,5 +241,21 @@
 		"COPYRIGHT_1": "Icons made by",
 		"COPYRIGHT_1_1": "from",
 		"COPYRIGHT_2": "All contents of this website (pictures, photos, texts, videos) are subject to copyright. If necessary, we will legally pursue the unauthorized use of parts of the contents of our site."
+	},
+	"VERIFY_MAIL": {
+		"VERIFYING": "Verifying email. Please wait.",
+		"SUCCESS": "Email verified successfully.",
+		"ERROR": "Error verifying email."
+	},
+	"ERROR": {
+		"ACCOUNT": {
+			"NO_USER": "Username does not exist",
+			"INVALID_PW": "Password is incorrect",
+			"EMAIL_NOT_VERIFIED": "Email address is not verified",
+			"EMAIL_TAKEN": "Email has already been taken",
+			"USERNAME_TAKEN": "Username has already been taken",
+			"MAX_FILE_SIZE": "Max file size exceeded.",
+			"OTHER": "An unknown error occurred."
+		}
 	}
 }

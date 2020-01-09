@@ -9,6 +9,7 @@ import {ComponentDeleteComponent} from '../dialogs/component-delete/component-de
 import {ComponentInfoComponent} from '../dialogs/component-info/component-info.component';
 import {NewComponentComponent} from '../dialogs/new-component/new-component.component';
 import {PopupService} from '@logigator/logigator-shared-comps';
+import {Title} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-component-list',
@@ -20,31 +21,38 @@ export class ComponentListComponent implements OnInit {
 	public editorUrl = environment.editor;
 	public apiUrl = environment.apiPrefix;
 
-	constructor(private api: ApiService, private popup: PopupService, private componentFactoryResolver: ComponentFactoryResolver) { }
+	constructor(
+		private api: ApiService,
+		private popup: PopupService,
+		private componentFactoryResolver: ComponentFactoryResolver,
+		private titleService: Title
+	) { }
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.titleService.setTitle('Logigator - Components');
+	}
 
 	public get userComponents$(): Observable<UserComponent[]> {
 		return this.api.userComponents$;
 	}
 
 	public openShareDialog(project: number) {
-		this.popup.showPopup(ShareProjectComponent, 'Share Component', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ShareProjectComponent, 'POPUP.SHARE.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectEditDialog(project: UserComponent) {
-		this.popup.showPopup(ComponentEditComponent, 'Edit Component', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ComponentEditComponent, 'POPUP.COMP_EDIT.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectDeleteDialog(project: UserComponent) {
-		this.popup.showPopup(ComponentDeleteComponent, 'Confirm Delete', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ComponentDeleteComponent, 'POPUP.COMP_DELETE.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectInfoDialog(project: UserComponent) {
-		this.popup.showPopup(ComponentInfoComponent, 'Information', false, project, this.componentFactoryResolver);
+		this.popup.showPopup(ComponentInfoComponent, 'POPUP.COMP_INFO.TITLE', false, project, this.componentFactoryResolver);
 	}
 
 	public openProjectAddDialog() {
-		this.popup.showPopup(NewComponentComponent, 'New Component', false, null, this.componentFactoryResolver);
+		this.popup.showPopup(NewComponentComponent, 'POPUP.NEW_COMP.TITLE', false, null, this.componentFactoryResolver);
 	}
 }

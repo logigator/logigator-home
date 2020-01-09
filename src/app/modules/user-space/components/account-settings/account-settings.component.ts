@@ -8,6 +8,7 @@ import {ChangeUsernameComponent} from '../dialogs/change-username/change-usernam
 import {ChangeEmailComponent} from '../dialogs/change-email/change-email.component';
 import {ChangePictureComponent} from '../dialogs/change-picture/change-picture.component';
 import {PopupService} from '@logigator/logigator-shared-comps';
+import {Title} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-account-settings',
@@ -20,9 +21,11 @@ export class AccountSettingsComponent implements OnInit {
 		private auth: AuthService,
 		private popup: PopupService,
 		private componentFactoryResolver: ComponentFactoryResolver,
+		private titleService: Title
 	) { }
 
 	ngOnInit() {
+		this.titleService.setTitle('Logigator - Account Settings');
 	}
 
 	public get userInfo$(): Observable<UserInfo> {

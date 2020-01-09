@@ -82,6 +82,10 @@
 			"PASSWORD": "Passwort",
 			"PASSWORD_ERR_REQUIRED": "Passwort muss angegeben werden",
 			"LOGIN_BUTTON": "ANMELDEN",
+			"RESEND_BUTTON": "Email erneut senden",
+			"RESEND_SUCCESS_1": "Email erfolgreich gesendet",
+			"RESEND_SUCCESS_2": "Bitte überprüfe deinen Posteingang und verifiziere deine Email Adresse",
+			"RESEND_SUCCESS_OK_BUTTON": "OK",
 			"OR": "oder"
 		},
 		"REGISTER": {
@@ -102,10 +106,13 @@
 			"PASSWORD_REPEAT_ERR": "Passwörter stimmen nicht überein",
 			"PRIVACY_POLICY": "Durch klicken auf \"Registrieren\" stimmen Sie zu, dass Sie die Datenschutzerklärung gelesen haben akzeptieren.",
 			"REGISTER_BUTTON": "REGISTRIEREN",
-			"OR": "oder"
+			"OR": "oder",
+			"SUCCESS_1": "Account erfolgreich erstellt.",
+			"SUCCESS_2": "Bitte überprüfe deinen Posteingang und verifiziere deine Email Adresse.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"SHARE": {
-			"TITLE": "Projekt teilen {{project}}",
+			"TITLE": "Teilen",
 			"SHARE_ENABLE": "Teile dieses Projekt mit anderen",
 			"PUBLIC": "Öffentlich teilen",
 			"INFO_TEXT": "Bitte geben Sie die E-Mail-Adressen und Benutzernamen der Nutzer an, mit denen Sie das Projekt teilen möchten.",
@@ -126,7 +133,10 @@
 			"EMAIL": "E-Mail",
 			"EMAIL_ERR_REQUIRED": "E-Mail muss angegeben werden",
 			"EMAIL_ERR_INVALID": "Bitte geben Sie eine valide E-Mail an",
-			"SAVE_BUTTON": "SPEICHERN"
+			"SAVE_BUTTON": "SPEICHERN",
+			"SUCCESS_1": "Email erfolgreich geändert.",
+			"SUCCESS_2": "Bitte überprüfe deinen Posteingang und verifiziere deine neue Email Adresse.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_PASSWORD": {
 			"TITLE": "Passwort ändern",
@@ -136,7 +146,9 @@
 			"PASSWORD_ERR_COMPLEXITY": "Passwort muss Ziffern und Buchstaben enthalten",
 			"PASSWORD_REPEAT": "Repeat password",
 			"PASSWORD_REPEAT_ERR": "Passwörter stimmen nicht überein",
-			"SAVE_BUTTON": "SPEICHERN"
+			"SAVE_BUTTON": "SPEICHERN",
+			"SUCCESS": "Passwort erfolgreich geändert.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_USERNAME": {
 			"TITLE": "Benutzernamen ändern",
@@ -144,17 +156,25 @@
 			"USERNAME_ERR_REQUIRED": "Benutzername muss angegeben werden",
 			"USERNAME_ERR_MIN": "Benutzername muss mindestens zwei Zeichen enthalten",
 			"USERNAME_ERR_MAX": "Benutzername darf maximal 20 Zeichen enthalten",
-			"SAVE_BUTTON": "SPEICHERN"
+			"SAVE_BUTTON": "SPEICHERN",
+			"SUCCESS": "Benutzername erfolgreich geändert.",
+			"SUCCESS_OK_BUTTON": "OK"
 		},
 		"CHANGE_PICTURE": {
 			"TITLE": "Profilbild ändern",
 			"IMAGE_CROP": "Bild zuschneiden",
 			"IMAGE_UPLOAD": "Bild hochladen",
-			"SAVE_BUTTON": "SPEICHERN"
+			"SAVE_BUTTON": "SPEICHERN",
+			"SUCCESS": "Profilbild erfolgreich geändert.",
+			"SUCCESS_OK_BUTTON": "OK"
+		},
+		"NEW_PROJECT": {
+			"TITLE": "Neues Projekt"
 		},
 		"NEW_COMP": {
-			"NAME": "Name",
+			"TITLE": "Neue Komponente",
 			"SYMBOL": "Symbol",
+			"NAME": "Name",
 			"NAME_REQUIRED": "Name muss angegeben werden",
 			"NAME_MIN_LENGTH": "Name muss mindestens zwei Zeichen enthalten",
 			"NAME_MAX_LENGTH": "Name darf maximal 20 Zeichen enthalten",
@@ -163,7 +183,39 @@
 			"SYMBOL_MAX_LENGTH": "Symbol darf maximal fünf Zeichen enthalten",
 			"SYMBOL_PATTERN": "Symbol ist ungültig",
 			"CREATE": "ERSTELLEN"
-    },
+		},
+		"COMP_EDIT": {
+			"TITLE": "Komponente bearbeiten"
+		},
+		"PROJECT_EDIT": {
+			"TITLE": "Projekt bearbeiten",
+			"NAME": "Name",
+			"NAME_ERR_REQUIRED": "Name muss angegeben werden",
+			"NAME_ERR_MIN": "Name ist zu kurz",
+			"NAME_ERR_MAX": "Name ist zu lang",
+			"NAME_ERR_PATTERN": "Darf nur Buchstaben, Zahlen, Untersctriche und Bindestriche enthalten",
+			"DESCRIPTION": "Bschreibung",
+			"DESCRIPTION_ERR_MAX": "Bschreibung ist zu lang",
+			"SAVE": "SPEICHERN"
+		},
+		"COMP_INFO": {
+			"TITLE": "Informationen",
+			"NAME": "Name",
+			"CREATED": "Erstellt",
+			"MODIFIED": "Zuletzt bearbeitet",
+			"INPUTS": "Eingänge",
+			"OUTPUTS": "Ausgänge",
+			"DESCRIPTION": "Beschreibung"
+		},
+		"PROJECT_DELETE": {
+			"TITLE": "Löschen bestätigen",
+			"DELETE": "Löschen bestätigen"
+		},
+		"COMP_DELETE": {
+			"TITLE": "Löschen bestätigen",
+			"WARNING": "Bitte verischere dich, dass die Komponente in keinen Projekten verwendet wird.",
+			"DELETE": "Löschen bestätigen"
+		},
 		"COOKIE_CONSENT": {
 			"MESSAGE": "Wir verwenden Cookies. Wenn Sie auf unserer Seite weitersurfen, stimmen Sie der Cookie-Nutzung zu.",
 			"DISMISS": "Akzeptieren",
@@ -189,5 +241,21 @@
 		"COPYRIGHT_1": "Icons erstellt von",
 		"COPYRIGHT_1_1": "von",
 		"COPYRIGHT_2": "Alle Inhalte dieser Webseite (Bilder, Fotos, Texte, Videos) unterliegen dem Urheberrecht. Falls notwendig, werden wir die unerlaubte Nutzung von Teilen der Inhalte unserer Seite rechtlich verfolgen."
+	},
+	"VERIFY_MAIL": {
+		"VERIFYING": "Email wird verifiezirt",
+		"SUCCESS": "Email erfolgreich verifiziert.",
+		"ERROR": "Fehler beim verifizieren der Email"
+	},
+	"ERROR": {
+		"ACCOUNT": {
+			"NO_USER": "Benutzername exsistiert nicht",
+			"INVALID_PW": "Password ist falsch",
+			"EMAIL_NOT_VERIFIED": "Email Adresse nicht verifiziert",
+			"EMAIL_TAKEN": "Email Adresse wird bereits verwendet",
+			"USERNAME_TAKEN": "Benutzername wird bereits verwedet",
+			"MAX_FILE_SIZE": "Maximale Dateigröße überschritten",
+			"OTHER": "Ein unbekannter Fehler ist aufgetreten"
+		}
 	}
 }

@@ -1,21 +1,21 @@
 <div class="info">
 	<img [src]="apiPath + '/images/thumbnails/' + project.location">
 	<div class="item">
-		<p>Name:</p>
+		<p>{{'POPUP.COMP_INFO.NAME' | translate}}:</p>
 		<p>{{project.name}}</p>
 	</div>
 	<hr>
 	<div class="item">
-		<p>Created:</p>
+		<p>{{'POPUP.COMP_INFO.CREATED' | translate}}:</p>
 		<p>{{project.created_on}}</p>
 	</div>
 	<div class="item">
-		<p>Modified:</p>
+		<p>{{'POPUP.COMP_INFO.MODIFIED' | translate}}:</p>
 		<p>{{project.last_edited}}</p>
 	</div>
 	<hr>
 	<div class="item description">
-		<p>Description:</p>
+		<p>{{'POPUP.COMP_INFO.DESCRIPTION' | translate}}:</p>
 		<p>{{project.description}}</p>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../../../../shared/services/api/api.service';
-import {PopupContentComp} from '@logigator/logigator-shared-comps';
+import {PopupContentComp, AccountActionErrorResolverService} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-change-password',
@@ -10,14 +10,21 @@ import {PopupContentComp} from '@logigator/logigator-shared-comps';
 })
 export class ChangeEmailComponent extends PopupContentComp implements OnInit {
 
-	public newCompForm: FormGroup;
+	public newMailForm: FormGroup;
 
-	constructor(private formBuilder: FormBuilder, private api: ApiService) {
+	public errorMessage = '';
+	public showSuccessMessage = false;
+
+	constructor(
+		private formBuilder: FormBuilder,
+		private api: ApiService,
+		private accountActionErrorResolver: AccountActionErrorResolverService
+	) {
 		super();
 	}
 
 	ngOnInit() {
-		this.newCompForm = this.formBuilder.group({
+		this.newMailForm = this.formBuilder.group({
 			email: ['', [
 				Validators.required,
 				Validators.email
@@ -26,9 +33,17 @@ export class ChangeEmailComponent extends PopupContentComp implements OnInit {
 	}
 
 	public async submit() {
-		if (this.newCompForm.invalid)
+		if (this.newMailForm.invalid)
 			return;
-		await this.api.updateProfile({ email: this.newCompForm.controls.email.value }).toPromise();
+		try {
+			await this.api.updateProfile({email: this.newMailForm.controls.email.value}).toPromise();
+			this.showSuccessMessage = true;
+		} catch (e) {
+			this.errorMessage = await this.accountActionErrorResolver.getErrorMessage(e);
+		}
+	}
+
+	public close() {
 		this.requestClose.emit();
 	}
 

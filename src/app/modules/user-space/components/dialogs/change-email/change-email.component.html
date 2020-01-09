@@ -1,9 +1,19 @@
-<form [formGroup]="newCompForm" (ngSubmit)="submit()" autocomplete="off">
+<form [formGroup]="newMailForm" (ngSubmit)="submit()" autocomplete="off" *ngIf="!showSuccessMessage; else changeSuccess">
 
 	<logi-input type="text" formControlName="email" label="{{'POPUP.CHANGE_EMAIL.EMAIL' | translate}}">
 		<logi-input-error error="required">{{'POPUP.CHANGE_EMAIL.EMAIL_ERR_REQUIRED' | translate}}</logi-input-error>
 		<logi-input-error error="email">{{'POPUP.CHANGE_EMAIL.EMAIL_ERR_INVALID' | translate}}</logi-input-error>
 	</logi-input>
 
-	<button type="submit" class="btn-raised primary" [disabled]="newCompForm.invalid">{{'POPUP.CHANGE_EMAIL.SAVE_BUTTON' | translate}}</button>
+	<p class="error">{{errorMessage}}</p>
+
+	<button type="submit" class="btn-raised primary" [disabled]="newMailForm.invalid">{{'POPUP.CHANGE_EMAIL.SAVE_BUTTON' | translate}}</button>
 </form>
+
+<ng-template #changeSuccess>
+	<div class="success">
+		<h3>{{'POPUP.CHANGE_EMAIL.SUCCESS_1' | translate}}</h3>
+		<p>{{'POPUP.CHANGE_EMAIL.SUCCESS_2' | translate}}</p>
+		<button type="button" class="btn-raised primary" (click)="close()">{{'POPUP.CHANGE_EMAIL.SUCCESS_OK_BUTTON' | translate}}</button>
+	</div>
+</ng-template>
