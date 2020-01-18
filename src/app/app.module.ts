@@ -5,15 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HomeModule} from './modules/home/home.module';
 import {SharedModule} from './shared/shared.module';
-import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MissingTranslationHandler, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {AppMissingTranslationHandler} from './shared/models/translation/missing-translation-handler';
 import {CredentialsInterceptor} from './shared/interceptors/credentials';
 import {WINDOW, windowFactory} from './shared/injectable-window';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {LogigatorSharedCompsModule, SharedCompsAuthService, SharedCompsThemingService} from '@logigator/logigator-shared-comps';
 import {ThemingService} from './shared/services/theming/theming.service';
 import {AuthService} from './shared/services/auth/auth.service';
+import {CacheBustingTranslationLoader} from './shared/models/translation/cache-busting-translation-loader';
 
 @NgModule({
 	declarations: [
@@ -28,8 +28,7 @@ import {AuthService} from './shared/services/auth/auth.service';
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
-				useClass: TranslateHttpLoader,
-				deps: [HttpClient]
+				useClass: CacheBustingTranslationLoader
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
