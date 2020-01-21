@@ -79,6 +79,9 @@ header {
 
 		.userspace:hover {
 			cursor: pointer;
+			@include themify() {
+				background-color: lighten(themed('primary'), 10%);
+			}
 		}
 
 		.username {
