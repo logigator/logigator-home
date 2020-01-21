@@ -13,9 +13,11 @@
 			</div>
 		</ng-container>
 		<ng-container *ngIf="!isLoggedIn || (userInfo | async) === undefined">
-			<button class="btn-outline secondary btn-login" (click)="loginEmail()">{{'OPTIONS.LOGIN' | translate}}</button>
-			<button class="btn-outline secondary btn-login" (click)="registerEmail()">{{'OPTIONS.REGISTER' | translate}}</button>
-			<div class="more" (click)="settingsDropdown = !settingsDropdown"></div>
+			<div>
+				<button class="btn-outline secondary btn-login" (click)="loginEmail()">{{'OPTIONS.LOGIN' | translate}}</button>
+				<button class="btn-outline secondary btn-login" (click)="registerEmail()">{{'OPTIONS.REGISTER' | translate}}</button>
+				<div class="more" (click)="settingsDropdown = !settingsDropdown"></div>
+			</div>
 		</ng-container>
 		<app-settings-dropdown *ngIf="settingsDropdown" (requestClosed)="settingsDropdown = false;"></app-settings-dropdown>
 	</div>
