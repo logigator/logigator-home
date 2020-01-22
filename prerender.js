@@ -24,6 +24,7 @@ const ROUTES = [
 	'/',
 	'/privacy-policy',
 	'/imprint',
+	'/download'
 ];
 
 

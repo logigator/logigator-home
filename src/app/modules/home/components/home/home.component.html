@@ -5,9 +5,12 @@
 		<img *ngIf="theme === 'light'" src="/assets/logo.svg" alt="large Logo">
 		<div class="intro-headline">
 			<h3>{{'HOME.INTRO.DESCRIPTION' | translate}}</h3>
-			<a [href]="editorHref" target="_blank" rel="noopener">
-				<button class="btn-raised primary">{{'HOME.INTRO.BUTTON' | translate}}</button>
-			</a>
+			<div class="editor-buttons">
+				<a [href]="editorHref" target="_blank" rel="noopener" class="web-editor">
+					<button class="btn-raised primary">{{'HOME.INTRO.BUTTON' | translate}}</button>
+				</a>
+				<a class="download-editor" routerLink="/download">{{'HOME.INTRO.DOWNLOAD_NATIVE' | translate}}</a>
+			</div>
 		</div>
 	</section>
 	<hr>

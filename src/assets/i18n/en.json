@@ -26,7 +26,8 @@
 		"INTRO": {
 			"TITLE": "What is Logigator",
 			"DESCRIPTION": "The editor for logical circuits...",
-			"BUTTON": "GO TO EDITOR"
+			"BUTTON": "GO TO EDITOR",
+			"DOWNLOAD_NATIVE": "or download native Editor App"
 		},
 		"EXPLANATION": {
 			"TITLE": "A short Explanation",
