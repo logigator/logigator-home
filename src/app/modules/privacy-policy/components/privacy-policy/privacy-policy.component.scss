@@ -2,6 +2,8 @@
 
 .privacy-policy {
 	padding: 2rem;
+	word-break: break-word;
+
 	@include themify(){
 		color: themed('text-primary');
 	}
