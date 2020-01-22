@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ThemingService} from '../../../../shared/services/theming/theming.service';
 import {Title} from '@angular/platform-browser';
+import {environment} from '../../../../../environments/environment';
 
 @Component({
 	selector: 'app-home',
@@ -17,5 +18,9 @@ export class HomeComponent implements OnInit {
 
 	public get theme() {
 		return this.theming.currentTheme;
+	}
+
+	public get editorHref(): string {
+		return environment.editor;
 	}
 }
