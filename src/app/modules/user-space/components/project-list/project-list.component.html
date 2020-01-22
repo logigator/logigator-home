@@ -6,7 +6,7 @@
 				<div class="tiles">
 					<div class="tile-wrapper" *ngFor="let project of projects | slice:0:4;">
 						<div class="tile">
-							<h3 class="title" logiAutoFontSize desiredFontWidth="150">{{project.name}}</h3>
+							<h3 class="title" logiAutoFontSize desiredFontWidth="140">{{project.name}}</h3>
 							<img class="preview" [src]="apiUrl + '/images/thumbnails/' + project.location" alt="Preview">
 							<div class="tile-hover">
 								<a class="icon icon-play" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener"></a>
