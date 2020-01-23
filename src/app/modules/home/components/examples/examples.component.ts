@@ -1,13 +1,11 @@
 import {Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild} from '@angular/core';
 import {fromEvent, Observable, Subject} from 'rxjs';
-import {UserProject} from '../../../../shared/models/http-responses/user-project';
 import {ApiService} from '../../../../shared/services/api/api.service';
 import {IImage} from 'ng-simple-slideshow';
 import {takeUntil} from 'rxjs/operators';
 import {isPlatformBrowser} from '@angular/common';
 import {environment} from '../../../../../environments/environment';
 import {ThemingService} from '../../../../shared/services/theming/theming.service';
-import {Theme} from '../../../../../../../logigator-editor/src/app/models/theming';
 
 @Component({
 	selector: 'app-examples',
@@ -73,7 +71,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public get currentTheme(): Theme {
+	public get currentTheme(): string {
 		return this.themingService.currentTheme;
 	}
 
