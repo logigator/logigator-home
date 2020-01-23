@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../../../../shared/services/api/api.service';
-import {PopupContentComp} from '@logigator/logigator-shared-comps';
+import {AccountActionErrorResolverService, PopupContentComp} from '@logigator/logigator-shared-comps';
 
 @Component({
 	selector: 'app-change-password',
@@ -10,14 +10,21 @@ import {PopupContentComp} from '@logigator/logigator-shared-comps';
 })
 export class ChangePasswordComponent extends PopupContentComp implements OnInit {
 
-	public newCompForm: FormGroup;
+	public newPasswordForm: FormGroup;
 
-	constructor(private formBuilder: FormBuilder, private api: ApiService) {
+	public errorMessage = '';
+	public showSuccessMessage = false;
+
+	constructor(
+		private formBuilder: FormBuilder,
+		private api: ApiService,
+		private accountActionErrorResolver: AccountActionErrorResolverService
+	) {
 		super();
 	}
 
 	ngOnInit() {
-		this.newCompForm = this.formBuilder.group({
+		this.newPasswordForm = this.formBuilder.group({
 			password: ['', [
 				Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[A-Za-z])(?=.*[0-9]).*$')
 			]],
@@ -32,9 +39,17 @@ export class ChangePasswordComponent extends PopupContentComp implements OnInit 
 	}
 
 	public async submit() {
-		if (this.newCompForm.invalid)
+		if (this.newPasswordForm.invalid)
 			return;
-		await this.api.updateProfile({ password: this.newCompForm.controls.password.value }).toPromise();
+		try {
+			await this.api.updateProfile({password: this.newPasswordForm.controls.password.value}).toPromise();
+			this.showSuccessMessage = true;
+		} catch (e) {
+			this.errorMessage = await this.accountActionErrorResolver.getErrorMessage(e);
+		}
+	}
+
+	public close() {
 		this.requestClose.emit();
 	}
 

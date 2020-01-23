@@ -12,23 +12,23 @@
 	</div>
 	<ng-container *ngIf="isLoggedIn">
 		<hr>
-		<a class="link item" href="" routerLink="/my/projects" (click)="close()">
+		<a class="link item" routerLink="/my/projects" (click)="close()">
 			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg">
 			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg">
 			{{'OPTIONS.PROJECTS' | translate}}
 		</a>
-		<a class="link item" href="" routerLink="/my/components" (click)="close()">
+		<a class="link item" routerLink="/my/components" (click)="close()">
 			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg">
 			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg">
 			{{'OPTIONS.COMPONENTS' | translate}}
 		</a>
 		<hr>
-		<a class="link item" href="" routerLink="/my/settings" (click)="close()">
+		<a class="link item" routerLink="/my/settings" (click)="close()">
 			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/user.svg">
 			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/user.svg">
 			{{'OPTIONS.ACCOUNT' | translate}}
 		</a>
-		<a class="link item" href="" (click)="logout()">
+		<a class="link item" (click)="logout()">
 			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/logout.svg">
 			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/logout.svg">
 			{{'OPTIONS.LOGOUT' | translate}}

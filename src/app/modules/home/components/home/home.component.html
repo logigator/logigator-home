@@ -5,7 +5,7 @@
 		<img *ngIf="theme === 'light'" src="/assets/logo.svg" alt="large Logo">
 		<div class="intro-headline">
 			<h3>{{'HOME.INTRO.DESCRIPTION' | translate}}</h3>
-			<a href="https://editor.logigator.com/" target="_blank" rel="noopener">
+			<a [href]="editorHref" target="_blank" rel="noopener">
 				<button class="btn-raised primary">{{'HOME.INTRO.BUTTON' | translate}}</button>
 			</a>
 		</div>
@@ -18,8 +18,7 @@
 						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen>
 				</iframe>-->
-				<img *ngIf="theme === 'dark'" src="/assets/comingsoon_dark.png" alt="placeholder-image for a soon coming video">
-				<img *ngIf="theme === 'light'" src="/assets/comingsoon_light.png" alt="placeholder-image for a soon coming video">
+				<img src="/assets/video_comming_soon.png" alt="placeholder-image for a soon coming video">
 			</div>
 		</div>
 		<article>

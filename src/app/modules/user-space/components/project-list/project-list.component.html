@@ -1,12 +1,15 @@
 <div class="container">
 	<div class="item-list">
-		<h1>{{'USERSPACE.PROJECTS.TITLE' | translate}}</h1>
+		<div class="header">
+			<h1>{{'USERSPACE.PROJECTS.TITLE' | translate}}</h1>
+			<a (click)="refresh()" class="icon icon-refresh"></a>
+		</div>
 		<ng-container *ngIf="userProjects$ | async as projects">
 			<ng-container *ngIf="projects.length > 0; else noProjects">
 				<div class="tiles">
 					<div class="tile-wrapper" *ngFor="let project of projects | slice:0:4;">
 						<div class="tile">
-							<h3 class="title" logiAutoFontSize desiredFontWidth="150">{{project.name}}</h3>
+							<h3 class="title" logiAutoFontSize desiredFontWidth="140">{{project.name}}</h3>
 							<img class="preview" [src]="apiUrl + '/images/thumbnails/' + project.location" alt="Preview">
 							<div class="tile-hover">
 								<a class="icon icon-play" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener"></a>

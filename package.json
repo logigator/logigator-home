@@ -22,7 +22,6 @@
 		"@angular/router": "^8.2.14",
 		"@logigator/logigator-shared-comps": "latest",
 		"@ngx-translate/core": "^11.0.1",
-		"@ngx-translate/http-loader": "^4.0.0",
 		"cookieconsent": "^3.1.1",
 		"core-js": "^3.5.0",
 		"ng-simple-slideshow": "^1.2.9",

@@ -1,17 +1,15 @@
 <div class="examples-area">
 	<slideshow
 		[imageUrls]="imageUrls"
-		[height]="'20rem'"
+		[height]="'100%'"
 		[autoPlay]="autoPlay"
 		[autoPlayInterval]="5000"
 		[stopAutoPlayOnSlide]="true"
 		[autoPlayWaitForLazyLoad]="true"
 		[lazyLoad]="true"
+		[showDots]="true"
+		[dotColor]="currentTheme === 'light' ? '#000000' :'#cccccc'"
 		#slideshow>
 	</slideshow>
 	<h3>{{'HOME.EXAMPLES.TITLE' | translate}}</h3>
 </div>
-
-
-
-

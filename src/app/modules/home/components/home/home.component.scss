@@ -190,14 +190,14 @@ section:last-child {
 
 .examples {
 	height: 43.2vw;
-	padding: 5rem 3rem;
+	padding: 3rem 3rem;
 
 	@media (max-width: 1100px) {
-		height: 25rem;
+		height: 34rem;
 	}
 
 	@media (max-width: 768px) {
-		height: auto;
+		height: 24rem;
 	}
 
 	@media (min-width: 1600px) {
