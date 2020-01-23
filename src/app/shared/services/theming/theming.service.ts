@@ -1,5 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
+import {Observable, Subject} from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -7,6 +8,8 @@ import {DOCUMENT} from '@angular/common';
 export class ThemingService {
 
 	private _currentTheme: 'light' | 'dark';
+
+	private _themeSubject$ = new Subject<'light' | 'dark'>();
 
 	constructor(@Inject(DOCUMENT) private document: HTMLDocument) {
 	}
@@ -29,6 +32,7 @@ export class ThemingService {
 	public setTheme(theme: 'light' | 'dark') {
 		localStorage.setItem('theme', theme);
 		this._currentTheme = theme;
+		this._themeSubject$.next(theme);
 		this.setThemeClass(this.currentTheme);
 	}
 
@@ -46,5 +50,10 @@ export class ThemingService {
 
 	private loadTheme() {
 		this._currentTheme = (localStorage.getItem('theme') || 'dark') as any;
+		this._themeSubject$.next(this.currentTheme);
+	}
+
+	public get currentTheme$(): Observable<'light' | 'dark'> {
+		return this._themeSubject$.asObservable();
 	}
 }
