@@ -25,6 +25,20 @@
 		}
 	}
 
+	.header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		.icon {
+			height: 2rem;
+			width: 2rem;
+			margin: 0;
+			cursor: pointer;
+		}
+	}
+
 	.item {
 		display: flex;
 		flex-direction: row;
@@ -300,3 +314,12 @@
 	}
 }
 
+.icon-refresh {
+	@include themify {
+		@if (isTheme('dark')) {
+			background-image: url("/assets/icons/dark/speed_sync.svg");
+		} @else {
+			background-image: url("/assets/icons/light/speed_sync.svg");
+		}
+	}
+}
