@@ -317,9 +317,9 @@
 .icon-refresh {
 	@include themify {
 		@if (isTheme('dark')) {
-			background-image: url("/assets/icons/dark/speed_sync.svg");
+			background-image: url("/assets/icons/dark/reload.svg");
 		} @else {
-			background-image: url("/assets/icons/light/speed_sync.svg");
+			background-image: url("/assets/icons/light/reload.svg");
 		}
 	}
 }
