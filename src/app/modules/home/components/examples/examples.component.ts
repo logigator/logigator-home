@@ -6,6 +6,8 @@ import {IImage} from 'ng-simple-slideshow';
 import {takeUntil} from 'rxjs/operators';
 import {isPlatformBrowser} from '@angular/common';
 import {environment} from '../../../../../environments/environment';
+import {ThemingService} from '../../../../shared/services/theming/theming.service';
+import {Theme} from '../../../../../../../logigator-editor/src/app/models/theming';
 
 @Component({
 	selector: 'app-examples',
@@ -53,7 +55,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
 		}
 	];
 
-	constructor(private api: ApiService, @Inject(PLATFORM_ID) private platformId: string) {}
+	constructor(private api: ApiService, @Inject(PLATFORM_ID) private platformId: string, private themingService: ThemingService) {}
 
 	ngOnInit() {
 		fromEvent(this._slideshow.nativeElement, 'mouseenter').pipe(
@@ -69,6 +71,10 @@ export class ExamplesComponent implements OnInit, OnDestroy {
 		if (isPlatformBrowser(this.platformId)) {
 			window.open(environment.editor + '/share/' + example, '_blank');
 		}
+	}
+
+	public get currentTheme(): Theme {
+		return this.themingService.currentTheme;
 	}
 
 	ngOnDestroy(): void {
