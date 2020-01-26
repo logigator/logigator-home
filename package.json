@@ -26,7 +26,7 @@
 		"cookieconsent": "^3.1.1",
 		"core-js": "^3.5.0",
 		"express": "^4.15.2",
-		"ng-simple-slideshow": "^1.2.9",
+		"ng-simple-slideshow": "^1.3.0-beta.9",
 		"ngx-image-cropper": "^2.0.2",
 		"regenerator-runtime": "^0.13.3",
 		"rxjs": "~6.5.4",
