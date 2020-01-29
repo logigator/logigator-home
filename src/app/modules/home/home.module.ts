@@ -9,7 +9,11 @@ import { BackgroundImageComponent } from './components/background-image/backgrou
 import {SlideshowModule} from 'ng-simple-slideshow';
 import {TranslateModule} from '@ngx-translate/core';
 import {LoginRegisterGuard} from '../../shared/guards/login-register/login-register.guard';
-import {LoginPopupComponent, RegisterPopupComponent} from '@logigator/logigator-shared-comps';
+import {
+	LogigatorSharedCompsModule,
+	LoginPopupComponent,
+	RegisterPopupComponent
+} from '@logigator/logigator-shared-comps';
 
 export const HOME_ROUTES: Routes = [
 	{
@@ -42,6 +46,7 @@ export const HOME_ROUTES: Routes = [
 		CommonModule,
 		SharedModule,
 		SlideshowModule,
+		LogigatorSharedCompsModule,
 		TranslateModule.forChild()
 	]
 })

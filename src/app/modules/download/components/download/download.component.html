@@ -1,1 +1,14 @@
-<p>download works!</p>
+<div class="download-page">
+	<div class="header">
+		<div class="electron-screenshot">
+			<img src="assets/comingsoon_dark.png" alt="Logigator Electron App Screenshot">
+		</div>
+		<div class="description">
+			<h1>{{'DOWNLOAD.HEADLINE' | translate}}</h1>
+			<p>{{'DOWNLOAD.DESCRIPTION' | translate}}</p>
+		</div>
+	</div>
+	<div class="download-section" *ngIf="electronDownloadData$ | async as electronDownloadData">
+		<app-current-version-download [downloadData]="getCurrentElectronVersion(electronDownloadData)"></app-current-version-download>
+	</div>
+</div>

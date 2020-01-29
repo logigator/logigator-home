@@ -9,6 +9,7 @@ import {UserComponent} from '../../models/http-responses/user-component';
 import {AuthService} from '../auth/auth.service';
 import {UserProject} from '../../models/http-responses/user-project';
 import {environment} from '../../../../environments/environment';
+import {ElectronDownloadData} from '../../models/http-responses/electron-download-data';
 
 @Injectable({
 	providedIn: 'root'
@@ -190,5 +191,9 @@ export class ApiService {
 				(x) => `Could not create component: (${x.status}) ${x.error.error.description}`,
 				false)
 		);
+	}
+
+	public getElectronDownloadData(): Observable<ElectronDownloadData> {
+		return this.http.get<ElectronDownloadData>('https://raw.githubusercontent.com/logigator/logigator-editor/development/currrent-electron-version.json');
 	}
 }

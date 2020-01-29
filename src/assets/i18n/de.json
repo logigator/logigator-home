@@ -249,6 +249,13 @@
 		"SUCCESS": "Email erfolgreich verifiziert.",
 		"ERROR": "Fehler beim verifizieren der Email"
 	},
+	"DOWNLOAD": {
+		"HEADLINE": "Editor herunterladen",
+		"DESCRIPTION": "Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123",
+		"DOWNLOAD": "Herunterladen",
+		"DATE": "Datum",
+		"FILE_SIZE": "Dateigröße"
+	},
 	"ERROR": {
 		"ACCOUNT": {
 			"NO_USER": "Benutzername exsistiert nicht",

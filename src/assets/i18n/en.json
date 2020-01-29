@@ -26,7 +26,7 @@
 		"INTRO": {
 			"TITLE": "What is Logigator",
 			"DESCRIPTION": "The editor for logical circuits...",
-			"BUTTON": "GO TO EDITOR",
+			"BUTTON": "TRY NOW",
 			"DOWNLOAD_NATIVE": "or download native Editor App"
 		},
 		"EXPLANATION": {
@@ -248,6 +248,13 @@
 		"VERIFYING": "Verifying email. Please wait.",
 		"SUCCESS": "Email verified successfully.",
 		"ERROR": "Error verifying email."
+	},
+	"DOWNLOAD": {
+		"HEADLINE": "Download native Editor",
+		"DESCRIPTION": "Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123",
+		"DOWNLOAD": "Download",
+		"DATE": "Date",
+		"FILE_SIZE": "File Size"
 	},
 	"ERROR": {
 		"ACCOUNT": {

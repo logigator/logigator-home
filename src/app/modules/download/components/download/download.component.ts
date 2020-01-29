@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {ElectronDownloadData, ElectronVersion} from '../../../../shared/models/http-responses/electron-download-data';
+import {ApiService} from '../../../../shared/services/api/api.service';
 
 @Component({
 	selector: 'app-download',
 	templateUrl: './download.component.html',
-	styleUrls: ['./download.component.scss']
+	styleUrls: ['./download.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DownloadComponent implements OnInit {
 
-	constructor() { }
+	public electronDownloadData$: Observable<ElectronDownloadData>;
+
+	constructor(private api: ApiService) { }
 
 	ngOnInit() {
+		this.electronDownloadData$ = this.api.getElectronDownloadData();
+	}
+
+	public getCurrentElectronVersion(downloadData: ElectronDownloadData): ElectronVersion {
+		return downloadData.versions.find(v => v.version === downloadData.currentVersion);
 	}
 
 }
