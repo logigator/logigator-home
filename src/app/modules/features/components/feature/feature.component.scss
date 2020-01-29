@@ -18,10 +18,12 @@
 
 	img {
 		width: 418px;
+		min-width: 418px;
 		object-fit: contain;
 
 		@media (max-width: 500px) {
 			width: 100%;
+			min-width: 0;
 		}
 	}
 

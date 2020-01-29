@@ -51,6 +51,9 @@ header {
 		}
 
 		.logo {
+			img {
+				height: $header-height/1.5;
+			}
 			padding: 0.5rem;
 		}
 
@@ -84,7 +87,7 @@ header {
 	}
 
 	img {
-		height: $header-height/1.5;
+		height: 100%;
 	}
 
 	.right {
