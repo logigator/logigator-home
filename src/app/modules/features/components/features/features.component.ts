@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-features',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturesComponent implements OnInit {
 
-	constructor() { }
+	constructor(private titleService: Title) { }
 
 	ngOnInit() {
+		this.titleService.setTitle('Logigator - Features');
 	}
 
 }
