@@ -1,6 +1,9 @@
 <div class="container">
 	<div class="item-list">
-		<h1>{{'USERSPACE.PROJECTS.TITLE' | translate}}</h1>
+		<div class="header">
+			<h1>{{'USERSPACE.PROJECTS.TITLE' | translate}}</h1>
+			<a (click)="refresh()" class="icon icon-refresh"></a>
+		</div>
 		<ng-container *ngIf="userProjects$ | async as projects">
 			<ng-container *ngIf="projects.length > 0; else noProjects">
 				<div class="tiles">

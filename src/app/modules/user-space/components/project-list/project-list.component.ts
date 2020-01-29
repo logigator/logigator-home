@@ -37,6 +37,10 @@ export class ProjectListComponent implements OnInit {
 		return this.api.userProjects$;
 	}
 
+	public refresh() {
+		this.api.loadUserProjects();
+	}
+
 	public openShareDialog(project: number) {
 		this.popup.showPopup(ShareProjectComponent, 'POPUP.SHARE.TITLE', false, project, this.componentFactoryResolver);
 	}

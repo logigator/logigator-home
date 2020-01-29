@@ -60,12 +60,12 @@
 		"PROJECTS": {
 			"TITLE": "My projects",
 			"LAST_EDITED": "Last edited: ",
-			"ERROR": "You haven't defined an projects yet."
+			"ERROR": "You haven't defined any projects yet."
 		},
 		"COMPONENTS": {
 			"TITLE": "My components",
 			"LAST_EDITED": "Last edited: ",
-			"ERROR": "You haven't defined an projects yet."
+			"ERROR": "You haven't defined any components yet."
 		},
 		"ACCOUNT_SETTINGS": {
 			"USERNAME": "Username",
