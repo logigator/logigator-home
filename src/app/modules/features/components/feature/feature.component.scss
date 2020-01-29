@@ -1,0 +1,49 @@
+@import "variables";
+@import "themes";
+
+.feature {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 1rem;
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@include themify() {
+		background-color: themed('accent2');
+	}
+
+	img {
+		width: 418px;
+		object-fit: contain;
+
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+	}
+
+	.description {
+		h2 {
+			margin: 0 0 1rem 0;
+		}
+
+		hr {
+			@include themify() {
+				border: {
+					width: 0;
+					top: 1px solid themed('text-primary');
+				}
+			}
+		}
+
+		@media (max-width: 768px) {
+			padding-bottom: 1rem;
+		}
+		@media (min-width: 768px) {
+			padding-right: 1rem;
+		}
+	}
+}

@@ -3,9 +3,17 @@
 
 	<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/menu.svg" alt="burger menu open">
 
-	<a routerLink="/" class="logo"><img alt="Logigator" src="/assets/logo.svg"></a>
+	<div class="left">
+		<a routerLink="/" class="logo">
+			<img alt="Logigator" src="/assets/logo.svg">
+		</a>
 
-	<div class="login">
+		<div class="links">
+			<div routerLink="/features">Features</div>
+		</div>
+	</div>
+
+	<div class="right">
 		<ng-container *ngIf="isLoggedIn && (userInfo | async) as userInfo">
 			<div (click)="settingsDropdown = !settingsDropdown" class="userspace">
 				<a class="username">{{userInfo.user.username}}</a>
