@@ -34,6 +34,22 @@ header {
 		flex-direction: row;
 		height: 100%;
 
+		.burger-menu {
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding: 0.5rem;
+
+			display: none;
+			@media (max-width: 767px) {
+				display: block;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
 		.logo {
 			padding: 0.5rem;
 		}
@@ -42,6 +58,10 @@ header {
 			margin-left: 1rem;
 			padding: 0 1rem;
 			height: 100%;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
 
 			> * {
 				display: flex;
@@ -67,21 +87,6 @@ header {
 
 	img {
 		height: 100%;
-	}
-
-	.burger-menu {
-		position: absolute;
-		left: 0;
-		top: 0;
-
-		display: none;
-		@media (max-width: 767px) {
-			display: block;
-		}
-
-		&:hover {
-			cursor: pointer;
-		}
 	}
 
 	.right {
