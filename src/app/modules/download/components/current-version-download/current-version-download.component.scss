@@ -18,72 +18,98 @@
 			width: 80%;
 		}
 	}
-}
 
-.archs {
-	width: 100%;
-	padding-left: 2rem;
+	.archs {
+		width: 100%;
+		padding-left: 2rem;
 
-	.arch {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 2rem 0;
+		.arch {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 2rem 0;
 
-		@include themify() {
-			border-bottom: border('width') solid themed('background');
-		}
-
-		p {
-			margin: 0;
-		}
-
-		.name {
-			margin-bottom: 0.2rem;
-		}
-
-		.filename {
-			width: 45%;
-
-			@media screen and (max-width: 1200px) {
-				width: unset;
+			@include themify() {
+				border-bottom: border('width') solid themed('background');
 			}
 
-		> * {
-			width: 100%;
-		}
+			p {
+				margin: 0;
+			}
 
 			.name {
-				font-size: 24px;
+				margin-bottom: 0.2rem;
 			}
 
-			.size-and-date-md {
-				display: none;
-				margin-top: 0.5rem;
+			.filename {
+				width: 45%;
+				word-break: break-all;
 
 				@media screen and (max-width: 1200px) {
-					display: block;
+					width: unset;
+				}
+
+				> * {
+					width: 100%;
+				}
+
+				.name {
+					font-size: 24px;
+				}
+
+				.size-and-date-md {
+					display: none;
+					margin-top: 0.5rem;
+
+					@media screen and (max-width: 1200px) {
+						display: block;
+					}
+
+					@media screen and (max-width: 800px) {
+						margin: {
+							top: 0.5rem;
+							bottom: 1rem;
+						};
+					}
 				}
 			}
-		}
 
-		.download-button button {
-			font-size: 20px;
-		}
+			.download-button button {
+				font-size: 20px;
+			}
 
-		@media screen and (max-width: 1200px) {
-			.file-size, .date {
-				display: none;
+			@media screen and (max-width: 1200px) {
+				.file-size, .date {
+					display: none;
+				}
+			}
+
+			@media screen and (max-width: 800px) {
+				flex-direction: column;
+				align-items: flex-start;
+				text-align: left;
+			}
+
+			&:nth-of-type(1) {
+				padding-top: 1rem;
+			}
+
+			&:last-of-type {
+				border-bottom: none !important;
+				padding-bottom: 0;
 			}
 		}
+	}
 
-		&:nth-of-type(1) {
-			padding-top: 1rem;
+	@media screen and (max-width: 700px) {
+		flex-direction: column;
+
+		.archs {
+			padding-left: 0;
 		}
 
-		&:last-of-type {
-			border-bottom: none !important;
-			padding-bottom: 0;
+		.platform-img {
+			text-align: left;
 		}
 	}
 }
