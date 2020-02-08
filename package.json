@@ -26,7 +26,7 @@
 		"cookieconsent": "^3.1.1",
 		"core-js": "^3.6.4",
 		"express": "^4.15.2",
-		"ng-simple-slideshow": "^1.3.0-beta.9",
+		"ng-simple-slideshow": "github:Liioooo/ng-simple-slideshow#logigator-built-lib",
 		"ngx-image-cropper": "^3.0.3",
 		"regenerator-runtime": "^0.13.3",
 		"rxjs": "~6.5.4",
