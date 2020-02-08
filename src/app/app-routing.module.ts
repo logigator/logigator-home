@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {HOME_ROUTES} from './modules/home/home.module';
 import {AuthGuard} from './shared/guards/auth/auth.guard';
 
@@ -24,9 +24,9 @@ const routes: Routes = [
 	{
 		path: 'my',
 		loadChildren: () => import('./modules/user-space/user-space.module').then(m => m.UserSpaceModule),
-		canActivate: [ AuthGuard ],
-		canActivateChild: [ AuthGuard ],
-		canLoad: [ AuthGuard ]
+		canActivate: [AuthGuard],
+		canActivateChild: [AuthGuard],
+		canLoad: [AuthGuard]
 	},
 	{
 		path: '404',
@@ -36,7 +36,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
+	imports: [RouterModule.forRoot(routes, {
+		initialNavigation: 'enabled'
+	})],
 	exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
