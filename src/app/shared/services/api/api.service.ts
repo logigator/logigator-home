@@ -72,12 +72,12 @@ export class ApiService {
 		return this._userProjects$;
 	}
 
-	public changeProfilePicture(file: File): Observable<boolean> {
+	public changeProfilePicture(blob: Blob): Observable<boolean> {
 		if (!this.auth.isLoggedIn)
 			return of(false);
 
 		const formData = new FormData();
-		formData.append('picture', file);
+		formData.append('picture', blob);
 		return this.http.post<HttpResponseData<any>>(environment.apiPrefix + '/user/upload-picture', formData).pipe(
 			map(data => data.result.success)
 		);

@@ -22,7 +22,7 @@
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.app.json",
-						"aot": false,
+						"aot": true,
 						"preserveSymlinks": true,
 						"assets": [
 							"src/favicon.ico",
@@ -60,7 +60,6 @@
 							"sourceMap": false,
 							"extractCss": true,
 							"namedChunks": false,
-							"aot": true,
 							"extractLicenses": true,
 							"vendorChunk": false,
 							"buildOptimizer": true,
@@ -142,7 +141,7 @@
 					"builder": "@angular-devkit/build-angular:server",
 					"options": {
 						"outputPath": "dist/server",
-						"main": "src/main.server.ts",
+						"main": "server.ts",
 						"tsConfig": "tsconfig.server.json",
 						"stylePreprocessorOptions": {
 							"includePaths": [
@@ -160,15 +159,36 @@
 								}
 							],
 							"sourceMap": false,
-							"optimization": {
-								"scripts": true,
-								"styles": true
-							}
+							"optimization": true
+						}
+					}
+				},
+				"prerender": {
+					"builder": "@nguniversal/builders:prerender",
+					"options": {
+						"browserTarget": "logigator-home:build:production",
+						"serverTarget": "logigator-home:server:production",
+						"routes": [
+							"/",
+							"/privacy-policy",
+							"/imprint",
+							"/verify-email",
+							"/404"
+						],
+						"guessRoutes": false
+					},
+					"configurations": {
+						"production": {
+							"sourceMap": false,
+							"optimization": true
 						}
 					}
 				}
 			}
 		}
 	},
-	"defaultProject": "logigator-home"
+	"defaultProject": "logigator-home",
+	"cli": {
+		"analytics": "3ea295b3-a266-4629-9d44-d6bc5e2fc128"
+	}
 }

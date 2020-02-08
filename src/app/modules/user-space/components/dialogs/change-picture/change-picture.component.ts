@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {ApiService} from '../../../../../shared/services/api/api.service';
 import {AccountActionErrorResolverService, PopupContentComp} from '@logigator/logigator-shared-comps';
+import {base64ToFile, ImageCroppedEvent} from 'ngx-image-cropper';
 
 @Component({
 	selector: 'app-change-picture',
@@ -14,7 +15,7 @@ export class ChangePictureComponent extends PopupContentComp implements OnInit {
 	public newCompForm: FormGroup;
 	public imageFile: File;
 
-	private croppedImage: File;
+	private croppedImage: Blob;
 
 	public errorMessage = '';
 	public showSuccessMessage = false;
@@ -45,8 +46,8 @@ export class ChangePictureComponent extends PopupContentComp implements OnInit {
 		console.error('Failed to load image into cropper.');
 	}
 
-	public onCrop(event) {
-		this.croppedImage = event.file;
+	public onCrop(event: ImageCroppedEvent) {
+		this.croppedImage = base64ToFile(event.base64);
 	}
 
 	public async submit() {
