@@ -1,9 +1,5 @@
 export interface ElectronDownloadData {
 	currentVersion: string;
-	versions: ElectronVersion[];
-}
-
-export interface ElectronVersion {
 	version: string;
 	date: string;
 	platforms: ElectronPlatforms;

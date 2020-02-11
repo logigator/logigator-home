@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {
+	ElectronDownloadData,
 	ElectronDownloadOption,
-	ElectronPlatform,
-	ElectronVersion
+	ElectronPlatform
 } from '../../../../shared/models/http-responses/electron-download-data';
 
 @Component({
@@ -17,7 +17,7 @@ export class CurrentVersionDownloadComponent implements OnInit {
 	public linuxDownloadOptions: ElectronDownloadOption[];
 
 	@Input()
-	private downloadData: ElectronVersion;
+	private downloadData: ElectronDownloadData;
 
 	constructor() { }
 
