@@ -1,39 +1,37 @@
 <div class="page">
-	<app-background-image></app-background-image>
 	<section class="introduction content-section">
-		<img *ngIf="theme === 'dark'" src="/assets/logo_light.svg" alt="lage Logo">
-		<img *ngIf="theme === 'light'" src="/assets/logo.svg" alt="large Logo">
-		<div class="intro-headline">
-			<h3>{{'HOME.INTRO.DESCRIPTION' | translate}}</h3>
-			<a [href]="editorHref" target="_blank" rel="noopener">
-				<button class="btn-raised primary">{{'HOME.INTRO.BUTTON' | translate}}</button>
-			</a>
-		</div>
-	</section>
-	<hr>
-	<section class="explanation content-section">
-		<div class="iframe-container-container">
-			<div class="iframe-container">
-			<!--<iframe width="560" height="340" appLazyLoad dataSrc="" frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen>
-				</iframe>-->
-				<img src="/assets/video_comming_soon.png" alt="placeholder-image for a soon coming video">
+		<div class="content-section-content">
+			<img *ngIf="theme === 'dark'" src="/assets/logo_light.svg" alt="lage Logo">
+			<img *ngIf="theme === 'light'" src="/assets/logo.svg" alt="large Logo">
+			<div class="intro-headline">
+				<h3>{{'HOME.INTRO.DESCRIPTION' | translate}}</h3>
+				<a [href]="editorHref" target="_blank" rel="noopener">
+					<button class="btn-raised primary">{{'HOME.INTRO.BUTTON' | translate}}</button>
+				</a>
 			</div>
 		</div>
-		<article>
-			<h3>{{'HOME.EXPLANATION.TITLE' | translate}}</h3>
-			<p>{{'HOME.EXPLANATION.DESCRIPTION' | translate}}</p>
-		</article>
 	</section>
-	<div class="explanation-examples-divider content-section"></div>
-	<hr>
+	<section class="explanation content-section">
+		<div class="content-section-content">
+			<div class="iframe-container-container">
+				<div class="iframe-container">
+					<!--<iframe width="560" height="340" appLazyLoad dataSrc="" frameborder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen>
+						</iframe>-->
+					<img src="/assets/video_comming_soon.png" alt="placeholder-image for a soon coming video">
+				</div>
+			</div>
+			<article>
+				<h3>{{'HOME.EXPLANATION.TITLE' | translate}}</h3>
+				<p>{{'HOME.EXPLANATION.DESCRIPTION' | translate}}</p>
+			</article>
+		</div>
+	</section>
 	<section class="content-section examples">
-		<app-examples></app-examples>
-	</section>
-	<hr>
-	<section class="content-section tutorials">
-		<app-tutorials></app-tutorials>
+		<div class="content-section-content">
+			<app-examples></app-examples>
+		</div>
 	</section>
 </div>
 

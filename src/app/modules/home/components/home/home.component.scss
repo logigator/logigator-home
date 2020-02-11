@@ -6,15 +6,6 @@
 	flex-direction: column;
 	align-items: center;
 	background: none;
-	max-width: 1500px;
-	width: 100%;
-	margin: auto;
-
-	hr {
-		@media (min-width: 1100px) {
-			display: none;
-		}
-	}
 
 	@include themify() {
 		color: themed('text-primary');
@@ -29,28 +20,16 @@
 }
 
 .content-section {
-	width: 75%;
-
-	@media (max-width: 1100px) {
-		width: 100%;
-	}
-
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
-	align-items: center;
-	z-index: 0;
-
+	width: 100%;
+	padding: 4rem;
 	@media (max-width: 768px) {
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		padding: 2rem;
+		padding: 1rem;
+	}
+	&-content {
+		margin: auto;
+		max-width: 1500px;
 	}
 
-	app-examples {
-		width: 100%;
-	}
 }
 
 section:last-child {
@@ -58,29 +37,13 @@ section:last-child {
 }
 
 .introduction {
-	margin-top: 4.5vw;
-	height: 38.6vw;
-	padding: 3rem;
+	margin-top: 2rem;
 	display: block;
 	text-align: center;
 
-	@media (max-width: 1100px) {
-		height: auto;
-		margin-top: 0;
-	}
-
-	@media (min-width: 1600px) {
-		height: 39.4rem;
-		margin-top: 4.3rem
-	}
-
 	img {
 		width: 100%;
-		padding: 3rem;
 
-		@media (max-width: 768px) {
-			padding: 0
-		}
 	}
 	.intro-headline{
 		display: flex;
@@ -88,7 +51,8 @@ section:last-child {
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		padding: 3rem;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 
 		@media (max-width: 768px) {
 			flex-direction: column;
@@ -121,38 +85,21 @@ section:last-child {
 }
 
 .explanation {
-	height: 38.9vw;
-	padding: 2rem 3rem;
 
-	@media (max-width: 768px) {
-		height: auto;
-	}
-
-	@media (min-width: 1600px) {
-		height: 39.5rem;
+	@include themify(){
+		background-color: themed('accent2');
 	}
 
 	article {
-		width: 50%;
-		@media (max-width: 768px) {
-			width: 100%;
-		}
-
+		width: 100%;
 		h3 {
-			margin-top: 0;
-			margin-bottom: 0;
-			@media (max-width: 768px) {
-				margin: 1rem;
-			}
 			font-weight: normal;
 			font-size: 2rem;
 		}
 	}
 
 	.iframe-container-container {
-		width: 50%;
 		position: relative;
-		margin-right: 2rem;
 
 		@media (max-width: 768px) {
 			width: 100%;
@@ -174,41 +121,4 @@ section:last-child {
 			}
 		}
 	}
-}
-
-.explanation-examples-divider {
-	height: 4.4vw;
-
-	@media (max-width: 768px) {
-		display: none;
-	}
-
-	@media (min-width: 1600px) {
-		height: 4.1rem;
-	}
-}
-
-.examples {
-	height: 43.2vw;
-	padding: 3rem 3rem;
-
-	@media (max-width: 1100px) {
-		height: 34rem;
-	}
-
-	@media (max-width: 768px) {
-		height: 24rem;
-	}
-
-	@media (min-width: 1600px) {
-		height: 43.8rem;
-	}
-
-	app-examples {
-		height: 100%;
-	}
-}
-
-.tutorials {
-	padding: 5rem 3rem;
 }
