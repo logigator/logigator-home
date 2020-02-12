@@ -9,13 +9,6 @@
 
 	@include themify() {
 		color: themed('text-primary');
-		hr {
-			width: 75%;
-			border-top: 0;
-			border-right: 0;
-			border-left: 0;
-			border-bottom: 1.5px solid themed('primary');
-		}
 	}
 }
 
@@ -33,10 +26,6 @@
 
 }
 
-section:last-child {
-	padding-bottom: 0;
-}
-
 .introduction {
 	margin-top: 7rem;
 	margin-bottom: 7rem;
@@ -45,7 +34,7 @@ section:last-child {
 		margin-top: 2rem;
 		margin-bottom: 2rem;
 	}
-	
+
 	display: block;
 	text-align: center;
 
