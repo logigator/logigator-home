@@ -21,9 +21,15 @@
 
 .content-section {
 	width: 100%;
-	padding: 4rem;
+	padding: 4rem 16rem;
+	@media (max-width: 1300px) {
+		padding: 4rem 8rem;
+	}
+	@media (max-width: 1000px) {
+		padding: 2rem 4rem;
+	}
 	@media (max-width: 768px) {
-		padding: 1rem;
+		padding: 2rem 1rem;
 	}
 
 	&-content {
@@ -38,16 +44,12 @@ section:last-child {
 }
 
 .introduction {
-	margin-top: 7rem;
-	margin-bottom: 7rem;
-
-	@media (max-width: 768px) {
-		margin-top: 2rem;
-		margin-bottom: 2rem;
-	}
-	
 	display: block;
 	text-align: center;
+	@media (min-width: 1300px) {
+		margin-top: 7rem;
+		margin-bottom: 7rem;
+	}
 
 	img {
 		width: 100%;
