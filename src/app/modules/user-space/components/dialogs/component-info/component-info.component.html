@@ -7,11 +7,11 @@
 	<hr>
 	<div class="item">
 		<p>{{'POPUP.COMP_INFO.CREATED' | translate}}:</p>
-		<p>{{project.created_on}}</p>
+		<p>{{project.created_on | date:'medium'}}</p>
 	</div>
 	<div class="item">
 		<p>{{'POPUP.COMP_INFO.MODIFIED' | translate}}:</p>
-		<p>{{project.last_edited}}</p>
+		<p>{{project.last_edited | date:'medium'}}</p>
 	</div>
 	<hr>
 	<div class="item">
