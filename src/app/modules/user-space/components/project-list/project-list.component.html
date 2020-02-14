@@ -9,7 +9,7 @@
 				<div class="tiles">
 					<div class="tile-wrapper" *ngFor="let project of projects | slice:0:4;">
 						<div class="tile">
-							<h3 class="title" logiAutoFontSize desiredFontWidth="140">{{project.name}}</h3>
+							<h3 class="title" logiAutoFontSize [desiredFontWidth]="140">{{project.name}}</h3>
 							<img class="preview" [src]="apiUrl + '/images/thumbnails/' + project.location" alt="Preview">
 							<div class="tile-hover">
 								<a class="icon icon-play" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener"></a>
@@ -24,7 +24,7 @@
 						</div>
 						<div class="details">
 							<a class="title" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{project.name}}</a>
-							<p class="edited">{{'USERSPACE.PROJECTS.LAST_EDITED' | translate}} {{project.last_edited}}</p>
+							<p class="edited">{{'USERSPACE.PROJECTS.LAST_EDITED' | translate}} {{project.last_edited | date}}</p>
 							<div class="actions">
 								<a class="icon icon-share" (click)="openShareDialog(project.pk_id)"></a>
 								<a class="icon icon-edit" (click)="openProjectEditDialog(project)"></a>
@@ -41,7 +41,7 @@
 				</div>
 				<div class="item" *ngFor="let project of projects; odd as isOdd" [class.odd]="isOdd">
 					<a class="title" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{project.name}}</a>
-					<a class="edited" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{'USERSPACE.PROJECTS.LAST_EDITED' | translate}} {{project.last_edited}}</a>
+					<a class="edited" [href]="editorUrl + '/board/' + project.pk_id" target="_blank" rel="noopener">{{'USERSPACE.PROJECTS.LAST_EDITED' | translate}} {{project.last_edited | date}}</a>
 					<div class="icon icon-share" (click)="openShareDialog(project.pk_id)"></div>
 					<div class="icon icon-edit" (click)="openProjectEditDialog(project)"></div>
 					<div class="icon icon-delete" (click)="openProjectDeleteDialog(project)"></div>
@@ -50,7 +50,7 @@
 				</div>
 			</ng-container>
 			<ng-template #noProjects>
-				<p>{{'USERSPACE.PROJECTS.ERROR' | translate}}</p>
+				<p class="no-items">{{'USERSPACE.PROJECTS.ERROR' | translate}}</p>
 			</ng-template>
 		</ng-container>
 	</div>

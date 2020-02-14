@@ -35,20 +35,6 @@
 		},
 		"EXAMPLES": {
 			"TITLE": "Ein paar Beispielschaltungen zum ausprobieren..."
-		},
-		"TUTORIALS": {
-			"LAYOUT": {
-				"TITLE": "Editoroberfläche",
-				"DESCRIPTION": "Dieses Tutorial zeigt die Möglichkeiten unserer Editoroberfläche auf und bietet einen Überblick über sämtliche verfügbare Funktionen."
-			},
-			"EDIT_MODE": {
-				"TITLE": "Editiermodus",
-				"DESCRIPTION": "Lerne die Bedienelemente des Editors kennen. In diesem Tutorial werden sämtliche Prinzipien vom Platzieren einer Komponente, bis zum Definieren benutzerdefinierter Komponenten mit frei gewählten Eingängen erklärt."
-			},
-			"SIMULATION_MODE": {
-				"TITLE": "Simulationsmodus",
-				"DESCRIPTION": "Der Simulationsmodus bietet einiges an Funktionen, und selbst falls man einmal die Übersicht verliert, hilft dieses Tutorial ganz schnell wieder den richtigen Weg zu finden."
-			}
 		}
 	},
 	"USERSPACE": {
@@ -224,7 +210,7 @@
 			"LINK": "Mehr erfahren"
 		}
 	},
-	"IMPRINT" : {
+	"IMPRINT": {
 		"HEAD": "Impressum",
 		"INFORMATION_OBLIGATION": "Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25 Mediengesetz.",
 		"COLLEGE": "Höhere technische Bundeslehranstalt Wien 3",

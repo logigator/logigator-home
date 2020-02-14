@@ -35,20 +35,6 @@
 		},
 		"EXAMPLES": {
 			"TITLE": "A few example circuits for you..."
-		},
-		"TUTORIALS": {
-			"LAYOUT": {
-				"TITLE": "Editor Layout",
-				"DESCRIPTION": "This tutorial points out the possibilities of the editors layout and sums up the entirety of its  functionality."
-			},
-			"EDIT_MODE": {
-				"TITLE": "Edit Mode",
-				"DESCRIPTION": "Get to know the basics of the edit-mode. In this Tutorial we address all the principles from placing a component to creating a user-defined component."
-			},
-			"SIMULATION_MODE": {
-				"TITLE": "Simulation Mode",
-				"DESCRIPTION": "The simulation-mode offers a bunch of possibilities and even if you loose orientation at some point, this tutorial will help to get back on the right path."
-			}
 		}
 	},
 	"USERSPACE": {
