@@ -1,28 +1,29 @@
 @import "themes";
 
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.no-items {
+	@media (max-width: 767px) {
+		margin-left: 2rem;
+	}
+}
+
 .item-list {
 	display: flex;
 	flex-direction: column;
 	margin-top: 5rem;
 	min-width: 50rem;
 
-	@media (max-width: 767px) {
-		min-width: 100%;
+	@media (max-width: 855px) {
+		min-width: 95%;
 	}
 
-	h1 {
-		font-size: 2rem;
-		font-weight: normal;
-
-		@media (max-width: 767px) {
-			text-align: center;
-			line-height: 4rem;
-			width: 100%;
-			margin-top: -3rem;
-			@include themify() {
-				border-bottom: 1px solid themed('text-primary');
-			}
-		}
+	@media (max-width: 767px) {
+		min-width: 100%;
+		margin-top: 1rem;
 	}
 
 	.header {
@@ -30,6 +31,23 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+
+		h1 {
+			font-size: 2rem;
+			font-weight: normal;
+		}
+
+		@media (max-width: 767px) {
+			margin-bottom: 2rem;
+			padding: {
+				left: 2rem;
+				right: 2rem;
+			};
+
+			@include themify() {
+				border-bottom: 1px solid themed('text-primary');
+			}
+		}
 
 		.icon {
 			height: 2rem;
