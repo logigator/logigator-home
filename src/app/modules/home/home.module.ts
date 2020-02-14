@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import { ExamplesComponent } from './components/examples/examples.component';
-import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import {SharedModule} from '../../shared/shared.module';
-import { BackgroundImageComponent } from './components/background-image/background-image.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import {TranslateModule} from '@ngx-translate/core';
 import {LoginRegisterGuard} from '../../shared/guards/login-register/login-register.guard';
@@ -33,9 +31,7 @@ export const HOME_ROUTES: Routes = [
 @NgModule({
 	declarations: [
 		HomeComponent,
-		ExamplesComponent,
-		TutorialsComponent,
-		BackgroundImageComponent
+		ExamplesComponent
 	],
 	imports: [
 		RouterModule,
