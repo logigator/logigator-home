@@ -14,7 +14,8 @@
 		"LOGOUT": "Abmelden",
 		"PROJECTS": "Projekte",
 		"COMPONENTS": "Komponenten",
-		"ACCOUNT": "Account"
+		"ACCOUNT": "Account",
+		"DOWNLOAD": "Download"
 	},
 	"FOOTER": {
 		"DATA_POLICY": "Datenschutzerklärung",
