@@ -1,6 +1,6 @@
 <div class="burger-menu" [class.show]="getOpen">
 	<div class="top">
-		<a class="entry" routerLink="my/components" (click)="setOpen(false)">
+		<a class="entry" routerLink="features" (click)="setOpen(false)">
 			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg" alt="Features Link">
 			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg" alt="Features Link">
 			<p>{{'OPTIONS.FEATURES' | translate}}</p>
