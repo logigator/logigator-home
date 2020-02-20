@@ -14,6 +14,7 @@ import {LogigatorSharedCompsModule, SharedCompsAuthService, SharedCompsThemingSe
 import {ThemingService} from './shared/services/theming/theming.service';
 import {AuthService} from './shared/services/auth/auth.service';
 import {CacheBustingTranslationLoader} from './shared/models/translation/cache-busting-translation-loader';
+import {FeaturesModule} from './modules/features/features.module';
 
 @NgModule({
 	declarations: [
@@ -25,6 +26,7 @@ import {CacheBustingTranslationLoader} from './shared/models/translation/cache-b
 		HomeModule,
 		AppRoutingModule,
 		HttpClientModule,
+		FeaturesModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,

@@ -21,10 +21,6 @@ header {
 		z-index: 100;
 	}
 
-	> *:not(.background)  {
-		padding: 0.5rem;
-	}
-
 	@media (max-width: 767px) {
 		justify-content: center;
 	}
@@ -33,31 +29,68 @@ header {
 		background-color: themed('primary');
 	}
 
-	.logo {
+	.left {
 		display: flex;
+		flex-direction: row;
 		height: 100%;
+
+		.burger-menu {
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding: 0.5rem;
+
+			display: none;
+			@media (max-width: 767px) {
+				display: block;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		.logo {
+			img {
+				height: $header-height/1.5;
+			}
+			padding: 0.5rem;
+		}
+
+		.links {
+			height: 100%;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
+
+			> * {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				padding: 0 1rem;
+				height: 100%;
+				color: black;
+
+				&:hover {
+					cursor: pointer;
+					@include themify() {
+						background-color: lighten(themed('primary'), 10);
+					}
+				}
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
 	}
 
 	img {
 		height: 100%;
 	}
 
-	.burger-menu {
-		position: absolute;
-		left: 0;
-		top: 0;
-
-		display: none;
-		@media (max-width: 767px) {
-			display: block;
-		}
-
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
-	.login {
+	.right {
 		display: flex;
 		flex-direction: row;
 		height: 100%;

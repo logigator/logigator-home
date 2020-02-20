@@ -1,5 +1,10 @@
 <div class="burger-menu" [class.show]="getOpen">
 	<div class="top">
+		<a class="entry" routerLink="my/components" (click)="setOpen(false)">
+			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg" alt="Features Link">
+			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg" alt="Features Link">
+			<p>{{'OPTIONS.FEATURES' | translate}}</p>
+		</a>
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/projects" (click)="setOpen(false)">
 				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg" alt="my Projects Link">

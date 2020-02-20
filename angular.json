@@ -173,7 +173,8 @@
 							"/privacy-policy",
 							"/imprint",
 							"/verify-email",
-							"/404"
+							"/404",
+							"/features"
 						],
 						"guessRoutes": false
 					},
