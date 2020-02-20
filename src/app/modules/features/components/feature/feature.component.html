@@ -4,5 +4,9 @@
 		<hr>
 		<ng-content></ng-content>
 	</div>
-	<img [src]="imgSrc" [alt]="head">
+	<img appLazyLoad [dataSrc]="imgSrc" [alt]="head">
+<!--	<iframe width="560" height="340" appLazyLoad [dataSrc]="imgSrc" frameborder="0"-->
+<!--	        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--	        allowfullscreen>-->
+<!--	</iframe>-->
 </div>
