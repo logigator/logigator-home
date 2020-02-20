@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 import {environment} from '../../../../environments/environment';
 import {WINDOW} from '../../injectable-window';
 import {SharedCompsAuthService} from '@logigator/logigator-shared-comps';
+import {ApiService} from '../api/api.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -67,6 +68,7 @@ export class AuthService implements SharedCompsAuthService {
 			throw Error('not logged in');
 		}
 		await this.http.get(environment.apiPrefix + '/auth/logout').toPromise();
+		this._userInfo$ = undefined;
 		await this.router.navigate(['/']);
 	}
 

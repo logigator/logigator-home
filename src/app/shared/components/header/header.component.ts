@@ -4,6 +4,7 @@ import {BurgerMenuService} from '../../services/burger-menu/burger-menu.service'
 import {Observable} from 'rxjs';
 import {UserInfo} from '../../models/http-responses/user-info';
 import {LoginPopupComponent, PopupService, RegisterPopupComponent} from '@logigator/logigator-shared-comps';
+import {ApiService} from '../../services/api/api.service';
 
 @Component({
 	selector: 'app-header',
@@ -18,7 +19,8 @@ export class HeaderComponent implements OnInit {
 		private auth: AuthService,
 		private burgerMenu: BurgerMenuService,
 		private popup: PopupService,
-		private componentFactoryResolver: ComponentFactoryResolver
+		private componentFactoryResolver: ComponentFactoryResolver,
+		private api: ApiService
 	) { }
 
 	ngOnInit() {
@@ -42,6 +44,7 @@ export class HeaderComponent implements OnInit {
 
 	public logout() {
 		this.auth.logout();
+		this.api.reset();
 	}
 
 	public switchBurgerMenu() {
