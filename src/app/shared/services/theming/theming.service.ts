@@ -1,5 +1,5 @@
-import {Inject, Injectable} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
+import {DOCUMENT, isPlatformServer} from '@angular/common';
 import {Observable, Subject} from 'rxjs';
 
 @Injectable({
@@ -11,7 +11,11 @@ export class ThemingService {
 
 	private _themeSubject$ = new Subject<'light' | 'dark'>();
 
-	constructor(@Inject(DOCUMENT) private document: HTMLDocument) {
+	constructor(@Inject(DOCUMENT) private document: HTMLDocument, @Inject(PLATFORM_ID) private platformId: string) {
+		if (isPlatformServer(this.platformId)) {
+			this._currentTheme = 'dark';
+			this._themeSubject$.next('dark');
+		}
 	}
 
 	public init() {

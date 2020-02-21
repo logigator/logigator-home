@@ -1,0 +1,51 @@
+@import "variables";
+@import "themes";
+
+.feature {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 1rem;
+
+	@media (max-width: 1000px) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@include themify() {
+		background-color: themed('accent2');
+	}
+
+	iframe, img {
+		width: 600px;
+		min-width: 600px;
+		object-fit: contain;
+
+		@media (max-width: 640px) {
+			width: 100%;
+			min-width: 0;
+		}
+	}
+
+	.description {
+		h2 {
+			margin: 0 0 1rem 0;
+		}
+
+		hr {
+			@include themify() {
+				border: {
+					width: 0;
+					top: 1px solid themed('text-primary');
+				}
+			}
+		}
+
+		@media (max-width: 1000px) {
+			padding-bottom: 1rem;
+		}
+		@media (min-width: 1000px) {
+			padding-right: 1rem;
+		}
+	}
+}

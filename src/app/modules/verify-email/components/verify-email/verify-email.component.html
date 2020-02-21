@@ -4,6 +4,6 @@
 		<h1 *ngIf="!loading && success">{{'VERIFY_MAIL.SUCCESS' | translate}}</h1>
 		<h1 *ngIf="!loading && !success">{{'VERIFY_MAIL.ERROR' | translate}}</h1>
 
-		<a *ngIf="!loading && success" routerLink="/">Go back to Home</a>
+		<a *ngIf="!loading" routerLink="/">Go back to Home</a>
 	</div>
 </div>

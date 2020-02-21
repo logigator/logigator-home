@@ -14,7 +14,8 @@
 		"LOGOUT": "Abmelden",
 		"PROJECTS": "Projekte",
 		"COMPONENTS": "Komponenten",
-		"ACCOUNT": "Account"
+		"ACCOUNT": "Account",
+		"FEATURES": "Features"
 	},
 	"FOOTER": {
 		"DATA_POLICY": "Datenschutzerklärung",
@@ -30,24 +31,38 @@
 		},
 		"EXPLANATION": {
 			"TITLE": "Eine kurze Erklärung",
-			"DESCRIPTION": "Wenn Sie sich jetzt Fragen, was logische Gatter überhaupt sind, dann ist das ganz normal. Kurzgesagt sind logische Gatter jene Bausteine, aus denen die Recheneinheiten eines Computers aufgebaut sind. Aber weil das als Erklärung nicht reicht, haben wir ein Video animiert in dem die Grundprinzipien unserer Diplomarbeit verständlich erklärt werden."
+			"DESCRIPTION": "Wenn Sie sich jetzt Fragen, was logische Gatter überhaupt sind, dann ist das ganz normal. Kurzgesagt sind logische Gatter jene Bausteine, aus denen die Recheneinheiten eines Computers aufgebaut sind. Aber weil das als Erklärung nicht reicht, haben wir ein Video animiert in dem die Grundprinzipien unserer Diplomarbeit verständlich erklärt werden.",
+			"VIDEO": "https://www.youtube.com/embed/114EOH-fdLE"
 		},
 		"EXAMPLES": {
 			"TITLE": "Ein paar Beispielschaltungen zum ausprobieren..."
+		}
+	},
+	"FEATURES": {
+		"WHAT_IS": {
+			"TITLE": "Was ist Logigator",
+			"VIDEO": "/assets/comingsoon_dark.png",
+			"TEXT": "Logigator ist ein Online Logikgatter-Simulator, welcher es einem ermöglicht im Browser Schaltungen aus logischen Gattern aufzubauen und diese dann zu simulieren. Es lassen sich zum Beispiel Halbaddierer und Volladdierer bauen, was gut zu Lernzwecken genutzt werden kann. Ob es nur ums Ausprobieren und Erforschen von boolschen Operationen geht, oder um das Entwerfen von neuen, komplexen Schaltungen - Logigator ist das geeignete Tool dafür. <br> Logigator bietet auch hohe Performanz bei umfangreichen Schaltungen, wie zum Beispiel auch ganzen CPUs (Computer). Mit Hilfe der Technologie “WebAssembly” (https://webassembly.org/) lassen sich Geschwindigkeiten erzielen, welche sonst im Browser nicht möglich wären."
 		},
-		"TUTORIALS": {
-			"LAYOUT": {
-				"TITLE": "Editoroberfläche",
-				"DESCRIPTION": "Dieses Tutorial zeigt die Möglichkeiten unserer Editoroberfläche auf und bietet einen Überblick über sämtliche verfügbare Funktionen."
-			},
-			"EDIT_MODE": {
-				"TITLE": "Editiermodus",
-				"DESCRIPTION": "Lerne die Bedienelemente des Editors kennen. In diesem Tutorial werden sämtliche Prinzipien vom Platzieren einer Komponente, bis zum Definieren benutzerdefinierter Komponenten mit frei gewählten Eingängen erklärt."
-			},
-			"SIMULATION_MODE": {
-				"TITLE": "Simulationsmodus",
-				"DESCRIPTION": "Der Simulationsmodus bietet einiges an Funktionen, und selbst falls man einmal die Übersicht verliert, hilft dieses Tutorial ganz schnell wieder den richtigen Weg zu finden."
-			}
+		"GENERAL": {
+			"TITLE": "Allgemein",
+			"VIDEO": "/assets/comingsoon_dark.png",
+			"TEXT": "Unter editor.logigator.com erreicht man den Editor, wo man Schaltungen entwerfen und simulieren kann. <br> Um ein Schaltungselement zu platzieren, selektiert man das gewollte Element aus dem Baukasten, der sich auf der linken Seite des Bildschirms befindet. Es gibt folgende grundlegende Gatter: UND, ODER, XODER, NICHT, sowie einen Durchpass, welcher das Eingangssignal nicht verändert und einen Taktgeber, welcher in regelmäßigen Abständen ein Signal ausgibt. Natürlich gibt es aber auch komplexere Elemente, die hier nicht erwähnt wurden. Nachdem man ein Element ausgewählt hat, kann man es mit einem Klick auf der Arbeitsfläche platzieren. Mit dem Selektierwerkzeug kann man ein Element auswählen und mithilfe der Einstellungsbox in der rechten unteren Ecke bearbeiten. Die Möglichkeiten dieser Einstellungen variieren von Komponente zu Komponente. Mit Hilfe des Leitungswerkzeugs lassen sich die einzelnen Elemente verbinden."
+		},
+		"CUSTOM_COMPS": {
+			"TITLE": "Benutzererstellte Komponenten",
+			"VIDEO": "/assets/comingsoon_dark.png",
+			"TEXT": "Oft ist es so, dass man einen Teil einer gebauten Schaltung, öfters verwenden will. Dazu kann man eigene Komponenten definieren, die danach leicht wiederzuverwenden sind, auch in mehreren Projekten. <br> Es gibt 2 Arten von Stecker-Elementen: Eingänge und Ausgänge. Platziert man diese in eigenen Komponenten, lassen sich mit deren Hilfe die Ein- und Ausgänge dieser Komponenten kennzeichnen. Man kann sie außerdem beschriften, um den Überblick zu behalten."
+		},
+		"SIMULATION": {
+			"TITLE": "Simulation",
+			"VIDEO": "/assets/comingsoon_dark.png",
+			"TEXT": "Im Simulationsmodus lassen sich aufgebaute Schaltungen testen und simulieren. Um in den Simulationsmodus zu wechseln, drückt man auf den “Simulation Starten” Button. Zu Beginn ist die Simulation pausiert. Um diese zu starten, drückt man den Play Button. Nun kann man mit der Schaltung interagieren. Will man die Schaltung debuggen, kann man diese mit Hilfe des Pause Buttons pausieren und Schritt für Schritt überprüfen. Mit dem Stopp Button kommen wir wieder zum Ausgangszustand zurück. Grundsätzlich läuft die Simulation so schnell wie möglich. Möchte man die Frequenz limitieren, kann man die Zielfrequenz entweder händisch angeben, oder mit der Frequenz des Bildschirms synchronisieren. Will man sich den Inhalt einer eigenen Komponente genauer ansehen, muss man einfach auf diese klicken."
+		},
+		"SAVING": {
+			"TITLE": "Projekte speichern",
+			"VIDEO": "/assets/comingsoon_dark.png",
+			"TEXT": "Projekte und eigene Komponenten können sowohl lokal, als Datei gespeichert werden, als auch in der Cloud, um sie auf mehreren Geräten bearbeiten zu können, wobei man hierfür angemeldet sein muss. Sie können ebenfalls mit anderen Nutzern geteilt werden."
 		}
 	},
 	"USERSPACE": {
@@ -99,6 +114,7 @@
 			"USERNAME_ERR_REQUIRED": "Benutzername muss angegeben werden",
 			"USERNAME_ERR_MIN": "Benutzername muss mindestens zwei Zeichen enthalten",
 			"USERNAME_ERR_MAX": "Benutzername darf maximal 20 Zeichen enthalten",
+			"USERNAME_ERR_PATTERN": "Benutzername darf nur a-z, A-Z, 0-9, _ oder - enthalten",
 			"PASSWORD": "Passwort",
 			"PASSWORD_ERR_REQUIRED": "Passwort muss angegeben werden",
 			"PASSWORD_ERR_MIN": "Passwort muss mindestens acht Zeichen enthalten",
@@ -223,7 +239,7 @@
 			"LINK": "Mehr erfahren"
 		}
 	},
-	"IMPRINT" : {
+	"IMPRINT": {
 		"HEAD": "Impressum",
 		"INFORMATION_OBLIGATION": "Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25 Mediengesetz.",
 		"COLLEGE": "Höhere technische Bundeslehranstalt Wien 3",

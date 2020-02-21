@@ -22,13 +22,15 @@ export class AppComponent implements OnInit {
 		this.initTranslation();
 
 		if (!isPlatformBrowser(this.platformId)) return;
-		this.router.events.subscribe(e => {
-			if (e instanceof NavigationEnd && !e.urlAfterRedirects.includes('auth-callback')) {
-				gtag('config', 'UA-151071040-2', {
-					page_path: e.urlAfterRedirects
-				});
-			}
-		});
+		if (window.location.host === 'logigator.com') {
+			this.router.events.subscribe(e => {
+				if (e instanceof NavigationEnd && !e.urlAfterRedirects.includes('auth-callback')) {
+					gtag('config', 'UA-151071040-2', {
+						page_path: e.urlAfterRedirects
+					});
+				}
+			});
+		}
 		this.theming.init();
 	}
 

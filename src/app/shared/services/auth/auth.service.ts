@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 import {environment} from '../../../../environments/environment';
 import {WINDOW} from '../../injectable-window';
 import {SharedCompsAuthService} from '@logigator/logigator-shared-comps';
+import {ApiService} from '../api/api.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -67,6 +68,7 @@ export class AuthService implements SharedCompsAuthService {
 			throw Error('not logged in');
 		}
 		await this.http.get(environment.apiPrefix + '/auth/logout').toPromise();
+		this._userInfo$ = undefined;
 		await this.router.navigate(['/']);
 	}
 
@@ -79,8 +81,10 @@ export class AuthService implements SharedCompsAuthService {
 		return isLoggedIn[0] !== '' && isLoggedIn[0].endsWith('true');
 	}
 
-	public verifyEmail(token: string) {
-		return this.http.get(environment.apiPrefix + '/auth/verify-email/' + token).toPromise();
+	public async verifyEmail(token: string) {
+		const mailResp = await this.http.get(environment.apiPrefix + '/auth/verify-email/' + token).toPromise();
+		this.getUserInformation();
+		return mailResp;
 	}
 
 	private openPopUp(url: string): Window {
