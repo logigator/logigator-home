@@ -81,8 +81,10 @@ export class AuthService implements SharedCompsAuthService {
 		return isLoggedIn[0] !== '' && isLoggedIn[0].endsWith('true');
 	}
 
-	public verifyEmail(token: string) {
-		return this.http.get(environment.apiPrefix + '/auth/verify-email/' + token).toPromise();
+	public async verifyEmail(token: string) {
+		const mailResp = await this.http.get(environment.apiPrefix + '/auth/verify-email/' + token).toPromise();
+		this.getUserInformation();
+		return mailResp;
 	}
 
 	private openPopUp(url: string): Window {
