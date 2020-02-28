@@ -36,6 +36,11 @@ export class ApiService {
 		return this._userComponents$;
 	}
 
+	public reset() {
+		this._userComponents$ = undefined;
+		this._userProjects$ = undefined;
+	}
+
 	public loadUserComponents(): Observable<UserComponent[]> {
 		if (!this.auth.isLoggedIn)
 			return of([]);

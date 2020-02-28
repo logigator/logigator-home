@@ -3,6 +3,7 @@ import {ThemingService} from '../../services/theming/theming.service';
 import {AuthService} from '../../services/auth/auth.service';
 import {TranslateService} from '@ngx-translate/core';
 import {PopupService} from '@logigator/logigator-shared-comps';
+import {ApiService} from '../../services/api/api.service';
 
 @Component({
 	selector: 'app-settings-dropdown',
@@ -22,7 +23,8 @@ export class SettingsDropdownComponent implements OnInit {
 		public theming: ThemingService,
 		private popupService: PopupService,
 		private auth: AuthService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private api: ApiService
 	) {}
 
 	ngOnInit(): void {
@@ -45,8 +47,9 @@ export class SettingsDropdownComponent implements OnInit {
 		return this.auth.isLoggedIn;
 	}
 
-	public logout() {
-		this.auth.logout();
+	public async logout() {
+		await this.auth.logout();
+		this.api.reset();
 		this.close();
 	}
 

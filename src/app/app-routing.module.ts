@@ -26,6 +26,10 @@ const routes: Routes = [
 		loadChildren: () => import('./modules/verify-email/verify-email.module').then(m => m.VerifyEmailModule)
 	},
 	{
+		path: 'features',
+		loadChildren: () => import('./modules/features/features.module').then(m => m.FeaturesModule)
+	},
+	{
 		path: 'my',
 		loadChildren: () => import('./modules/user-space/user-space.module').then(m => m.UserSpaceModule),
 		canActivate: [AuthGuard],

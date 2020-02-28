@@ -4,6 +4,7 @@ import {AuthService} from '../../services/auth/auth.service';
 import {ThemingService} from '../../services/theming/theming.service';
 import {TranslateService} from '@ngx-translate/core';
 import {LoginPopupComponent, PopupService, RegisterPopupComponent} from '@logigator/logigator-shared-comps';
+import {ApiService} from '../../services/api/api.service';
 
 @Component({
 	selector: 'app-burger-menu',
@@ -20,7 +21,8 @@ export class BurgerMenuComponent implements OnInit {
 		private popup: PopupService,
 		private componentFactoryResolver: ComponentFactoryResolver,
 		public theming: ThemingService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private api: ApiService
 	) {
 	}
 
@@ -50,6 +52,7 @@ export class BurgerMenuComponent implements OnInit {
 
 	public async logout() {
 		await this.auth.logout();
+		this.api.reset();
 		this.setOpen(false);
 	}
 

@@ -1,17 +1,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>https://logigator.com/</loc>
-		<lastmod>2019-12-22T13:22:49+00:00</lastmod>
+		<lastmod>2020-02-21T15:23:17+00:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
+		<loc>https://logigator.com/features/</loc>
+		<lastmod>2020-02-21T15:23:17+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
 		<loc>https://logigator.com/privacy-policy/</loc>
-		<lastmod>2019-12-22T13:22:49+00:00</lastmod>
+		<lastmod>2020-02-21T15:23:17+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://logigator.com/imprint/</loc>
-		<lastmod>2019-12-22T13:22:49+00:00</lastmod>
+		<lastmod>2020-02-21T15:23:17+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 </urlset>

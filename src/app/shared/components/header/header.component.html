@@ -1,11 +1,18 @@
 <header>
 	<div (click)="settingsDropdown = false;" *ngIf="settingsDropdown" class="background"></div>
 
-	<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/menu.svg" alt="burger menu open">
+	<div class="left">
+		<img class="burger-menu" (click)="switchBurgerMenu()" src="assets/icons/light/menu.svg" alt="burger menu open">
+		<a routerLink="/" class="logo">
+			<img alt="Logigator" src="/assets/logo.svg">
+		</a>
 
-	<a routerLink="/" class="logo"><img alt="Logigator" src="/assets/logo.svg"></a>
+		<div class="links">
+			<div routerLink="/features">{{'OPTIONS.FEATURES' | translate}}</div>
+		</div>
+	</div>
 
-	<div class="login">
+	<div class="right">
 		<ng-container *ngIf="isLoggedIn && (userInfo | async) as userInfo">
 			<div (click)="settingsDropdown = !settingsDropdown" class="userspace">
 				<a class="username">{{userInfo.user.username}}</a>

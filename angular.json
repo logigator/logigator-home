@@ -174,7 +174,8 @@
 							"/imprint",
 							"/verify-email",
 							"/download",
-							"/404"
+							"/404",
+							"/features"
 						],
 						"guessRoutes": false
 					},
