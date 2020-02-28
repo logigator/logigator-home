@@ -28,8 +28,7 @@
 		"INTRO": {
 			"TITLE": "Was ist Logigator",
 			"DESCRIPTION": "Der Editor für Logikschaltungen...",
-			"BUTTON": "ZUM EDITOR",
-			"DOWNLOAD_NATIVE": "oder native Editor App herunterladen"
+			"BUTTON": "ZUM EDITOR"
 		},
 		"EXPLANATION": {
 			"TITLE": "Eine kurze Erklärung",

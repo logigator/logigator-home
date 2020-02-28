@@ -69,28 +69,18 @@
 			}
 		}
 
-		.editor-buttons {
+		.try-now {
 			margin: 0;
 			width: 50%;
-			display: flex;
-			flex-direction: column;
 
 			@media (max-width: 768px) {
 				width: 100%;
 			}
 
-			.web-editor {
+			button {
 				width: 100%;
-
-				button {
-					width: 100%;
-					height: 3rem;
-					font-size: 1.2rem;
-				}
-			}
-
-			.download-editor {
-				margin-top: 1rem;
+				height: 3rem;
+				font-size: 1.2rem;
 			}
 		}
 	}
