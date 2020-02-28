@@ -1,5 +1,3 @@
-@import "themes";
-
 .examples-area {
 	width: 100%;
 	height: 40rem;
@@ -12,6 +10,13 @@ slideshow {
 	width: 100%;
 	height: 100%;
 	z-index: 0;
+}
+
+.try-now {
+	height: 2.5rem;
+	box-shadow: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 h3 {
