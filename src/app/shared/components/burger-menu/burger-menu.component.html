@@ -6,8 +6,8 @@
 			<p>{{'OPTIONS.FEATURES' | translate}}</p>
 		</a>
 		<a class="entry" routerLink="download" (click)="setOpen(false)">
-			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg" alt="my Components Link">
-			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/archive.svg" alt="my Components Link">
+			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/download.svg" alt="Downlaod Page Link">
+			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/download.svg" alt="Downlaod Page Link">
 			<p>{{'OPTIONS.DOWNLOAD' | translate}}</p>
 		</a>
 		<ng-container *ngIf="isLoggedIn">
