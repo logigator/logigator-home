@@ -10,6 +10,16 @@
 		<div class="links">
 			<div routerLink="/features">{{'OPTIONS.FEATURES' | translate}}</div>
 		</div>
+
+		<ng-container *ngIf="isLoggedIn">
+			<div class="links">
+				<div routerLink="/my/projects">{{'OPTIONS.PROJECTS' | translate}}</div>
+			</div>
+			<div class="links">
+				<div routerLink="/my/components">{{'OPTIONS.COMPONENTS' | translate}}</div>
+			</div>
+		</ng-container>
+
 	</div>
 
 	<div class="right">

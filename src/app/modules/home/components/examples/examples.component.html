@@ -10,7 +10,10 @@
 		[showDots]="true"
 		[arrowColor]="currentTheme === 'light' ? '#000000' :'#cccccc'"
 		[dotColor]="currentTheme === 'light' ? '#000000' :'#cccccc'"
+		[captionColor]="currentTheme === 'light' ? '#000000' :'#cccccc'"
+		[captionBackground]="'rgba(0,0,0,0)'"
 		#slideshow>
 	</slideshow>
+	<button class="btn-raised primary try-now" (click)="tryNowClick()">{{'HOME.EXAMPLES.TRY_NOW' | translate}}</button>
 	<h3>{{'HOME.EXAMPLES.TITLE' | translate}}</h3>
 </div>
