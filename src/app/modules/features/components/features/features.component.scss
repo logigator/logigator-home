@@ -1,9 +1,13 @@
 .features {
 	max-width: 1500px;
 	margin: auto;
-	padding-top: 2rem;
+	padding-top: 1rem;
 
 	.feature {
-		padding-bottom: 1rem;
+		margin: {
+			left: 1rem;
+			right: 1rem;
+			bottom: 1rem;
+		};
 	}
 }
