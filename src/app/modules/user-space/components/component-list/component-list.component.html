@@ -34,9 +34,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="tile empty-tile">
+					<div class="tile empty-tile" (click)="openProjectAddDialog()">
 						<div class="tile-hover"></div>
-						<div class="icon icon-add-new" (click)="openProjectAddDialog()"></div>
+						<div class="icon icon-add-new"></div>
 					</div>
 				</div>
 				<div class="item" *ngFor="let project of projects; odd as isOdd" [class.odd]="isOdd">
@@ -51,6 +51,12 @@
 			</ng-container>
 			<ng-template #noProjects>
 				<p class="no-items">{{'USERSPACE.COMPONENTS.ERROR' | translate}}</p>
+				<div class="tiles no-items-tiles">
+					<div class="tile empty-tile" (click)="openProjectAddDialog()">
+						<div class="tile-hover"></div>
+						<div class="icon icon-add-new"></div>
+					</div>
+				</div>
 			</ng-template>
 		</ng-container>
 	</div>
