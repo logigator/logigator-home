@@ -9,7 +9,7 @@ import {UserComponent} from '../../models/http-responses/user-component';
 import {AuthService} from '../auth/auth.service';
 import {UserProject} from '../../models/http-responses/user-project';
 import {environment} from '../../../../environments/environment';
-import {ElectronDownloadData} from '../../models/http-responses/electron-download-data';
+import {EditorReleaseData} from '../../models/http-responses/editor-release-data';
 
 @Injectable({
 	providedIn: 'root'
@@ -198,7 +198,7 @@ export class ApiService {
 		);
 	}
 
-	public getElectronDownloadData(): Observable<ElectronDownloadData> {
-		return this.http.get<ElectronDownloadData>('https://raw.githubusercontent.com/logigator/logigator-editor/development/currrent-electron-version.json');
+	public getEditorReleaseData(): Observable<EditorReleaseData> {
+		return this.http.get<EditorReleaseData>('https://api.github.com/repos/logigator/logigator-editor/releases/latest');
 	}
 }

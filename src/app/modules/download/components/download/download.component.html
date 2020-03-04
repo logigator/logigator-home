@@ -8,7 +8,7 @@
 			<p>{{'DOWNLOAD.DESCRIPTION' | translate}}</p>
 		</div>
 	</div>
-	<div class="download-section" *ngIf="electronDownloadData$ | async as electronDownloadData">
-		<app-current-version-download [downloadData]="electronDownloadData"></app-current-version-download>
+	<div class="download-section" *ngIf="editorReleaseData$ | async as editorReleaseData">
+		<app-current-version-download [downloadData]="editorReleaseData"></app-current-version-download>
 	</div>
 </div>

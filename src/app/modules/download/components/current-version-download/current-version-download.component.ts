@@ -1,9 +1,8 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {
-	ElectronDownloadData,
-	ElectronDownloadOption,
-	ElectronPlatform
-} from '../../../../shared/models/http-responses/electron-download-data';
+	EditorReleaseData,
+	EditorDownloadOption
+} from '../../../../shared/models/http-responses/editor-release-data';
 
 @Component({
 	selector: 'app-current-version-download',
@@ -13,30 +12,32 @@ import {
 })
 export class CurrentVersionDownloadComponent implements OnInit {
 
-	public windowsDownloadOptions: ElectronDownloadOption[];
-	public linuxDownloadOptions: ElectronDownloadOption[];
+	public windowsDownloadOptions: EditorDownloadOption[];
+	public linuxDownloadOptions: EditorDownloadOption[];
 
 	@Input()
-	private downloadData: ElectronDownloadData;
+	private downloadData: EditorReleaseData;
 
 	constructor() { }
 
 	ngOnInit(): void {
-		this.windowsDownloadOptions = this.getDownloadsOptions('windows');
+		this.windowsDownloadOptions = this.getDownloadsOptions('win32');
 		this.linuxDownloadOptions = this.getDownloadsOptions('linux');
 	}
 
 
-	private getDownloadsOptions(platform: ElectronPlatform): ElectronDownloadOption[] {
-		const downloadOptions: ElectronDownloadOption[] = [];
-		for (const arch in this.downloadData.platforms[platform]) {
-			downloadOptions.push({
-				...this.downloadData.platforms[platform][arch],
-				...{
-					date: this.downloadData.date,
-					version: this.downloadData.version
-				}
-			});
+	private getDownloadsOptions(platform: string): EditorDownloadOption[] {
+		const downloadOptions: EditorDownloadOption[] = [];
+		for (const asset of this.downloadData.assets) {
+			if (asset.name.includes(platform)) {
+				downloadOptions.push({
+					date: this.downloadData.published_at,
+					fileName: asset.name,
+					fileSize: asset.size,
+					version: this.downloadData.tag_name,
+					downloadLink: asset.browser_download_url
+				});
+			}
 		}
 		return downloadOptions;
 	}
