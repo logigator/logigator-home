@@ -12,7 +12,7 @@ import {TranslateModule} from '@ngx-translate/core';
 	imports: [
 		CommonModule,
 		SharedModule,
-		TranslateModule,
+		TranslateModule.forChild(),
 		VerifyEmailRoutingModule
 	]
 })

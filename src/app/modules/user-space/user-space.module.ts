@@ -66,7 +66,7 @@ import {LogigatorSharedCompsModule} from '@logigator/logigator-shared-comps';
 		CommonModule,
 		ReactiveFormsModule,
 		ImageCropperModule,
-		TranslateModule,
+		TranslateModule.forChild(),
 		SharedModule,
 		FormsModule,
 		LogigatorSharedCompsModule

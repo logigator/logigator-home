@@ -11,7 +11,7 @@ import {TranslateModule} from '@ngx-translate/core';
 	imports: [
 		ImprintRoutingModule,
 		CommonModule,
-		TranslateModule
+		TranslateModule.forChild()
 	]
 })
 export class ImprintModule { }
