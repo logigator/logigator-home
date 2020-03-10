@@ -267,8 +267,8 @@
 		"ERROR": "Error verifying email."
 	},
 	"DOWNLOAD": {
-		"HEADLINE": "Download native Editor",
-		"DESCRIPTION": "Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123",
+		"HEADLINE": "Download Editor",
+		"DESCRIPTION": "The editor is also available as a Desktop app. This has the advantage, that the simulation is way faster than in the web version. The app can be downloaded below.",
 		"DOWNLOAD": "Download",
 		"DATE": "Date",
 		"FILE_SIZE": "File Size"

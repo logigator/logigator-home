@@ -268,7 +268,7 @@
 	},
 	"DOWNLOAD": {
 		"HEADLINE": "Editor herunterladen",
-		"DESCRIPTION": "Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123 Description 123",
+		"DESCRIPTION": "Der Editor ist auch als Desktopanwendung verfügbar. Das hat den Vorteil, dass die Simulation um einiges schneller ist, als in der Webversion. Die App kann hier heruntergeladen werden.",
 		"DOWNLOAD": "Herunterladen",
 		"DATE": "Datum",
 		"FILE_SIZE": "Dateigröße"
