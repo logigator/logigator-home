@@ -1,7 +1,8 @@
 <div class="download-page">
 	<div class="header">
 		<div class="electron-screenshot">
-			<img src="assets/comingsoon_dark.png" alt="Logigator Electron App Screenshot">
+			<img *ngIf="currentTheme === 'dark'" src="assets/electron-app-dark.jpg" alt="Logigator Electron App Screenshot">
+			<img *ngIf="currentTheme === 'light'" src="assets/electron-app-light.jpg" alt="Logigator Electron App Screenshot">
 		</div>
 		<div class="description">
 			<h1>{{'DOWNLOAD.HEADLINE' | translate}}</h1>
