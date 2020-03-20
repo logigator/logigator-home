@@ -37,13 +37,12 @@
 	text-align: center;
 
 	@media (min-width: 1300px) {
-		margin-top: 7rem;
-		margin-bottom: 7rem;
+		margin-top: 5rem;
+		margin-bottom: 5rem;
 	}
 
 	img {
 		width: 100%;
-
 	}
 
 	.intro-headline {
@@ -57,22 +56,23 @@
 
 		@media (max-width: 768px) {
 			flex-direction: column;
-			padding: 1rem 0 0;
+			padding: 2rem 0 0;
 		}
 
 		h3 {
 			text-align: start;
 			font-weight: normal;
 			font-size: 2rem;
-			margin: 0;
+			margin: 0 1rem 0 0;
 			@media (max-width: 768px) {
 				display: none;
 			}
 		}
 
-		a {
+		.try-now {
 			margin: 0;
-			width: 40%;
+			width: 50%;
+
 			@media (max-width: 768px) {
 				width: 100%;
 			}

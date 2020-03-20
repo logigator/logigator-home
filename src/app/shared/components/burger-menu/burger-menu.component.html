@@ -5,6 +5,11 @@
 			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/features.svg" alt="Features Link">
 			<p>{{'OPTIONS.FEATURES' | translate}}</p>
 		</a>
+		<a class="entry" routerLink="download" (click)="setOpen(false)">
+			<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/download.svg" alt="Downlaod Page Link">
+			<img *ngIf="currentTheme === 'dark'" src="/assets/icons/dark/download.svg" alt="Downlaod Page Link">
+			<p>{{'OPTIONS.DOWNLOAD' | translate}}</p>
+		</a>
 		<ng-container *ngIf="isLoggedIn">
 			<a class="entry" routerLink="my/projects" (click)="setOpen(false)">
 				<img *ngIf="currentTheme === 'light'" src="/assets/icons/light/archive.svg" alt="my Projects Link">

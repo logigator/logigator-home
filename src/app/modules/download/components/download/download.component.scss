@@ -1,0 +1,58 @@
+@import "themes";
+
+.download-page {
+	padding: {
+		top: 2rem;
+		left: 2rem;
+		right: 2rem;
+	};
+	margin: auto;
+	max-width: 1500px;
+
+	@include themify() {
+		color: themed('text-primary');
+	}
+
+	.header {
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		align-items: center;
+
+		.electron-screenshot {
+			min-width: 450px;
+			max-width: 700px;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.description {
+			margin-left: 2rem;
+
+			h1 {
+				font-size: 40px;
+				margin-bottom: 0;
+				font-weight: normal;
+			}
+		}
+
+		@media only screen and (max-width: 768px) {
+			flex-direction: column;
+
+			.electron-screenshot {
+				width: 100%;
+				min-width: unset;
+			}
+
+			.description {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.download-section {
+		margin-top: 3rem;
+	}
+}

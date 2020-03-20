@@ -15,6 +15,7 @@
 		"PROJECTS": "Projects",
 		"COMPONENTS": "Components",
 		"ACCOUNT": "Account",
+		"DOWNLOAD": "Download",
 		"FEATURES": "Features"
 	},
 	"FOOTER": {
@@ -27,7 +28,7 @@
 		"INTRO": {
 			"TITLE": "What is Logigator",
 			"DESCRIPTION": "The editor for logical circuits...",
-			"BUTTON": "GO TO EDITOR"
+			"BUTTON": "TRY NOW"
 		},
 		"EXPLANATION": {
 			"TITLE": "A short Explanation",
@@ -264,6 +265,13 @@
 		"VERIFYING": "Verifying email. Please wait.",
 		"SUCCESS": "Email verified successfully.",
 		"ERROR": "Error verifying email."
+	},
+	"DOWNLOAD": {
+		"HEADLINE": "Download Editor",
+		"DESCRIPTION": "The editor is also available as a Desktop app. This has the advantage, that the simulation is way faster than in the web version. The app can be downloaded below.",
+		"DOWNLOAD": "Download",
+		"DATE": "Date",
+		"FILE_SIZE": "File Size"
 	},
 	"ERROR": {
 		"ACCOUNT": {

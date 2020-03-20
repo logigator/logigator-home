@@ -1,0 +1,55 @@
+<div class="download-platform">
+	<div class="platform-img">
+		<img src="assets/windows_logo.svg" alt="Windows Logo">
+	</div>
+	<div class="archs">
+		<div class="arch" *ngFor="let arch of windowsDownloadOptions">
+			<div class="filename">
+				<p class="name">{{arch.fileName}}</p>
+				<p class="version">{{arch.version}}</p>
+				<p class="size-and-date-md">{{'DOWNLOAD.FILE_SIZE' | translate}}: {{arch.fileSize | si}}; {{'DOWNLOAD.DATE' | translate}}: {{arch.date | date}}</p>
+			</div>
+			<div class="file-size">
+				<p class="name">{{'DOWNLOAD.FILE_SIZE' | translate}}</p>
+				<p>{{arch.fileSize | si}}</p>
+			</div>
+			<div class="date">
+				<p class="name">{{'DOWNLOAD.DATE' | translate}}</p>
+				<p>{{arch.date | date}}</p>
+			</div>
+			<div class="download-button">
+				<a [href]="arch.downloadLink" download>
+					<button class="btn-raised primary">{{'DOWNLOAD.DOWNLOAD' | translate}}</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="download-platform">
+	<div class="platform-img">
+		<img src="assets/linux_logo.svg" alt="Linux Logo">
+	</div>
+	<div class="archs">
+		<div class="arch" *ngFor="let arch of linuxDownloadOptions">
+			<div class="filename">
+				<p class="name">{{arch.fileName}}</p>
+				<p class="version">{{arch.version}}</p>
+				<p class="size-and-date-md">{{'DOWNLOAD.FILE_SIZE' | translate}}: {{arch.fileSize | si}}</p>
+			</div>
+			<div class="file-size">
+				<p class="name">{{'DOWNLOAD.FILE_SIZE' | translate}}</p>
+				<p>{{arch.fileSize | si}}</p>
+			</div>
+			<div class="date">
+				<p class="name">{{'DOWNLOAD.DATE' | translate}}</p>
+				<p>{{arch.date | date}}</p>
+			</div>
+			<div class="download-button">
+				<a [href]="arch.downloadLink" download>
+					<button class="btn-raised primary">{{'DOWNLOAD.DOWNLOAD' | translate}}</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

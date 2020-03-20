@@ -1,0 +1,15 @@
+<div class="download-page">
+	<div class="header">
+		<div class="electron-screenshot">
+			<img *ngIf="currentTheme === 'dark'" src="assets/electron-app-dark.jpg" alt="Logigator Electron App Screenshot">
+			<img *ngIf="currentTheme === 'light'" src="assets/electron-app-light.jpg" alt="Logigator Electron App Screenshot">
+		</div>
+		<div class="description">
+			<h1>{{'DOWNLOAD.HEADLINE' | translate}}</h1>
+			<p>{{'DOWNLOAD.DESCRIPTION' | translate}}</p>
+		</div>
+	</div>
+	<div class="download-section" *ngIf="editorReleaseData$ | async as editorReleaseData">
+		<app-current-version-download [downloadData]="editorReleaseData"></app-current-version-download>
+	</div>
+</div>

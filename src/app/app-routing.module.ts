@@ -18,6 +18,10 @@ const routes: Routes = [
 		loadChildren: () => import('./modules/privacy-policy/privacy-policy.module').then(m => m.PrivacyPolicyModule)
 	},
 	{
+		path: 'download',
+		loadChildren: () => import('./modules/download/download.module').then(m => m.DownloadModule)
+	},
+	{
 		path: 'verify-email',
 		loadChildren: () => import('./modules/verify-email/verify-email.module').then(m => m.VerifyEmailModule)
 	},

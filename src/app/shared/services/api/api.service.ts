@@ -9,6 +9,7 @@ import {UserComponent} from '../../models/http-responses/user-component';
 import {AuthService} from '../auth/auth.service';
 import {UserProject} from '../../models/http-responses/user-project';
 import {environment} from '../../../../environments/environment';
+import {EditorReleaseData} from '../../models/http-responses/editor-release-data';
 
 @Injectable({
 	providedIn: 'root'
@@ -195,5 +196,9 @@ export class ApiService {
 				(x) => `Could not create component: (${x.status}) ${x.error.error.description}`,
 				false)
 		);
+	}
+
+	public getEditorReleaseData(): Observable<EditorReleaseData> {
+		return this.http.get<EditorReleaseData>('https://api.github.com/repos/logigator/logigator-editor/releases/latest');
 	}
 }
