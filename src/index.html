@@ -15,8 +15,9 @@
 	<meta name="msapplication-TileColor" content="#2b5797">
 	<meta name="theme-color" content="#27ae60">
 	<meta name="Description"
-		  content="Build and simulate your own logic circuits with Logigator, a simple yet powerful web-based online tool.">
-	<meta name="keywords" content="logic circuit, simulator, logic, cad, computer aided design, digital, designer, build, simulate, logic circuit simulator, digital circuit simulator, online">
+	      content="Build and simulate your own logic circuits with Logigator, a simple yet powerful web-based online tool.">
+	<meta name="keywords"
+	      content="logic circuit, simulator, logic, cad, computer aided design, digital, designer, build, simulate, logic circuit simulator, digital circuit simulator, online">
 	<meta property="og:title" content="Logigator"/>
 	<meta property="og:url" content="https://logigator.com"/>
 	<meta property="og:image" content="https://logigator.com/assets/icons/android-chrome-512x512.png"/>
@@ -24,30 +25,40 @@
 	<meta property="twitter:image" content="https://logigator.com/assets/icons/android-chrome-512x512.png"/>
 	<meta property="twitter:title" content="Logigator"/>
 	<meta property="twitter:description"
-		  content="Build and simulate your own logic circuits with Logigator, a simple yet powerful web-based online tool."/>
+	      content="Build and simulate your own logic circuits with Logigator, a simple yet powerful web-based online tool."/>
 	<meta property="og:description"
-		  content="Build and simulate your own logic circuits with Logigator, a simple yet powerful web-based online tool."/>
+	      content="Build and simulate your own logic circuits with Logigator, a simple yet powerful web-based online tool."/>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script defer src="https://www.googletagmanager.com/gtag/js?id=UA-151071040-2"></script>
-	<script defer src="https://www.google.com/recaptcha/api.js?render=6Le9BbgUAAAAAHJupU1XiAa8n1Z0M2YFHL89OMMp"></script>
 	<link rel="preconnect" href="https://youtube.com">
 	<link rel="preconnect" href="https://google.com">
 	<link rel="preconnect" href="https://www.google-analytics.com">
 	<link rel="preconnect" href="https://www.googletagmanager.com">
-	<link rel="preconnect" href="https://www.gstatic.com">
 	<script>
-        if (window && window.location.host === 'logigator.com') {
-            window.dataLayer = window.dataLayer || [];
+		window.onload = function () {
+			var recaptcha = document.createElement('script');
+			recaptcha.src = 'https://www.google.com/recaptcha/api.js?render=6Le9BbgUAAAAAHJupU1XiAa8n1Z0M2YFHL89OMMp';
+			recaptcha.defer = true;
+			recaptcha.async = true;
+			document.head.appendChild(recaptcha);
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
+			if (window && window.location.host === 'logigator.com') {
+				var analytics = document.createElement('script');
+				analytics.src = 'https://www.googletagmanager.com/gtag/js?id=UA-151071040-2';
+				analytics.defer = true;
+				document.head.appendChild(analytics);
+				analytics.onload = function () {
+					window.dataLayer = window.dataLayer || [];
 
-            gtag('js', new Date());
+					function gtag() {
+						dataLayer.push(arguments);
+					}
 
-            gtag('config', 'UA-151071040-2');
-        }
+					gtag('js', new Date());
+					gtag('config', 'UA-151071040-2');
+				}
+			}
+		}
+
 	</script>
 </head>
 <body class="theme-dark">

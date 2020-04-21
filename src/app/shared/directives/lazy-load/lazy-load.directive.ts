@@ -1,6 +1,6 @@
 import {Directive, ElementRef, Inject, Input, OnChanges, OnInit, PLATFORM_ID, SimpleChanges} from '@angular/core';
 import {WINDOW} from '../../injectable-window';
-import {isPlatformServer} from '@angular/common';
+import {DOCUMENT, isPlatformServer} from '@angular/common';
 
 @Directive({
 	selector: 'img[appLazyLoad],iframe[appLazyLoad]'
@@ -17,6 +17,7 @@ export class LazyLoadDirective implements OnInit, OnChanges {
 	constructor(
 		private el: ElementRef<HTMLIFrameElement | HTMLImageElement>,
 		@Inject(WINDOW) private window: Window,
+		@Inject(DOCUMENT) private document: Document,
 		@Inject(PLATFORM_ID) private platformId: string
 	) { }
 
@@ -25,12 +26,21 @@ export class LazyLoadDirective implements OnInit, OnChanges {
 		if ('IntersectionObserver' in window) {
 			this._intersectionObserver = new IntersectionObserver((entries, observer) => {
 				entries.forEach(entry => {
+					const lazy = entry.target;
 					if (entry.isIntersecting) {
-						const lazy = entry.target;
-						if (this.isImageUrl(this.dataSrc)) {
-							lazy.setAttribute('src', this.dataSrc);
+						if (this.document.readyState === 'complete') {
+							if (this.isImageUrl(this.dataSrc)) {
+								lazy.setAttribute('src', this.dataSrc);
+							}
+							this.hasIntersected = true;
+						} else {
+							this.window.addEventListener('load', () => {
+								if (this.isImageUrl(this.dataSrc)) {
+									lazy.setAttribute('src', this.dataSrc);
+								}
+								this.hasIntersected = true;
+							});
 						}
-						this.hasIntersected = true;
 						this._intersectionObserver.unobserve(lazy);
 					}
 				});
@@ -42,7 +52,7 @@ export class LazyLoadDirective implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		if (isPlatformServer(this.platformId) && !this.hasIntersected) return;
+		if (isPlatformServer(this.platformId) || !this.hasIntersected) return;
 		if (this.isImageUrl(this.dataSrc))
 			this.el.nativeElement.setAttribute('src', this.dataSrc);
 	}
