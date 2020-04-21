@@ -49,7 +49,7 @@
 				analytics.onload = function () {
 					window.dataLayer = window.dataLayer || [];
 
-					function gtag() {
+					window.gtag = function() {
 						dataLayer.push(arguments);
 					}
 
