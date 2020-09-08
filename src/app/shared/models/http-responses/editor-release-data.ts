@@ -13,7 +13,7 @@ export interface ReleaseAsset {
 export interface EditorDownloadOption {
 	fileName: string;
 	fileSize: number;
-	version: string,
+	version: string;
 	date: string;
 	downloadLink: string;
 }

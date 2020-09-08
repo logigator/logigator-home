@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DrawerComponent } from './drawer.component';
+import { BurgerMenuComponent } from './burger-menu.component';
 
-describe('DrawerComponent', () => {
-	let component: DrawerComponent;
-	let fixture: ComponentFixture<DrawerComponent>;
+describe('BurgerMenuComponent', () => {
+	let component: BurgerMenuComponent;
+	let fixture: ComponentFixture<BurgerMenuComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
-			declarations: [ DrawerComponent ]
+			declarations: [ BurgerMenuComponent ]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(DrawerComponent);
+		fixture = TestBed.createComponent(BurgerMenuComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
