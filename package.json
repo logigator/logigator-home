@@ -25,7 +25,7 @@
 		"@ngx-translate/core": "^12.1.2",
 		"cookieconsent": "^3.1.1",
 		"core-js": "^3.6.4",
-		"express": "^4.17.1",
+		"express": "^4.17.3",
 		"ng-simple-slideshow": "github:Liioooo/ng-simple-slideshow#logigator-built-lib",
 		"ngx-image-cropper": "^3.1.3",
 		"regenerator-runtime": "^0.13.5",
